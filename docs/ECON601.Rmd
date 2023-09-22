@@ -1,0 +1,100 @@
+---
+title: "Micro I Notes"
+author: "Parker Howell"
+date: "Last Updated: `r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    toc_float: true
+---
+
+## Preference
+
+<!-- 1. consider $X \times X = $ -->
+
+### Def "binary relation"
+A binary relation $R$ on $X$ is a subset of $X \times X$.
+
+The ordered pair $(x,y) \in R$ means $x$ is (weakly) preferred to $y$.
+
+#### Remark about notation
+We use $\succsim$ to denote $R$ but all these methods are the same thing:
+$$(x,y)  \iff xRy \iff x \succsim y$$
+
+##### Example
+1. $X$ = real line; $R$ is "="
+  * Then $(2,2) \in$ =" but $(2,4) \notin$ "="
+2. $X$ = real line; $R$ is "$\geq$"
+  * Then $(x,y) \in R \iff x \geq y$
+
+### Def "attributes of binary relations"
+
+### Def "rational"
+
+## Choice
+
+### Def "choice function"
+
+### Def "choice structure"
+
+### Def "WARP"
+
+### Def Sen's $\alpha$ and $\beta$
+
+### Prop 1 "WARP $\iff \alpha$ and $\beta$"
+
+#### Term "single-valued"
+We say $c$ is single-valued if $\forall A \in \mathcal{B}, |c(A)| = 1$
+
+
+### Prop 2 "$\alpha$ and single-valued $\Rightarrow$ WARP"
+
+## Choice and Preference
+
+### Def "$c_\succsim$"
+
+### Def "$\succsim_c$"
+
+### Prop "satisfies WARP $\iff \succsim$ rational
+
+### Prop "WARP $\Rightarrow c=c_\succsim$"
+If $(\mathcal{P}, c)$ is a choice structure that satisfies WARP then there exists a unique rational binary relation such that $c=c_\succsim$ (i.e., for all $A \in \mathcal{P}, c(A) = c_\succsim (A)$).
+
+<!-- ### Def "$\succsim^*$ from MWG" -->
+
+## Utility
+
+### Def "utility function"
+
+### Prop "$U$ represents $\succsim$, then $\succsim$ rational"
+If $U: X \rightarrow \mathbb{R}$ represents $\succsim$, then $\succsim$ is rational.
+
+Note: this proposition does NOT require finiteness!
+
+
+### Prop "$X$ finite + $\succsim$ rational \Rightarrow $\exists U$
+If $X$ is finite and $\succsim$ is rational then there exists $U: X \rightarrow \mathbb{R}$ that represents $\succsim$.
+
+### Prop "$V \iff \phi$ and $\phi$ strictly increasing"
+
+## Expected Utility
+
+### Def "lottery"
+
+#### Remark: $\mathcal{L}$ is the set of alternatives, and unlike $X$ is infinite!
+
+### Def "expected utility"
+
+### Def "Mixture operation"
+
+### Def "expected utility"
+
+### Def "linear function"
+
+### Lemma "linear $\iff U$ is an expected utility function"
+
+### Def "vNM Axioms"
+A1. (Rationality)
+
+A2. (Independence): for all $p,q,r \in \mathcal{L}, \alpha \in (0,1)$ we have $[p \succsim q] \Rightarrow [\alpha p + (1-\alpha)r \succsim \alpha q + (1-\alpha)r]$
