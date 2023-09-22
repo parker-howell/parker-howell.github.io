@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Sequences | ECON 600 Notes</title>
+  <meta name="description" content="5 Sequences | ECON 600 Notes" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Sequences | ECON 600 Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Sequences | ECON 600 Notes" />
+  
+  
+  
+
+<meta name="author" content="Parker Howell" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="metric-spaces.html"/>
+<link rel="next" href="openclosed-sets.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="sets.html"><a href="sets.html"><i class="fa fa-check"></i><b>1</b> Sets</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="sets.html"><a href="sets.html#def-properties-of-a-set"><i class="fa fa-check"></i><b>1.0.1</b> Def “Properties of a set”</a></li>
+<li class="chapter" data-level="1.0.2" data-path="sets.html"><a href="sets.html#def-subsets"><i class="fa fa-check"></i><b>1.0.2</b> Def: “Subsets”</a></li>
+<li class="chapter" data-level="1.0.3" data-path="sets.html"><a href="sets.html#remark-1-proper-subset"><i class="fa fa-check"></i><b>1.0.3</b> Remark 1 “proper subset”</a></li>
+<li class="chapter" data-level="1.0.4" data-path="sets.html"><a href="sets.html#remark-2-empty-set-in-all-sets"><i class="fa fa-check"></i><b>1.0.4</b> Remark 2 “empty set in all sets”</a></li>
+<li class="chapter" data-level="1.0.5" data-path="sets.html"><a href="sets.html#important-object-power-set"><i class="fa fa-check"></i><b>1.0.5</b> Important Object “power set”</a></li>
+<li class="chapter" data-level="1.0.6" data-path="sets.html"><a href="sets.html#operations-on-sets"><i class="fa fa-check"></i><b>1.0.6</b> Operations on Sets</a></li>
+<li class="chapter" data-level="1.0.7" data-path="sets.html"><a href="sets.html#def-partition"><i class="fa fa-check"></i><b>1.0.7</b> Def “Partition”</a></li>
+<li class="chapter" data-level="1.0.8" data-path="sets.html"><a href="sets.html#def-cartesian-product"><i class="fa fa-check"></i><b>1.0.8</b> Def “Cartesian Product”</a></li>
+<li class="chapter" data-level="1.1" data-path="sets.html"><a href="sets.html#relations"><i class="fa fa-check"></i><b>1.1</b> Relations</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="sets.html"><a href="sets.html#def-equivalence-relation"><i class="fa fa-check"></i><b>1.1.1</b> Def “Equivalence Relation”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="functions.html"><a href="functions.html#def-invertible"><i class="fa fa-check"></i><b>2.0.1</b> Def “invertible”</a></li>
+<li class="chapter" data-level="2.0.2" data-path="functions.html"><a href="functions.html#def-injective-one-to-one"><i class="fa fa-check"></i><b>2.0.2</b> Def “injective” (one-to-one)</a></li>
+<li class="chapter" data-level="2.0.3" data-path="functions.html"><a href="functions.html#def-surjective-onto"><i class="fa fa-check"></i><b>2.0.3</b> Def “surjective” (onto)</a></li>
+<li class="chapter" data-level="2.0.4" data-path="functions.html"><a href="functions.html#prop-1-subsets-with-functions"><i class="fa fa-check"></i><b>2.0.4</b> Prop 1 “subsets with functions”</a></li>
+<li class="chapter" data-level="2.0.5" data-path="functions.html"><a href="functions.html#def-composition"><i class="fa fa-check"></i><b>2.0.5</b> Def “composition”</a></li>
+<li class="chapter" data-level="2.0.6" data-path="functions.html"><a href="functions.html#def-correspondence"><i class="fa fa-check"></i><b>2.0.6</b> Def “correspondence”</a></li>
+<li class="chapter" data-level="2.0.7" data-path="functions.html"><a href="functions.html#def-bijective"><i class="fa fa-check"></i><b>2.0.7</b> Def “bijective”</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="real-numbers.html"><a href="real-numbers.html"><i class="fa fa-check"></i><b>3</b> Real Numbers</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="real-numbers.html"><a href="real-numbers.html#def-bounds"><i class="fa fa-check"></i><b>3.0.1</b> Def “bounds”</a></li>
+<li class="chapter" data-level="3.0.2" data-path="real-numbers.html"><a href="real-numbers.html#def-supremum"><i class="fa fa-check"></i><b>3.0.2</b> Def “supremum”</a></li>
+<li class="chapter" data-level="3.0.3" data-path="real-numbers.html"><a href="real-numbers.html#completeness-axiom"><i class="fa fa-check"></i><b>3.0.3</b> Completeness Axiom:</a></li>
+<li class="chapter" data-level="3.0.4" data-path="real-numbers.html"><a href="real-numbers.html#prop-1-sup-is-unique"><i class="fa fa-check"></i><b>3.0.4</b> Prop 1: “sup is unique”</a></li>
+<li class="chapter" data-level="3.0.5" data-path="real-numbers.html"><a href="real-numbers.html#def-maxmin"><i class="fa fa-check"></i><b>3.0.5</b> Def “max/min”</a></li>
+<li class="chapter" data-level="3.0.6" data-path="real-numbers.html"><a href="real-numbers.html#prop-2-maxsup"><i class="fa fa-check"></i><b>3.0.6</b> Prop 2 “max=sup”</a></li>
+<li class="chapter" data-level="3.0.7" data-path="real-numbers.html"><a href="real-numbers.html#corollary-1"><i class="fa fa-check"></i><b>3.0.7</b> Corollary 1:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="metric-spaces.html"><a href="metric-spaces.html"><i class="fa fa-check"></i><b>4</b> Metric Spaces</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="metric-spaces.html"><a href="metric-spaces.html#def-metric"><i class="fa fa-check"></i><b>4.0.1</b> Def “metric”</a></li>
+<li class="chapter" data-level="4.0.2" data-path="metric-spaces.html"><a href="metric-spaces.html#def-metric-space"><i class="fa fa-check"></i><b>4.0.2</b> Def “metric space”</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sequences.html"><a href="sequences.html"><i class="fa fa-check"></i><b>5</b> Sequences</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="sequences.html"><a href="sequences.html#def-sequence"><i class="fa fa-check"></i><b>5.0.1</b> Def “sequence”</a></li>
+<li class="chapter" data-level="5.0.2" data-path="sequences.html"><a href="sequences.html#def-limit"><i class="fa fa-check"></i><b>5.0.2</b> Def “limit”</a></li>
+<li class="chapter" data-level="5.0.3" data-path="sequences.html"><a href="sequences.html#prop-1-sequences-have-max-one-limit"><i class="fa fa-check"></i><b>5.0.3</b> Prop 1 “sequences have max one limit”</a></li>
+<li class="chapter" data-level="5.0.4" data-path="sequences.html"><a href="sequences.html#def-limit-1"><i class="fa fa-check"></i><b>5.0.4</b> Def “Limit”</a></li>
+<li class="chapter" data-level="5.0.5" data-path="sequences.html"><a href="sequences.html#def-divergence"><i class="fa fa-check"></i><b>5.0.5</b> Def “divergence”</a></li>
+<li class="chapter" data-level="5.1" data-path="sequences.html"><a href="sequences.html#subsequences"><i class="fa fa-check"></i><b>5.1</b> Subsequences</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sequences.html"><a href="sequences.html#def-subsequence"><i class="fa fa-check"></i><b>5.1.1</b> Def “subsequence”</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sequences.html"><a href="sequences.html#prop-2-sequence-converges-rightarrow-subsequences-converge"><i class="fa fa-check"></i><b>5.1.2</b> Prop 2 “sequence converges <span class="math inline">\(\Rightarrow\)</span> subsequences converge”</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sequences.html"><a href="sequences.html#def-bounded-sequence"><i class="fa fa-check"></i><b>5.1.3</b> Def “bounded sequence”</a></li>
+<li class="chapter" data-level="5.1.4" data-path="sequences.html"><a href="sequences.html#prop-3-a-convergent-sequence-is-bounded."><i class="fa fa-check"></i><b>5.1.4</b> Prop 3 “A convergent sequence is bounded.”</a></li>
+<li class="chapter" data-level="5.1.5" data-path="sequences.html"><a href="sequences.html#def-increasing"><i class="fa fa-check"></i><b>5.1.5</b> Def “increasing”</a></li>
+<li class="chapter" data-level="5.1.6" data-path="sequences.html"><a href="sequences.html#def-monotone"><i class="fa fa-check"></i><b>5.1.6</b> Def “monotone”</a></li>
+<li class="chapter" data-level="5.1.7" data-path="sequences.html"><a href="sequences.html#prop-4-bounded-monotone-rightarrow-convergent"><i class="fa fa-check"></i><b>5.1.7</b> Prop 4 “bounded, monotone <span class="math inline">\(\Rightarrow\)</span> convergent”</a></li>
+<li class="chapter" data-level="5.1.8" data-path="sequences.html"><a href="sequences.html#prop-5-squeeze-thm"><i class="fa fa-check"></i><b>5.1.8</b> Prop 5 “squeeze thm”</a></li>
+<li class="chapter" data-level="5.1.9" data-path="sequences.html"><a href="sequences.html#prop-6-limit-algebra"><i class="fa fa-check"></i><b>5.1.9</b> Prop 6 “limit algebra”</a></li>
+<li class="chapter" data-level="5.1.10" data-path="sequences.html"><a href="sequences.html#prop-7-bolzano-weierstrauss-thm-bounded-seq-rightarrow-convergent-subsequence"><i class="fa fa-check"></i><b>5.1.10</b> Prop 7: Bolzano-Weierstrauss Thm “bounded seq <span class="math inline">\(\Rightarrow\)</span> convergent subsequence”</a></li>
+<li class="chapter" data-level="5.1.11" data-path="sequences.html"><a href="sequences.html#def-cauchy"><i class="fa fa-check"></i><b>5.1.11</b> Def “Cauchy”</a></li>
+<li class="chapter" data-level="5.1.12" data-path="sequences.html"><a href="sequences.html#prop-8-convergent-rightarrow-cauchy"><i class="fa fa-check"></i><b>5.1.12</b> Prop 8 “convergent <span class="math inline">\(\Rightarrow\)</span> Cauchy”</a></li>
+<li class="chapter" data-level="5.1.13" data-path="sequences.html"><a href="sequences.html#def-complete-space"><i class="fa fa-check"></i><b>5.1.13</b> Def <em>complete space</em></a></li>
+<li class="chapter" data-level="5.1.14" data-path="sequences.html"><a href="sequences.html#prop-9-cauchy-rightarrow-bounded"><i class="fa fa-check"></i><b>5.1.14</b> Prop 9 “Cauchy <span class="math inline">\(\Rightarrow\)</span> bounded”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="openclosed-sets.html"><a href="openclosed-sets.html"><i class="fa fa-check"></i><b>6</b> Open/closed Sets</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-open-ball"><i class="fa fa-check"></i><b>6.0.1</b> Def “open ball”</a></li>
+<li class="chapter" data-level="6.0.2" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-interior-point"><i class="fa fa-check"></i><b>6.0.2</b> Def “interior point”</a></li>
+<li class="chapter" data-level="6.0.3" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-open-set"><i class="fa fa-check"></i><b>6.0.3</b> Def “open set”</a></li>
+<li class="chapter" data-level="6.0.4" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-1-unionintersection-of-open-sets-open"><i class="fa fa-check"></i><b>6.0.4</b> Prop 1 “union/intersection of open sets open”</a></li>
+<li class="chapter" data-level="6.0.5" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-closed-set"><i class="fa fa-check"></i><b>6.0.5</b> Def “Closed Set”</a></li>
+<li class="chapter" data-level="6.0.6" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-2-unionintersection-closed-sets-closed"><i class="fa fa-check"></i><b>6.0.6</b> Prop 2 “union/intersection closed sets closed”</a></li>
+<li class="chapter" data-level="6.0.7" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-3-closed-iff-lim-in-e"><i class="fa fa-check"></i><b>6.0.7</b> Prop 3 “closed <span class="math inline">\(\iff\)</span> lim in <span class="math inline">\(E\)</span>”</a></li>
+<li class="chapter" data-level="6.0.8" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-adherent-point"><i class="fa fa-check"></i><b>6.0.8</b> Def “adherent point”</a></li>
+<li class="chapter" data-level="6.0.9" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-closure"><i class="fa fa-check"></i><b>6.0.9</b> Def “closure”</a></li>
+<li class="chapter" data-level="6.0.10" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-boundary"><i class="fa fa-check"></i><b>6.0.10</b> Def “boundary”</a></li>
+<li class="chapter" data-level="6.0.11" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-4-inte-largest-open-set-contained"><i class="fa fa-check"></i><b>6.0.11</b> Prop 4 “int(E) largest open set contained”</a></li>
+<li class="chapter" data-level="6.1" data-path="openclosed-sets.html"><a href="openclosed-sets.html#compactness"><i class="fa fa-check"></i><b>6.1</b> Compactness</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-open-cover"><i class="fa fa-check"></i><b>6.1.1</b> Def “open cover”</a></li>
+<li class="chapter" data-level="6.1.2" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-compact"><i class="fa fa-check"></i><b>6.1.2</b> Def “Compact”</a></li>
+<li class="chapter" data-level="6.1.3" data-path="openclosed-sets.html"><a href="openclosed-sets.html#def-bounded-set"><i class="fa fa-check"></i><b>6.1.3</b> Def “bounded set”</a></li>
+<li class="chapter" data-level="6.1.4" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-5-compact-rightarrow-closed-and-bounded"><i class="fa fa-check"></i><b>6.1.4</b> Prop 5 “compact <span class="math inline">\(\Rightarrow\)</span> closed and bounded”</a></li>
+<li class="chapter" data-level="6.1.5" data-path="openclosed-sets.html"><a href="openclosed-sets.html#thm-heine-borel-compact-iff-closed-and-bounded"><i class="fa fa-check"></i><b>6.1.5</b> Thm “Heine-Borel: compact <span class="math inline">\(\iff\)</span> closed and bounded”</a></li>
+<li class="chapter" data-level="6.1.6" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-6-subsets-compact-if-closed"><i class="fa fa-check"></i><b>6.1.6</b> Prop 6 “subsets compact if closed”</a></li>
+<li class="chapter" data-level="6.1.7" data-path="openclosed-sets.html"><a href="openclosed-sets.html#prop-7-compact-space-rightarrow-complete-set"><i class="fa fa-check"></i><b>6.1.7</b> Prop 7 “compact space <span class="math inline">\(\Rightarrow\)</span> complete set”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="continuity.html"><a href="continuity.html"><i class="fa fa-check"></i><b>7</b> Continuity</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="continuity.html"><a href="continuity.html#def-continuous-at"><i class="fa fa-check"></i><b>7.0.1</b> Def “continuous at”</a></li>
+<li class="chapter" data-level="7.0.2" data-path="continuity.html"><a href="continuity.html#prop-1-continuous-iff-limits-contained"><i class="fa fa-check"></i><b>7.0.2</b> Prop 1 “continuous <span class="math inline">\(\iff\)</span> limits contained”</a></li>
+<li class="chapter" data-level="7.0.3" data-path="continuity.html"><a href="continuity.html#def-continuous-function"><i class="fa fa-check"></i><b>7.0.3</b> Def “continuous function”</a></li>
+<li class="chapter" data-level="7.0.4" data-path="continuity.html"><a href="continuity.html#prop-2-continuous-iff-inverse-is-open"><i class="fa fa-check"></i><b>7.0.4</b> Prop 2 “continuous <span class="math inline">\(\iff\)</span> inverse is open”</a></li>
+<li class="chapter" data-level="7.0.5" data-path="continuity.html"><a href="continuity.html#prop-3-combining-continuous-functions"><i class="fa fa-check"></i><b>7.0.5</b> Prop 3 “combining continuous functions”</a></li>
+<li class="chapter" data-level="7.1" data-path="continuity.html"><a href="continuity.html#other-notions-of-continuity"><i class="fa fa-check"></i><b>7.1</b> Other notions of continuity</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="continuity.html"><a href="continuity.html#def-lower-semi-continuous"><i class="fa fa-check"></i><b>7.1.1</b> Def “lower semi-continuous”</a></li>
+<li class="chapter" data-level="7.1.2" data-path="continuity.html"><a href="continuity.html#prop-4-cont-iff-upper-and-lower-semi-cont"><i class="fa fa-check"></i><b>7.1.2</b> Prop 4 “cont iff upper and lower semi-cont”</a></li>
+<li class="chapter" data-level="7.1.3" data-path="continuity.html"><a href="continuity.html#def-uniformly-continuous"><i class="fa fa-check"></i><b>7.1.3</b> Def “uniformly continuous”</a></li>
+<li class="chapter" data-level="7.1.4" data-path="continuity.html"><a href="continuity.html#def-lipschitz-continuity"><i class="fa fa-check"></i><b>7.1.4</b> Def “Lipschitz Continuity”</a></li>
+<li class="chapter" data-level="7.1.5" data-path="continuity.html"><a href="continuity.html#thm-intermediate-value-theorem"><i class="fa fa-check"></i><b>7.1.5</b> Thm: “Intermediate Value Theorem”</a></li>
+<li class="chapter" data-level="7.1.6" data-path="continuity.html"><a href="continuity.html#def-maximum-minimum"><i class="fa fa-check"></i><b>7.1.6</b> Def “maximum” “minimum”</a></li>
+<li class="chapter" data-level="7.1.7" data-path="continuity.html"><a href="continuity.html#thm-weierstrauss-if-compact-then-cont-fn-has-maxmin"><i class="fa fa-check"></i><b>7.1.7</b> Thm “Weierstrauss if compact then cont fn has max/min”</a></li>
+<li class="chapter" data-level="7.1.8" data-path="continuity.html"><a href="continuity.html#prop-5-upper-cont-fn-achieves-max"><i class="fa fa-check"></i><b>7.1.8</b> Prop 5 “upper cont fn achieves max”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="function-spaces.html"><a href="function-spaces.html"><i class="fa fa-check"></i><b>8</b> Function Spaces</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="function-spaces.html"><a href="function-spaces.html#def-pointwise-convergence"><i class="fa fa-check"></i><b>8.0.1</b> Def “pointwise convergence”</a></li>
+<li class="chapter" data-level="8.0.2" data-path="function-spaces.html"><a href="function-spaces.html#def-uniform-convergence"><i class="fa fa-check"></i><b>8.0.2</b> Def “uniform convergence”</a></li>
+<li class="chapter" data-level="8.0.3" data-path="function-spaces.html"><a href="function-spaces.html#prop-1-restricting-domain-doesnt-change-uniform-convergence"><i class="fa fa-check"></i><b>8.0.3</b> Prop 1 “restricting domain doesn’t change uniform convergence”</a></li>
+<li class="chapter" data-level="8.0.4" data-path="function-spaces.html"><a href="function-spaces.html#prop-2-if-fn-is-cont-then-f-is-cont"><i class="fa fa-check"></i><b>8.0.4</b> Prop 2 “if fn is cont then f is cont”</a></li>
+<li class="chapter" data-level="8.0.5" data-path="function-spaces.html"><a href="function-spaces.html#prop-3-if-seq-is-uni-cont-and-uni-conv-then-each-fn-converges-to-fx"><i class="fa fa-check"></i><b>8.0.5</b> Prop 3 “if seq is uni cont and uni conv then each fn converges to f(x)”</a></li>
+<li class="chapter" data-level="8.0.6" data-path="function-spaces.html"><a href="function-spaces.html#prop-4-converges-uniformly-iff-converges-under-uniform-metric"><i class="fa fa-check"></i><b>8.0.6</b> Prop 4 “converges uniformly <span class="math inline">\(\iff\)</span> converges under uniform metric”</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>9</b> Vector Spaces</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="vector-spaces.html"><a href="vector-spaces.html#prop-1-vector-algebra"><i class="fa fa-check"></i><b>9.0.1</b> Prop 1 “vector algebra”</a></li>
+<li class="chapter" data-level="9.0.2" data-path="vector-spaces.html"><a href="vector-spaces.html#proposition-2-norm-rules"><i class="fa fa-check"></i><b>9.0.2</b> Proposition 2 “norm rules”</a></li>
+<li class="chapter" data-level="9.0.3" data-path="vector-spaces.html"><a href="vector-spaces.html#def-orthogonal"><i class="fa fa-check"></i><b>9.0.3</b> Def “orthogonal”</a></li>
+<li class="chapter" data-level="9.0.4" data-path="vector-spaces.html"><a href="vector-spaces.html#def-orthonormal"><i class="fa fa-check"></i><b>9.0.4</b> Def “orthonormal”</a></li>
+<li class="chapter" data-level="9.0.5" data-path="vector-spaces.html"><a href="vector-spaces.html#def-linear-combination"><i class="fa fa-check"></i><b>9.0.5</b> Def “linear combination”</a></li>
+<li class="chapter" data-level="9.0.6" data-path="vector-spaces.html"><a href="vector-spaces.html#def-span"><i class="fa fa-check"></i><b>9.0.6</b> Def “span”</a></li>
+<li class="chapter" data-level="9.0.7" data-path="vector-spaces.html"><a href="vector-spaces.html#def-linearly-dependent"><i class="fa fa-check"></i><b>9.0.7</b> Def “linearly dependent”</a></li>
+<li class="chapter" data-level="9.0.8" data-path="vector-spaces.html"><a href="vector-spaces.html#prop-3-every-subset-is-linearly-independent"><i class="fa fa-check"></i><b>9.0.8</b> Prop 3 “every subset is linearly independent”</a></li>
+<li class="chapter" data-level="9.0.9" data-path="vector-spaces.html"><a href="vector-spaces.html#prop-4-orthogonal-non-zero-rightarrow-lin-ind."><i class="fa fa-check"></i><b>9.0.9</b> Prop 4 “orthogonal, non-zero <span class="math inline">\(\Rightarrow\)</span> lin ind.”</a></li>
+<li class="chapter" data-level="9.0.10" data-path="vector-spaces.html"><a href="vector-spaces.html#def-basis"><i class="fa fa-check"></i><b>9.0.10</b> Def “basis”</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>10</b> Matrix Algebra</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="matrix-algebra.html"><a href="matrix-algebra.html#def-properties-of-transpose"><i class="fa fa-check"></i><b>10.0.1</b> Def “Properties of transpose”</a></li>
+<li class="chapter" data-level="10.0.2" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-1-matrix-multiplication"><i class="fa fa-check"></i><b>10.0.2</b> Prop 1 “matrix multiplication”</a></li>
+<li class="chapter" data-level="10.0.3" data-path="matrix-algebra.html"><a href="matrix-algebra.html#remark-aat-is-symmetric"><i class="fa fa-check"></i><b>10.0.3</b> Remark <span class="math inline">\(AA^T\)</span> is symmetric</a></li>
+<li class="chapter" data-level="10.0.4" data-path="matrix-algebra.html"><a href="matrix-algebra.html#def-orthogonal-1"><i class="fa fa-check"></i><b>10.0.4</b> Def “orthogonal”</a></li>
+<li class="chapter" data-level="10.0.5" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-2-orthonogal-iff"><i class="fa fa-check"></i><b>10.0.5</b> Prop 2 “orthonogal iff”</a></li>
+<li class="chapter" data-level="10.0.6" data-path="matrix-algebra.html"><a href="matrix-algebra.html#def-invertible-matrix"><i class="fa fa-check"></i><b>10.0.6</b> Def “invertible matrix”</a></li>
+<li class="chapter" data-level="10.0.7" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-3-inverse-is-unique"><i class="fa fa-check"></i><b>10.0.7</b> Prop 3 “inverse is unique”</a></li>
+<li class="chapter" data-level="10.0.8" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-4-properties-of-invertibility"><i class="fa fa-check"></i><b>10.0.8</b> Prop 4 “properties of invertibility”</a></li>
+<li class="chapter" data-level="10.0.9" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-5-invertible-iff-rows-cols-lin-ind"><i class="fa fa-check"></i><b>10.0.9</b> Prop 5 “invertible iff rows, cols lin ind”</a></li>
+<li class="chapter" data-level="10.0.10" data-path="matrix-algebra.html"><a href="matrix-algebra.html#def-determinant"><i class="fa fa-check"></i><b>10.0.10</b> Def “determinant”</a></li>
+<li class="chapter" data-level="10.0.11" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-6-determinants-and-invertibility"><i class="fa fa-check"></i><b>10.0.11</b> Prop 6 “determinants and invertibility”</a></li>
+<li class="chapter" data-level="10.0.12" data-path="matrix-algebra.html"><a href="matrix-algebra.html#prop-7-properties-of-determinants"><i class="fa fa-check"></i><b>10.0.12</b> Prop 7 “properties of determinants”</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html"><i class="fa fa-check"></i><b>11</b> Matrices as transformations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#linear-transformations"><i class="fa fa-check"></i><b>11.1</b> Linear Transformations</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#def-linear-transformation"><i class="fa fa-check"></i><b>11.1.1</b> Def “linear transformation”</a></li>
+<li class="chapter" data-level="11.1.2" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-1-linear-transformation-properties"><i class="fa fa-check"></i><b>11.1.2</b> Prop 1 “linear transformation properties”</a></li>
+<li class="chapter" data-level="11.1.3" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-2-invertible-iff-bijective"><i class="fa fa-check"></i><b>11.1.3</b> Prop 2 “invertible iff bijective”</a></li>
+<li class="chapter" data-level="11.1.4" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#def-eigenvector"><i class="fa fa-check"></i><b>11.1.4</b> Def “eigenvector”</a></li>
+<li class="chapter" data-level="11.1.5" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-4-invertible-iff-eigenvalue-nonzero"><i class="fa fa-check"></i><b>11.1.5</b> Prop 4 “invertible iff eigenvalue nonzero”</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#quadratic-forms"><i class="fa fa-check"></i><b>11.2</b> Quadratic Forms</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#def-quadratic-forms"><i class="fa fa-check"></i><b>11.2.1</b> Def “quadratic forms”</a></li>
+<li class="chapter" data-level="11.2.2" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#def-quadratic-positivenegative"><i class="fa fa-check"></i><b>11.2.2</b> Def “quadratic positive/negative”</a></li>
+<li class="chapter" data-level="11.2.3" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-5-unique-symmetric-matrix"><i class="fa fa-check"></i><b>11.2.3</b> Prop 5 “unique symmetric matrix”</a></li>
+<li class="chapter" data-level="11.2.4" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-6-eigenvalues-pos-iff-pos-def"><i class="fa fa-check"></i><b>11.2.4</b> Prop 6 “eigenvalues pos <span class="math inline">\(\iff\)</span> pos def”</a></li>
+<li class="chapter" data-level="11.2.5" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#prop-7-posneg-iff-leading-principal-minor"><i class="fa fa-check"></i><b>11.2.5</b> Prop 7 “pos/neg <span class="math inline">\(\iff\)</span> leading principal minor”</a></li>
+<li class="chapter" data-level="11.2.6" data-path="matrices-as-transformations.html"><a href="matrices-as-transformations.html#thm-cholesky-decomposition"><i class="fa fa-check"></i><b>11.2.6</b> Thm “Cholesky Decomposition”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="convexity.html"><a href="convexity.html"><i class="fa fa-check"></i><b>12</b> Convexity</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="convexity.html"><a href="convexity.html#convex-sets"><i class="fa fa-check"></i><b>12.1</b> Convex Sets</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="convexity.html"><a href="convexity.html#def-convex"><i class="fa fa-check"></i><b>12.1.1</b> Def “convex”</a></li>
+<li class="chapter" data-level="12.1.2" data-path="convexity.html"><a href="convexity.html#prop-1-convex-operations"><i class="fa fa-check"></i><b>12.1.2</b> Prop 1 “convex operations”</a></li>
+<li class="chapter" data-level="12.1.3" data-path="convexity.html"><a href="convexity.html#def-convex-combination"><i class="fa fa-check"></i><b>12.1.3</b> Def “convex combination”</a></li>
+<li class="chapter" data-level="12.1.4" data-path="convexity.html"><a href="convexity.html#def-convex-hull"><i class="fa fa-check"></i><b>12.1.4</b> Def “convex hull”</a></li>
+<li class="chapter" data-level="12.1.5" data-path="convexity.html"><a href="convexity.html#prop-2-convex-hull-is-convex"><i class="fa fa-check"></i><b>12.1.5</b> Prop 2 “convex hull is convex”</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="convexity.html"><a href="convexity.html#concave-vs-convex-functions"><i class="fa fa-check"></i><b>12.2</b> Concave vs Convex Functions</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="convexity.html"><a href="convexity.html#def-convex-and-strictly-convex-functions"><i class="fa fa-check"></i><b>12.2.1</b> Def “convex and strictly convex functions”</a></li>
+<li class="chapter" data-level="12.2.2" data-path="convexity.html"><a href="convexity.html#prop-3-f-convex-iff-epif-convex"><i class="fa fa-check"></i><b>12.2.2</b> Prop 3 “<span class="math inline">\(f\)</span> convex <span class="math inline">\(\iff epi(f)\)</span> convex”</a></li>
+<li class="chapter" data-level="12.2.3" data-path="convexity.html"><a href="convexity.html#prop-4"><i class="fa fa-check"></i><b>12.2.3</b> Prop 4</a></li>
+<li class="chapter" data-level="12.2.4" data-path="convexity.html"><a href="convexity.html#claim"><i class="fa fa-check"></i><b>12.2.4</b> Claim</a></li>
+<li class="chapter" data-level="12.2.5" data-path="convexity.html"><a href="convexity.html#prop-5-if-convex-then-continuous"><i class="fa fa-check"></i><b>12.2.5</b> Prop 5 “if convex then continuous”</a></li>
+<li class="chapter" data-level="12.2.6" data-path="convexity.html"><a href="convexity.html#prop-6-convexity-and-posneg-def"><i class="fa fa-check"></i><b>12.2.6</b> Prop 6 “convexity and pos/neg def”</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="convexity.html"><a href="convexity.html#quasiconvexity"><i class="fa fa-check"></i><b>12.3</b> Quasiconvexity</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="convexity.html"><a href="convexity.html#def-quasiconvex"><i class="fa fa-check"></i><b>12.3.1</b> Def “quasiconvex”</a></li>
+<li class="chapter" data-level="12.3.2" data-path="convexity.html"><a href="convexity.html#prop-7-convex-rightarrow-quasi"><i class="fa fa-check"></i><b>12.3.2</b> Prop 7 “convex <span class="math inline">\(\Rightarrow\)</span> quasi”</a></li>
+<li class="chapter" data-level="12.3.3" data-path="convexity.html"><a href="convexity.html#prop-8-quasiconvex-iff-lower-contour-set-convex"><i class="fa fa-check"></i><b>12.3.3</b> Prop 8 “quasiconvex iff lower contour set convex”</a></li>
+<li class="chapter" data-level="12.3.4" data-path="convexity.html"><a href="convexity.html#prop-9-if-quasi-and-increasing-then-quasi"><i class="fa fa-check"></i><b>12.3.4</b> Prop 9 “if quasi and increasing then quasi”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="constrained-optimization.html"><a href="constrained-optimization.html"><i class="fa fa-check"></i><b>13</b> Constrained Optimization</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#intro-constrained-optimization"><i class="fa fa-check"></i><b>13.0.1</b> Intro Constrained Optimization</a></li>
+<li class="chapter" data-level="13.0.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-1-cont-and-compact-rightarrow-argmax-non-empty-and-compact"><i class="fa fa-check"></i><b>13.0.2</b> Prop 1 “cont and compact <span class="math inline">\(\Rightarrow\)</span> argmax non-empty and compact”</a></li>
+<li class="chapter" data-level="13.0.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-2-convex-and-strictly-quasiconcave-rightarrow-argmax-has-max-one-element"><i class="fa fa-check"></i><b>13.0.3</b> Prop 2 “convex and strictly quasiconcave <span class="math inline">\(\Rightarrow\)</span> argmax has max one element”</a></li>
+<li class="chapter" data-level="13.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#unconstrained-optimization"><i class="fa fa-check"></i><b>13.1</b> Unconstrained Optimization</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-local-maximizer"><i class="fa fa-check"></i><b>13.1.1</b> Def “local maximizer”</a></li>
+<li class="chapter" data-level="13.1.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-3-local-max-rightarrow-nabla-fx-vec0"><i class="fa fa-check"></i><b>13.1.2</b> Prop 3 “local max <span class="math inline">\(\Rightarrow \nabla f(x^*) = \vec{0}\)</span>”</a></li>
+<li class="chapter" data-level="13.1.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-4-concavequasiconcave-rightarrow-local-global-and-critical-point"><i class="fa fa-check"></i><b>13.1.3</b> Prop 4 “concave/quasiconcave <span class="math inline">\(\Rightarrow\)</span> local = global and critical point”</a></li>
+<li class="chapter" data-level="13.1.4" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-5-local-maximizers-gradient-convexity-and-openness"><i class="fa fa-check"></i><b>13.1.4</b> Prop 5 “local maximizers, gradient, convexity, and openness”</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#constrained-optimization-with-equality-constraints"><i class="fa fa-check"></i><b>13.2</b> Constrained Optimization with Equality Constraints</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-6-theorem-of-lagrange"><i class="fa fa-check"></i><b>13.2.1</b> Prop 6 “theorem of Lagrange”</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#inequality-constraints"><i class="fa fa-check"></i><b>13.3</b> Inequality Constraints</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-mangasarian-fromovitz"><i class="fa fa-check"></i><b>13.3.1</b> Def “Mangasarian-Fromovitz”</a></li>
+<li class="chapter" data-level="13.3.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-slater-condition"><i class="fa fa-check"></i><b>13.3.2</b> Def “Slater condition”</a></li>
+<li class="chapter" data-level="13.3.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-7-slater-iff-mf-at-each-feasible"><i class="fa fa-check"></i><b>13.3.3</b> Prop 7 “Slater iff MF at each feasible”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="misc-notes.html"><a href="misc-notes.html"><i class="fa fa-check"></i><b>14</b> Misc Notes</a>
+<ul>
+<li class="chapter" data-level="14.0.1" data-path="misc-notes.html"><a href="misc-notes.html#def-homogeneous-function"><i class="fa fa-check"></i><b>14.0.1</b> Def “Homogeneous function”</a></li>
+<li class="chapter" data-level="14.0.2" data-path="misc-notes.html"><a href="misc-notes.html#thm-eulers-thm"><i class="fa fa-check"></i><b>14.0.2</b> Thm “Euler’s thm”</a></li>
+<li class="chapter" data-level="14.0.3" data-path="misc-notes.html"><a href="misc-notes.html#def-lagrange-multiplier"><i class="fa fa-check"></i><b>14.0.3</b> Def “Lagrange multiplier”</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ECON 600 Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sequences" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Sequences<a href="sequences.html#sequences" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="def-sequence" class="section level3 hasAnchor" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Def “sequence”<a href="sequences.html#def-sequence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fix a metric space <span class="math inline">\((X,d)\)</span>. A <em>sequence</em> on <span class="math inline">\((X,d)\)</span> is a function <span class="math inline">\(f: \mathbb{N} \rightarrow X\)</span>.</p>
+</div>
+<div id="def-limit" class="section level3 hasAnchor" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Def “limit”<a href="sequences.html#def-limit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fix a sequence <span class="math inline">\((x_n:n\in \mathbb{N})\)</span> on <span class="math inline">\((X,d)\)</span>. The <em>limit</em> of <span class="math inline">\((x_n:n\in \mathbb{N})\)</span> is some <span class="math inline">\(x \in X\)</span> such that for each <span class="math inline">\(\varepsilon &gt;0\)</span> there exists <span class="math inline">\(N\)</span> with <span class="math inline">\(d(x_n, x)&lt; \varepsilon\)</span> for all <span class="math inline">\(n\geq N\)</span>.</p>
+<p>The sequence <strong>converges</strong> if it has a limit in <span class="math inline">\(X\)</span>. The sequence <strong>diverges</strong> if it does not have a limit in <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="prop-1-sequences-have-max-one-limit" class="section level3 hasAnchor" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Prop 1 “sequences have max one limit”<a href="sequences.html#prop-1-sequences-have-max-one-limit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Any sequence has at most one limit.</p>
+<p><strong>Proof:</strong> Fix a sequence <span class="math inline">\((x_n: n \in \mathbb{N})\)</span> and suppose that <span class="math inline">\(x, y\)</span> are both limits of the sequence.</p>
+<p><em>want to show:</em> x = y</p>
+<p>We know</p>
+<ul>
+<li>there exists <span class="math inline">\(N(x)\)</span> such that for all <span class="math inline">\(n \geq N(x), d(x_n, x) &lt; \varepsilon / 2\)</span></li>
+<li>there exists <span class="math inline">\(N(y)\)</span> such that for all <span class="math inline">\(n \geq N(y), d(x_n, y) &lt; \varepsilon / 2\)</span></li>
+</ul>
+<p>Let <span class="math inline">\(N = \max\{N(x), N(y)\}\)</span>.</p>
+<p>For each <span class="math inline">\(n \geq N\)</span>, <span class="math inline">\(d(x,y) \geq d(x, x_n) + d(x_n,y) &lt; \varepsilon /2 + \varepsilon / 2 = \varepsilon\)</span>.</p>
+<p>So, <span class="math inline">\(d(x,y) &lt; \varepsilon\)</span> for all <span class="math inline">\(\varepsilon &gt; 0\)</span>. So, <span class="math inline">\(d(x,y)=0\)</span>. So, <span class="math inline">\(x=y\)</span>. QED.</p>
+<!-- # Class 3: 2023-08-16 -->
+<!-- # Sequences, cont. -->
+</div>
+<div id="def-limit-1" class="section level3 hasAnchor" number="5.0.4">
+<h3><span class="header-section-number">5.0.4</span> Def “Limit”<a href="sequences.html#def-limit-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <em>limit</em> of <span class="math inline">\((x_n, n\in \mathbb{N})\)</span> is some <span class="math inline">\(x \in X\)</span> such that for each <span class="math inline">\(\varepsilon &gt;0\)</span>, there exists <span class="math inline">\(N\)</span> with <span class="math inline">\(d(x_n, x) &lt; \varepsilon\)</span> for all <span class="math inline">\(n \geq N\)</span>.</p>
+<p>The sequence <em>converges</em> if it has a limit in <span class="math inline">\(X\)</span>. Otherwise it <em>diverges</em>.</p>
+<p>Special case of interest: real-valued sequence (whenever <span class="math inline">\(X\)</span> is a subset of the reals), <span class="math inline">\(X \subseteq \mathbb{R}, d = d^u\)</span></p>
+<p>A sequence is just a mapping of the natural numbers to <span class="math inline">\(X\)</span>. (i.e., <span class="math inline">\(f: \mathbb{N} \rightarrow X\)</span>)</p>
+<p><strong>Example 1</strong>: <span class="math inline">\((1/n, n \geq 1)\)</span> on <span class="math inline">\((\mathbb{R}, d^u)\)</span>.</p>
+<p><span class="math inline">\(\lim_{n \rightarrow \infty} 1/n = 0\)</span>: Fix <span class="math inline">\(\varepsilon &gt;0\)</span>. To show: there exists <span class="math inline">\(N\)</span> such that
+<span class="math display">\[|1/n - 0| &lt; \varepsilon\]</span>
+for all <span class="math inline">\(n \geq N\)</span>. Take <span class="math inline">\(N = 1/\varepsilon\)</span>. Rearrange to get <span class="math inline">\(1/N &lt; \varepsilon\)</span>. And clearly, any <span class="math inline">\(n &gt; N\)</span> will also satisfy this inequality. So, we have proved that the limit converges to 0.</p>
+<p><strong>Example 1b</strong> <span class="math inline">\((1/n, n\geq 2)\)</span> on <span class="math inline">\(((0,1), d^u)\)</span></p>
+<p>This diverges to 0. It gets closer to 0, but the limit is not in our set, so it’s divergent.</p>
+<p><strong>Example 2</strong> <span class="math inline">\((n: n\geq 1)\)</span> on <span class="math inline">\((\mathbb{R}, d^u)\)</span>
+Can there exist some <span class="math inline">\(x \in \mathbb{R}\)</span> such that for each <span class="math inline">\(\varepsilon &gt; 0\)</span> there exists <span class="math inline">\(N\)</span> where <span class="math inline">\(|n-x| &lt; \varepsilon\)</span> for all <span class="math inline">\(n \geq N\)</span>?</p>
+<p>No. For each <span class="math inline">\(\varepsilon\)</span> there is some <span class="math inline">\(N\)</span> with <span class="math inline">\(N &gt; x + \varepsilon\)</span>. I also know for every <span class="math inline">\(n \geq N, |n - x| &gt; \varepsilon\)</span>.</p>
+</div>
+<div id="def-divergence" class="section level3 hasAnchor" number="5.0.5">
+<h3><span class="header-section-number">5.0.5</span> Def “divergence”<a href="sequences.html#def-divergence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fix a real-valued sequence, <span class="math inline">\((x_n: n\geq 1)\)</span> on <span class="math inline">\((X, d^u)\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((x_n: n\geq 1)\)</span> diverges to <span class="math inline">\(\infty\)</span> if, for each <span class="math inline">\(k\in \mathbb{R}\)</span>, there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(x_n&gt;k\)</span> for all <span class="math inline">\(n\geq N\)</span>.</li>
+<li><span class="math inline">\((x_n: n\geq 1)\)</span> diverges to <span class="math inline">\(-\infty\)</span> if, for each <span class="math inline">\(k\in \mathbb{R}\)</span>, there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(x_n&lt;k\)</span> for all <span class="math inline">\(n\geq N\)</span>.</li>
+</ol>
+<p>It’s convenient to write <span class="math inline">\(lim_{n\rightarrow \infty} x_n = \infty\)</span>. But this is an abuse of notation. Just remember that it doesn’t actually converge (bc you can’t converge outside your set).</p>
+<p><strong>Case</strong> <span class="math inline">\((\mathbb{R}^m, d^{euc})\)</span>, <span class="math inline">\((x_n: n \in \mathbb{N})\)</span> where <span class="math inline">\(x_n \in \mathbb{R}^m\)</span>. So <span class="math inline">\(x_n = (x_{n1}, x_{n2}, ..., x_{nm}) \in \mathbb{R}^m\)</span></p>
+<p><strong>Result</strong> the sequence <span class="math inline">\((x_n: n\in\mathbb{N})\)</span> converges to <span class="math inline">\(x^*\in\mathbb{R}^m\)</span> iff for each <span class="math inline">\(i=1, ..., m\)</span>, <span class="math inline">\((x_{ni}: n\in \mathbb{N})\)</span> converges to <span class="math inline">\(x_i^*\)</span> in <span class="math inline">\((\mathbb{R}, d^u)\)</span></p>
+<p><strong>Case</strong> <span class="math inline">\((X, d^{disc})\)</span></p>
+<p>the seq <span class="math inline">\((x_n: n \in \mathbb{N})\)</span> converges to <span class="math inline">\(x\in X\)</span> iff there exists some <span class="math inline">\(n\geq N\)</span> such that <span class="math inline">\(x_n=x\)</span> for all <span class="math inline">\(n\geq N\)</span>.</p>
+<p>Suppose <span class="math inline">\((x_n: n \in \mathbb{N})\)</span> converges to <span class="math inline">\(x\in X\)</span>. Then, there exists some <span class="math inline">\(N\)</span> such that <span class="math inline">\(1/2 &gt; d^{disc}(x_n,x) \Rightarrow x_n=x\)</span> for all <span class="math inline">\(n \geq N\)</span> since <span class="math inline">\(d^{disc}(x_n,x) \in \{0,1\}\)</span> (note that 1/2 is arbitrary–any value between 0 and 1 would have worked here.)</p>
+</div>
+<div id="subsequences" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Subsequences<a href="sequences.html#subsequences" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>seq <span class="math inline">\(= (1,6, 2, 9, 7, 5, 22, 1, ...)\)</span></p>
+<p>subsequence <span class="math inline">\(= (1,6, 9, 5, 22, ...)\)</span></p>
+<div id="def-subsequence" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Def “subsequence”<a href="sequences.html#def-subsequence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fix a sequence <span class="math inline">\((x_n: n\in \mathbb{N})\)</span>. Call <span class="math inline">\((y_n: n\in \mathbb{N})\)</span> a <em>subsequence</em> if there exists a function <span class="math inline">\(f: \mathbb{N}\rightarrow \mathbb{N}\)</span> such that for each <span class="math inline">\(k\in \mathbb{N}\)</span>,</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f(k+1) &gt; f(k)\geq k\)</span>,</li>
+<li><span class="math inline">\(y_k=x_{f(k)}\)</span></li>
+</ol>
+</div>
+<div id="prop-2-sequence-converges-rightarrow-subsequences-converge" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Prop 2 “sequence converges <span class="math inline">\(\Rightarrow\)</span> subsequences converge”<a href="sequences.html#prop-2-sequence-converges-rightarrow-subsequences-converge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> be a sequence on <span class="math inline">\((X,d)\)</span> that converges to <span class="math inline">\(x\)</span>. Then each subsequence of <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> also converges to <span class="math inline">\(x\)</span>.</p>
+<p><em>Proof</em> Let <span class="math inline">\((y_n: n\in \mathbb{N})\)</span> be a <em>subsequence</em> of <span class="math inline">\((x_n: n\in\mathbb{N})\)</span> associated with a function <span class="math inline">\(f: \mathbb{N}\rightarrow \mathbb{N}\)</span>. Since <span class="math inline">\((x_n: n\in\mathbb{N})\)</span> converges to <span class="math inline">\(x\)</span> for each <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(d(x_n, x) &lt; \varepsilon\)</span>, for all <span class="math inline">\(n \geq N\)</span>. There exists <span class="math inline">\(K\)</span> such that <span class="math inline">\(f(K) \geq N\)</span>. Then it follows <span class="math inline">\(d(y_k, x) = d(x_{f(k)}, x) &lt; \varepsilon\)</span> for all <span class="math inline">\(k \geq K\)</span> since <span class="math inline">\(f(k) \geq N\)</span>.</p>
+<p><strong>Example 3</strong> <span class="math inline">\(((-1)^n: n\geq 1)\)</span>. Pick two subsequences:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((-1, -1,..., ) \rightarrow\)</span> converges to -1</li>
+<li><span class="math inline">\((1, 1,..., ) \rightarrow\)</span> converges to 1</li>
+</ol>
+<p>but a sequence cannot have two limits, so this sequence must diverge.</p>
+</div>
+<div id="def-bounded-sequence" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Def “bounded sequence”<a href="sequences.html#def-bounded-sequence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Call a sequence <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> <em>bounded</em> if there exists <span class="math inline">\(y\in X\)</span> and <span class="math inline">\(M&gt;0\)</span> such that <span class="math inline">\(d(x_n, y) \leq M\)</span> for all <span class="math inline">\(n\in \mathbb{N}\)</span>.</p>
+</div>
+<div id="prop-3-a-convergent-sequence-is-bounded." class="section level3 hasAnchor" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Prop 3 “A convergent sequence is bounded.”<a href="sequences.html#prop-3-a-convergent-sequence-is-bounded." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Proof</em> Omitted</p>
+<p><em>Caution</em>: not every bounded sequence is convergent (example: <span class="math inline">\((-1)^n\)</span> on <span class="math inline">\(X =\mathbb{R}, d^u\)</span>)</p>
+</div>
+<div id="def-increasing" class="section level3 hasAnchor" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Def “increasing”<a href="sequences.html#def-increasing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> be a real-valued sequence. The sequence is <em>increasing</em> if for each <span class="math inline">\(n \in \mathbb{N}, x_{n+1} \geq x_n\)</span>.</p>
+</div>
+<div id="def-monotone" class="section level3 hasAnchor" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Def “monotone”<a href="sequences.html#def-monotone" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The sequence is <em>monotone</em> if it is either increasing or decreasing.</p>
+</div>
+<div id="prop-4-bounded-monotone-rightarrow-convergent" class="section level3 hasAnchor" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> Prop 4 “bounded, monotone <span class="math inline">\(\Rightarrow\)</span> convergent”<a href="sequences.html#prop-4-bounded-monotone-rightarrow-convergent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> is a bounded, monotone sequence on <span class="math inline">\((\mathbb{R}, d^u)\)</span> then it is convergent.</p>
+<p><em>Proof</em> Fix <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> on <span class="math inline">\((\mathbb{R}, d^u)\)</span> that is bounded, monotone sequence. Without loss of generality, assume it is increasing.</p>
+<p>Since bounded, the set <span class="math inline">\(\{x_n: n\in\mathbb{N}\}\)</span> has to be bounded above (note: switching to set so we can use completeness axiom. apparently that may not apply to sequences, but it does to sets). By completeness axiom, if there is an upper bound, there must be a least upper bound, <span class="math inline">\(x\in \mathbb{R}\)</span>.</p>
+<p>Want to show: <span class="math inline">\(x=\lim x_n\)</span></p>
+<p>To show: Fix <span class="math inline">\(\varepsilon &gt;0\)</span>, Find some <span class="math inline">\(N\)</span> such that <span class="math inline">\(|x_n-x| &lt; \varepsilon\)</span>, for all <span class="math inline">\(n \geq N\)</span>.</p>
+<p>Note: there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(x_N &gt; x-\varepsilon\)</span>, by Prop 1 of the real numbers notes.</p>
+<p>Since the seq is increasing <span class="math inline">\(x_n \geq x_N \geq x-\varepsilon\)</span>. Rearrange to get <span class="math inline">\(\varepsilon &gt; x-x_n\)</span>. Since <span class="math inline">\(x\)</span> is an upper bound (the supremum) we have <span class="math inline">\(x &gt; x_n\)</span> which means <span class="math inline">\(x-x_n = |x-x_n|\)</span>.</p>
+<p>So, we have <span class="math inline">\(\varepsilon &gt; |x-x_n|\)</span>. QED.</p>
+</div>
+<div id="prop-5-squeeze-thm" class="section level3 hasAnchor" number="5.1.8">
+<h3><span class="header-section-number">5.1.8</span> Prop 5 “squeeze thm”<a href="sequences.html#prop-5-squeeze-thm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\((x_n: n\in \mathbb{N}), (y_n: n\in \mathbb{N}), (z_n: n\in \mathbb{N})\)</span> be sequences on <span class="math inline">\((\mathbb{R}, d^u)\)</span>. If, for each <span class="math inline">\(n\)</span>, <span class="math inline">\(x_n \leq y_n \leq z_n\)</span> and <span class="math inline">\(\lim_{n\rightarrow\infty} x_n = \lim_{n\rightarrow\infty} z_n = a\)</span> then <span class="math inline">\(\lim_{n\rightarrow\infty} y_n = a\)</span></p>
+<p>Note: even if <span class="math inline">\(x_n\)</span> and <span class="math inline">\(z_n\)</span> crossed over each other at some points, I might still be able to use the squeeze thm by using subsequences to satisfy the fact that for each <span class="math inline">\(n\)</span>, <span class="math inline">\(x_n \leq y_n \leq z_n\)</span></p>
+</div>
+<div id="prop-6-limit-algebra" class="section level3 hasAnchor" number="5.1.9">
+<h3><span class="header-section-number">5.1.9</span> Prop 6 “limit algebra”<a href="sequences.html#prop-6-limit-algebra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\((x_n: n\in \mathbb{N}), (y_n: n\in \mathbb{N})\)</span> be sequences on <span class="math inline">\((\mathbb{R}, d^u)\)</span> with <span class="math inline">\(\lim_{n\rightarrow\infty} x_n = x, \lim_{n\rightarrow\infty} y_n = y\)</span>. Then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\lim_{n\rightarrow\infty} |x_n| = |x|\)</span></li>
+<li><span class="math inline">\(\lim_{n\rightarrow\infty} x_n + y_n = x+y\)</span></li>
+<li><span class="math inline">\(\lim_{n\rightarrow\infty} x_ny_n = xy\)</span></li>
+<li>If <span class="math inline">\(x_n \neq 0 \forall n\)</span> and <span class="math inline">\(x\neq 0\)</span>, then <span class="math inline">\(\lim_{n\rightarrow\infty} y_n/x_n= y/x\)</span></li>
+</ol>
+</div>
+<div id="prop-7-bolzano-weierstrauss-thm-bounded-seq-rightarrow-convergent-subsequence" class="section level3 hasAnchor" number="5.1.10">
+<h3><span class="header-section-number">5.1.10</span> Prop 7: Bolzano-Weierstrauss Thm “bounded seq <span class="math inline">\(\Rightarrow\)</span> convergent subsequence”<a href="sequences.html#prop-7-bolzano-weierstrauss-thm-bounded-seq-rightarrow-convergent-subsequence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Every bounded sequence on <span class="math inline">\((\mathbb{R}, d^u)\)</span> has a convergent subsequence.</p>
+</div>
+<div id="def-cauchy" class="section level3 hasAnchor" number="5.1.11">
+<h3><span class="header-section-number">5.1.11</span> Def “Cauchy”<a href="sequences.html#def-cauchy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Call a sequence <em>Cauchy</em> if for each <span class="math inline">\(\varepsilon &gt;0\)</span> there exists <span class="math inline">\(N\)</span> such that for all <span class="math inline">\(n, m \geq N, d(x_n, x_m) &lt; \varepsilon\)</span>.</p>
+</div>
+<div id="prop-8-convergent-rightarrow-cauchy" class="section level3 hasAnchor" number="5.1.12">
+<h3><span class="header-section-number">5.1.12</span> Prop 8 “convergent <span class="math inline">\(\Rightarrow\)</span> Cauchy”<a href="sequences.html#prop-8-convergent-rightarrow-cauchy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Any convergent sequence is Cauchy.</p>
+<p><em>Proof</em> Fix a sequence <span class="math inline">\((x_n: n\in \mathbb{N})\)</span> with <span class="math inline">\(\lim_{n\rightarrow\infty}x_n=x\)</span>. So there exists <span class="math inline">\(g: (0,\infty) \rightarrow \mathbb{N}\)</span> such that for each <span class="math inline">\(\varepsilon &gt;0\)</span> and <span class="math inline">\(n\geq g(\varepsilon), d(x_n,x) &lt; \varepsilon\)</span>. To show it’s Cauchy, fix <span class="math inline">\(\varepsilon &gt;0\)</span> and choose <span class="math inline">\(N = g(\varepsilon/2)\)</span>. By triangle inequality I know <span class="math inline">\(d(x_n,x_m) \leq d(x_n, x) + d(x, x_m) &lt; \varepsilon/2 + \varepsilon/2 = \varepsilon\)</span>.</p>
+<p><em>Remark</em>: a seq can be Cauchy without converging. Consider example 1b: <span class="math inline">\((1/n, n\geq 2)\)</span> on <span class="math inline">\(((0,1), d^u)\)</span>. This doesn’t converge (because 1 isn’t in the metric space), but it is cauchy. (i.e., for <span class="math inline">\(\varepsilon &gt;0\)</span> there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(|1/n -1/m| &lt; \varepsilon\)</span> for all <span class="math inline">\(n, m \geq N\)</span>.)</p>
+</div>
+<div id="def-complete-space" class="section level3 hasAnchor" number="5.1.13">
+<h3><span class="header-section-number">5.1.13</span> Def <em>complete space</em><a href="sequences.html#def-complete-space" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A metric space is <em>complete</em> if every Cauchy sequence converges.</p>
+<p>Examples of complete metric spaces:</p>
+<ul>
+<li><span class="math inline">\((\mathbb{R}^n, d^{euc})\)</span></li>
+<li><span class="math inline">\((X, d^{disc})\)</span> for <span class="math inline">\(X\)</span> finite</li>
+<li><span class="math inline">\(((0,1), d^u)\)</span> is NOT complete</li>
+<li><span class="math inline">\((\mathbb{Q}, d^u)\)</span> is NOT complete</li>
+</ul>
+<p><em>Remark:</em> All Cauchy sequences converge in complete spaces.</p>
+</div>
+<div id="prop-9-cauchy-rightarrow-bounded" class="section level3 hasAnchor" number="5.1.14">
+<h3><span class="header-section-number">5.1.14</span> Prop 9 “Cauchy <span class="math inline">\(\Rightarrow\)</span> bounded”<a href="sequences.html#prop-9-cauchy-rightarrow-bounded" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Every Cauchy sequence is bounded.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="metric-spaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="openclosed-sets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
