@@ -213,4 +213,3 @@ prop-7-slater-iff-mf-at-each-feasible
 misc-notes
 def-homogeneous-function
 thm-eulers-thm
-def-lagrange-multiplier
