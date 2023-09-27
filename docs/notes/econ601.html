@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Micro I Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2023-09-25</h4>
+<h4 class="date">Last Updated: 2023-09-27</h4>
 
 </div>
 
@@ -1562,7 +1562,7 @@ called a <em>choice structure</em>.</p>
 all <span class="math inline">\(A, B \in \mathcal{B}\)</span>:</p>
 <ul>
 <li><span class="math inline">\(c(A) \cap B \neq \emptyset \Rightarrow
-c(B) \cap \subseteq c(A)\)</span></li>
+c(B) \cap A \subseteq c(A)\)</span></li>
 <li><span class="math inline">\([c(A) \cap B \neq \emptyset \text{ AND }
 c(B) \cap A \neq \emptyset] \Rightarrow [c(A) \cap B \subseteq c(B)
 \text{ AND } c(B) \cap A \subseteq c(A)]\)</span></li>
@@ -1592,6 +1592,9 @@ c(B) \Rightarrow x \in c(B), y \in c(A)\)</span></li>
 </div>
 <div id="prop-2-alpha-and-single-valued-rightarrow-warp" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Prop 2 “<span class="math inline">\(\alpha\)</span> and single-valued <span class="math inline">\(\Rightarrow\)</span> WARP”</h2>
+<p>If <span class="math inline">\((\mathcal{P}(X), c)\)</span> satisfies
+<span class="math inline">\(\alpha\)</span> and <span class="math inline">\(c\)</span> is single-valued, then it satisfies
+WARP.</p>
 </div>
 </div>
 <div id="choice-and-preference" class="section level1" number="3">
@@ -1767,11 +1770,33 @@ A2, and A3 of vNM axioms.</p>
 (1-\alpha)s\)</span></li>
 </ol>
 </div>
-<div id="thm-a1-a3-iff-succsim-has-eu" class="section level2" number="5.9">
-<h2><span class="header-section-number">5.9</span> Thm “A1-A3 <span class="math inline">\(\iff \succsim\)</span> has EU”</h2>
-<p>Suppose <span class="math inline">\(X\)</span> is finite and <span class="math inline">\(\succsim\)</span> is a binary relation on <span class="math inline">\(\mathcal{L}\)</span>. <span class="math inline">\(\succsim\)</span> satisfies A1, A2, and A3 if and
-only if <span class="math inline">\(\succsim\)</span> has an Expected
-Utility representation.</p>
+<div id="thm-a1-a3-iff-eu-representation" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Thm “A1-A3 <span class="math inline">\(\iff\)</span> EU representation”</h2>
+<p>Suppose <span class="math inline">\(X\)</span> is finite and <span class="math inline">\(\succsim\)</span> is a binary relation on <span class="math inline">\(\mathcal{L}\)</span>. Then <span class="math display">\[[\succsim \text{ satisfies A1, A2, and A3 }] \iff
+\succsim \text{ has an Expected Utility representation.}\]</span></p>
+<div id="thm-v-linear-representation-iff-vp-aupb" class="section level3" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Thm “<span class="math inline">\(V\)</span> linear representation <span class="math inline">\(\iff V(p) = aU(p)+b\)</span>”</h3>
+<p>Suppose <span class="math inline">\(U\)</span> is a linear
+representation of <span class="math inline">\(\succsim\)</span>, and
+<span class="math inline">\(V: \mathcal{L}\rightarrow
+\mathbb{R}\)</span> is a linear function. Then <span class="math display">\[[V \text{ is a linear representation of }
+\succsim] \iff [\exists a&gt;0, b\in\mathbb{R} \text{ such that }
+V(p)=aU(p) + b, \forall p \in \mathcal{L}]\]</span></p>
+<!-- #### Term "affine" -->
+<!-- A function composed of a linear function and a constant and its graph is a straight line. -->
+</div>
+<div id="def-simple-lottery" class="section level3" number="5.9.2">
+<h3><span class="header-section-number">5.9.2</span> Def “simple
+lottery”</h3>
+<p><span class="math inline">\(P: X \rightarrow \mathbb{R}\)</span> is a
+<em>simple lottery</em> if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\{x\in X: p(x)&gt;0\}\)</span> is
+finite</li>
+<li><span class="math inline">\(\displaystyle \sum_{x\in X: p(x)&gt;0}
+p(x) = 1\)</span></li>
+</ol>
+</div>
 </div>
 </div>
 

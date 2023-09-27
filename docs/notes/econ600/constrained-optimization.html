@@ -492,13 +492,19 @@ Clearly <span class="math inline">\(f(1,1) &gt; f(-1,-1)\)</span> so only <span 
 <div id="prop-6-theorem-of-lagrange" class="section level3 hasAnchor" number="13.2.1">
 <h3><span class="header-section-number">13.2.1</span> Prop 6 “theorem of Lagrange”<a href="constrained-optimization.html#prop-6-theorem-of-lagrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(X \subset \mathbb{R}^n\)</span> open and let <span class="math inline">\(f: X \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g_i: X \rightarrow \mathbb{R}\)</span> (for <span class="math inline">\(i = 1, ..., m\)</span>) be continuously differentiable.</p>
-<p>If <span class="math inline">\(\vec{x}^*\)</span> is a solution to the max-equality problem and if <span class="math inline">\(rank(J(\vec{x}^*)) = m\)</span>, then there exists unique
-<span class="math display">\[(\lambda_1^*, ..., \lambda_m^*), \text{ such that } \nabla f(\vec{x}^*) = \sum^m_{i=1} \lambda_i^* \nabla g_i(\vec{x}^*)\]</span></p>
+<p>If <span class="math inline">\(x^*\)</span> is a solution to the max-equality problem and if <span class="math inline">\(rank(J(x^*)) = m\)</span>, then there exists unique
+<span class="math display">\[(\lambda_1^*, ..., \lambda_m^*), \text{ such that } \nabla f(x^*) = \sum^m_{i=1} \lambda_i^* \nabla g_i(x^*)\]</span>
+We say <strong>the Lagrange condition holds at</strong> <span class="math inline">\(x^*\)</span> if
+<span class="math display">\[\nabla f(x^*) = \sum_{i =1}^m \lambda_i \nabla g_i(x^*)\]</span>
+and we refer to these scalars <span class="math inline">\(\lambda_1, ... , \lambda_m\)</span> as <strong>Lagrange Multipliers</strong>.</p>
+<ul>
+<li>reminder: <span class="math inline">\(x^*\)</span> is technically a vector even though this notation doesn’t emphasize that.</li>
+</ul>
 <p><em>Aside</em>: Suppose <span class="math inline">\(m=1\)</span>. Then</p>
 <ul>
 <li><span class="math inline">\(rank(J(\vec{x})) \leq 1\)</span></li>
 <li>if <span class="math inline">\(rank(J(\vec{x})) \neq 1\)</span> then <span class="math inline">\(rank(J(\vec{x})) = 0\)</span></li>
-<li><span class="math inline">\(rank(J(\vec{x})) = 0\)</span> iff <span class="math inline">\(\nabla(\vec{x}) = \vec{0}\)</span></li>
+<li><span class="math inline">\(rank(J(\vec{x})) = 0 \iff \nabla(\vec{x}) = \vec{0}\)</span></li>
 <li>so, to say rank of a matrix is 0 is to say none of its cols/rows are linearly independent (the only for this to happen is for the gradient to be 0)</li>
 </ul>
 <p><strong>Example 5</strong></p>
