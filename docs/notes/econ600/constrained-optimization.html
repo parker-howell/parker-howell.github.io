@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="convexity.html"/>
-<link rel="next" href="misc-notes.html"/>
+<link rel="next" href="hyperplanes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -284,12 +284,23 @@
 <li class="chapter" data-level="13.3.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-mangasarian-fromovitz"><i class="fa fa-check"></i><b>13.3.1</b> Def “Mangasarian-Fromovitz”</a></li>
 <li class="chapter" data-level="13.3.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-slater-condition"><i class="fa fa-check"></i><b>13.3.2</b> Def “Slater condition”</a></li>
 <li class="chapter" data-level="13.3.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-7-slater-iff-mf-at-each-feasible"><i class="fa fa-check"></i><b>13.3.3</b> Prop 7 “Slater iff MF at each feasible”</a></li>
+<li class="chapter" data-level="13.3.4" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-8-karush-kun-tucker-theorem"><i class="fa fa-check"></i><b>13.3.4</b> Prop 8 “Karush-Kun-Tucker Theorem”</a></li>
+<li class="chapter" data-level="13.3.5" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-9-g-quasiconvex-f-quasiconcave-rightarrow-x-solves-max-inequality"><i class="fa fa-check"></i><b>13.3.5</b> Prop 9 “<span class="math inline">\(g\)</span> quasiconvex, <span class="math inline">\(f\)</span> quasiconcave <span class="math inline">\(\Rightarrow x^*\)</span> solves max inequality”</a></li>
+<li class="chapter" data-level="13.3.6" data-path="constrained-optimization.html"><a href="constrained-optimization.html#def-saddle-point"><i class="fa fa-check"></i><b>13.3.6</b> Def “saddle point”</a></li>
+<li class="chapter" data-level="13.3.7" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-10-saddle-points-are-great"><i class="fa fa-check"></i><b>13.3.7</b> Prop 10 “saddle points are great”</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="misc-notes.html"><a href="misc-notes.html"><i class="fa fa-check"></i><b>14</b> Misc Notes</a>
+<li class="chapter" data-level="14" data-path="hyperplanes.html"><a href="hyperplanes.html"><i class="fa fa-check"></i><b>14</b> Hyperplanes</a>
 <ul>
-<li class="chapter" data-level="14.0.1" data-path="misc-notes.html"><a href="misc-notes.html#def-homogeneous-function"><i class="fa fa-check"></i><b>14.0.1</b> Def “Homogeneous function”</a></li>
-<li class="chapter" data-level="14.0.2" data-path="misc-notes.html"><a href="misc-notes.html#thm-eulers-thm"><i class="fa fa-check"></i><b>14.0.2</b> Thm “Euler’s thm”</a></li>
+<li class="chapter" data-level="14.1" data-path="hyperplanes.html"><a href="hyperplanes.html#separating-hyperplane-theorems"><i class="fa fa-check"></i><b>14.1</b> Separating Hyperplane Theorems</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="hyperplanes.html"><a href="hyperplanes.html#def-hyperplane"><i class="fa fa-check"></i><b>14.1.1</b> Def “Hyperplane”</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="misc-notes.html"><a href="misc-notes.html"><i class="fa fa-check"></i><b>15</b> Misc Notes</a>
+<ul>
+<li class="chapter" data-level="15.0.1" data-path="misc-notes.html"><a href="misc-notes.html#def-homogeneous-function"><i class="fa fa-check"></i><b>15.0.1</b> Def “Homogeneous function”</a></li>
+<li class="chapter" data-level="15.0.2" data-path="misc-notes.html"><a href="misc-notes.html#thm-eulers-thm"><i class="fa fa-check"></i><b>15.0.2</b> Thm “Euler’s thm”</a></li>
 </ul></li>
 </ul>
 
@@ -599,6 +610,77 @@ This means: our constraint binds at <span class="math inline">\(x^*=0\)</span> b
 <div id="prop-7-slater-iff-mf-at-each-feasible" class="section level3 hasAnchor" number="13.3.3">
 <h3><span class="header-section-number">13.3.3</span> Prop 7 “Slater iff MF at each feasible”<a href="constrained-optimization.html#prop-7-slater-iff-mf-at-each-feasible" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(X \subseteq \mathbb{R}^n\)</span> be open, <span class="math inline">\(f\)</span> continuously differentiable and for each <span class="math inline">\(i, g_i\)</span> is convex and continuously differentiable. Then the Slater condition holds if and only if Mangasarian-Fromovitz holds at each feasible <span class="math inline">\(x^*\)</span>.</p>
+<div id="begin-class-2023-09-28" class="section level4 hasAnchor" number="13.3.3.1">
+<h4><span class="header-section-number">13.3.3.1</span> Begin class 2023-09-28<a href="constrained-optimization.html#begin-class-2023-09-28" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="prop-8-karush-kun-tucker-theorem" class="section level3 hasAnchor" number="13.3.4">
+<h3><span class="header-section-number">13.3.4</span> Prop 8 “Karush-Kun-Tucker Theorem”<a href="constrained-optimization.html#prop-8-karush-kun-tucker-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(X\subseteq \mathbb{R}^n\)</span> be open, <span class="math inline">\(f: X \rightarrow \mathbb{R}\)</span> and each <span class="math inline">\(g_i: X \rightarrow \mathbb{R}\)</span> be continuously differentiable. Let <span class="math inline">\(x^*\)</span> be a solution to the max-inequality problem. If MF holds at <span class="math inline">\(x^*\)</span> then for each <span class="math inline">\(i = 1, ..., m\)</span> there exists <span class="math inline">\(\lambda_i \geq 0\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\nabla f(x^*) = \sum_{i=1}^m \lambda_i \nabla g_i(x^*)\)</span></li>
+<li>if <span class="math inline">\(i \notin bind(x^*)\)</span> then <span class="math inline">\(\lambda_i = 0\)</span></li>
+</ol>
+<p>Either way, <span class="math inline">\(\lambda_i g_i(x^*) = 0\)</span>:</p>
+<blockquote>
+<p><span class="math inline">\(i \notin bind(x^*), \lambda_i = 0 \Rightarrow \lambda_i g_i(x^*) = 0\)</span></p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(i \in bind(x^*), g_i(x^*) = 0 \Rightarrow \lambda_i g_i(x^*) = 0\)</span></p>
+</blockquote>
+<div id="remark" class="section level4 hasAnchor" number="13.3.4.1">
+<h4><span class="header-section-number">13.3.4.1</span> Remark<a href="constrained-optimization.html#remark" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sometimes we will have a non-negativity constraint <span class="math inline">\(g_i(x_1, ..., x_m) = -x_i \leq 0\)</span>. If <span class="math inline">\(g_i\)</span> binds at <span class="math inline">\(x^*\)</span> then <span class="math inline">\(\lambda_i &gt; 0\)</span>.</p>
+<ul>
+<li>some authors don’t include the non-negativity constraints into their optimization problem (even though they mean to)
+<ul>
+<li>since those missing constraints have <span class="math inline">\(\lambda_i \nabla g_i (x_1^*, ..., x_m^*) = (0, ..., 0, -\lambda_i, 0, ..., 0) \leq (0, ..., 0)\)</span> they rewrite KKT condition as <span class="math inline">\(\nabla f(x^*) \leq \sum_{i=1}^m \lambda_i \nabla g_i(x^*)\)</span>.</li>
+</ul></li>
+</ul>
+<p><strong>Example 9</strong> Omitted - explains why nonnegativity are important.
+<!-- $$f: \mathbb{R}^2 \rightarrow \mathbb{R}, f(x_1, x_2) = x_1 + x_2$$ -->
+<!-- $$g_1(x_1, x_2) = -x_1$$ -->
+<!-- $$g_2(x_1, x_2) = -x_2$$ -->
+<!-- $$g_3(x_1, x_2) = a_1x_1 + a_2x_x - b, \text{where } a_1 > a_2 > 0$$ --></p>
+<!-- See picture for why we choose this point. -->
+<!-- Note that $x^* = (0, \frac{b}{a_2})$, so  -->
+<!-- not complete..... -->
+</div>
+</div>
+<div id="prop-9-g-quasiconvex-f-quasiconcave-rightarrow-x-solves-max-inequality" class="section level3 hasAnchor" number="13.3.5">
+<h3><span class="header-section-number">13.3.5</span> Prop 9 “<span class="math inline">\(g\)</span> quasiconvex, <span class="math inline">\(f\)</span> quasiconcave <span class="math inline">\(\Rightarrow x^*\)</span> solves max inequality”<a href="constrained-optimization.html#prop-9-g-quasiconvex-f-quasiconcave-rightarrow-x-solves-max-inequality" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(X \subseteq \mathbb{R}^n\)</span> be open and let <span class="math inline">\(f: X\rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g: X\rightarrow \mathbb{R}\)</span> be continuously differentiable for <span class="math inline">\(i = 1, ..., m\)</span>. Let <span class="math inline">\(x^*\in X\)</span> be feasible for the inequality problem and satisfy the KKT conditions.</p>
+<p>If each constraint at which <span class="math inline">\(x^*\)</span> binds is quasiconvex and either</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f\)</span> is concave or</li>
+<li><span class="math inline">\(f\)</span> is quasiconcave and <span class="math inline">\(\nabla f(x^*) \neq \vec{0}\)</span></li>
+</ol>
+<p>then <span class="math inline">\(x^*\)</span> solves the max inequality problem.</p>
+<ul>
+<li>note: constraints are almost always convex, so that is nice.</li>
+</ul>
+<p><strong>Finding <span class="math inline">\(x^*\)</span> and <span class="math inline">\(\lambda_1^*, ..., \lambda_m^*\)</span>:</strong></p>
+<ul>
+<li>Define a lagrangean for inequality constraints:
+<span class="math display">\[\mathcal{L}: X \times \mathbb{R}^m_+ \rightarrow \mathbb{R} \text{ such that } \mathcal{L}(x, \lambda_1, ..., \lambda_m) = f(x) - \sum_{i=1}^m \lambda_i g_i(x)\]</span></li>
+<li>if we choose <span class="math inline">\(x^*\)</span> to maximize <span class="math inline">\(\mathcal{L}(\cdot, \lambda_1, ..., \lambda_m)\)</span> then <span class="math inline">\(\frac{df}{dx^*_j}(x^*) = \sum_{i=1}^m \lambda_i \frac{dg_i}{dx}(x^*, \lambda_1, ..., \lambda_m)\)</span> for each dimension <span class="math inline">\(j = 1, ..., n\)</span>.</li>
+</ul>
+<p><strong>Example 10</strong> Omitted. Leads to saddle points.</p>
+</div>
+<div id="def-saddle-point" class="section level3 hasAnchor" number="13.3.6">
+<h3><span class="header-section-number">13.3.6</span> Def “saddle point”<a href="constrained-optimization.html#def-saddle-point" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math inline">\((x^*, \lambda_1^*, ..., \lambda_m^*)\)</span> is a saddle point of <span class="math inline">\(\mathcal{L}\)</span> if
+<span class="math display">\[\mathcal{L}(x^*, \lambda_1, ..., \lambda_m) \geq \mathcal{L}(x^*, \lambda_1^*, ..., \lambda_m^*) \geq \mathcal{L}(x, \lambda_1^*, ..., \lambda_m^*)\]</span>
+for each <span class="math inline">\(x \in X\)</span> and for each <span class="math inline">\((\lambda_1, ..., \lambda_m)\in \mathbb{R}^m_+\)</span></p>
+</div>
+<div id="prop-10-saddle-points-are-great" class="section level3 hasAnchor" number="13.3.7">
+<h3><span class="header-section-number">13.3.7</span> Prop 10 “saddle points are great”<a href="constrained-optimization.html#prop-10-saddle-points-are-great" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose <span class="math inline">\((x^*, \lambda_1^*, ..., \lambda_m^*)\)</span> is a saddle point of the Lagrangian inequality. Then</p>
+<ol style="list-style-type: decimal">
+<li>if <span class="math inline">\(\mathcal{L}\)</span> is differentiable and <span class="math inline">\(x^*\)</span> is feasible, then the KKT conditions hold at <span class="math inline">\(x^*\)</span>.</li>
+<li><span class="math inline">\(x^*\)</span> solves the max problem with inequality constraints.</li>
+</ol>
+<p>Suppose <span class="math inline">\(x^*\)</span> solves the max problem with inequality constraints and <span class="math inline">\(\mathcal{L}\)</span> is the associated Lagrangian. Then, if <span class="math inline">\(f\)</span> is concave and <span class="math inline">\(g_1, ..., g_m\)</span> are convex and satisfy Slater condition, then there exists <span class="math inline">\((\lambda_1^*, ..., \lambda_m^*)\)</span> such that <span class="math inline">\((x^*, \lambda_1^*, ..., \lambda_m^*)\)</span> is a saddle point of <span class="math inline">\(\mathcal{L}\)</span>.</p>
 
 </div>
 </div>
@@ -609,7 +691,7 @@ This means: our constraint binds at <span class="math inline">\(x^*=0\)</span> b
         </div>
       </div>
 <a href="convexity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="misc-notes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hyperplanes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
