@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Micro I Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2023-09-27</h4>
+<h4 class="date">Last Updated: 2023-10-04</h4>
 
 </div>
 
@@ -1714,7 +1714,7 @@ representation if there exists <span class="math inline">\(u: X
 <h2><span class="header-section-number">5.5</span> Def “linear
 function”</h2>
 <p>A function <span class="math inline">\(U: \mathcal{L} \rightarrow
-\mathbb{R}\)</span> is <em>linear</em> if for all <span class="math inline">\(\alpha \in [0,1]\)</span> and <span class="math inline">\(p,q \in \mathcal{L}\)</span>: <span class="math display">\[U(\alpha p + (1-\alpha)q = \alpha U(p) +
+\mathbb{R}\)</span> is <em>linear</em> if for all <span class="math inline">\(\alpha \in [0,1]\)</span> and <span class="math inline">\(p,q \in \mathcal{L}\)</span>: <span class="math display">\[U(\alpha p + (1-\alpha)q) = \alpha U(p) +
 (1-\alpha) U(q).\]</span></p>
 </div>
 <div id="lemma-linear-iff-u-is-an-expected-utility-function" class="section level2" number="5.6">
@@ -1730,8 +1730,8 @@ function”</h2>
 <li>A1. (Rationality): <span class="math inline">\(\succsim\)</span> is
 complete and transitive.</li>
 <li>A2. (Independence): For all <span class="math inline">\(p,q,r \in
-\mathcal{L}, \alpha \in (0,1)\)</span> we have <span class="math inline">\([p \succsim q] \Rightarrow [\alpha p + (1-\alpha)r
-\succsim \alpha q + (1-\alpha)r]\)</span>.</li>
+\mathcal{L}, \alpha \in (0,1)\)</span> we have <span class="math inline">\([p \succ q] \Rightarrow [\alpha p + (1-\alpha)r
+\succ \alpha q + (1-\alpha)r]\)</span>.</li>
 <li>A3. (Continuity): For all <span class="math inline">\(p, q, r \in
 \mathcal{L}\)</span>, if <span class="math inline">\(p \succ q \succ
 r\)</span> then there exists <span class="math inline">\(\alpha, \beta
@@ -1782,8 +1782,13 @@ representation of <span class="math inline">\(\succsim\)</span>, and
 \mathbb{R}\)</span> is a linear function. Then <span class="math display">\[[V \text{ is a linear representation of }
 \succsim] \iff [\exists a&gt;0, b\in\mathbb{R} \text{ such that }
 V(p)=aU(p) + b, \forall p \in \mathcal{L}]\]</span></p>
-<!-- #### Term "affine" -->
-<!-- A function composed of a linear function and a constant and its graph is a straight line. -->
+<div id="term-affine" class="section level4" number="5.9.1.1">
+<h4><span class="header-section-number">5.9.1.1</span> Term
+“affine”</h4>
+<p>Basically a line, but the intercept doesn’t have to be zero. “A
+function composed of a linear function and a constant and its graph is a
+straight line.”</p>
+</div>
 </div>
 <div id="def-simple-lottery" class="section level3" number="5.9.2">
 <h3><span class="header-section-number">5.9.2</span> Def “simple
@@ -1797,6 +1802,137 @@ finite</li>
 p(x) = 1\)</span></li>
 </ol>
 </div>
+<div id="def-simple-improvement" class="section level3" number="5.9.3">
+<h3><span class="header-section-number">5.9.3</span> Def “simple
+improvement”</h3>
+<p>For all (simple) lotteries <span class="math inline">\(p,q \in
+\mathcal{L}\)</span>, <span class="math inline">\(p\)</span> is a simple
+improvement of <span class="math inline">\(q\)</span> if there exists
+<span class="math inline">\(\lambda \in (0,1), m, m&#39; \in X, m&gt;m;,
+r \in \mathcal{L}\)</span> such that <span class="math display">\[p =
+\lambda \delta_m + (1-\lambda)r \text{ and } q = \lambda \delta_m&#39; +
+(1-\lambda)r.\]</span></p>
+</div>
+<div id="def-fosd" class="section level3" number="5.9.4">
+<h3><span class="header-section-number">5.9.4</span> Def “FOSD”</h3>
+<p>For <span class="math inline">\(p, q \in \mathcal{L}\)</span>, <span class="math inline">\(p\)</span> first-order stochastically dominates
+(FOSD) <span class="math inline">\(q\)</span> if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p \neq q\)</span>, and</li>
+<li><span class="math inline">\(F_p(x) \leq F_q(x), \forall x \in
+X\)</span></li>
+</ol>
+<blockquote>
+<p>caution: CDF of <span class="math inline">\(p\)</span> SMALLER than
+CDF of <span class="math inline">\(q\)</span> means <span class="math inline">\(p\)</span> dominates <span class="math inline">\(q\)</span>, not the other way around</p>
+</blockquote>
+</div>
+<div id="fact-p-fosd-q-iff-p-is-a-complex-improvement-of-q" class="section level3" number="5.9.5">
+<h3><span class="header-section-number">5.9.5</span> Fact “<span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \iff
+p\)</span> is a complex improvement of <span class="math inline">\(q\)</span>”</h3>
+</div>
+<div id="thm-eu-representation-means-p-fosd-q-rightarrow-p-succ-q-and-u-strictly-increasing" class="section level3" number="5.9.6">
+<h3><span class="header-section-number">5.9.6</span> Thm “EU
+representation means <span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \Rightarrow p \succ q\)</span> and <span class="math inline">\(u\)</span> strictly increasing”</h3>
+<p>Suppose <span class="math inline">\(\succsim\)</span> has an expected
+utility representation. Then the following are equivalent:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \Rightarrow p \succ q\)</span></li>
+<li><span class="math inline">\(p\)</span> is a simple improvement of
+<span class="math inline">\(q \Rightarrow p \succ q\)</span></li>
+<li>Every EU representation of <span class="math inline">\(\succsim\)</span> has a strictly increasing
+utility index (<span class="math inline">\(U(p) = \sum_{x \in supp(p)}
+\underline{u(x)}p(x)\)</span>)</li>
+</ol>
+</div>
+</div>
+<div id="risk-attitudes" class="section level2" number="5.10">
+<h2><span class="header-section-number">5.10</span> Risk Attitudes</h2>
+<div id="lemma" class="section level3" number="5.10.1">
+<h3><span class="header-section-number">5.10.1</span> Lemma</h3>
+<p>Suppose <span class="math inline">\(\succsim\)</span> has an expected
+utility representation with a strictly increasing and continuous index
+<span class="math inline">\(u\)</span>. Then <span class="math inline">\(\forall p \in \mathcal{L}, \exists\)</span> unique
+<span class="math inline">\(CE(p)\in X\)</span> such that <span class="math inline">\(p \sim \delta_{CE(p)}\)</span>. In this case,
+$CE(p) is the <em>certainty equivalent</em> of <span class="math inline">\(p\)</span>. <span class="math display">\[CE(p) =
+u^{-1}(U(p)) = u^{-1}(\sum_{x\in supp(p)}u(x)p(x))\in X \iff
+u(CE(p))=U(p)\]</span></p>
+</div>
+<div id="def-risk-attitudes" class="section level3" number="5.10.2">
+<h3><span class="header-section-number">5.10.2</span> Def “risk
+attitudes”</h3>
+<p>Let <span class="math inline">\(\bar{p} = \sum_{x \in supp(p)}
+p(x)x\)</span> be the expected value of <span class="math inline">\(p\)</span>. Then <span class="math inline">\(p\)</span> is riskier than <span class="math inline">\(\delta_{\bar{p}}\)</span>. For all <span class="math inline">\(p \in \mathcal{L}\)</span>, <span class="math inline">\(\succsim\)</span> is</p>
+<ol style="list-style-type: decimal">
+<li><em>risk averse</em> if <span class="math inline">\(\delta_{\bar{p}}
+\succsim p\)</span></li>
+<li><em>risk neutral</em> if <span class="math inline">\(\delta_{\bar{p}} \sim p\)</span></li>
+<li><em>risk seeking</em> if <span class="math inline">\(p \succsim
+\delta_{\bar{p}}\)</span></li>
+</ol>
+</div>
+<div id="thm-risk-averse-iff-u-concave-iff-mps" class="section level3" number="5.10.3">
+<h3><span class="header-section-number">5.10.3</span> Thm “risk-averse
+<span class="math inline">\(\iff u\)</span> concave <span class="math inline">\(\iff\)</span> MPS”</h3>
+<p><span class="math inline">\(\succsim\)</span> has an EU
+representation such that its utility index, <span class="math inline">\(u\)</span>, is strictly increasing and continuous.
+Then the following are equivalent:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\succsim\)</span> is risk-averse / <span style="color: red;">-seeking</span> / <span style="color: green;">-neutral</span></li>
+<li><span class="math inline">\([p\)</span> is a simple MPS of <span class="math inline">\(q] \Rightarrow q \succsim p\)</span></li>
+<li><span class="math inline">\(u\)</span> is concave / <span style="color: red;">convex</span> / <span style="color: green;">affine</span></li>
+</ol>
+</div>
+<div id="def-more-risk-averse" class="section level3" number="5.10.4">
+<h3><span class="header-section-number">5.10.4</span> Def “more risk
+averse”</h3>
+<p><span class="math inline">\(\succsim_1\)</span> is more risk averse
+than <span class="math inline">\(\succsim_2\)</span> if for all <span class="math inline">\(m\in X, p \in \mathcal{L}\)</span> we have <span class="math display">\[\delta_m \succsim_2 p \Rightarrow \delta_m
+\succsim_1 p.\]</span></p>
+<div id="term-absolute-risk-aversion" class="section level4" number="5.10.4.1">
+<h4><span class="header-section-number">5.10.4.1</span> Term “Absolute
+risk aversion”</h4>
+<p>Call <span class="math inline">\(-\frac{u_1&#39;&#39;}{u_2&#39;}\)</span>
+Arrow-Pratt’s measure of absolute risk aversion (ARA).</p>
+</div>
+</div>
+<div id="thm-more-risk-averse-iff-concave-composition" class="section level3" number="5.10.5">
+<h3><span class="header-section-number">5.10.5</span> Thm “more risk
+averse <span class="math inline">\(\iff\)</span> concave
+composition”</h3>
+<p><span class="math inline">\(\succsim_1, \succsim_2\)</span> have an
+EU representation with <span class="math inline">\(u_1, u_2\)</span>
+strictly increasing and smooth. Then the following are equivalent:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\succsim_1\)</span> is (always) more
+risk averse than <span class="math inline">\(\succsim_2\)</span>.</li>
+<li>there exists a concave and strictly increasing function <span class="math inline">\(f: u_2(X) \rightarrow u_1(X)\)</span> such that
+<span class="math inline">\(u_1 = f \circ u_2 = f(u_2(x)), \forall x \in
+X\)</span></li>
+<li><span class="math inline">\(ARA_{u_1} \geq ARA_{u_2}\)</span></li>
+</ol>
+<div id="term-smooth" class="section level4" number="5.10.5.1">
+<h4><span class="header-section-number">5.10.5.1</span> Term
+“smooth”</h4>
+<p>Twice continuously differentiable</p>
+</div>
+</div>
+</div>
+</div>
+<div id="misc" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Misc</h1>
+<div id="def-betweenness-axiom" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Def Betweenness
+Axiom</h3>
+<p><span class="math display">\[\forall p,q \in \mathcal{L}, \lambda \in
+(0,1):\]</span> <span class="math display">\[p \sim q \Rightarrow
+\lambda p + (1-\lambda)q \sim p\]</span></p>
+</div>
+<div id="def-allais-paradox" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> Def “Allais
+paradox”</h3>
+<p>Individuals prefer certainty over a risky outcome even if this defies
+the expected utility axiom</p>
 </div>
 </div>
 
