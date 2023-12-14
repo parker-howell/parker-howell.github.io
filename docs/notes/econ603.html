@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Micro III Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2023-11-25</h4>
+<h4 class="date">Last Updated: 2023-12-13</h4>
 
 </div>
 
@@ -1728,8 +1728,10 @@ vector <span class="math inline">\(T = (T_1, ..., T_I) \in
 T_i = 0\)</span>.</p>
 <p>Note:</p>
 <ul>
-<li>$T_i &gt; 0 $ “receiving transfer”</li>
-<li>$T_i &lt; 0 $ “paying transfer (tax)”</li>
+<li><span class="math inline">\(T_i &gt; 0 \Rightarrow\)</span>
+“receiving transfer”</li>
+<li><span class="math inline">\(T_i &lt; 0 \Rightarrow\)</span> “paying
+transfer (tax)”</li>
 </ul>
 </div>
 <div id="def-we-with-transfers" class="section level3" number="2.0.9">
@@ -1796,7 +1798,9 @@ function”</h3>
 \sum_{i=1}^I x_i^*(p) - \sum_{i=1}^I \omega_i - \sum_{j=1}^J
 y_j^*(p)\]</span> is called the excess demand function.</p>
 <p><span class="math inline">\(\varphi(p) = \vec{0} \Rightarrow\)</span>
-WE exists. And, under some assumptions we can get the converse:</p>
+WE exists (in WE: demand<span class="math inline">\((p)\)</span> =
+supply<span class="math inline">\((p) \iff\)</span> demand<span class="math inline">\((p)\)</span> - supply = 0 <span class="math inline">\(\iff\)</span> excess demand<span class="math inline">\((p) = 0\)</span>). And, under some assumptions we
+can get the converse:</p>
 <p>WE exists <span class="math inline">\(\Rightarrow \varphi(p) =
 \vec{0}\)</span>.</p>
 </div>
@@ -1861,13 +1865,359 @@ and satisfies <span class="math inline">\(\forall y_j, y_j&#39;: y_j
 and satisfies 1-3 of Thm “sufficient conditions on <span class="math inline">\(\varphi\)</span>”.</p>
 </div>
 </div>
-<div id="misc" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Misc</h1>
-<p>PET economy = Production, Endowments, Technology</p>
-<div id="term-quasilinear-economy" class="section level4" number="4.0.0.1">
-<h4><span class="header-section-number">4.0.0.1</span> Term “Quasilinear
+<div id="arrows-impossibility-theorem" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Arrow’s Impossibility
+Theorem</h1>
+<div id="def-setting-for-arrows-impossibility-theorem" class="section level3" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Def “setting for
+Arrow’s Impossibility Theorem”</h3>
+<ol style="list-style-type: decimal">
+<li>Finite set of “alternatives,” <span class="math inline">\(A =
+\{a,b,c, ...\}\)</span></li>
+<li>Finite set of individuals, <span class="math inline">\(N = \{1,
+...,N\}\)</span></li>
+<li><span class="math inline">\(\mathcal{R}\)</span> is the set of all
+rational (and antisymmetric) preferences over <span class="math inline">\(A\)</span>, ruling out indifferences (<span class="math inline">\(R_i \in \mathcal{R}\)</span> is the preference of
+individual <span class="math inline">\(i\)</span>).</li>
+<li>A preference profile is <span class="math inline">\(R = (R_1, ...
+R_n) \in \mathcal{R}^n\)</span></li>
+</ol>
+<p>Goal: <span class="math inline">\(f: \mathcal{R}^n \rightarrow
+\mathcal{R}\)</span></p>
+</div>
+<div id="thm-arrows-impossibility-theorem" class="section level3" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> Thm “Arrow’s
+Impossibility Theorem”</h3>
+<p>Assumptions: 1. Universal domain: any ranking is possible (so long as
+it is complete, transitive, and anti-symmetric) 2. society’s preference
+must be complete, transitive, and anti-symmetric 3. <span class="math inline">\(|A| \geq 3\)</span></p>
+<p>Axioms: 1. Pareto: <span class="math inline">\(aR_ib, \forall i
+\Rightarrow af(R)b\)</span> 2. Independence of irrelevant alternatives:
+<span class="math inline">\(\forall i [aR_ib\iff a\hat{R_i}b]
+\Rightarrow [af(R)b \iff af(\hat{R})b]\)</span> 3. No dictator: <span class="math inline">\(\not \exists i \in N: \forall R \in \mathcal{R}^n,
+f(R)=R_i\)</span></p>
+<p>There is no <span class="math inline">\(f: \mathcal{R}^n \rightarrow
+R\)</span> that satisfies all three axioms at the same time.</p>
+</div>
+<div id="def-winning-coalition" class="section level3" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> Def “winning
+coalition”</h3>
+<p>Denote <span class="math inline">\(\mathcal{P}(N)\)</span> to be the
+set of all nonempty subsets of <span class="math inline">\(N\)</span>
+(<span class="math inline">\(2^N \setminus \{\emptyset\}\)</span>).</p>
+<p>We say <span class="math inline">\(\mathcal{G} \subseteq
+\mathcal{P}(N)\)</span> is a set of winning coalition if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall G \subseteq
+\mathcal{P}(N)\)</span> either <span class="math inline">\(G \in
+\mathcal{G}\)</span> or <span class="math inline">\(N \setminus G \in
+\mathcal{G}\)</span>, but not both. And</li>
+<li><span class="math inline">\([G \in \mathcal{G}, G&#39; \supseteq G]
+\Rightarrow G&#39; \in \mathcal{G}\)</span></li>
+</ol>
+<!-- ### Remark "No dictatorship is a strong assumption" -->
+</div>
+<div id="def-generalized-majority-voting" class="section level3" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Def “Generalized
+majority voting”</h3>
+<p><span class="math inline">\(f: \mathcal{R}^n \rightarrow R\)</span>
+is a GMV if there exists a set of winning coalitions <span class="math inline">\(\mathcal{G}\)</span> such that <span class="math inline">\(\forall a, b \in A, \forall R \in
+\mathcal{R}^n:\)</span> <span class="math display">\[af(R)b \iff \{i\in
+N: a R_i b\} \in \mathcal{G}.\]</span></p>
+<div id="term-condorcet-winnercondorcet-cycle" class="section level4" number="4.0.4.1">
+<h4><span class="header-section-number">4.0.4.1</span> Term “Condorcet
+Winner/Condorcet cycle”</h4>
+<p>the pairwise champion or beats-all winner, is formally called the
+Condorcet winner. The head-to-head elections need not be done
+separately; a voter’s choice within any given pair can be determined
+from the ranking.</p>
+<p>Some elections may not yield a Condorcet winner because voter
+preferences may be cyclic—that is, it is possible (but rare) that every
+candidate has an opponent that defeats them in a two-candidate contest.
+(This is similar to the game rock paper scissors, where each hand shape
+wins against one opponent and loses to another one).</p>
+</div>
+<div id="term-social-welfare-function-swf" class="section level4" number="4.0.4.2">
+<h4><span class="header-section-number">4.0.4.2</span> Term “Social
+Welfare Function (SWF)”</h4>
+<p>Function with preferences as inputs and a complete ranking as
+outputs.</p>
+</div>
+<div id="term-collective-choice-rule-ccr" class="section level4" number="4.0.4.3">
+<h4><span class="header-section-number">4.0.4.3</span> Term “Collective
+Choice Rule (CCR)”</h4>
+<p>Function with preferences as inputs and a winner as output.</p>
+</div>
+</div>
+</div>
+<div id="quasilinear-economy" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Quasilinear
+Economy</h1>
+<div id="term-quasilinear-economy" class="section level4" number="5.0.0.1">
+<h4><span class="header-section-number">5.0.0.1</span> Term “Quasilinear
 economy”</h4>
-<p><span class="math display">\[U(x_i, m) = U(x_i) + m\]</span></p>
+<p><span class="math display">\[U(x_i, m_i) = g_i(x_i) + m_i, \forall i
+\text{ where } g_i \text{ is strictly concave.}\]</span></p>
+<blockquote>
+<p>Called quasilinear because utility is linear in money but not in the
+consumption good.</p>
+</blockquote>
+</div>
+<div id="def-cost-function" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Def “cost
+function”</h3>
+<p><span class="math inline">\(c_j: \mathbb{R}_+ \rightarrow
+\mathbb{R}_+\)</span> is a cost function. <span class="math inline">\(c_j(y_j)\)</span> is the amount of money needed to
+produce <span class="math inline">\(y_j\)</span> units of consumption
+good <span class="math inline">\(l\)</span>. <span class="math inline">\(c_j\)</span> must be</p>
+<ol style="list-style-type: decimal">
+<li>smooth,</li>
+<li>increasing, <span class="math inline">\(c_j&#39;(y_j) &gt; 0,
+\forall y_j &gt; 0\)</span>,</li>
+<li>convex <span class="math inline">\(c_j&#39;&#39;(y_j)&gt;0 \forall
+y_j &gt; 0\)</span> (i.e., the more you produce, the harder it becomes
+to produce more.)</li>
+</ol>
+</div>
+<div id="def-primitives-on-quasilinear-economy" class="section level3" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Def “primitives on
+quasilinear economy”</h3>
+<ol style="list-style-type: decimal">
+<li>Goods:
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(l = 1\)</span> is “money,” <span class="math inline">\(l = 2\)</span> is consumption good</li>
+</ol></li>
+<li>Consumers <span class="math inline">\(i = 1, ... , I\)</span>:
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall i = 1, ..., I, X_i = \mathbb{R}
+\times \mathbb{R}_+\)</span> (means negative amounts of money are
+allowed!)</li>
+<li>Initial endowment of <span class="math inline">\((\omega_i,
+0)\)</span>.</li>
+<li><span class="math inline">\(u_i(m_i, x_i) = m_i + g_i(x_i)\)</span>
+<ol style="list-style-type: decimal">
+<li>money has constant marginal utility and MRS does not depend on <span class="math inline">\(m_i\)</span>.</li>
+<li>Assumptions on <span class="math inline">\(g_i\)</span> is smooth
+and <span class="math inline">\(g_i&#39;(x_i) &gt; 0, g_i&#39;&#39;(x_i)
+&lt; 0, \forall x_i&gt;0\)</span> (this is concave, but more restrictive
+- <span class="math inline">\(log\)</span> satisfies, but <span class="math inline">\(x^2\)</span> does not). No need for Inada
+conditions.</li>
+</ol></li>
+</ol></li>
+<li>Firms <span class="math inline">\(j = 1, ..., J\)</span>:
+<ol style="list-style-type: decimal">
+<li>firm <span class="math inline">\(j\)</span>’s production set: <span class="math inline">\(Y_j = \{(-z_j,y_j): y_j \geq 0, z_j \geq
+c_j(y_j)\}\)</span>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(z_j &gt; c_j\)</span> would mean that
+free disposal is employed</li>
+<li><span class="math inline">\(z_j \geq 0\)</span> - we can write this
+separately, it’s just redundant since <span class="math inline">\(c_j\)</span> maps to/from <span class="math inline">\(\mathbb{R}_+\)</span> and <span class="math inline">\(z_j \geq c_j(y_j)\)</span>.</li>
+</ol></li>
+</ol></li>
+<li>Consumer <span class="math inline">\(i\)</span>’s share of firm
+<span class="math inline">\(j\)</span>’s profits is as before: <span class="math inline">\(\theta_i^j\)</span></li>
+</ol>
+</div>
+<div id="def-allocation-1" class="section level3" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Def
+“allocation”</h3>
+<p>A vector <span class="math inline">\((m,x,z,y) \in \mathbb{R}^I
+\times \mathbb{R}_+^{I + 2J}\)</span> where</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(m_i\)</span>: money of consumer <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(x_i\)</span>: consumption good of
+consumer <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(z_j\)</span>: input of money firm <span class="math inline">\(j\)</span> uses</li>
+<li><span class="math inline">\(y_j\)</span>: consumption good firm
+<span class="math inline">\(j\)</span> produces.</li>
+</ol>
+<p>An allocation is <em>feasible</em> if</p>
+<ol style="list-style-type: decimal">
+<li>Plans are feasible:
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall i, (m_i, x_i) \in
+X_i\)</span></li>
+<li><span class="math inline">\(\forall j, (-z_j, y_j) \in
+Y_j\)</span></li>
+</ol></li>
+<li>Markets clear:
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\sum_{i=1}^I m_i = \sum_{i=1}^I \omega_i
+- \sum_{j=1}^J z_j\)</span> (money is all used up)</li>
+<li><span class="math inline">\(\sum_{i=1}^I x_i = \sum_{j=1}^J
+y_j\)</span> (demand = supply)</li>
+</ol></li>
+</ol>
+</div>
+<div id="def-walrasian-allocations" class="section level3" number="5.0.4">
+<h3><span class="header-section-number">5.0.4</span> Def “Walrasian
+Allocations”</h3>
+<ol style="list-style-type: decimal">
+<li>Simplifications without loss:
+<ol style="list-style-type: decimal">
+<li>Normalize price of money to 1, price of <span class="math inline">\(l=2\)</span> to <span class="math inline">\(p&gt;0\)</span>.
+<ol style="list-style-type: decimal">
+<li>always works in a quasilinear economy since utility is strictly
+increasing in both goods.</li>
+<li>focus on the market for the consumption good (since <span class="math inline">\(p&gt;0\)</span> we apply observation 3)</li>
+</ol></li>
+</ol></li>
+<li>Solve for Demand</li>
+</ol>
+<p>UMP is:</p>
+<p><span class="math display">\[\max_{m_i \in \mathbb{R}, x_i \in
+\mathbb{R}_+} m_i + g_i(x_i) \text{ s to } m_i + px_i \leq \omega_i +
+\sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))\]</span></p>
+<p>But we can assume that <span class="math inline">\(m_i + px_i \leq
+\omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))\)</span>, isolate,
+and plug <span class="math inline">\(m_i\)</span> into the objective
+function to get the unconstrained maximization problem:</p>
+<p><span class="math display">\[\max_{x_i \geq 0} \omega_i +
+\sum_{j=1}^J \theta_i^j(py_j - c_j(y_j)) - px_i + g_i(x_i)\]</span></p>
+<p>Which is the same as</p>
+<p><span class="math display">\[\max_{x_i \geq 0} g_i(x_i) -
+px_i\]</span></p>
+<blockquote>
+<p>So, the UMP for demand in a quasilinear economy is unaffected by
+money</p>
+</blockquote>
+<p>By FOC and SOCs we get the Econ 101 result that consumers will demand
+more until MU = MC (unless demand is 0):</p>
+<p><span class="math display">\[\begin{cases}MU = g_i&#39;(x_i) = p = MC
+\text{ if } p \leq g_i&#39;(0) \\ 0, \text{
+otherwise}\end{cases}\]</span></p>
+<blockquote>
+<p><span class="math inline">\(p \leq g_i&#39;(0)\)</span> since MU is
+decreasing, so MU is highest at zero</p>
+</blockquote>
+<blockquote>
+<p>Caution: watch out for corner solutions since <span class="math inline">\(x_i\)</span> can equal 0!</p>
+</blockquote>
+<blockquote>
+<p>This is why the partial equilibrium from intermediate micro leads to
+the same conclusions as general equilibrium - we just always studied
+quasilinear economies in intermediate micro</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>Solve for Supply</li>
+</ol>
+<p>Profit max problem:</p>
+<p><span class="math display">\[\max_{y_j \geq 0} py_j -
+c_j(y_j\]</span></p>
+<p>which is the same as</p>
+<p><span class="math display">\[\begin{cases} MC = c_j&#39;(y_j) = p
+\text{ if } p \geq c_j&#39;(0) \\ 0 \text{ otherwise.}
+\end{cases}\]</span></p>
+<blockquote>
+<p>The above assumes that MC of production is increasing, so <span class="math inline">\(c_j&#39;(0)\)</span> is the lowest marginal
+cost</p>
+</blockquote>
+<blockquote>
+<p>Econ 101: MC = p, unless supply = 0.</p>
+</blockquote>
+<div id="remark-market-supply-sum-of-all-firms-supply" class="section level4" number="5.0.4.1">
+<h4><span class="header-section-number">5.0.4.1</span> Remark: Market
+supply = sum of all firm’s supply</h4>
+</div>
+</div>
+<div id="pareto-efficient-allocations" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Pareto Efficient
+Allocations</h2>
+<!-- In a quasilinear economy, Pareto Efficiency is equal to the sum of utilities -->
+<blockquote>
+<p>Allocation of money does not matter</p>
+</blockquote>
+<blockquote>
+<p>Summing utilities is okay to do in a quasilinear economy - in general
+it is not!</p>
+</blockquote>
+<div id="prop-1-pe-iff-max-welfare" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Prop 1 “PE iff max
+welfare”</h3>
+<p>In the quasilinear model a feasible allocation <span class="math inline">\((m,x,z,y)\)</span> is Pareto Efficient if and only
+if <span class="math inline">\((x,y)\)</span> maximize <span class="math inline">\(\sum_{i=1}^I g_i (x_i) - \sum_{j=1}^J
+c_j(y_j)\)</span> among all feasible allocations.</p>
+<p>That is, <span class="math inline">\(\forall i,j, x_i \geq 0, y_j
+\geq 0:\)</span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\sum_{i=1}^I x_i = \sum_{j=1}^J
+y_j\)</span> and</li>
+<li><span class="math inline">\(\sum_{i=1}^I m_i = \sum_{i=1}^I \omega_i
+- \sum_{j=1}^J z_j,\)</span> where <span class="math inline">\(z_j =
+c_j(y_j)\)</span>.</li>
+</ol>
+</div>
+<div id="prop-2-pe-iff-max-over-all-feasible-allocations" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Prop 2 “PE iff max
+over all feasible allocations”</h3>
+<p>In the quasilinear model a feasible allocation <span class="math inline">\((m,x,z,y)\)</span> is Pareto Efficient if and only
+if <span class="math inline">\((x,y)\)</span> maximizes the sum of
+consumer utilities, <span class="math inline">\(\sum_{i=1}^I (m_i +
+g_i(x_i))\)</span>, among all feasible allocations.</p>
+<blockquote>
+<p>Econ 101: surplus = sum of utilities of consumption good - sum of
+firms’ costs</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="aggregation" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Aggregation</h1>
+<div id="term-summation-of-sets" class="section level4" number="6.0.0.1">
+<h4><span class="header-section-number">6.0.0.1</span> Term “summation
+of sets”</h4>
+<p><span class="math display">\[M_1 + M_2 = \{x_1 + x_2: x_1 \in M_1,
+x_2 \in M_2\}\]</span></p>
+</div>
+<div id="def-supply-correspondence-of-firm-j" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Def “Supply
+correspondence of firm <span class="math inline">\(j\)</span>”</h3>
+<p>The supply correspondence of firm <span class="math inline">\(j\)</span> with production set <span class="math inline">\(Y_j\)</span> is <span class="math inline">\(S_j\)</span>, where <span class="math inline">\(\forall p \in \mathbb{R}^L\)</span>: <span class="math display">\[S_j(p) = \{y_j \in Y_j: p \cdot y_j \geq p \cdot
+\hat{y}_j, \forall \hat{y}_j \in Y_j\}\]</span></p>
+<ul>
+<li>We assume <span class="math inline">\(S_j(p)\)</span> is well
+defined <span class="math inline">\(\forall p\)</span> – that is, profit
+maximization has a solution</li>
+<li>In general, <span class="math inline">\(S_j(p)\)</span> is NOT a
+singleton set.</li>
+</ul>
+</div>
+<div id="def-aggregate-supply-correspondence" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> Def “Aggregate
+supply correspondence”</h3>
+<p><span class="math display">\[S^*(p) = (S_1 + \cdot \cdot \cdot+
+S_J)(p) = S_1(p) + \cdot \cdot \cdot+ S_J(p)\]</span></p>
+</div>
+<div id="prop-s-looks-like-the-supply-correspondence-of-just-one-firm" class="section level3" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> Prop “<span class="math inline">\(S\)</span> looks like the supply correspondence of
+just one firm”</h3>
+<p>Denote production set, <span class="math inline">\(Y = Y_1 + \cdot
+\cdot \cdot Y_J\)</span> and <span class="math inline">\(S\)</span> is
+the supply correspondence of a firm with production set <span class="math inline">\(Y\)</span>. Then <span class="math inline">\(S =
+S_1 + \cdot \cdot \cdot S_J\)</span>.</p>
+</div>
+<div id="def-setting-for-demand-aggregation" class="section level3" number="6.0.4">
+<h3><span class="header-section-number">6.0.4</span> Def “Setting for
+demand aggregation”</h3>
+</div>
+<div id="prop-demand-fns-allow-aggregation-iff" class="section level3" number="6.0.5">
+<h3><span class="header-section-number">6.0.5</span> Prop “demand fns
+allow aggregation iff”</h3>
+<p>FINISH</p>
+</div>
+</div>
+<div id="misc" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Misc</h1>
+<div id="def-numeraire" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Def
+“numeraire”</h3>
+<p>a tradable economic entity in terms of whose price the relative
+prices of all other tradables are expressed (i.e., the price that is
+normalized to [1 or p - need to figure this out!] )</p>
+<p>w/o free disposal, have to consume everything. w/ free disposal, need
+strongly monotone preferences to guarantee that consumers consume the
+entire endowment (budget constraint will bind).</p>
 </div>
 </div>
 

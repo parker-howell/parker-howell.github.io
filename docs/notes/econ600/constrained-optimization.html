@@ -278,7 +278,8 @@
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#constrained-optimization-with-equality-constraints"><i class="fa fa-check"></i><b>13.2</b> Constrained Optimization with Equality Constraints</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-6-theorem-of-lagrange"><i class="fa fa-check"></i><b>13.2.1</b> Prop 6 “theorem of Lagrange”</a></li>
+<li class="chapter" data-level="13.2.1" data-path="constrained-optimization.html"><a href="constrained-optimization.html#term-constraint-qualification-for-the-max-equality-problem"><i class="fa fa-check"></i><b>13.2.1</b> Term “constraint qualification for the max-equality problem”</a></li>
+<li class="chapter" data-level="13.2.2" data-path="constrained-optimization.html"><a href="constrained-optimization.html#prop-6-theorem-of-lagrange"><i class="fa fa-check"></i><b>13.2.2</b> Prop 6 “theorem of Lagrange”</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="constrained-optimization.html"><a href="constrained-optimization.html#inequality-constraints"><i class="fa fa-check"></i><b>13.3</b> Inequality Constraints</a>
 <ul>
@@ -528,14 +529,18 @@ Clearly <span class="math inline">\(f(1,1) &gt; f(-1,-1)\)</span> so only <span 
 <li><span class="math inline">\(i^{th}\)</span> row is <span class="math inline">\(\nabla g_i(\vec{x})\)</span></li>
 <li><span class="math inline">\(rank(J(\vec{x})) \leq \min\{m,n\}\)</span></li>
 </ul>
-<p>Recall: rank = largest number of linearly independte rows (or columns) of the matrix</p>
+<p>Recall: rank = largest number of linearly independent rows (or columns) of the matrix</p>
 </div>
-<div id="term-constraint-qualification-for-the-max-equality-problem" class="section level4 hasAnchor" number="13.2.0.5">
-<h4><span class="header-section-number">13.2.0.5</span> Term “constraint qualification for the max-equality problem”<a href="constrained-optimization.html#term-constraint-qualification-for-the-max-equality-problem" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="term-constraint-qualification-for-the-max-equality-problem" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Term “constraint qualification for the max-equality problem”<a href="constrained-optimization.html#term-constraint-qualification-for-the-max-equality-problem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(rank(J(x^*)) = m\)</span> is the constraint qualification for the max-equality problem</p>
+<p>Check this to make sure you got all candidate points. It’s possible there’s another candidate point with a more extreme value if the Jacobian of the constraints has any linearly dependent columns.</p>
+<p><img src="src/13_constraint_qualification1.png" /></p>
+<p><img src="src/13_constraint_qualification2.png" /></p>
+<p>See <a href="https://www.youtube.com/watch?v=TqN-8fxYUYY&amp;ab_channel=MathematicsforEconomists" class="uri">https://www.youtube.com/watch?v=TqN-8fxYUYY&amp;ab_channel=MathematicsforEconomists</a> for more</p>
 </div>
-<div id="prop-6-theorem-of-lagrange" class="section level3 hasAnchor" number="13.2.1">
-<h3><span class="header-section-number">13.2.1</span> Prop 6 “theorem of Lagrange”<a href="constrained-optimization.html#prop-6-theorem-of-lagrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="prop-6-theorem-of-lagrange" class="section level3 hasAnchor" number="13.2.2">
+<h3><span class="header-section-number">13.2.2</span> Prop 6 “theorem of Lagrange”<a href="constrained-optimization.html#prop-6-theorem-of-lagrange" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let <span class="math inline">\(X \subset \mathbb{R}^n\)</span> open and let <span class="math inline">\(f: X \rightarrow \mathbb{R}\)</span> and <span class="math inline">\(g_i: X \rightarrow \mathbb{R}\)</span> (for <span class="math inline">\(i = 1, ..., m\)</span>) be continuously differentiable.</p>
 <p>If <span class="math inline">\(x^*\)</span> is a solution to the max-equality problem and if <span class="math inline">\(rank(J(x^*)) = m\)</span>, then there exists unique
 <span class="math display">\[(\lambda_1^*, ..., \lambda_m^*), \text{ such that } \nabla f(x^*) = \sum^m_{i=1} \lambda_i^* \nabla g_i(x^*)\]</span>
