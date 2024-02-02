@@ -1505,9 +1505,9 @@ player <span class="math inline">\(i\)</span></li>
 </ol>
 <p><strong>Example 1:</strong> introduce NE</p>
 </div>
-<div id="def-nash-equilibrium" class="section level3" number="1.0.2">
+<div id="def-nash-equilibrium-psne" class="section level3" number="1.0.2">
 <h3><span class="header-section-number">1.0.2</span> Def “Nash
-Equilibrium”</h3>
+Equilibrium (PSNE)”</h3>
 <p>Call <span class="math inline">\((s_1^*, ... ,s_I^*)\)</span> a Nash
 equilibrium if, for each <span class="math inline">\(i = 1, ...,
 I\)</span> <span class="math display">\[u_i(s_i^*, s_{-i}^*) \geq
@@ -1567,19 +1567,44 @@ strategies of <span class="math inline">\(i\)</span>”</h3>
 </div>
 <div id="def-msne" class="section level3" number="1.0.6">
 <h3><span class="header-section-number">1.0.6</span> Def “MSNE”</h3>
+<p>Call <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> a
+“Mixed Strategy Nash Equilibrium” (MSNE) if, and only if, for each <span class="math inline">\(i=1, ..., I\)</span></p>
+<p><span class="math display">\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq
+u_i(\sigma_i, \sigma_{-i}), \forall \sigma_i \in
+\Delta(S_i).\]</span></p>
 </div>
-<div id="lemma-1" class="section level3" number="1.0.7">
-<h3><span class="header-section-number">1.0.7</span> Lemma 1 “”</h3>
+<div id="lemma-1-msne-iff-weakly-better-than-all-pure-strategies" class="section level3" number="1.0.7">
+<h3><span class="header-section-number">1.0.7</span> Lemma 1 “MSNE <span class="math inline">\(\iff\)</span> weakly better than all pure
+strategies”</h3>
+<p>A strategy profile <span class="math inline">\((\sigma_1, ...,
+\sigma_I)\)</span> is a MSNE if, and only if, for each <span class="math inline">\(i\)</span></p>
+<p><span class="math display">\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq
+u_i(s_i, \sigma_{-i}^*), \forall s_i \in S_i.\]</span></p>
 </div>
-<div id="lemma-2" class="section level3" number="1.0.8">
-<h3><span class="header-section-number">1.0.8</span> Lemma 2 “”</h3>
+<div id="lemma-2-msne-iff-positive-strategy-in-support-is-best" class="section level3" number="1.0.8">
+<h3><span class="header-section-number">1.0.8</span> Lemma 2 “MSNE <span class="math inline">\(\iff\)</span> positive strategy in support is
+best”</h3>
+<p>Fix a finite game <span class="math inline">\(G = (S_i, u_i: i = 1,
+..., I)\)</span>.</p>
+<p>Then <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span>
+is a MSNE if, and only if, for each <span class="math inline">\(i\)</span> and for each <span class="math inline">\(s_i \in S_i\)</span>, with <span class="math inline">\(\sigma_i^*(s_i) &gt; 0,\)</span></p>
+<p><span class="math display">\[u_i(s_i, \sigma_{-i}^*) \geq u_i(r_i,
+\sigma_{-i}^*), \forall r_i \in S_i.\]</span></p>
 <div id="remark-5-lemma-2-doesnt-have-the-right-context-for-the-infinite-case" class="section level4" number="1.0.8.1">
 <h4><span class="header-section-number">1.0.8.1</span> Remark 5 “Lemma 2
 doesn’t have the right context for the infinite case”</h4>
 </div>
 </div>
-<div id="cor-1" class="section level3" number="1.0.9">
-<h3><span class="header-section-number">1.0.9</span> Cor 1 “”</h3>
+<div id="cor-1-indifference-condition" class="section level3" number="1.0.9">
+<h3><span class="header-section-number">1.0.9</span> Cor 1 “indifference
+condition”</h3>
+<p>Fix a finite game <span class="math inline">\(G = (S_i, u_i: i = 1,
+..., I)\)</span>.</p>
+<p>If <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> is
+a MSNE and with <span class="math inline">\(\sigma_i^*(s_i),
+\sigma_i^*(r_i) &gt; 0,\)</span> then</p>
+<p><span class="math display">\[u_i(s_i, \sigma_{-i}^*) = u_i(r_i,
+\sigma_{-i}^*).\]</span></p>
 <p><strong>Example 5</strong> “Lemma 2 doesn’t work in the infinite case
 + intuition for how to extend”</p>
 </div>
@@ -1602,9 +1627,9 @@ that induces <span class="math inline">\(F_i\)</span>.</li>
 <p>omitted</p>
 </div>
 </div>
-<div id="thm-kakutanis" class="section level3" number="1.0.11">
-<h3><span class="header-section-number">1.0.11</span> Thm
-“Kakutani’s”</h3>
+<div id="thm-kakutanis-fixed-point-thm" class="section level3" number="1.0.11">
+<h3><span class="header-section-number">1.0.11</span> Thm “Kakutani’s
+fixed point thm”</h3>
 <p>Let <span class="math inline">\(X\)</span> be nonempty compact convex
 set. If <span class="math inline">\(F\)</span> is nonempty,
 convex-valued, and has a closed graph, then <span class="math inline">\(F\)</span> has a fixed point.</p>
@@ -1612,7 +1637,7 @@ convex-valued, and has a closed graph, then <span class="math inline">\(F\)</spa
 <h4><span class="header-section-number">1.0.11.1</span> Term “Mixed Best
 Response Correspondence”</h4>
 <p><span class="math inline">\(\tilde{BR}_i: \Pi_{j \neq i} \Delta (S_j)
-\rightrightarrows \Delta(S_i)\)</span> …</p>
+\rightrightarrows \Delta(S_i)\)</span> … FINISH</p>
 </div>
 </div>
 <div id="thm-1-conditions-to-guarantee-existence-of-psne" class="section level3" number="1.0.12">
@@ -1672,6 +1697,8 @@ is continuous.</li>
 <div id="rationalizability-and-iterated-dominance" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Rationalizability and
 Iterated Dominance</h1>
+<p><strong>Example 1</strong> “”</p>
+<p>Belief of player <span class="math inline">\(i\)</span>: <span class="math inline">\(\mu_i \in \Delta(S_{-i})\)</span></p>
 </div>
 
 
