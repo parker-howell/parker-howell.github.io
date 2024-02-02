@@ -252,7 +252,7 @@
 <li class="chapter" data-level="12.2.1" data-path="convexity.html"><a href="convexity.html#def-convex-and-strictly-convex-functions"><i class="fa fa-check"></i><b>12.2.1</b> Def “convex and strictly convex functions”</a></li>
 <li class="chapter" data-level="12.2.2" data-path="convexity.html"><a href="convexity.html#prop-3-f-convex-iff-epif-convex"><i class="fa fa-check"></i><b>12.2.2</b> Prop 3 “<span class="math inline">\(f\)</span> convex <span class="math inline">\(\iff epi(f)\)</span> convex”</a></li>
 <li class="chapter" data-level="12.2.3" data-path="convexity.html"><a href="convexity.html#prop-4"><i class="fa fa-check"></i><b>12.2.3</b> Prop 4</a></li>
-<li class="chapter" data-level="12.2.4" data-path="convexity.html"><a href="convexity.html#claim"><i class="fa fa-check"></i><b>12.2.4</b> Claim</a></li>
+<li class="chapter" data-level="12.2.4" data-path="convexity.html"><a href="convexity.html#claim-definiteness-and-convexity"><i class="fa fa-check"></i><b>12.2.4</b> Claim “definiteness and convexity”</a></li>
 <li class="chapter" data-level="12.2.5" data-path="convexity.html"><a href="convexity.html#prop-5-if-convex-then-continuous"><i class="fa fa-check"></i><b>12.2.5</b> Prop 5 “if convex then continuous”</a></li>
 <li class="chapter" data-level="12.2.6" data-path="convexity.html"><a href="convexity.html#prop-6-convexity-and-posneg-def"><i class="fa fa-check"></i><b>12.2.6</b> Prop 6 “convexity and pos/neg def”</a></li>
 </ul></li>
@@ -429,9 +429,9 @@
 <p>Fix <span class="math inline">\(f: X \rightarrow \mathbb{R}\)</span></p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(f\)</span> is convex if, for each <span class="math inline">\(\vec{x}, \vec{y} \in X\)</span> and each <span class="math inline">\(\alpha \in [0,1]\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) \leq \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
-<li><span class="math inline">\(f\)</span> is strictly convex if, for each <span class="math inline">\(\vec{x}, \vec{y} \ in X\)</span> and each <span class="math inline">\(\alpha \in (0,1)\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) &lt; \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
+<li><span class="math inline">\(f\)</span> is strictly convex if, for each <span class="math inline">\(\vec{x}, \vec{y} \in X\)</span> and each <span class="math inline">\(\alpha \in (0,1)\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) &lt; \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
 <li><span class="math inline">\(f\)</span> is concave if, for each <span class="math inline">\(\vec{x}, \vec{y} \in X\)</span> and each <span class="math inline">\(\alpha \in [0,1]\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) \geq \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
-<li><span class="math inline">\(f\)</span> is strictly concave if, for each <span class="math inline">\(\vec{x}, \vec{y} \ in X\)</span> and each <span class="math inline">\(\alpha \in (0,1)\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) &gt; \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
+<li><span class="math inline">\(f\)</span> is strictly concave if, for each <span class="math inline">\(\vec{x}, \vec{y} \in X\)</span> and each <span class="math inline">\(\alpha \in (0,1)\)</span> we have <span class="math inline">\(f(\alpha \vec{x} + (1- \alpha) \vec{y}) &gt; \alpha f(\vec{x}) + (1- \alpha) f(\vec{y})\)</span></li>
 </ol>
 <blockquote>
 <p>a function can be convex and concave so long as it’s a line</p>
@@ -485,19 +485,19 @@
 <li><span class="math inline">\(h(f(x)) = -\sqrt{x}\)</span> which is convex</li>
 </ul>
 </div>
-<div id="claim" class="section level3 hasAnchor" number="12.2.4">
-<h3><span class="header-section-number">12.2.4</span> Claim<a href="convexity.html#claim" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="claim-definiteness-and-convexity" class="section level3 hasAnchor" number="12.2.4">
+<h3><span class="header-section-number">12.2.4</span> Claim “definiteness and convexity”<a href="convexity.html#claim-definiteness-and-convexity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>A is positive definite if and only if <span class="math inline">\(f\)</span> is strictly convex</li>
 <li>A is negative definite if and only if <span class="math inline">\(f\)</span> is strictly concave</li>
 <li>A is positive semidefinite if and only if <span class="math inline">\(f\)</span> is convex</li>
 <li>A is negative semidefinite if and only if <span class="math inline">\(f\)</span> is concave</li>
 </ul>
-<p><em>Proof of positive definite claim</em>
-Assume <span class="math inline">\(A\)</span> is positive definite. Fix <span class="math inline">\(\vec{x} \neq \vec{y}\)</span> and fix <span class="math inline">\(\alpha \in (0,1)\)</span>.</p>
+<p><em>Proof of positive definite claim</em></p>
+<p>Assume <span class="math inline">\(A\)</span> is positive definite. Fix <span class="math inline">\(\vec{x} \neq \vec{y}\)</span> and fix <span class="math inline">\(\alpha \in (0,1)\)</span>.</p>
 <p>to show: <span class="math inline">\(f(\alpha \vec{x} + (1-\alpha)\vec{y}) &lt; \alpha f(\vec{x}) + (1-\alpha)f(\vec{y})\)</span></p>
 <p><span class="math display">\[\vec{z} = \alpha \vec{x} +  (1-\alpha)\vec{y} \Rightarrow \\
-f(\vec{z}) = \vec{z}^T A \vec{z} = \text{ ALGEBRA GETS NASTY, OMMITTED } = \alpha f(\vec{x}) + (1-\alpha)f(\vec{y}).\]</span>
+f(\vec{z}) = \vec{z}^T A \vec{z} = \text{ ALGEBRA OMITTED } = \alpha f(\vec{x}) + (1-\alpha)f(\vec{y}).\]</span>
 which is the definition of convexity.</p>
 </div>
 <div id="prop-5-if-convex-then-continuous" class="section level3 hasAnchor" number="12.2.5">
