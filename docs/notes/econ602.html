@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 602 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-02-02</h4>
+<h4 class="date">Last Updated: 2024-02-08</h4>
 
 </div>
 
@@ -1545,24 +1545,35 @@ payoffs can hurt.</p>
 </blockquote>
 <p><strong>Example 4</strong> “incentive to hide what you are
 playing”</p>
+<blockquote>
+<p>Randomization is a way of hiding what’s being played.</p>
+</blockquote>
 </div>
 </div>
 <div id="def-set-of-mixed-strategies-of-i" class="section level3" number="1.0.5">
 <h3><span class="header-section-number">1.0.5</span> Def “set of mixed
 strategies of <span class="math inline">\(i\)</span>”</h3>
-<p>FINISH</p>
+<p>The set of probability measures or distributions on <span class="math inline">\(S_i\)</span> is <span class="math inline">\(\Delta(S_i).\)</span></p>
+<p>Given <span class="math inline">\(E_i \subseteq S_i\)</span> (event),
+<span class="math inline">\(\sigma(E_i)\)</span> is the probability that
+<span class="math inline">\(i\)</span> plays a strategy in <span class="math inline">\(E_i\)</span>, if <span class="math inline">\(i\)</span> chooses the mixed strategy <span class="math inline">\(\sigma_i\)</span>.</p>
 <div id="remark-2-infinite-strategies-have-no-atoms" class="section level4" number="1.0.5.1">
 <h4><span class="header-section-number">1.0.5.1</span> Remark 2
 “infinite strategies have no atoms…”</h4>
 <p>If <span class="math inline">\(S_i\)</span> is finite, then <span class="math inline">\(\sigma_i(E_i) = \sum_{s_i \in E_i}
 \sigma_i(s_i)\)</span>. But, this property need not hold when <span class="math inline">\(S_i\)</span> is infinite.</p>
-<p>FINISH</p>
 </div>
 <div id="remark-3" class="section level4" number="1.0.5.2">
 <h4><span class="header-section-number">1.0.5.2</span> Remark 3</h4>
+<p>We have (above) defined a new game called the “mixed extension” of
+<span class="math inline">\(G = (S_i, u_i: i = 1, ..., I)\)</span>. The
+differences are (1) strategy sets are now <span class="math inline">\(\Delta(S_i)\)</span>, and (2) the payoff of <span class="math inline">\(i\)</span> from <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> is <span class="math inline">\(u_i(\sigma_1, ..., \sigma_I)\)</span>.</p>
 </div>
 <div id="remark-4" class="section level4" number="1.0.5.3">
 <h4><span class="header-section-number">1.0.5.3</span> Remark 4</h4>
+<p>Consider a finite game (a game in which <span class="math inline">\(S_i\)</span> is finite for each <span class="math inline">\(i = 1, ..., I\)</span>.). The payoff is <span class="math display">\[u_i(\sigma_1, ..., \sigma_I) = \Sigma_{S_I}\cdot
+\cdot \cdot \Sigma_{S_1}u_i(s_1, ..., s_I)\sigma_1(s_1) \cdot \cdot
+\cdot \sigma_I(s_I).\]</span></p>
 </div>
 </div>
 <div id="def-msne" class="section level3" number="1.0.6">
@@ -1581,9 +1592,8 @@ strategies”</h3>
 <p><span class="math display">\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq
 u_i(s_i, \sigma_{-i}^*), \forall s_i \in S_i.\]</span></p>
 </div>
-<div id="lemma-2-msne-iff-positive-strategy-in-support-is-best" class="section level3" number="1.0.8">
-<h3><span class="header-section-number">1.0.8</span> Lemma 2 “MSNE <span class="math inline">\(\iff\)</span> positive strategy in support is
-best”</h3>
+<div id="lemma-2-msne-iff-strategy-in-support-is-best" class="section level3" number="1.0.8">
+<h3><span class="header-section-number">1.0.8</span> Lemma 2 “MSNE <span class="math inline">\(\iff\)</span> strategy in support is best”</h3>
 <p>Fix a finite game <span class="math inline">\(G = (S_i, u_i: i = 1,
 ..., I)\)</span>.</p>
 <p>Then <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span>
@@ -1637,7 +1647,9 @@ convex-valued, and has a closed graph, then <span class="math inline">\(F\)</spa
 <h4><span class="header-section-number">1.0.11.1</span> Term “Mixed Best
 Response Correspondence”</h4>
 <p><span class="math inline">\(\tilde{BR}_i: \Pi_{j \neq i} \Delta (S_j)
-\rightrightarrows \Delta(S_i)\)</span> … FINISH</p>
+\rightrightarrows \Delta(S_i)\)</span> such that <span class="math display">\[\tilde{BR}_i(\sigma_{-i}) = \{\sigma_i \in
+\Delta(S_i): \sigma_i \text{ is a best response under }
+\sigma_{-i}\}.\]</span></p>
 </div>
 </div>
 <div id="thm-1-conditions-to-guarantee-existence-of-psne" class="section level3" number="1.0.12">
@@ -1659,11 +1671,12 @@ is continuous, and</li>
 and continuity of utility fn (BR has to be nonempty)</p>
 </blockquote>
 <blockquote>
-<p>convex-valued: from quasiconcavity of <span class="math inline">\(u_i(\cdot, s_{-i}): S_i \rightarrow
-\mathbb{R}\)</span></p>
+<p>closed-graph: from continuity of <span class="math inline">\(u_i\)</span></p>
 </blockquote>
 <blockquote>
-<p>closed-graph: from continuity of <span class="math inline">\(u_i\)</span></p>
+<p>convex-valued (<span class="math inline">\(F\)</span>): from
+quasiconcavity of <span class="math inline">\(u_i(\cdot, s_{-i}): S_i
+\rightarrow \mathbb{R}\)</span></p>
 </blockquote>
 </div>
 <div id="thm-2-conditions-to-guarantee-existence-of-msne" class="section level3" number="1.0.13">
@@ -1671,9 +1684,9 @@ and continuity of utility fn (BR has to be nonempty)</p>
 to guarantee existence of MSNE”</h3>
 <p>For each finite game, there exists a MSNE.</p>
 </div>
-<div id="thm-3-glicksberg-thm" class="section level3" number="1.0.14">
-<h3><span class="header-section-number">1.0.14</span> Thm 3 “Glicksberg’
-thm”</h3>
+<div id="thm-3-glicksbergs-thm" class="section level3" number="1.0.14">
+<h3><span class="header-section-number">1.0.14</span> Thm 3
+“Glicksberg’s thm”</h3>
 <p>Fix a game, <span class="math inline">\(G\)</span> where, for each
 <span class="math inline">\(i\)</span>,</p>
 <ol style="list-style-type: decimal">
@@ -1685,20 +1698,160 @@ is continuous.</li>
 <p>Then <span class="math inline">\(G\)</span> has a MSNE.</p>
 <div id="remark-8" class="section level4" number="1.0.14.1">
 <h4><span class="header-section-number">1.0.14.1</span> Remark 8</h4>
+<p>Glicksberg’s thm doesn’t tell us that the assumptions of compactness
+and continuity are interesting. E.g., first-price auctions are
+discontinuous.</p>
 </div>
 <div id="remark-9" class="section level4" number="1.0.14.2">
 <h4><span class="header-section-number">1.0.14.2</span> Remark 9</h4>
+<p>Glicksberg’s thm only tells us there is some equilibrium–there may be
+many.</p>
 </div>
 <div id="remark-10" class="section level4" number="1.0.14.3">
 <h4><span class="header-section-number">1.0.14.3</span> Remark 10</h4>
+<p>Existence results are most useful if there are qualitative results of
+how equlibria vary with interesting parameters of the model/game.</p>
 </div>
 </div>
 </div>
 <div id="rationalizability-and-iterated-dominance" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Rationalizability and
 Iterated Dominance</h1>
-<p><strong>Example 1</strong> “”</p>
+<p><strong>Example 1</strong> “motivation for beliefs: can have wrong
+beliefs now.”</p>
+<div id="term-belief" class="section level4" number="2.0.0.1">
+<h4><span class="header-section-number">2.0.0.1</span> Term
+“belief”</h4>
 <p>Belief of player <span class="math inline">\(i\)</span>: <span class="math inline">\(\mu_i \in \Delta(S_{-i})\)</span></p>
+</div>
+<div id="def-best-response-with-beliefs" class="section level3" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Def “best response
+with beliefs”</h3>
+<p>Fix a nonempty set <span class="math inline">\(Q_i \subseteq
+S_i\)</span>. Say <em><span class="math inline">\(s_i\)</span> is a best
+response under <span class="math inline">\(\mu_i\)</span> given <span class="math inline">\(Q_i\)</span></em> if <span class="math inline">\(s_i \in Q_i\)</span> and <span class="math display">\[\int_{S_i} u_i(s_i, s_{-i})d\mu_i \geq \int_{S_i}
+u_i(r_i, s_{-i})d\mu_i, ~\forall r_i \in Q_i.\]</span> Say <em><span class="math inline">\(s_i\)</span> is a best response under <span class="math inline">\(\mu_i\)</span></em> if it is a best response under
+<span class="math inline">\(\mu_i\)</span> given <span class="math inline">\(S_i\)</span>.</p>
+</div>
+<div id="def-justifiable" class="section level3" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Def
+“justifiable”</h3>
+<p>Fix a nonempty (candidate subset) <span class="math inline">\(Q_i
+\subseteq S_{-i}\)</span>. Say <em><span class="math inline">\(s_i\)</span> is justifiable given <span class="math inline">\(Q_i\)</span></em> if there exists <span class="math inline">\(\mu_i \in \Delta(S_{-i})\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(s_i\)</span> is a best response under
+<span class="math inline">\(\mu_i\)</span> and</li>
+<li><span class="math inline">\(\mu_i(Q_{-i})=1\)</span>.</li>
+</ol>
+<p>Say <span class="math inline">\(s_i\)</span> is <em>justifiable</em>
+if it is justifiable given <span class="math inline">\(S_{-i}\)</span>.</p>
+</div>
+<div id="def-rationalizable-sets" class="section level3" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Def “rationalizable
+sets”</h3>
+<p>Let <span class="math inline">\(R_i^0 = S_i; R_{-i}^0 =
+S_{-i}.\)</span></p>
+<p>Inductively define sets <span class="math inline">\(R_i^m\)</span>
+and <span class="math inline">\(R_{-i}^m\)</span> such that</p>
+<ul>
+<li><span class="math inline">\(R_i^{m+1} = \{s_i \in S_i: s_i \text{ is
+justifiable given } R_{-i}^m\}\)</span>, and</li>
+<li><span class="math inline">\(R_{-i}^{m+1} = \Pi_{j \neq
+i}R_{j}^{m+1}\)</span>.</li>
+</ul>
+<p>Additional notation:</p>
+<ul>
+<li><span class="math inline">\(R_i^\infty = \cap_{m\geq 0}\)</span> is
+the set of rationalizable strategies for <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(R^\infty = \Pi_{i=1}^I
+R_i^\infty\)</span> is the set of rationalizable strategy profiles.</li>
+<li><span class="math inline">\(R^m = \Pi_{i=1}^I R_i^m\)</span> is the
+set of <span class="math inline">\(m-\)</span>rationalizable strategy
+profiles.</li>
+</ul>
+<p><strong>Example 2</strong> “which strategies are justifiable?”</p>
+<p><strong>Example 3</strong> “which strategies are justifiable?”</p>
+<p><strong>Example 4</strong> “which strategies are justifiable?”</p>
+</div>
+<div id="def-undominated" class="section level3" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Def
+“(un)dominated”</h3>
+<p>Fix <span class="math inline">\(Q_1, ..., Q_I\)</span> where each
+<span class="math inline">\(Q_j \subseteq S_j\)</span>.</p>
+<p>Say <em><span class="math inline">\(s_i\)</span> is dominated given
+<span class="math inline">\(\Pi_{j=1}^I Q_j\)</span></em> if <span class="math inline">\(s_i \in Q_i\)</span> and there exists a <span class="math inline">\(\sigma_i \in \Delta(S_i)\)</span> such that <span class="math display">\[u_i(\sigma_i,s_{-i}) &gt;
+u_i(s_i,s_{-i}),~\forall s_{-i} \in \Pi_{j \neq i}^I Q_j.\]</span></p>
+<p>Say <em><span class="math inline">\(s_i\)</span> is undominated given
+<span class="math inline">\(\Pi_{j=1}^I Q_j\)</span></em> if it is not
+dominated given <span class="math inline">\(\Pi_{j=1}^I
+Q_j\)</span>.</p>
+<p>Say <em><span class="math inline">\(s_i\)</span> is
+(un)dominated</em> if it is (un)dominated given <span class="math inline">\(S\)</span>.</p>
+</div>
+<div id="def-undominated-sets" class="section level3" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Def “undominated
+sets”</h3>
+<p>Let <span class="math inline">\(U_i^0 = S_i.\)</span></p>
+<p>Inductively define <span class="math inline">\(U_i^m\)</span> such
+that <span class="math display">\[U_i^{m+1} = \{s_i \in S_i: s_i \text{
+is justifiable given } R_{-i}^m\}.\]</span></p>
+<p>Additional notation:</p>
+<ul>
+<li><span class="math inline">\(U_i^\infty = \cap_{m\geq
+0}U_i^m\)</span> is the set of undominated strategies for <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(U^m = \Pi_{i=1}^I R_i^m\)</span> is the
+set of <span class="math inline">\(m-\)</span>undominated strategy
+profiles.</li>
+<li><span class="math inline">\(U^\infty = \Pi_{i=1}^I
+U_i^\infty\)</span> is the set of <em>iteratively undominated</em> (IU)
+strategy profiles.</li>
+</ul>
+</div>
+<div id="thm-1-rm-um" class="section level3" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> Thm 1 “<span class="math inline">\(R^m = U^m\)</span>”</h3>
+<p>Fix a finite game. <span class="math inline">\(R^m = U^m, ~\forall
+m.\)</span></p>
+</div>
+<div id="prop-1-justifiable-iff-undominated" class="section level3" number="2.0.7">
+<h3><span class="header-section-number">2.0.7</span> Prop 1 “justifiable
+<span class="math inline">\(\iff\)</span> undominated”</h3>
+<p>Fix a finite game. A strategy <span class="math inline">\(s_i\)</span> is justifiable if, and only if, it is
+undominated.</p>
+</div>
+<div id="def-hyperplane" class="section level3" number="2.0.8">
+<h3><span class="header-section-number">2.0.8</span> Def
+“Hyperplane”</h3>
+<p>A hyperplane in <span class="math inline">\(\mathbb{R}^n\)</span> is
+a set of the form <span class="math display">\[H[\vec{p}, \alpha] =
+\{\vec{x} \in \mathbb{R}^n: \vec{p} \cdot \vec{x}= \alpha\}\]</span> for
+<span class="math inline">\(\vec{p} \in \mathbb{R}^n \setminus
+\{0\}\)</span> and <span class="math inline">\(\alpha \in
+\mathbb{R}\)</span>.</p>
+</div>
+<div id="def-supporting-hyperplane" class="section level3" number="2.0.9">
+<h3><span class="header-section-number">2.0.9</span> Def “supporting
+hyperplane”</h3>
+<p>Fix <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> and
+<span class="math inline">\(\vec{x} \in A\)</span>. Say <span class="math inline">\(\vec{p} \in \mathbb{R}^n\)</span> (with <span class="math inline">\(\vec{p}\neq \vec{0}\)</span>) <em>supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span></em> if <span class="math display">\[\vec{p} \cdot \vec{x} \geq \vec{p} \cdot \vec{y},
+\forall y \in A.\]</span></p>
+<p>Say <span class="math inline">\(H[\vec{p}, \alpha]\)</span> supports
+<span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> if <span class="math inline">\(\vec{p}\)</span> supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> and <span class="math inline">\(\vec{p} \cdot \vec{x} = \alpha\)</span>.</p>
+</div>
+<div id="thm-supporting-hyperplane-theorem" class="section level3" number="2.0.10">
+<h3><span class="header-section-number">2.0.10</span> Thm “Supporting
+Hyperplane Theorem”</h3>
+<p>Let <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span>,
+convex and <span class="math inline">\(\vec{x} \in A\)</span>. There
+exists some <span class="math inline">\(\vec{p} \in
+\mathbb{R}^n\)</span> (with <span class="math inline">\(\vec{p}\neq
+\vec{0}\)</span>) such that <span class="math inline">\(\vec{p}\)</span>
+supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> if and only if <span class="math inline">\(\vec{x} \notin int(A)\)</span>. (i.e., <span class="math inline">\(\vec{x} \in\)</span> boundary(<span class="math inline">\(A\)</span>))</p>
+<!-- # Steps to approach common questions - see Goodnotes -->
+<!-- ### Find all PSNE -->
+<!-- ### Show no PSNE Exists -->
+<!-- ### Find all MSNE (finite) -->
+<!-- ### Find a MSNE (infinite) -->
+</div>
 </div>
 
 
