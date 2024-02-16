@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 602 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-02-08</h4>
+<h4 class="date">Last Updated: 2024-02-15</h4>
 
 </div>
 
@@ -1630,6 +1630,7 @@ that induces <span class="math inline">\(F_i\)</span>.</li>
 <div id="remark-6-unanswered-questions" class="section level4" number="1.0.10.1">
 <h4><span class="header-section-number">1.0.10.1</span> Remark 6
 “unanswered questions”</h4>
+<p>FINISH</p>
 </div>
 <div id="remark-7-pdfcdf-technical-notes" class="section level4" number="1.0.10.2">
 <h4><span class="header-section-number">1.0.10.2</span> Remark 7
@@ -1637,23 +1638,46 @@ that induces <span class="math inline">\(F_i\)</span>.</li>
 <p>omitted</p>
 </div>
 </div>
-<div id="thm-kakutanis-fixed-point-thm" class="section level3" number="1.0.11">
-<h3><span class="header-section-number">1.0.11</span> Thm “Kakutani’s
+<div id="existence-of-pure-and-mixed-strategy-nash-equilibria" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Existence of Pure and
+Mixed Strategy Nash Equilibria</h2>
+<div id="notation-mixed-best-response-correspondence" class="section level4" number="1.1.0.1">
+<h4><span class="header-section-number">1.1.0.1</span> Notation: “Mixed
+Best Response Correspondence”</h4>
+<p>We’ve already seen one correspondence: <span class="math inline">\(BR_i: S_{-i} \rightrightarrows S_i\)</span> such
+that <span class="math display">\[BR_i(s_{-i}) = \{s_i \in S_i: s_i
+\text{ is a best response to } s_{-i}\}.\]</span></p>
+<p>Now, we have <span class="math inline">\(\tilde{BR}_i: \Pi_{j \neq i}
+\Delta (S_j) \rightrightarrows \Delta(S_i)\)</span> such that <span class="math display">\[\tilde{BR}_i(\sigma_{-i}) = \{\sigma_i \in
+\Delta(S_i): \sigma_i \text{ is a best response under }
+\sigma_{-i}\}.\]</span></p>
+<p>For all players:</p>
+<p><span class="math display">\[\tilde{BR}: \Pi_{i=1}^I \Delta(S_i)
+\rightrightarrows \Pi_{i=1}^I \Delta(S_i) \text{ such that }
+\tilde{BR}(\sigma_1, ..., \sigma_I) = \Pi_{i=1}^I \tilde{BR} (\sigma_1,
+..., \sigma_{i-1}, \sigma_{i+1}, ..., \sigma_I).\]</span></p>
+</div>
+<div id="result-ne-iff-fixed-point-of-br" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Result “NE <span class="math inline">\(\iff\)</span> fixed point of BR”</h3>
+<ul>
+<li><span class="math inline">\((s_1^*, ..., s_I^*)\)</span> is a PSNE
+<span class="math inline">\(\iff (s_1^*, ..., s_I^*) \in BR(s_1^*, ...,
+s_I^*) \iff\)</span> fixed point of <span class="math inline">\(BR\)</span>.</li>
+<li><span class="math inline">\((\sigma_1^*, ..., \sigma_I^*)\)</span>
+is a MSNE <span class="math inline">\(\iff (s_1^*, ..., s_I^*) \in
+\tilde{BR}(\sigma_1^*, ..., \sigma_I^*) \iff\)</span> fixed point of
+<span class="math inline">\(\tilde{BR}\)</span>.</li>
+</ul>
+</div>
+<div id="thm-kakutanis-fixed-point-thm" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Thm “Kakutani’s
 fixed point thm”</h3>
 <p>Let <span class="math inline">\(X\)</span> be nonempty compact convex
 set. If <span class="math inline">\(F\)</span> is nonempty,
 convex-valued, and has a closed graph, then <span class="math inline">\(F\)</span> has a fixed point.</p>
-<div id="term-mixed-best-response-correspondence" class="section level4" number="1.0.11.1">
-<h4><span class="header-section-number">1.0.11.1</span> Term “Mixed Best
-Response Correspondence”</h4>
-<p><span class="math inline">\(\tilde{BR}_i: \Pi_{j \neq i} \Delta (S_j)
-\rightrightarrows \Delta(S_i)\)</span> such that <span class="math display">\[\tilde{BR}_i(\sigma_{-i}) = \{\sigma_i \in
-\Delta(S_i): \sigma_i \text{ is a best response under }
-\sigma_{-i}\}.\]</span></p>
 </div>
-</div>
-<div id="thm-1-conditions-to-guarantee-existence-of-psne" class="section level3" number="1.0.12">
-<h3><span class="header-section-number">1.0.12</span> Thm 1 “conditions
+<div id="thm-1-conditions-to-guarantee-existence-of-psne" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Thm 1 “conditions
 to guarantee existence of PSNE”</h3>
 <p>Fix a game where, for each <span class="math inline">\(i = 1, ...,
 I\)</span>, if</p>
@@ -1679,14 +1703,14 @@ quasiconcavity of <span class="math inline">\(u_i(\cdot, s_{-i}): S_i
 \rightarrow \mathbb{R}\)</span></p>
 </blockquote>
 </div>
-<div id="thm-2-conditions-to-guarantee-existence-of-msne" class="section level3" number="1.0.13">
-<h3><span class="header-section-number">1.0.13</span> Thm 2 “conditions
+<div id="thm-2-conditions-to-guarantee-existence-of-msne" class="section level3" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Thm 2 “conditions
 to guarantee existence of MSNE”</h3>
 <p>For each finite game, there exists a MSNE.</p>
 </div>
-<div id="thm-3-glicksbergs-thm" class="section level3" number="1.0.14">
-<h3><span class="header-section-number">1.0.14</span> Thm 3
-“Glicksberg’s thm”</h3>
+<div id="thm-3-glicksbergs-thm" class="section level3" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Thm 3 “Glicksberg’s
+thm”</h3>
 <p>Fix a game, <span class="math inline">\(G\)</span> where, for each
 <span class="math inline">\(i\)</span>,</p>
 <ol style="list-style-type: decimal">
@@ -1696,21 +1720,22 @@ and</li>
 is continuous.</li>
 </ol>
 <p>Then <span class="math inline">\(G\)</span> has a MSNE.</p>
-<div id="remark-8" class="section level4" number="1.0.14.1">
-<h4><span class="header-section-number">1.0.14.1</span> Remark 8</h4>
+<div id="remark-8" class="section level4" number="1.1.5.1">
+<h4><span class="header-section-number">1.1.5.1</span> Remark 8</h4>
 <p>Glicksberg’s thm doesn’t tell us that the assumptions of compactness
 and continuity are interesting. E.g., first-price auctions are
 discontinuous.</p>
 </div>
-<div id="remark-9" class="section level4" number="1.0.14.2">
-<h4><span class="header-section-number">1.0.14.2</span> Remark 9</h4>
+<div id="remark-9" class="section level4" number="1.1.5.2">
+<h4><span class="header-section-number">1.1.5.2</span> Remark 9</h4>
 <p>Glicksberg’s thm only tells us there is some equilibrium–there may be
 many.</p>
 </div>
-<div id="remark-10" class="section level4" number="1.0.14.3">
-<h4><span class="header-section-number">1.0.14.3</span> Remark 10</h4>
+<div id="remark-10" class="section level4" number="1.1.5.3">
+<h4><span class="header-section-number">1.1.5.3</span> Remark 10</h4>
 <p>Existence results are most useful if there are qualitative results of
 how equlibria vary with interesting parameters of the model/game.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1769,9 +1794,7 @@ R_i^\infty\)</span> is the set of rationalizable strategy profiles.</li>
 set of <span class="math inline">\(m-\)</span>rationalizable strategy
 profiles.</li>
 </ul>
-<p><strong>Example 2</strong> “which strategies are justifiable?”</p>
-<p><strong>Example 3</strong> “which strategies are justifiable?”</p>
-<p><strong>Example 4</strong> “which strategies are justifiable?”</p>
+<p><strong>Examples 2-4</strong> “which strategies are justifiable?”</p>
 </div>
 <div id="def-undominated" class="section level3" number="2.0.4">
 <h3><span class="header-section-number">2.0.4</span> Def
@@ -1794,7 +1817,7 @@ sets”</h3>
 <p>Let <span class="math inline">\(U_i^0 = S_i.\)</span></p>
 <p>Inductively define <span class="math inline">\(U_i^m\)</span> such
 that <span class="math display">\[U_i^{m+1} = \{s_i \in S_i: s_i \text{
-is justifiable given } R_{-i}^m\}.\]</span></p>
+is undominated given } R_{-i}^m\}.\]</span></p>
 <p>Additional notation:</p>
 <ul>
 <li><span class="math inline">\(U_i^\infty = \cap_{m\geq
@@ -1846,6 +1869,95 @@ exists some <span class="math inline">\(\vec{p} \in
 \mathbb{R}^n\)</span> (with <span class="math inline">\(\vec{p}\neq
 \vec{0}\)</span>) such that <span class="math inline">\(\vec{p}\)</span>
 supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> if and only if <span class="math inline">\(\vec{x} \notin int(A)\)</span>. (i.e., <span class="math inline">\(\vec{x} \in\)</span> boundary(<span class="math inline">\(A\)</span>))</p>
+<p><strong>Example 6</strong> “weakly dominated”</p>
+</div>
+<div id="lemma-1-later-sets-subsets-of-earlier-subsets" class="section level3" number="2.0.11">
+<h3><span class="header-section-number">2.0.11</span> Lemma 1 “later
+sets subsets of earlier subsets”</h3>
+<p>For each <span class="math inline">\(i = 1, ..., I\)</span> and each
+<span class="math inline">\(m\geq 0\)</span>, <span class="math inline">\(R_i^{m+1} \subseteq R_i^m\)</span>.</p>
+</div>
+<div id="cor-0.1-rationalizable-set-stops-shrinking-at-some-point" class="section level3" number="2.0.12">
+<h3><span class="header-section-number">2.0.12</span> Cor 0.1
+“rationalizable set stops shrinking at some point”</h3>
+<p>If the game is finite, there exists some number <span class="math inline">\(M\)</span> such that <span class="math inline">\(R^m = R^M\)</span> for all <span class="math inline">\(m \geq M\)</span>.</p>
+<p><strong>Example 0.1</strong> NEED TO WORK THROUGH</p>
+</div>
+<div id="prop-1-nonempty-rationalizable-set-exists-if-compact-and-continuous" class="section level3" number="2.0.13">
+<h3><span class="header-section-number">2.0.13</span> Prop 1 “nonempty
+rationalizable set exists if compact and continuous”</h3>
+<p>Fix a game <span class="math inline">\(G = (S_i, u_i: i = 1, ...,
+I)\)</span> where each <span class="math inline">\(S_i\)</span> is a
+compact metrics space and each <span class="math inline">\(u_i\)</span>
+is continuous. Then the set of rationalizable strategy profiles is
+nonempty.</p>
+</div>
+<div id="def-weakly-dominated" class="section level3" number="2.0.14">
+<h3><span class="header-section-number">2.0.14</span> Def “Weakly
+Dominated”</h3>
+<p>Fix non-empty sets <span class="math inline">\(Q_1, ...,
+Q_I\)</span>. Say <span class="math inline">\(s_i\)</span> is <em>weakly
+dominated given</em> <span class="math inline">\(\Pi_{j=1}^I
+Q_j\)</span> if <span class="math inline">\(s_i \in Q_i\)</span> and
+there exists <span class="math inline">\(\sigma_i \in
+\Delta(Q_i)\)</span> so that</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(u_i(\sigma_i, s_{-i}) \geq u_i(s_i,
+s_{-i})\)</span> for each <span class="math inline">\(s_{-i} \in
+\Pi_{j\neq i} Q_j\)</span>, and</li>
+<li><span class="math inline">\(u_i(\sigma_i, s_{-i}) &gt; u_i(s_i,
+s_{-i})\)</span> for some <span class="math inline">\(s_{-i} \in
+\Pi_{j\neq i} Q_j\)</span>.</li>
+</ol>
+<p>Say <span class="math inline">\(s_i\)</span> is <em>weakly
+dominated</em> if it is weakly dominated given <span class="math inline">\(S\)</span>.</p>
+</div>
+<div id="def-iterated-weak-dominance" class="section level3" number="2.0.15">
+<h3><span class="header-section-number">2.0.15</span> Def “Iterated Weak
+Dominance”</h3>
+<p>Set <span class="math inline">\(W_i^0 = S_i\)</span>. Inductively
+define <span class="math inline">\(W_i^m\)</span> such that <span class="math display">\[W_i^{m+1} = \{s_i \in W_i^m: s_i \text{ is not
+weakly dominated given } \Pi^{I}_{j=1}W_j^m\}.\]</span></p>
+<p>Then <span class="math inline">\(W_i^{m+1}\)</span> is the set of
+strategies of <span class="math inline">\(i\)</span> that survive <span class="math inline">\((m+1)\)</span> rounds of iterated weak
+dominance.</p>
+<p>Set <span class="math inline">\(W_i^\infty = \cap_{m\geq
+0}W_i^m\)</span>. Then <span class="math inline">\(W^\infty =
+\Pi_{i=1}^I W_i^\infty\)</span> is the set of strategy profiles that
+survive iterated weak dominance.</p>
+</div>
+</div>
+<div id="sequential-games-of-complete-information" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Sequential Games of
+Complete Information</h1>
+<p><strong>Example 1</strong></p>
+<div id="remark-1-1" class="section level4" number="3.0.0.1">
+<h4><span class="header-section-number">3.0.0.1</span> Remark 1</h4>
+<p>Some people will see an example like example 1 and conclude “the
+strategic form game does not suffice.” This is incorrect. We will see
+(later) that the problem is the solution concept of Nash Equilibrium,
+not the strategic form, per se.</p>
+<p>Visualization vs Formalization - FINISH</p>
+</div>
+<div id="def-extensive-form-model-a-sequential-game-as-an-extensive-form-game" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Def Extensive Form
+(model a sequential game as an extensive-form game)</h3>
+<p>We model a sequential game as an extensive form game: <span class="math inline">\(\Gamma = (A1, ..., A_J; N; H_1, ..., H_I; U_1,
+..., U_I)\)</span>.</p>
+<p><strong>Extensive-Form 1:</strong> Players <span class="math inline">\(1, ..., I\)</span></p>
+<p><strong>Extensive-Form 2:</strong> Action Sets <span class="math inline">\((A_1, ..., A_I)\)</span>, where <span class="math inline">\(A_i\)</span> is the set of actions player i can
+choose <em>somewhere</em> in the game. E.g., <span class="math inline">\(A_E = \{O, E, *\}, A_I = \{F, A, *\}\)</span></p>
+<p><strong>Extensive-Form 3:</strong> Nodes <span class="math inline">\(N=\)</span> set of nodes.</p>
+<p>We think of nodes as being defined by sequences of action profiles.
+E.g., initial node will be identified as <span class="math inline">\(\phi\)</span>.</p>
+<ul>
+<li><span class="math inline">\(n_1 = (O, *)\)</span></li>
+<li><span class="math inline">\(n_2 = (E, *)\)</span></li>
+<li><span class="math inline">\(n_3 = ((E, *), (*, A))\)</span></li>
+<li><span class="math inline">\(n_4 = ((E, *), (*, F))\)</span></li>
+</ul>
+<p><strong>Extensive-Form 4:</strong> <span class="math inline">\(Players 1, ..., I\)</span></p>
+<p><strong>Extensive-Form 5:</strong> <span class="math inline">\(Players 1, ..., I\)</span></p>
 <!-- # Steps to approach common questions - see Goodnotes -->
 <!-- ### Find all PSNE -->
 <!-- ### Show no PSNE Exists -->
