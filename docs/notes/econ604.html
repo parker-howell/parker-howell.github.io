@@ -1480,706 +1480,243 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 602 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-03-07</h4>
+<h4 class="date">Last Updated: 2024-03-14</h4>
 
 </div>
 
 
-<div id="simultaneous-move-games-of-complete-information" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Simultaneous-move Games
-of Complete Information</h1>
-<p>Can model these as strategic-form games</p>
-<div id="def-strategic-form-game" class="section level3" number="1.0.1">
-<h3><span class="header-section-number">1.0.1</span> Def “strategic-form
-game”</h3>
-<p>A strategic-form game is a <span class="math inline">\(G = (S_i, u_i
-= 1, ..., I)\)</span> such that</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\{1, ..., I\}\)</span> is a set of
-players</li>
-<li><span class="math inline">\(S_i\)</span> is a set of strategies for
-player <span class="math inline">\(i\)</span></li>
-<li><span class="math inline">\(u_i: \Pi_{j=1}^I S_j \rightarrow
-\mathbb{R}\)</span> is a payoff function for player <span class="math inline">\(i\)</span>. (<span class="math inline">\(u_i\)</span> maps from strategy profiles to real
-(integrable) numbers.)</li>
-</ol>
-<p><strong>Example 1:</strong> introduce NE</p>
-</div>
-<div id="def-nash-equilibrium-psne" class="section level3" number="1.0.2">
-<h3><span class="header-section-number">1.0.2</span> Def “Nash
-Equilibrium (PSNE)”</h3>
-<p>Call <span class="math inline">\((s_1^*, ... ,s_I^*)\)</span> a Nash
-equilibrium if, for each <span class="math inline">\(i = 1, ...,
-I\)</span> <span class="math display">\[u_i(s_i^*, s_{-i}^*) \geq
-u_i(s_i, s_{-i}), \forall s_i \in S_i.\]</span></p>
-<blockquote>
-<p>“deviating to some <span class="math inline">\(s_i\)</span> is not
-going to make me any better off.</p>
-</blockquote>
-</div>
-<div id="def-best-response" class="section level3" number="1.0.3">
-<h3><span class="header-section-number">1.0.3</span> Def “Best
-Response”</h3>
-<p>Say <span class="math inline">\(s_i \in S_i\)</span> is a best
-response for <span class="math inline">\(i\)</span> under <span class="math inline">\(s_{-i}\)</span> if <span class="math display">\[u_i(s_i, s_{-i}) \geq u_i(s_i&#39;, s_{-i})~~~~
-\forall s_i&#39; \in S_i.\]</span></p>
-</div>
-<div id="def-best-response-correspondence" class="section level3" number="1.0.4">
-<h3><span class="header-section-number">1.0.4</span> Def “Best Response
-Correspondence”</h3>
-<p><span class="math inline">\(BR_i: S_{-i} \rightrightarrows
-S_i\)</span> such that <span class="math display">\[BR_i(s_{-i}) = \{s_i
-\in S_i: s_i \text{ is a best response for } i \text{ under }
-s_{-i}\}\]</span></p>
-<div id="remark-1" class="section level4" number="1.0.4.1">
-<h4><span class="header-section-number">1.0.4.1</span> Remark 1</h4>
-<p>A strategy profile is a Nash Equilibrium if and only if, for each
-<span class="math inline">\(i = 1, ..., I\)</span> <span class="math display">\[s_i^* \in BR_i(s_{-i}).\]</span> <strong>Example
-2</strong> Maximize revenue to find BR correspondence. Determine PSNE
-from correspondence.</p>
-<p><strong>Example 3</strong> “Increasing payoffs can hurt”</p>
-<blockquote>
-<p>Difference between Game Theory and Decision Theory: In DT, increasing
-payoffs cannot hurt. In GT, there are scenarios under which increasing
-payoffs can hurt.</p>
-</blockquote>
-<p><strong>Example 4</strong> “incentive to hide what you are
-playing”</p>
-<blockquote>
-<p>Randomization is a way of hiding what’s being played.</p>
-</blockquote>
-</div>
-</div>
-<div id="def-set-of-mixed-strategies-of-i" class="section level3" number="1.0.5">
-<h3><span class="header-section-number">1.0.5</span> Def “set of mixed
-strategies of <span class="math inline">\(i\)</span>”</h3>
-<p>The set of probability measures or distributions on <span class="math inline">\(S_i\)</span> is <span class="math inline">\(\Delta(S_i).\)</span></p>
-<p>Given <span class="math inline">\(E_i \subseteq S_i\)</span> (event),
-<span class="math inline">\(\sigma(E_i)\)</span> is the probability that
-<span class="math inline">\(i\)</span> plays a strategy in <span class="math inline">\(E_i\)</span>, if <span class="math inline">\(i\)</span> chooses the mixed strategy <span class="math inline">\(\sigma_i\)</span>.</p>
-<div id="remark-2-infinite-strategies-have-no-atoms" class="section level4" number="1.0.5.1">
-<h4><span class="header-section-number">1.0.5.1</span> Remark 2
-“infinite strategies have no atoms…”</h4>
-<p>If <span class="math inline">\(S_i\)</span> is finite, then <span class="math inline">\(\sigma_i(E_i) = \sum_{s_i \in E_i}
-\sigma_i(s_i)\)</span>. But, this property need not hold when <span class="math inline">\(S_i\)</span> is infinite.</p>
-</div>
-<div id="remark-3" class="section level4" number="1.0.5.2">
-<h4><span class="header-section-number">1.0.5.2</span> Remark 3</h4>
-<p>We have (above) defined a new game called the “mixed extension” of
-<span class="math inline">\(G = (S_i, u_i: i = 1, ..., I)\)</span>. The
-differences are (1) strategy sets are now <span class="math inline">\(\Delta(S_i)\)</span>, and (2) the payoff of <span class="math inline">\(i\)</span> from <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> is <span class="math inline">\(u_i(\sigma_1, ..., \sigma_I)\)</span>.</p>
-</div>
-<div id="remark-4" class="section level4" number="1.0.5.3">
-<h4><span class="header-section-number">1.0.5.3</span> Remark 4</h4>
-<p>Consider a finite game (a game in which <span class="math inline">\(S_i\)</span> is finite for each <span class="math inline">\(i = 1, ..., I\)</span>.). The payoff is <span class="math display">\[u_i(\sigma_1, ..., \sigma_I) = \Sigma_{S_I}\cdot
-\cdot \cdot \Sigma_{S_1}u_i(s_1, ..., s_I)\sigma_1(s_1) \cdot \cdot
-\cdot \sigma_I(s_I).\]</span></p>
-</div>
-</div>
-<div id="def-msne" class="section level3" number="1.0.6">
-<h3><span class="header-section-number">1.0.6</span> Def “MSNE”</h3>
-<p>Call <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> a
-“Mixed Strategy Nash Equilibrium” (MSNE) if, and only if, for each <span class="math inline">\(i=1, ..., I\)</span></p>
-<p><span class="math display">\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq
-u_i(\sigma_i, \sigma_{-i}), \forall \sigma_i \in
-\Delta(S_i).\]</span></p>
-</div>
-<div id="lemma-1-msne-iff-weakly-better-than-all-pure-strategies" class="section level3" number="1.0.7">
-<h3><span class="header-section-number">1.0.7</span> Lemma 1 “MSNE <span class="math inline">\(\iff\)</span> weakly better than all pure
-strategies”</h3>
-<p>A strategy profile <span class="math inline">\((\sigma_1, ...,
-\sigma_I)\)</span> is a MSNE if, and only if, for each <span class="math inline">\(i\)</span></p>
-<p><span class="math display">\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq
-u_i(s_i, \sigma_{-i}^*), \forall s_i \in S_i.\]</span></p>
-</div>
-<div id="lemma-2-msne-iff-strategy-in-support-is-best" class="section level3" number="1.0.8">
-<h3><span class="header-section-number">1.0.8</span> Lemma 2 “MSNE <span class="math inline">\(\iff\)</span> strategy in support is best”</h3>
-<p>Fix a finite game <span class="math inline">\(G = (S_i, u_i: i = 1,
-..., I)\)</span>.</p>
-<p>Then <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span>
-is a MSNE if, and only if, for each <span class="math inline">\(i\)</span> and for each <span class="math inline">\(s_i \in S_i\)</span>, with <span class="math inline">\(\sigma_i^*(s_i) &gt; 0,\)</span></p>
-<p><span class="math display">\[u_i(s_i, \sigma_{-i}^*) \geq u_i(r_i,
-\sigma_{-i}^*), \forall r_i \in S_i.\]</span></p>
-<div id="remark-5-lemma-2-doesnt-have-the-right-context-for-the-infinite-case" class="section level4" number="1.0.8.1">
-<h4><span class="header-section-number">1.0.8.1</span> Remark 5 “Lemma 2
-doesn’t have the right context for the infinite case”</h4>
-</div>
-</div>
-<div id="cor-1-indifference-condition" class="section level3" number="1.0.9">
-<h3><span class="header-section-number">1.0.9</span> Cor 1 “indifference
-condition”</h3>
-<p>Fix a finite game <span class="math inline">\(G = (S_i, u_i: i = 1,
-..., I)\)</span>.</p>
-<p>If <span class="math inline">\((\sigma_1, ..., \sigma_I)\)</span> is
-a MSNE and with <span class="math inline">\(\sigma_i^*(s_i),
-\sigma_i^*(r_i) &gt; 0,\)</span> then</p>
-<p><span class="math display">\[u_i(s_i, \sigma_{-i}^*) = u_i(r_i,
-\sigma_{-i}^*).\]</span></p>
-<p><strong>Example 5</strong> “Lemma 2 doesn’t work in the infinite case
-+ intuition for how to extend”</p>
-</div>
-<div id="thm-from-online-notes" class="section level3" number="1.0.10">
-<h3><span class="header-section-number">1.0.10</span> Thm “from online
-notes”</h3>
-<ol style="list-style-type: decimal">
-<li>If <span class="math inline">\(\sigma_i\)</span> induces <span class="math inline">\(F_i\)</span>, then <span class="math inline">\(F_i\)</span> is a CDF</li>
-<li>If <span class="math inline">\(F_i\)</span> is a CDF, then there
-exists a <em>unique</em> <span class="math inline">\(\sigma_i\)</span>
-that induces <span class="math inline">\(F_i\)</span>.</li>
-</ol>
-<div id="remark-6-unanswered-questions" class="section level4" number="1.0.10.1">
-<h4><span class="header-section-number">1.0.10.1</span> Remark 6
-“unanswered questions”</h4>
-<p>We constructed an example of a symmetric MSNE. But, we have not shown
-it is the only such symmetric MSNE. Can we have a symmetric MSNE with
-gaps in the support? Can we have a symmetric MSNE with atoms?</p>
-</div>
-<div id="remark-7-pdfcdf-technical-notes" class="section level4" number="1.0.10.2">
-<h4><span class="header-section-number">1.0.10.2</span> Remark 7
-“pdf/cdf technical notes”</h4>
-<p>omitted</p>
-</div>
-</div>
-<div id="existence-of-pure-and-mixed-strategy-nash-equilibria" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Existence of Pure and
-Mixed Strategy Nash Equilibria</h2>
-<div id="notation-mixed-best-response-correspondence" class="section level4" number="1.1.0.1">
-<h4><span class="header-section-number">1.1.0.1</span> Notation: “Mixed
-Best Response Correspondence”</h4>
-<p>We’ve already seen one correspondence: <span class="math inline">\(BR_i: S_{-i} \rightrightarrows S_i\)</span> such
-that <span class="math display">\[BR_i(s_{-i}) = \{s_i \in S_i: s_i
-\text{ is a best response to } s_{-i}\}.\]</span></p>
-<p>Now, we have <span class="math inline">\(\tilde{BR}_i: \Pi_{j \neq i}
-\Delta (S_j) \rightrightarrows \Delta(S_i)\)</span> such that <span class="math display">\[\tilde{BR}_i(\sigma_{-i}) = \{\sigma_i \in
-\Delta(S_i): \sigma_i \text{ is a best response under }
-\sigma_{-i}\}.\]</span></p>
-<p>For all players:</p>
-<p><span class="math display">\[\tilde{BR}: \Pi_{i=1}^I \Delta(S_i)
-\rightrightarrows \Pi_{i=1}^I \Delta(S_i) \text{ such that }
-\tilde{BR}_i(\sigma_1, ..., \sigma_I) = \Pi_{i=1}^I \tilde{BR}
-(\sigma_1, ..., \sigma_{i-1}, \sigma_{i+1}, ..., \sigma_I).\]</span></p>
-</div>
-<div id="result-ne-iff-fixed-point-of-br" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Result “NE <span class="math inline">\(\iff\)</span> fixed point of BR”</h3>
+<div id="noncooperative-bargaining" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Noncooperative
+Bargaining</h1>
+<div id="model-divide-a-dollar" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Model “Divide a
+dollar”</h3>
 <ul>
-<li><span class="math inline">\((s_1^*, ..., s_I^*)\)</span> is a PSNE
-<span class="math inline">\(\iff (s_1^*, ..., s_I^*) \in BR(s_1^*, ...,
-s_I^*) \iff\)</span> fixed point of <span class="math inline">\(BR\)</span>.</li>
-<li><span class="math inline">\((\sigma_1^*, ..., \sigma_I^*)\)</span>
-is a MSNE <span class="math inline">\(\iff (s_1^*, ..., s_I^*) \in
-\tilde{BR}(\sigma_1^*, ..., \sigma_I^*) \iff\)</span> fixed point of
-<span class="math inline">\(\tilde{BR}\)</span>.</li>
+<li>Two players simultaneously submit demands <span class="math inline">\(d_i \in [0,1]\)</span></li>
+<li>Continuum of Nash equilibria–this will lead us to look at SPE
+instead.</li>
 </ul>
 </div>
-<div id="thm-kakutanis-fixed-point-thm" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Thm “Kakutani’s
-fixed point thm”</h3>
-<p>Let <span class="math inline">\(X\)</span> be nonempty compact convex
-set. If <span class="math inline">\(F\)</span> is nonempty,
-convex-valued, and has a closed graph, then <span class="math inline">\(F\)</span> has a fixed point.</p>
-</div>
-<div id="thm-1-conditions-to-guarantee-existence-of-psne" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Thm 1 “conditions
-to guarantee existence of PSNE”</h3>
-<p>Fix a game where, for each <span class="math inline">\(i = 1, ...,
-I\)</span>, if</p>
-<ol style="list-style-type: decimal">
-<li>there exists an <span class="math inline">\(n_i\)</span> such that
-<span class="math inline">\(S_i\)</span> is a nonempty, compact, convex
-subset of <span class="math inline">\(\mathbb{R}^{n_i}\)</span>,</li>
-<li><span class="math inline">\(u_i: S \rightarrow \mathbb{R}\)</span>
-is continuous, and</li>
-<li>for each <span class="math inline">\(s_{-i}\)</span>, holding <span class="math inline">\(s_i\)</span> fixed, <span class="math inline">\(u_i(\cdot, s_{-i}): S_i \rightarrow
-\mathbb{R}\)</span> is quasiconcave.</li>
-</ol>
-<blockquote>
-<p>nonempty: from <span class="math inline">\(S_i\)</span> being compact
-and continuity of utility fn (BR has to be nonempty)</p>
-</blockquote>
-<blockquote>
-<p>closed-graph: from continuity of <span class="math inline">\(u_i\)</span></p>
-</blockquote>
-<blockquote>
-<p>convex-valued (<span class="math inline">\(F\)</span>): from
-quasiconcavity of <span class="math inline">\(u_i(\cdot, s_{-i}): S_i
-\rightarrow \mathbb{R}\)</span></p>
-</blockquote>
-</div>
-<div id="thm-2-conditions-to-guarantee-existence-of-msne" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> Thm 2 “conditions
-to guarantee existence of MSNE”</h3>
-<p>For each finite game, there exists a MSNE.</p>
-</div>
-<div id="thm-3-glicksbergs-thm" class="section level3" number="1.1.5">
-<h3><span class="header-section-number">1.1.5</span> Thm 3 “Glicksberg’s
-thm”</h3>
-<p>Fix a game, <span class="math inline">\(G\)</span> where, for each
-<span class="math inline">\(i\)</span>,</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(S_i\)</span> is compact metric space,
-and</li>
-<li><span class="math inline">\(u_i: S \rightarrow \mathbb{R}\)</span>
-is continuous.</li>
-</ol>
-<p>Then <span class="math inline">\(G\)</span> has a MSNE.</p>
-<div id="remark-8" class="section level4" number="1.1.5.1">
-<h4><span class="header-section-number">1.1.5.1</span> Remark 8</h4>
-<p>Glicksberg’s thm doesn’t tell us that the assumptions of compactness
-and continuity are interesting. E.g., first-price auctions are
-discontinuous.</p>
-</div>
-<div id="remark-9" class="section level4" number="1.1.5.2">
-<h4><span class="header-section-number">1.1.5.2</span> Remark 9</h4>
-<p>Glicksberg’s thm only tells us there is some equilibrium–there may be
-many.</p>
-</div>
-<div id="remark-10" class="section level4" number="1.1.5.3">
-<h4><span class="header-section-number">1.1.5.3</span> Remark 10</h4>
-<p>Existence results are most useful if there are qualitative results of
-how equlibria vary with interesting parameters of the model/game.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="rationalizability-and-iterated-dominance" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Rationalizability and
-Iterated Dominance</h1>
-<p><strong>Example 1</strong> “motivation for beliefs: can have wrong
-beliefs now.”</p>
-<div id="term-belief" class="section level4" number="2.0.0.1">
-<h4><span class="header-section-number">2.0.0.1</span> Term
-“belief”</h4>
-<p>Belief of player <span class="math inline">\(i\)</span>: <span class="math inline">\(\mu_i \in \Delta(S_{-i})\)</span></p>
-</div>
-<div id="def-best-response-with-beliefs" class="section level3" number="2.0.1">
-<h3><span class="header-section-number">2.0.1</span> Def “best response
-with beliefs”</h3>
-<p>Fix a nonempty set <span class="math inline">\(Q_i \subseteq
-S_i\)</span>. Say <em><span class="math inline">\(s_i\)</span> is a best
-response under <span class="math inline">\(\mu_i\)</span> given <span class="math inline">\(Q_i\)</span></em> if <span class="math inline">\(s_i \in Q_i\)</span> and <span class="math display">\[\int_{S_{-i}} u_i(s_i, s_{-i})d\mu_i \geq
-\int_{S_{-i}} u_i(r_i, s_{-i})d\mu_i, ~\forall r_i \in Q_i.\]</span> Say
-<em><span class="math inline">\(s_i\)</span> is a best response under
-<span class="math inline">\(\mu_i\)</span></em> if it is a best response
-under <span class="math inline">\(\mu_i\)</span> given <span class="math inline">\(S_i\)</span>.</p>
-<p>Or, in discrete settings: <span class="math display">\[\sum_{s_{-i}
-\in S_{-i}} u_i(s_i, s_{-i})\mu_i(s_{-i}) \geq \sum_{s_{-i} \in S_{-i}}
-u_i(r_i, s_{-i})\mu_i(s_{-i}), ~\forall r_i \in Q_i.\]</span></p>
-</div>
-<div id="def-justifiable" class="section level3" number="2.0.2">
-<h3><span class="header-section-number">2.0.2</span> Def
-“justifiable”</h3>
-<p>Fix a nonempty (candidate subset) <span class="math inline">\(Q_{-i}
-\subseteq S_{-i}\)</span>. Say <em><span class="math inline">\(s_i\)</span> is justifiable given <span class="math inline">\(Q_{-i}\)</span></em> if there exists <span class="math inline">\(\mu_i \in \Delta(S_{-i})\)</span> such that</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(s_i\)</span> is a best response under
-<span class="math inline">\(\mu_i\)</span> and</li>
-<li><span class="math inline">\(\mu_i(Q_{-i})=1\)</span>.</li>
-</ol>
-<p>Say <span class="math inline">\(s_i\)</span> is <em>justifiable</em>
-if it is justifiable given <span class="math inline">\(S_{-i}\)</span>.</p>
-</div>
-<div id="def-rationalizable-sets" class="section level3" number="2.0.3">
-<h3><span class="header-section-number">2.0.3</span> Def “rationalizable
-sets”</h3>
-<p>Let <span class="math inline">\(R_i^0 = S_i; R_{-i}^0 =
-S_{-i}.\)</span></p>
-<p>Inductively define sets <span class="math inline">\(R_i^m\)</span>
-and <span class="math inline">\(R_{-i}^m\)</span> such that</p>
+<div id="def-ultimatum-game" class="section level3" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> Def “Ultimatum
+Game”</h3>
 <ul>
-<li><span class="math inline">\(R_i^{m+1} = \{s_i \in S_i: s_i \text{ is
-justifiable given } R_{-i}^m\}\)</span>, and</li>
-<li><span class="math inline">\(R_{-i}^{m+1} = \Pi_{j \neq
-i}R_{j}^{m+1}\)</span>.</li>
-</ul>
-<p>Additional notation:</p>
-<ul>
-<li><span class="math inline">\(R_i^\infty = \cap_{m\geq 0}\)</span> is
-the set of rationalizable strategies for <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(R^\infty = \Pi_{i=1}^I
-R_i^\infty\)</span> is the set of rationalizable strategy profiles.</li>
-<li><span class="math inline">\(R^m = \Pi_{i=1}^I R_i^m\)</span> is the
-set of <span class="math inline">\(m-\)</span>rationalizable strategy
-profiles.</li>
-</ul>
-<p><strong>Examples 2-4</strong> “which strategies are justifiable?”</p>
-</div>
-<div id="def-undominated" class="section level3" number="2.0.4">
-<h3><span class="header-section-number">2.0.4</span> Def
-“(un)dominated”</h3>
-<p>Fix <span class="math inline">\(Q_1, ..., Q_I\)</span> where each
-<span class="math inline">\(Q_j \subseteq S_j\)</span>.</p>
-<p>Say <em><span class="math inline">\(s_i\)</span> is dominated given
-<span class="math inline">\(\Pi_{j=1}^I Q_j\)</span></em> if <span class="math inline">\(s_i \in Q_i\)</span> and there exists a <span class="math inline">\(\sigma_i \in \Delta(S_i)\)</span> such that <span class="math display">\[u_i(\sigma_i,s_{-i}) &gt;
-u_i(s_i,s_{-i}),~\forall s_{-i} \in \Pi_{j \neq i}^I Q_j.\]</span></p>
-<p>Say <em><span class="math inline">\(s_i\)</span> is undominated given
-<span class="math inline">\(\Pi_{j=1}^I Q_j\)</span></em> if it is not
-dominated given <span class="math inline">\(\Pi_{j=1}^I
-Q_j\)</span>.</p>
-<p>Say <em><span class="math inline">\(s_i\)</span> is
-(un)dominated</em> if it is (un)dominated given <span class="math inline">\(S\)</span>.</p>
-</div>
-<div id="def-undominated-sets" class="section level3" number="2.0.5">
-<h3><span class="header-section-number">2.0.5</span> Def “undominated
-sets”</h3>
-<p>Let <span class="math inline">\(U_i^0 = S_i.\)</span></p>
-<p>Inductively define <span class="math inline">\(U_i^m\)</span> such
-that <span class="math display">\[U_i^{m+1} = \{s_i \in S_i: s_i \text{
-is undominated given } U_{-i}^m\}.\]</span></p>
-<p>Additional notation:</p>
-<ul>
-<li><span class="math inline">\(U_i^\infty = \cap_{m\geq
-0}U_i^m\)</span> is the set of undominated strategies for <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(U^m = \Pi_{i=1}^I R_i^m\)</span> is the
-set of <span class="math inline">\(m-\)</span>undominated strategy
-profiles.</li>
-<li><span class="math inline">\(U^\infty = \Pi_{i=1}^I
-U_i^\infty\)</span> is the set of <em>iteratively undominated</em> (IU)
-strategy profiles.</li>
+<li>“sequential” but only one round (P1 makes TIOLI offer to P2 who
+accepts or rejects)</li>
+<li><strong>Prop:</strong> has a <strong>unique</strong> SPE in which P1
+offers (1,0) and P2 accepts any offer.</li>
+<li>multiple NE in the subgame following the offer, but P1 only has a BR
+if P2 accepts (1,0).</li>
 </ul>
 </div>
-<div id="thm-1-rm-um" class="section level3" number="2.0.6">
-<h3><span class="header-section-number">2.0.6</span> Thm 1 “<span class="math inline">\(R^m = U^m\)</span>”</h3>
-<p>Fix a finite game. <span class="math inline">\(R^m = U^m, ~\forall
-m.\)</span></p>
-</div>
-<div id="prop-1-justifiable-iff-undominated" class="section level3" number="2.0.7">
-<h3><span class="header-section-number">2.0.7</span> Prop 1 “justifiable
-<span class="math inline">\(\iff\)</span> undominated”</h3>
-<p>Fix a finite game. A strategy <span class="math inline">\(s_i\)</span> is justifiable if, and only if, it is
-undominated.</p>
-</div>
-<div id="def-hyperplane" class="section level3" number="2.0.8">
-<h3><span class="header-section-number">2.0.8</span> Def
-“Hyperplane”</h3>
-<p>A hyperplane in <span class="math inline">\(\mathbb{R}^n\)</span> is
-a set of the form <span class="math display">\[H[\vec{p}, \alpha] =
-\{\vec{x} \in \mathbb{R}^n: \vec{p} \cdot \vec{x}= \alpha\}\]</span> for
-<span class="math inline">\(\vec{p} \in \mathbb{R}^n \setminus
-\{0\}\)</span> and <span class="math inline">\(\alpha \in
-\mathbb{R}\)</span>.</p>
-</div>
-<div id="def-supporting-hyperplane" class="section level3" number="2.0.9">
-<h3><span class="header-section-number">2.0.9</span> Def “supporting
-hyperplane”</h3>
-<p>Fix <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span> and
-<span class="math inline">\(\vec{x} \in A\)</span>. Say <span class="math inline">\(\vec{p} \in \mathbb{R}^n\)</span> (with <span class="math inline">\(\vec{p}\neq \vec{0}\)</span>) <em>supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span></em> if <span class="math display">\[\vec{p} \cdot \vec{x} \geq \vec{p} \cdot \vec{y},
-\forall y \in A.\]</span></p>
-<p>Say <span class="math inline">\(H[\vec{p}, \alpha]\)</span> supports
-<span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> if <span class="math inline">\(\vec{p}\)</span> supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> and <span class="math inline">\(\vec{p} \cdot \vec{x} = \alpha\)</span>.</p>
-</div>
-<div id="thm-supporting-hyperplane-theorem" class="section level3" number="2.0.10">
-<h3><span class="header-section-number">2.0.10</span> Thm “Supporting
-Hyperplane Theorem”</h3>
-<p>Let <span class="math inline">\(A \subseteq \mathbb{R}^n\)</span>,
-convex and <span class="math inline">\(\vec{x} \in A\)</span>. There
-exists some <span class="math inline">\(\vec{p} \in
-\mathbb{R}^n\)</span> (with <span class="math inline">\(\vec{p}\neq
-\vec{0}\)</span>) such that <span class="math inline">\(\vec{p}\)</span>
-supports <span class="math inline">\(A\)</span> at <span class="math inline">\(\vec{x}\)</span> if and only if <span class="math inline">\(\vec{x} \notin int(A)\)</span>. (i.e., <span class="math inline">\(\vec{x} \in\)</span> boundary(<span class="math inline">\(A\)</span>))</p>
-<p><strong>Example 6</strong> “weakly dominated”</p>
-</div>
-<div id="lemma-1-later-sets-subsets-of-earlier-subsets" class="section level3" number="2.0.11">
-<h3><span class="header-section-number">2.0.11</span> Lemma 1 “later
-sets subsets of earlier subsets”</h3>
-<p>For each <span class="math inline">\(i = 1, ..., I\)</span> and each
-<span class="math inline">\(m\geq 0\)</span>, <span class="math inline">\(R_i^{m+1} \subseteq R_i^m\)</span>.</p>
-</div>
-<div id="cor-0.1-rationalizable-set-stops-shrinking-at-some-point" class="section level3" number="2.0.12">
-<h3><span class="header-section-number">2.0.12</span> Cor 0.1
-“rationalizable set stops shrinking at some point”</h3>
-<p>If the game is finite, there exists some number <span class="math inline">\(M\)</span> such that <span class="math inline">\(R^m = R^M\)</span> for all <span class="math inline">\(m \geq M\)</span>.</p>
-<p><strong>Example 0.1</strong> NEED TO WORK THROUGH</p>
-</div>
-<div id="prop-1-nonempty-rationalizable-set-exists-if-compact-and-continuous" class="section level3" number="2.0.13">
-<h3><span class="header-section-number">2.0.13</span> Prop 1 “nonempty
-rationalizable set exists if compact and continuous”</h3>
-<p>Fix a game <span class="math inline">\(G = (S_i, u_i: i = 1, ...,
-I)\)</span> where each <span class="math inline">\(S_i\)</span> is a
-compact metrics space and each <span class="math inline">\(u_i\)</span>
-is continuous. Then the set of rationalizable strategy profiles is
-nonempty.</p>
-</div>
-<div id="def-weakly-dominated" class="section level3" number="2.0.14">
-<h3><span class="header-section-number">2.0.14</span> Def “Weakly
-Dominated”</h3>
-<p>Fix non-empty sets <span class="math inline">\(Q_1, ...,
-Q_I\)</span>. Say <span class="math inline">\(s_i\)</span> is <em>weakly
-dominated given</em> <span class="math inline">\(\Pi_{j=1}^I
-Q_j\)</span> if <span class="math inline">\(s_i \in Q_i\)</span> and
-there exists <span class="math inline">\(\sigma_i \in
-\Delta(Q_i)\)</span> so that</p>
+<div id="model-finite-alternating-offer-bargaining" class="section level3" number="1.0.3">
+<h3><span class="header-section-number">1.0.3</span> Model “Finite
+Alternating-Offer Bargaining”</h3>
+<p>Regularities:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(u_i(\sigma_i, s_{-i}) \geq u_i(s_i,
-s_{-i})\)</span> for each <span class="math inline">\(s_{-i} \in
-\Pi_{j\neq i} Q_j\)</span>, and</li>
-<li><span class="math inline">\(u_i(\sigma_i, s_{-i}) &gt; u_i(s_i,
-s_{-i})\)</span> for some <span class="math inline">\(s_{-i} \in
-\Pi_{j\neq i} Q_j\)</span>.</li>
-</ol>
-<p>Say <span class="math inline">\(s_i\)</span> is <em>weakly
-dominated</em> if it is weakly dominated given <span class="math inline">\(S\)</span>.</p>
-</div>
-<div id="def-iterated-weak-dominance" class="section level3" number="2.0.15">
-<h3><span class="header-section-number">2.0.15</span> Def “Iterated Weak
-Dominance”</h3>
-<p>Set <span class="math inline">\(W_i^0 = S_i\)</span>. Inductively
-define <span class="math inline">\(W_i^m\)</span> such that <span class="math display">\[W_i^{m+1} = \{s_i \in W_i^m: s_i \text{ is not
-weakly dominated given } \Pi^{I}_{j=1}W_j^m\}.\]</span></p>
-<p>Then <span class="math inline">\(W_i^{m+1}\)</span> is the set of
-strategies of <span class="math inline">\(i\)</span> that survive <span class="math inline">\((m+1)\)</span> rounds of iterated weak
-dominance.</p>
-<p>Set <span class="math inline">\(W_i^\infty = \cap_{m\geq
-0}W_i^m\)</span>. Then <span class="math inline">\(W^\infty =
-\Pi_{i=1}^I W_i^\infty\)</span> is the set of strategy profiles that
-survive iterated weak dominance.</p>
-</div>
-</div>
-<div id="sequential-games-of-complete-information" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Sequential Games of
-Complete Information</h1>
-<p><strong>Example 1</strong> Entrant (E) can <em>enter</em> or stay
-<em>out</em>. If E enters, then incumbent monopolist (I) can
-<strong>F</strong>ight or <strong>A</strong>cquiesce.</p>
-<p>Profits to (E, I), subject to <span class="math inline">\(M \geq
-2\)</span>, are:</p>
-<ul>
-<li>(out, <span class="math inline">\(*\)</span>): <span class="math inline">\((0,M)\)</span></li>
-<li>(enter, A): <span class="math inline">\((\frac{M}{2},\frac{M}{2})\)</span></li>
-<li>(enter, F): <span class="math inline">\((-1,1)\)</span></li>
-</ul>
-<p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QAqRXhpZgAASUkqAAgAAAABADEBAgAHAAAAGgAAAAAAAABQaWNhc2EAAP/bAIQACAYGBwYQCAcHBxAQCBAQExATEBAQGBAQEBATEBUVFRAQEBUYIh0VGCAYEBAdKx0gJSUoKCgVGy0xLCYwIicoJgEJCQkNDA0ZDg4ZKiIdIi8qLSstJycoLjAwKi0wJzIqLiYqJzAnJi0qLy0qLy0tJy8oJycnLSctLy0tLS0mJy0n/8AAEQgD6AYAAwERAAIRAQMRAf/EABwAAQACAwEBAQAAAAAAAAAAAAAFBwQGCAMCAf/EAFwQAAIBAwIDBQQFCAQJCAcHBQABAgMEEQUGEiExBxNBUWEUInGBCCMykaEVM0JSYnKCkhZDorEkU2Nzk7LBwtElNIOjs8Ph8BcnRJTS0/EYVFVkdKS0NTZFVsT/xAAbAQEAAwEBAQEAAAAAAAAAAAAABAUGAwIBB//EADwRAQACAQIDBAkDAwMDBAMAAAABAgMEEQUhMRJBUWETcYGRobHB0fAUIjIGQuEVI/EzUmIWJHLSJTRD/9oADAMBAAIRAxEAPwC/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARq1u0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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z" /></p>
-<div id="remark-1-1" class="section level4" number="3.0.0.1">
-<h4><span class="header-section-number">3.0.0.1</span> Remark 1</h4>
-<p>Some people will see an example like example 1 and conclude “the
-strategic form game does not suffice.” This is incorrect. We will see
-(later) that the problem is the solution concept of Nash Equilibrium,
-not the strategic form, per se.</p>
-<p>Visualization vs Formalization - omitted for now.</p>
-</div>
-<div id="def-extensive-form-model-a-sequential-game-as-an-extensive-form-game" class="section level3" number="3.0.1">
-<h3><span class="header-section-number">3.0.1</span> Def Extensive Form
-(model a sequential game as an extensive-form game)</h3>
-<p>We model a sequential game as an extensive form game: <span class="math inline">\(\Gamma = (A1, ..., A_J; N; H_1, ..., H_I; U_1,
-..., U_I)\)</span>.</p>
-<p><strong>Extensive-Form 1:</strong> Players <span class="math inline">\(1, ..., I\)</span></p>
-<p><strong>Extensive-Form 2:</strong> Action Sets <span class="math inline">\((A_1, ..., A_I)\)</span>, where <span class="math inline">\(A_i\)</span> is the set of actions player i can
-choose <em>somewhere</em> in the game. E.g., <span class="math inline">\(A_E = \{O, E, *\}, A_I = \{F, A, *\}\)</span></p>
-<p><strong>Extensive-Form 3:</strong> Nodes <span class="math inline">\(N=\)</span> set of nodes.</p>
-<blockquote>
-<p>Each non-terminal node, <span class="math inline">\(n\)</span> is
-associated with a set <span class="math inline">\(A_i(n) =\)</span> set
-of actions of <span class="math inline">\(i\)</span> that can be played
-at <span class="math inline">\(n\)</span>.</p>
-</blockquote>
-<blockquote>
-<p><span class="math inline">\(\Pi_{i=1}^I A_i(n) =\)</span>set of
-action profiles that can be played at <span class="math inline">\(n\)</span>.</p>
-</blockquote>
-<blockquote>
-<p><span class="math inline">\(A_i(n) \neq \phi\)</span> but might be a
-singleton (e.g., <span class="math inline">\(A_i(\phi) =
-\{*\}\)</span>).</p>
-</blockquote>
-<blockquote>
-<p>$Z = $ set of terminal nodes. We don’t define <span class="math inline">\(A_i(n)\)</span> at terminal nodes.</p>
-</blockquote>
-<p>Think of nodes as being defined by sequences of action profiles.
-E.g.,</p>
-<ul>
-<li>initial node = the empty sequence, <span class="math inline">\(\phi\)</span>, because nothing has been
-played.</li>
-<li><span class="math inline">\(n_1 = (O, *)\)</span></li>
-<li><span class="math inline">\(n_2 = (E, *)\)</span></li>
-<li><span class="math inline">\(n_3 = ((E, *), (*, A))\)</span></li>
-<li><span class="math inline">\(n_4 = ((E, *), (*, F))\)</span></li>
-</ul>
-<p><strong>Extensive-Form 4:</strong> Information Sets <span class="math inline">\(H_1, ..., H_I\)</span></p>
-<ul>
-<li><span class="math inline">\(H_i\)</span> is the set of information
-sets for <span class="math inline">\(i\)</span>
-<ul>
-<li>if <span class="math inline">\(h_i \in H_i\)</span> then <span class="math inline">\(h_i \subseteq N \setminus Z\)</span></li>
-</ul></li>
-<li><span class="math inline">\(H_i\)</span> forms a partition of <span class="math inline">\(N \setminus Z\)</span></li>
-<li>If <span class="math inline">\(n, n&#39; \in h_i, h_i \in
-H_i\)</span> then <span class="math inline">\(A_i(n) =
-A_i(n&#39;)\)</span></li>
-</ul>
-<p><strong>Extensive-Form 5:</strong> Payoff Functions</p>
-<p>Mapped from terminal nodes to numbers: <span class="math display">\[U_i: Z \rightarrow \mathbb{R}\]</span></p>
-<p>Typically add</p>
+<li>Immediate agreement, efficient outcome</li>
+<li>Proposer’s offer makes responder indifferent</li>
+<li>Unique SPE</li>
+<li>Division of surplus depends:
 <ol style="list-style-type: decimal">
-<li>No absentmindedness (rules out forgetting if you moved at all),
-and</li>
-<li>Perfect recall (rules out a situation where I remember I moved, but
-not what I chose).</li>
+<li><span class="math inline">\(x_1^*(T, \delta) = \sum_{t=1}^T
+(-\delta)^{t-1}= \frac{1-(-\delta)^T}{1+\delta}\)</span></li>
+<li><span class="math inline">\(\delta \rightarrow 1
+\Rightarrow\)</span> last mover takes all</li>
+<li><span class="math inline">\(T\rightarrow\infty \Rightarrow X^*
+\rightarrow \frac{1}{1+\delta}\)</span></li>
+<li><span class="math inline">\(T\rightarrow\infty\)</span> then <span class="math inline">\(\delta \rightarrow 1\Rightarrow\)</span> equal
+sharing</li>
+</ol></li>
 </ol>
-<div id="term-no-absentmindedness" class="section level4" number="3.0.1.1">
-<h4><span class="header-section-number">3.0.1.1</span> Term “No
-absentmindedness”</h4>
-<p>Intuitively, this requires that <span class="math inline">\(i\)</span> does not forget that she made
-<em>some</em> previous choice. So, there is no <span class="math inline">\(h_i \in H_i\)</span> with <span class="math inline">\(n, n&#39; \in h_i\)</span> so that <span class="math inline">\(n\)</span> strictly precedes <span class="math inline">\(n&#39;\)</span>. (If there were such an <span class="math inline">\(n\)</span> and <span class="math inline">\(n&#39;\)</span>, then at <span class="math inline">\(n&#39;\)</span> player <span class="math inline">\(i\)</span> has forgotten that she was at <span class="math inline">\(n\)</span> and made a choice.)</p>
-</div>
-<div id="term-perfect-recall" class="section level4" number="3.0.1.2">
-<h4><span class="header-section-number">3.0.1.2</span> Term “Perfect
-recall”</h4>
-<p>Intuitively, this requires that <span class="math inline">\(i\)</span> remembers <em>which</em> previous
-choice they made. So there is no situation where, say, <span class="math inline">\(i\)</span> knows they moved previously but cannot
-remember if they chose <span class="math inline">\(l\)</span> or <span class="math inline">\(r\)</span>.</p>
-</div>
-</div>
-<div id="def-specific-games-of-interest" class="section level3" number="3.0.2">
-<h3><span class="header-section-number">3.0.2</span> Def “Specific Games
-of Interest”</h3>
-<ol style="list-style-type: decimal">
-<li>Simultaneous-move games: the only non-terminal node is <span class="math inline">\(\phi\)</span>.</li>
-<li>Games with observable actions: for each player, <span class="math inline">\(i\)</span>, each <span class="math inline">\(h_i
-\in H_i\)</span> is a singleton.</li>
-<li>Perfect-info games: games with observable actions where, at each
-info set there is at most one active player</li>
-</ol>
-<div id="term-active-player" class="section level4" number="3.0.2.1">
-<h4><span class="header-section-number">3.0.2.1</span> Term “Active
-player”</h4>
-<p><span class="math display">\[|A_i(n)| \geq 2\]</span></p>
-<p><strong>Example 2</strong> “Introduces (derived) strategies”</p>
-</div>
-</div>
-<div id="def-strategy" class="section level3" number="3.0.3">
-<h3><span class="header-section-number">3.0.3</span> Def “strategy”</h3>
-<p>A strategy for <span class="math inline">\(i\)</span> is an <span class="math inline">\(s_i: H_i \rightarrow A_i\)</span> such that <span class="math inline">\(s_i(h_i) \in A_i(h_i)\)</span>.</p>
-<p>(Note: we’ve only allowed pure strategies so far, but mixed will fit
-in later).</p>
 <blockquote>
-<p>A strategy is a full contingency plan of action. It tells me what to
-do at each info set.</p>
+<p>Every game in this class has a unique subgame perfect equilibrium,
+and in it there is immediate agreement in the first round.</p>
 </blockquote>
 <blockquote>
-<p>A strategy will specify 1 action at EACH <span class="math inline">\(h_i \in H_i\)</span> where <span class="math inline">\(i\)</span> is making a choice.</p>
+<p>The proposer in round T offers to take everything, and the responder
+accepts every offer</p>
 </blockquote>
-<div id="term-path-function" class="section level4" number="3.0.3.1">
-<h4><span class="header-section-number">3.0.3.1</span> Term “Path
-function”</h4>
-<p><span class="math display">\[\zeta: S \rightarrow Z\]</span></p>
 </div>
-<div id="term-strategic-form-payoff-function" class="section level4" number="3.0.3.2">
-<h4><span class="header-section-number">3.0.3.2</span> Term
-“strategic-form payoff function”</h4>
-<p><span class="math display">\[u_i: S \rightarrow \mathbb{R} \text{
-such that } u_i(s) = U_i(\zeta(s)),  \forall s\in S.\]</span>
-<strong>Example 3:</strong> In a simultaneous game: <span class="math inline">\(S_i = A_i\)</span>.</p>
-<p><strong>Analyzing games: Solution concepts</strong></p>
+<div id="thm-infinite-alternating-offer-bargaining-game-outcome" class="section level3" number="1.0.4">
+<h3><span class="header-section-number">1.0.4</span> Thm “infinite
+alternating-offer bargaining game outcome”</h3>
+<p>The infinite horizon alternating-offer bargaining game with discount
+factor <span class="math inline">\(\delta &lt; 1\)</span> has a unique
+subgame perfect equilibrium, in which Player 1 offers the payoff vector
+<span class="math inline">\((\frac{1}{1+\delta},
+\frac{\delta}{1+\delta})\)</span> in the first round and Player 2
+accepts.</p>
+</div>
+</div>
+<div id="finitely-repeated-games" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Finitely Repeated
+Games</h1>
+<!-- Examples: -->
+<!-- * Prisoner's dilemma twice -->
+<!-- * Augmented prisoner's dilemma twice -->
+<div id="model-repeated-games" class="section level3" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Model “Repeated
+Games”</h3>
 <ul>
-<li>we can always write down the strategic form of the game and solve by
-NE. The problem is that NE doesn’t require sequentially optimal
-behavior.</li>
-<li>instead, we need sequential optimality and for the players to
-believe other players are also sequentially optimizing.</li>
+<li>Stage Game <span class="math inline">\(\langle N, A, \pi
+\rangle\)</span> (Normal form game)</li>
+<li>Players <span class="math inline">\(N = \{1, ..., N\}\)</span></li>
+<li>Action profiles <span class="math inline">\(A = A_1 \times \cdot
+\cdot \cdot A_n\)</span></li>
+<li>Stage payoffs <span class="math inline">\(\pi: A \rightarrow
+\mathbb{R}^n\)</span> (uniformly bounded) (i.e., <span class="math inline">\(\pi_i(a)\)</span> is <span class="math inline">\(i\)</span>’s payoff from action profile <span class="math inline">\(a\)</span>)</li>
+<li>Periods <span class="math inline">\(t = 1, ..., T\)</span>, where
+<span class="math inline">\(T &lt; \infty\)</span></li>
+<li>Discount factor <span class="math inline">\(\delta &gt; 0 (\delta
+&lt; 1 \text{ if } T = \infty)\)</span></li>
 </ul>
 </div>
-</div>
-<div id="def-subgame" class="section level3" number="3.0.4">
-<h3><span class="header-section-number">3.0.4</span> Def “subgame”</h3>
-<p>We identify subgames with singleton information sets, <span class="math inline">\(h = \{n\}\)</span> where</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(h\)</span> is an information set for all
-<span class="math inline">\(i\)</span>, and</li>
-<li>if <span class="math inline">\(n&#39;\)</span> follows <span class="math inline">\(n\)</span>, and <span class="math inline">\(n&#39;
-\in h_i&#39;\)</span>, then all nodes in <span class="math inline">\(h_i&#39;\)</span> follow <span class="math inline">\(n\)</span>.</li>
-</ol>
-<p><strong>Facts about subgames:</strong></p>
+<div id="histories-and-strategies" class="section level3" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> “Histories and
+Strategies”</h3>
+<p>A strategy (in a repeated game) maps from the history of past play
+into an action for the current period.</p>
 <ul>
-<li>Each subgame is associated with a new strategic-form game which is
-associated with <span class="math inline">\(h\)</span>. We call this
-new, strategic form game <span class="math inline">\(G^h\)</span>
-(Remember, <span class="math inline">\(G\)</span> for strategic/normal,
-and <span class="math inline">\(\Gamma\)</span> for
-sequential/extensive).</li>
-<li>Intuitively, <span class="math inline">\(G^h\)</span> consists of
-strategies in the <em>original</em> strategic-form game that allow <span class="math inline">\(h\)</span>.</li>
-<li>Given <span class="math inline">\(s_i \in S_i\)</span>, write <span class="math inline">\(s_i^h\)</span> for a (potentially different)
-strategy that allows <span class="math inline">\(h\)</span> and
-otherwise agrees with <span class="math inline">\(s_i\)</span>.</li>
+<li>History <span class="math inline">\(h^t \equiv (a^1, ...,
+a^{t-1})\)</span>, <span class="math inline">\(h^1 \equiv
+\varnothing\)</span></li>
+<li>Possible <span class="math inline">\(t\)</span>-histories <span class="math inline">\(\mathcal{H} \equiv A^{t-1}\)</span></li>
+<li>Possible histories <span class="math inline">\(\mathcal{H} \equiv
+\cup_{t=1}^T\mathcal{H}^t\)</span></li>
+<li>Correlated behavior strategy profile <span class="math inline">\(\sigma: \mathcal{H} \rightarrow \Delta
+A\)</span></li>
+<li>A (pure) strategy is a function <span class="math inline">\(s_i:
+\mathcal{H} \rightarrow A_i\)</span></li>
+<li>a (behavioral) mixed strategy is defined in terms of strategy
+profiles to allow for correlation. So <span class="math inline">\(\sigma: \mathcal{H} \rightarrow \Delta
+A\)</span>.</li>
 </ul>
-<!-- > Notice: each subgame is its own strategic-form game -->
+<!-- Write, $\alpha \in \Delta A$ for a (possibly correlated) mixed action profile. -->
+<!-- $$\pi(\alpha) = \mathbb{E}[\pi(a)|\alpha]$$ -->
 </div>
-<div id="def-subgame-perfect-equilibrium-spe" class="section level3" number="3.0.5">
-<h3><span class="header-section-number">3.0.5</span> Def “Subgame
-Perfect Equilibrium (SPE)”</h3>
-<p>Call <span class="math inline">\((s_1^*, ..., s_I^*)\)</span> a
-<em>subgame perfect equilibrium</em> (SPE) if, for each subgame <span class="math inline">\(h\)</span>, <span class="math inline">\((s_1^{*h},
-..., s_I^{*h})\)</span> is a (pure strategy) Nash equilibrium of <span class="math inline">\(G^h\)</span>.</p>
-<p><strong>Example 3</strong> Battle of the sexes with an outside
-option.</p>
+<div id="def-utility" class="section level3" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Def “Utility”</h3>
+<p><span class="math display">\[\text{Total Utility} =
+\tilde{u}_i(\sigma) \equiv \sum_{t=1}^T \delta^{t-1} \sum_{h^t \in
+\mathcal{H}^t} \pi_i(\sigma(h^t))Pr(h^t|\sigma)\]</span></p>
+<p><span class="math display">\[\text{Average Utility} = u_i(\sigma)
+\equiv \frac{1-\delta}{1-\delta^T}\sum_{t=1}^T \delta^{t-1} \sum_{h^t
+\in \mathcal{H}^t} \pi_i(\sigma(h^t))Pr(h^t|\sigma)\]</span></p>
 </div>
-<div id="object-backward-induction-algorithm" class="section level3" number="3.0.6">
-<h3><span class="header-section-number">3.0.6</span> Object
-“Backward-induction algorithm”</h3>
-<ol style="list-style-type: decimal">
-<li>Look at each last nonterminal node and the player who moves there.
-Find <em>an</em> action that is a best response for that player at that
-node.</li>
-<li>Look at nonterminal nodes that are followed only by “last
-nonterminal nodes”. Find an action (for the player who moves at such a
-node) that is a best response given the behavior specified in step
-1.</li>
-<li>Repeat until we reach the start of the game.</li>
-</ol>
-<p>This delivers an action associated with each information set. Collect
-these actions into strategies of each player and we have an SPE.</p>
-<p>(re-run the algorithm for each action that is a best response at each
-node to find the full set of SPE)</p>
+<div id="def-non-contingent-strategy-profile" class="section level3" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Def “Non-contingent
+strategy profile”</h3>
+<p><span class="math inline">\(\sigma\)</span> is a non-contingent
+strategy profile if <span class="math display">\[\sigma(h^t) =
+\sigma(\hat{h}^t),  \forall h^t, \hat{h}^t \in \mathscr{H}^t, \forall t
+= 1, ..., T.\]</span></p>
 <blockquote>
-<p>Caution: Backward-induction applies only to perfect information
-games.</p>
+<p><span class="math inline">\(\sigma\)</span> is non-contingent if it
+specifies that in each period players should play some period-specific
+mixed action profile regardless of the history.</p>
 </blockquote>
-<p><strong>Example 4</strong> “SPE without observable actions may look
-peculiar”</p>
+</div>
+<div id="prop-13.1-non-contingent-equilibria" class="section level3" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Prop 13.1
+“Non-contingent equilibria”</h3>
+<p>Suppose <span class="math inline">\(T&lt;\infty\)</span>. If <span class="math inline">\(\sigma\)</span> is a non-contingent strategy
+profile such that <span class="math inline">\(\sigma(h^t)\)</span> is a
+stage game NE for all <span class="math inline">\(t = 1, ..., T\)</span>
+then <span class="math inline">\(\sigma\)</span> is a SPE.</p>
 <blockquote>
-<p>Important point: for the purpose of iterated weak dominance, it
-suffices to look at the “reduced strategic form”</p>
+<p>Any sequence of stage Nash profiles can be supported as the outcome
+of a SPE. (Watson)</p>
 </blockquote>
-<!-- #### Term "Realization-equivalent strategies" -->
-<div id="term-reduced-strategic-form" class="section level4" number="3.0.6.1">
-<h4><span class="header-section-number">3.0.6.1</span> Term “reduced
-strategic form”</h4>
-<p>The strategic form that collapses all realization-equivalent
-strategies into one “strategy”</p>
 </div>
+<div id="prop-13.2-unique-stage-game-equilibrium" class="section level3" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> Prop 13.2 “Unique
+Stage Game Equilibrium”</h3>
+<p>Suppose <span class="math inline">\(T&lt;\infty\)</span>. If <span class="math inline">\(\alpha^*\)</span> is the unique NE in the stage
+game, then the unique SPE in the repeated game is a non-contingent
+strategy profile <span class="math inline">\(\sigma^*\)</span> such
+that, for all <span class="math inline">\(h\in \mathscr{H}, \sigma^*(h)
+= \alpha^*\)</span>.</p>
 </div>
-<div id="def-behavioral-strategy" class="section level3" number="3.0.7">
-<h3><span class="header-section-number">3.0.7</span> Def “behavioral
-strategy”</h3>
-<p>A <em>behavioral strategy</em> of <span class="math inline">\(i\)</span> is a <span class="math inline">\(b_i:
-H_i \rightarrow \Delta(A_i)\)</span> such that <span class="math display">\[\forall h_i \in H_i,
-b_i(h_i)(A_i(h_i))=1.\]</span></p>
-<p>E.g., <span class="math inline">\(b_2(h)(l) = P(l|h) = \frac{1}{4} +
-\frac{1}{2}\)</span> and <span class="math inline">\(b_2(h&#39;)(l) =
-P(l|h&#39;) = \frac{1}{4} + \frac{1}{8}\)</span>.</p>
-<p><strong>Example 5</strong> Extending SPE to behavioral strategies
-(note: we do this in example only because the notation is
-cumbersome.)</p>
-</div>
-</div>
-<div id="misc" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Misc</h1>
-<div id="def-pareto-dominate" class="section level3" number="4.0.1">
-<h3><span class="header-section-number">4.0.1</span> Def “pareto
-dominate”</h3>
-<p>Say a strategy profile <span class="math inline">\((s_1&#39;, ...,
-s_I&#39;)\)</span> Pareto dominates <span class="math inline">\((s_1,
-..., s_I)\)</span> if</p>
+<div id="def-profitable-one-shot-deviation" class="section level3" number="2.0.7">
+<h3><span class="header-section-number">2.0.7</span> Def “profitable
+one-shot deviation”</h3>
+<p>A <em>profitable one-shot deviation</em> from <span class="math inline">\(\sigma\)</span> is a strategy <span class="math inline">\(\hat{\sigma}_i \neq \sigma_i\)</span> for some
+player <span class="math inline">\(i\)</span> such that:</p>
 <ol style="list-style-type: decimal">
-<li>for all <span class="math inline">\(i\)</span>, <span class="math inline">\(u_i(s_1&#39;, ..., s_I&#39;) \geq u_i(s_1, ...,
-s_I)\)</span> and</li>
-<li>for some <span class="math inline">\(i\)</span>, <span class="math inline">\(u_i(s_1&#39;, ..., s_I&#39;) &gt; u_i(s_1, ...,
-s_I)\)</span>.</li>
+<li>there exists a unique history <span class="math inline">\(\hat{h}^t
+\in \mathscr{H}\)</span> such that <span class="math inline">\(\hat{\sigma}_i(h) = \sigma_i(h), \forall h\neq
+\hat{h}\)</span> and</li>
+<li><span class="math inline">\(\tilde{u}_i(\hat{\sigma}_i|_{\hat{h}},\sigma_{-i}|_{\hat{h}})
+&gt; \tilde{u}_i(\sigma_i|_{\hat{h}})\)</span>.</li>
 </ol>
-<!-- # Steps to approach common questions - see Goodnotes -->
-<!-- ### Find all PSNE -->
-<!-- ### Show no PSNE Exists -->
-<!-- ### Find all MSNE (finite) -->
-<!-- ### Find a MSNE (infinite) -->
+</div>
+<div id="thm-one-shot-deviation-principle" class="section level3" number="2.0.8">
+<h3><span class="header-section-number">2.0.8</span> Thm “one-shot
+deviation principle”</h3>
+<p>In a finitely or infinitely repeated game, a strategy profile is a
+SPE if and only if it has no profitable one-shot deviations.</p>
+</div>
+<div id="model-infinite-cournot-duopoly" class="section level3" number="2.0.9">
+<h3><span class="header-section-number">2.0.9</span> Model “Infinite
+Cournot Duopoly”</h3>
+<ul>
+<li>Two firms simultaneously choose <em>quantities</em> in each
+period</li>
+<li>Demand curve (e.g., <span class="math inline">\(P = 12 -
+Q\)</span>)</li>
+<li>Zero costs</li>
+<li><span class="math inline">\(\delta &lt; 1\)</span></li>
+</ul>
+<p>Proposal:</p>
+<ul>
+<li>on path: produce 1/2 monopoly quantity each</li>
+<li>off path: produce Cournot quantity (i.e., stage game NE)</li>
+</ul>
+<p>Q. For what value of <span class="math inline">\(\delta\)</span> is
+this proposal a SPE?</p>
+<p>Stage game NE is <span class="math inline">\(produce\)</span></p>
+</div>
+<div id="model-infinite-bertrand-duopoly" class="section level3" number="2.0.10">
+<h3><span class="header-section-number">2.0.10</span> Model “Infinite
+Bertrand Duopoly”</h3>
+<ul>
+<li>Two firms simultaneously choose <em>prices</em> in each period</li>
+<li>Unit mass of consumers demand 1 unit at any price <span class="math inline">\(\leq 1\)</span></li>
+<li>lowest price gets the market; ties split</li>
+<li>Zero costs</li>
+<li><span class="math inline">\(\delta &lt; 1\)</span></li>
+</ul>
+<p>Proposal:</p>
+<ul>
+<li>on-path: set price = 1 (note: this means market is split)</li>
+<li>off-path: set price = 0</li>
+</ul>
+<p>Q. For what value of <span class="math inline">\(\delta\)</span> is
+this proposal a SPE?</p>
+</div>
+<div id="thm-nash-threat-folk-theorem" class="section level3" number="2.0.11">
+<h3><span class="header-section-number">2.0.11</span> Thm “Nash-Threat
+Folk Theorem”</h3>
+<p>If <span class="math inline">\(v\)</span> is feasible and
+Nash-individually rational, then there exists <span class="math inline">\(\underline{\delta}&lt;1\)</span> such that, for
+all <span class="math inline">\(\delta \in (\underline{\delta},
+1)\)</span>, <span class="math inline">\(v\)</span> is the average
+utility profile of an SPE given <span class="math inline">\(\delta\)</span>.</p>
+</div>
+<div id="def-feasible" class="section level3" number="2.0.12">
+<h3><span class="header-section-number">2.0.12</span> Def
+“feasible”</h3>
+<p>A payoff vector <span class="math inline">\(v \in
+\mathbb{R}^n\)</span> is <em>feasible</em> if <span class="math inline">\(v\)</span> is in the convex hull of <span class="math inline">\(\{\pi(a): a \in A\}\)</span></p>
+</div>
+<div id="def-nash-individually-rational" class="section level3" number="2.0.13">
+<h3><span class="header-section-number">2.0.13</span> Def
+“Nash-individually rational”</h3>
+<p>A payoff vector <span class="math inline">\(v \in
+\mathbb{R}^n\)</span> is <em>Nash-individually rational</em> if <span class="math display">\[v_i &gt; \underline{v}_i^{Nash} \equiv
+\min_{\alpha \in \Delta A \text{ is Nash}} \pi_i(\alpha), \forall
+i.\]</span></p>
 </div>
 </div>
 
