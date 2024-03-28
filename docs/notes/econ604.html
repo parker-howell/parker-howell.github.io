@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-03-25</h4>
+<h4 class="date">Last Updated: 2024-03-28</h4>
 
 </div>
 
@@ -1801,20 +1801,22 @@ S_i\)</span> such that for each <span class="math inline">\(i\)</span>
 and each <span class="math inline">\(s_i&#39; \in S_i\)</span>, <span class="math display">\[\mathbb{E}[u_i(s(\theta), \theta)] \geq
 \mathbb{E}[u_i(s_i&#39;(\theta_i), s_{-i}(\theta_{-i}),
 \theta)].\]</span></p>
-<blockquote>
-<p>Observation: A BNE is a NE in the game <span class="math inline">\(\langle N, S, \mathbb{E}[u] \rangle\)</span>.</p>
-</blockquote>
 </div>
-<div id="thm-bayesian-nash-equilibrium-if" class="section level3" number="3.1.4">
-<h3><span class="header-section-number">3.1.4</span> Thm “Bayesian Nash
+<div id="observation" class="section level3" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Observation</h3>
+<p>A BNE is a NE in the game <span class="math inline">\(\langle N, S,
+\mathbb{E}[u] \rangle\)</span>.</p>
+</div>
+<div id="thm-bayesian-nash-equilibrium-if" class="section level3" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Thm “Bayesian Nash
 Equilibrium if”</h3>
 <p>In a Bayesian game, <span class="math inline">\(\langle N, A, u,
 \Theta, \mu \rangle\)</span>, a strategy profile <span class="math inline">\(s = \times^n_{i=1} S_i\)</span> is a <em>Bayesian
 Nash Equilibrium</em> if <span class="math display">\[\mathbb{E}[u_i(s(\theta), \theta | \theta_i)]
 \geq \mathbb{E}[u_i(a_i, s_{-i}(\theta_{-i}) | \theta_i)], \forall a_i
 \in A_i, \theta_i \in \Theta_i, i \in N.\]</span></p>
-<div id="remark-1" class="section level4" number="3.1.4.1">
-<h4><span class="header-section-number">3.1.4.1</span> Remark</h4>
+<div id="remark-1" class="section level4" number="3.1.5.1">
+<h4><span class="header-section-number">3.1.5.1</span> Remark</h4>
 <p>This is also “only if” if <span class="math inline">\(\Theta\)</span>
 is finite and <span class="math inline">\(\mu\)</span> has full
 support.</p>
@@ -1823,9 +1825,121 @@ support.</p>
 </div>
 <div id="applications" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Applications</h2>
+<div id="model-cournot-duopoly-with-higher-order-beliefs" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Model “Cournot
+Duopoly with higher order beliefs”</h3>
+<ul>
+<li>2 firms simultaneously choose quantities facing a demand curve</li>
+<li>Firm 1 has zero costs</li>
+<li>Firm 2 is
+<ul>
+<li>type <span class="math inline">\(\theta_2 = L\)</span> (i.e., has
+low costs) with probability <span class="math inline">\(1-\alpha\)</span></li>
+<li>type <span class="math inline">\(\theta_2 = H\)</span> (i.e., has
+high costs) with probability <span class="math inline">\(\alpha\)</span></li>
+</ul></li>
+<li>Firm 1’s belief about Firm 2’s costs:
+<ul>
+<li>Type <span class="math inline">\(\theta_1 = l\)</span> (i.e.,
+believes <span class="math inline">\(\alpha_l = 1/4\)</span>) with
+probability <span class="math inline">\(1- \beta\)</span></li>
+<li>Type <span class="math inline">\(\theta_1 = h\)</span> (i.e.,
+believes <span class="math inline">\(\alpha_h = 3/4\)</span>) with
+probability <span class="math inline">\(\beta\)</span></li>
+</ul></li>
+</ul>
+</div>
+<div id="model-lemons" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Model “Lemons”</h3>
+<ul>
+<li>Seller privately knows his good has quality <span class="math inline">\(\theta \in [0,1]\)</span></li>
+<li>Buyer believes <span class="math inline">\(\theta \sim
+U[0,1]\)</span></li>
+<li>Seller chooses price <span class="math inline">\(p \in
+[0,1]\)</span></li>
+<li>Buyer chooses set <span class="math inline">\(E \subseteq
+[0,1]\)</span> of prices she will accept</li>
+</ul>
+<p>Analysis:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(E^* = \emptyset \Rightarrow\)</span>
+continuum of no-trade equilibria</li>
+<li><span class="math inline">\(E^* \neq \emptyset \Rightarrow
+E^*\)</span> contains its maximum, <span class="math inline">\(e^*\)</span></li>
+<li>Seller BR to <span class="math inline">\(e^*\)</span>: <span class="math inline">\(BR_s(e^*|\theta) = \begin{cases} e^* \text{ if }
+\theta &lt; \frac{e^*}{q} \\ (e^*,1] \text{ if } \theta &gt;
+\frac{e^*}{q} \end{cases}\)</span>.</li>
+<li><span class="math inline">\(E^* \neq \emptyset \Rightarrow e^* =
+0\)</span></li>
+<li><span class="math inline">\(E^* = \{0\} \Rightarrow\)</span>
+continuum of almost-no-trade equilibria</li>
+</ol>
+<div id="term-adverse-selection" class="section level4" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Term: “Adverse
+selection”</h4>
+<p>Occurs when asymmetric information leads to undesirable outcomes in
+transactions.</p>
+</div>
+</div>
 </div>
 <div id="auctions" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Auctions</h2>
+<div id="primitives" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Primitives</h3>
+<ul>
+<li><span class="math inline">\(n\)</span> bidders (one prize)</li>
+<li>Bidder <span class="math inline">\(i\)</span>’s type: <span class="math inline">\(\theta_i \in \Theta_i\)</span></li>
+<li>Each bidder simultaneously submits <span class="math inline">\(b_i
+\in [0,\infty]\)</span></li>
+<li>Payoff: <span class="math inline">\(u_i(b, \theta) = x_i(b)
+v_i(\theta) - p_i(b)\)</span>
+<ul>
+<li><span class="math inline">\(x_i(b)\)</span> is the probability <span class="math inline">\(i\)</span> gets the prize</li>
+<li><span class="math inline">\(v_i(b)\)</span> is <span class="math inline">\(i\)</span> valuation of the prize</li>
+<li><span class="math inline">\(p_i(b)\)</span> is the price <span class="math inline">\(i\)</span> pays</li>
+</ul></li>
+</ul>
+<div id="model-second-price-private-values" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Model
+“Second-price <em>Private</em> Values”</h4>
+<ul>
+<li>Private values: <span class="math inline">\(\Theta_i = [0,
+\bar\theta]\)</span> and <span class="math inline">\(v_i(\theta) =
+\theta_i\)</span></li>
+<li><strong>Thm:</strong> It is a weakly dominant strategy for each
+player to bid <span class="math inline">\(b_i(\theta_i) =
+\theta_i\)</span>, regardless of the distribution over <span class="math inline">\(\Theta\)</span>.</li>
+</ul>
+</div>
+<div id="model-first-price-private-values" class="section level4" number="3.3.1.2">
+<h4><span class="header-section-number">3.3.1.2</span> Model
+“First-price <em>Private</em> Values”</h4>
+<ul>
+<li>(Confirmed) Guess: symmetric strictly increasing bid strategy, <span class="math inline">\(s: \Theta_i \rightarrow [0,\infty)\)</span>.</li>
+</ul>
+</div>
+<div id="model-second-price-common-values" class="section level4" number="3.3.1.3">
+<h4><span class="header-section-number">3.3.1.3</span> Model
+“Second-price <em>Common</em> Values”</h4>
+<ul>
+<li><strong>Claim:</strong> Everyone bidding their true expected values
+is not an equilibrium (suppose not: bid lower, now you (1) lose if you
+were close, or (2) profitable deviation??)</li>
+<li><strong>Claim:</strong> Symmetric equilibrium in which each player
+bids his expected value conditional on <span class="math inline">\(\theta_i\)</span> and <span class="math inline">\(\max_{j\neq i}\theta_j = \theta_i\)</span>.
+(Winner’s curse!)</li>
+</ul>
+<!-- # Perfect Bayesian Equilibrium -->
+<!-- ## Perfect Bayesian Equilibrium -->
+<!-- ### Def "Assessment" -->
+<!-- An *assessment* is a pair $(\beta, \mu)$, where -->
+<!-- 1. $\beta$ is an independent behavior strategy profile -->
+<!-- 2. $\mu$ is a belief system -->
+<!-- #### Term "belief system" -->
+<!-- For each information set, $I$, $\mu(\cdot | I)$ is a measure over nodes in $I$. -->
+<!-- #### Term "feasible paths ($H$)" -->
+</div>
+</div>
 </div>
 </div>
 

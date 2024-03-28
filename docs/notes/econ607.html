@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 607 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-02-20</h4>
+<h4 class="date">Last Updated: 2024-03-27</h4>
 
 </div>
 
@@ -1628,10 +1628,10 @@ Importantly: endowments not correlated across individuals)</li>
 <p><span class="math display">\[Y_t = \int_0^1 y_t(i) di =
 \bar{y}\]</span></p>
 </div>
-<div id="def-stationay-stochastic-equilibrium" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Def “stationay
+<div id="def-stationary-stochastic-equilibrium" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Def “stationary
 stochastic equilibrium”</h3>
-<p>A <em>stationay stochastic equilibrium</em> consists of</p>
+<p>A <em>stationary stochastic equilibrium</em> consists of</p>
 <ul>
 <li>a (single) interest rate <span class="math inline">\((1+r)\)</span>,</li>
 <li>a policy function <span class="math inline">\(h(y,A)\)</span>,
@@ -1641,7 +1641,13 @@ and</li>
 <p>such that</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(h(\cdot)\)</span> is optimal given <span class="math inline">\(1+r\)</span>,</li>
-<li>All markets clear</li>
+<li>All markets clear:
+<ol style="list-style-type: decimal">
+<li>bond market <span class="math inline">\(\int_{-\infty}^\infty
+\int_{y^{min}}^{y^{max}} h(y,A) \varphi(y)g(A) dy dA = 0\)</span> (i.e.,
+agg savings 0)</li>
+<li>goods market - clears by Walras’ law</li>
+</ol></li>
 <li><span class="math inline">\(g(A)\)</span> is implied by <span class="math inline">\(h(\cdot)\)</span>.</li>
 </ol>
 <blockquote>
@@ -1666,6 +1672,131 @@ u(c_{t+k})}{\delta \beta^{t+k+1} u(c_{t+k+1})} =
 u(c_{t+k+1})}\]</span></p>
 <p>Leahy (2004) Valuation of past consumption…</p>
 <p>FINISH</p>
+</div>
+</div>
+<div id="labor-supply-and-search" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Labor Supply and
+Search</h1>
+<p>Neoclassical (price-taking, utility maximizing, single time period
+framework) Labor Supply: <span class="math inline">\(\max \{u(c) -
+\nu(N)\}\)</span></p>
+<p>e.g., <span class="math display">\[\frac{c^{1-\frac{1}{\sigma}}}{1-\frac{1}{\sigma}}
+- \phi \frac{N^{1+ \frac{1}{\eta}}}{1+ \frac{1}{\eta}}, \eta \geq 0
+\text{ s. to } pc = wN+A\]</span></p>
+<p>where <span class="math inline">\(N\)</span> = number hours worked,
+<span class="math inline">\(A\)</span> = other assets e.g.,</p>
+</div>
+<div id="asset-pricing" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Asset Pricing</h1>
+<div id="capm" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> CAPM</h2>
+<p>Recall Hansen and Singleton:</p>
+<p>max problem lets us derive the price given below.</p>
+<!-- $$\max E_t $$ -->
+<div id="def-stochastic-discount-factor" class="section level4" number="5.1.0.1">
+<h4><span class="header-section-number">5.1.0.1</span> Def “stochastic
+discount factor”</h4>
+<p><span class="math display">\[m_{t, t+j} = m_{t+j} \equiv \beta^j
+\frac{u&#39;(c_{t+1})}{u&#39;(c_t)}\]</span></p>
+<p>Gives rise to:</p>
+<p><span class="math display">\[p_{i,t} = E_t \bigg[\sum_{j=1}^\infty
+m_{t,t+j} x_{i,t+j} \bigg] = E_t \bigg[\sum_{j=1}^\infty \beta^j
+\frac{u&#39;(c_{t+1})}{u&#39;(c_t)} x_{i,t+j}\bigg]\]</span></p>
+</div>
+<div id="def-r" class="section level4" number="5.1.0.2">
+<h4><span class="header-section-number">5.1.0.2</span> Def “R”</h4>
+<p><span class="math display">\[R_{i,t+1} \equiv \frac{p_{i,t+1} + x_{i,
+t+1}}{p_{i,t}}\]</span></p>
+</div>
+<div id="def-capm" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Def “CAPM”</h3>
+<ul>
+<li><span class="math inline">\(Cov(m, R) = 0 \Rightarrow\)</span>
+risk-adjsted return = safe return</li>
+<li><span class="math inline">\(Cov(m, R) &lt; 0 \Rightarrow\)</span>
+when <span class="math inline">\(R\)</span> high, <span class="math inline">\(m\)</span> low (on average)
+<ul>
+<li>MU(c) is low, which means consumption is high (economy booming). So,
+asset pays when economy good, and asset sucks when economy sucks.</li>
+<li><span class="math inline">\(E_t[R] &gt; 1+r_t\)</span> &lt;– this is
+risk!</li>
+</ul></li>
+<li><span class="math inline">\(Cov(m, R) &gt; 0 \Rightarrow\)</span>
+when <span class="math inline">\(R\)</span> high, <span class="math inline">\(m\)</span> high (on average)
+<ul>
+<li>economy sucks, but asset comes thru. willing to sacrifice rate to
+reduce risk</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“US steelworkers should buy stock in foreign steel”</p>
+</blockquote>
+<blockquote>
+<p>If you have an asset paying off when MU(c) is high, this is an asset
+that reduces your risk. So, you are willing to sacrifice your return to
+acquire the risk-reducing asset.</p>
+</blockquote>
+<blockquote>
+<p>“If I tell you this asset will come through in your darkest hour you
+will want that asset. So demand will rise <span class="math inline">\(\Rightarrow\)</span> price will rise.”</p>
+</blockquote>
+</div>
+<div id="puzzle-1" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Puzzle 1</h3>
+</div>
+<div id="equity-premium-puzzle" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Equity Premium
+Puzzle</h3>
+</div>
+<div id="jorgensons-model" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Jorgenson’s
+Model</h3>
+<p>Firm input demand: <span class="math inline">\(\max \sum_{t=0}^\infty
+(\frac{1}{1+r})^t\bigg(p F(K_t, N_t) - w_t N_t - p^k_t I_t
+\bigg)\)</span> s. to <span class="math inline">\(K_{t+1} =
+K_t(1-\delta) + I_t\)</span></p>
+<blockquote>
+<p>Note: we later assume <span class="math inline">\(p = 1\)</span></p>
+</blockquote>
+<p>Solve through either Hamiltonian or Dynamic Programming.</p>
+<p><strong>Result:</strong> <span class="math inline">\(p_t^k =
+\frac{1}{1+r} \sum_{j=0}^\infty (\frac{1-\delta}{1+r}^j)
+F_{k,t+j+1}\)</span></p>
+</div>
+</div>
+<div id="q-theory" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Q-theory</h2>
+<div id="def-tobins-q" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Def “Tobin’s
+Q”</h3>
+<p><span class="math display">\[Q^{Tobin} = \frac{\text{Value of
+firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} = \text{average
+} Q\]</span> ### Model “Hayashi, Abel, Summers (i.e., Jorgenson’s with
+adj. cost)”</p>
+</div>
+</div>
+<div id="intertermporal-elasticity-of-investment-demand" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Intertermporal
+Elasticity of Investment Demand</h2>
+<p>“Lumpy” investment/inertia</p>
+<p>Same model as before, but we’ve shifted back to discrete:</p>
+<p><span class="math display">\[\underbrace{q_t}_{\text{Shadow Val}} =
+\frac{MPK_{t+1}}{1+r} +
+\underbrace{\frac{1-\delta}{1+r}q_{t+1}}_{\text{continuation
+val}}\]</span></p>
+<p><span class="math display">\[\underbrace{p_t^k = q_t}_{\text{no adj
+costs now!}} = \frac{1}{1+r} \sum_{j=0}^\infty (\frac{1-\delta}{1+r})^j
+MPK_{t+j+1}\]</span></p>
+<blockquote>
+<p>if I know of some improvement in future MPK I should invest more
+today!</p>
+</blockquote>
+<div id="claim" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Claim</h3>
+<p>If the subsidy is temporary and <span class="math inline">\(\delta\)</span> (and <span class="math inline">\(r\)</span>) are small then <span class="math inline">\(q_{j,t} \approx \bar{q}_j\)</span>. (i.e., <span class="math inline">\(\frac{\Delta q_{j,t}}{\bar{q}_j} \approx
+0\)</span>).</p>
+<p>I. “Kinked” Adjustment Costs</p>
+</div>
 </div>
 </div>
 
