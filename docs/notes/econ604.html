@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-03-28</h4>
+<h4 class="date">Last Updated: 2024-03-29</h4>
 
 </div>
 
@@ -1609,6 +1609,10 @@ A\)</span>.</li>
 <p><span class="math display">\[\text{Average Utility} = u_i(\sigma)
 \equiv \frac{1-\delta}{1-\delta^T}\sum_{t=1}^T \delta^{t-1} \sum_{h^t
 \in \mathcal{H}^t} \pi_i(\sigma(h^t))Pr(h^t|\sigma)\]</span></p>
+<blockquote>
+<p>For infinite horizon we multiply by <span class="math inline">\(1-\delta\)</span>, which is just the limit as
+<span class="math inline">\(T \rightarrow \infty\)</span> of <span class="math inline">\(\frac{1-\delta}{1-\delta^T}\)</span>.</p>
+</blockquote>
 </div>
 </div>
 <div id="infinitely-repeated-games" class="section level2" number="2.2">
@@ -1730,25 +1734,21 @@ utility profile of an SPE given <span class="math inline">\(\delta\)</span>.</p>
 \min_{\alpha \in \Delta A \text{ is Nash}} \pi_i(\alpha), \forall
 i.\]</span></p>
 </div>
-<div id="def-minmax-payoff" class="section level3" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> Def “minmax
-payoff”</h3>
-</div>
-<div id="def-minimax-individually-rational" class="section level3" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> Def
+<div id="def-minimax-individually-rational" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Def
 “Minimax-individually rational”</h3>
 <p>A payoff vector <span class="math inline">\(v \in
-\mathbb{R}^n\)</span> is <em>individually rational</em> if <span class="math display">\[v_i &gt; \underline{v}_i^{min} \equiv
+\mathbb{R}^n\)</span> is <em>individually rational</em> if <span class="math display">\[v_i &gt; \underline{v}_{~i}^{min} \equiv
 \min_{\alpha_{-i} \in \Delta A_{-i}} \max_{a_i \in A_i} \pi_i(a_i,
 \alpha_{-i} ), \forall i.\]</span></p>
-<div id="remark" class="section level4" number="2.3.5.1">
-<h4><span class="header-section-number">2.3.5.1</span> Remark</h4>
+<div id="remark" class="section level4" number="2.3.4.1">
+<h4><span class="header-section-number">2.3.4.1</span> Remark</h4>
 <p><span class="math inline">\(\underline{v}_i^{min} \leq
 \underline{v}_i^{Nash}, \forall i\)</span></p>
 </div>
 </div>
-<div id="thm-minimax-folk-theorem" class="section level3" number="2.3.6">
-<h3><span class="header-section-number">2.3.6</span> Thm “Minimax Folk
+<div id="thm-minimax-folk-theorem" class="section level3" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Thm “Minimax Folk
 Theorem”</h3>
 <p>If <span class="math inline">\(v\)</span> is in the interior of the
 set of feasible and individually rational payoffs, then there exists
@@ -1796,7 +1796,7 @@ profile <span class="math inline">\(s\)</span> and the common prior
 Equilibrium”</h3>
 <p>In a Bayesian game, <span class="math inline">\(\langle N, A, u,
 \Theta, \mu \rangle\)</span>, a <em>Bayesian Nash Equilibrium</em> is a
-strategy profile <span class="math inline">\(s = \times^n_{i=1}
+strategy profile <span class="math inline">\(s \in S = \times^n_{i=1}
 S_i\)</span> such that for each <span class="math inline">\(i\)</span>
 and each <span class="math inline">\(s_i&#39; \in S_i\)</span>, <span class="math display">\[\mathbb{E}[u_i(s(\theta), \theta)] \geq
 \mathbb{E}[u_i(s_i&#39;(\theta_i), s_{-i}(\theta_{-i}),
@@ -1811,8 +1811,8 @@ and each <span class="math inline">\(s_i&#39; \in S_i\)</span>, <span class="mat
 <h3><span class="header-section-number">3.1.5</span> Thm “Bayesian Nash
 Equilibrium if”</h3>
 <p>In a Bayesian game, <span class="math inline">\(\langle N, A, u,
-\Theta, \mu \rangle\)</span>, a strategy profile <span class="math inline">\(s = \times^n_{i=1} S_i\)</span> is a <em>Bayesian
-Nash Equilibrium</em> if <span class="math display">\[\mathbb{E}[u_i(s(\theta), \theta | \theta_i)]
+\Theta, \mu \rangle\)</span>, a strategy profile <span class="math inline">\(s \in S = \times^n_{i=1} S_i\)</span> is a
+<em>Bayesian Nash Equilibrium</em> if <span class="math display">\[\mathbb{E}[u_i(s(\theta), \theta | \theta_i)]
 \geq \mathbb{E}[u_i(a_i, s_{-i}(\theta_{-i}) | \theta_i)], \forall a_i
 \in A_i, \theta_i \in \Theta_i, i \in N.\]</span></p>
 <div id="remark-1" class="section level4" number="3.1.5.1">
