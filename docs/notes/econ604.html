@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-03-29</h4>
+<h4 class="date">Last Updated: 2024-03-31</h4>
 
 </div>
 
@@ -1583,22 +1583,21 @@ into an action for the current period.</p>
 <li>History <span class="math inline">\(h^t \equiv (a^1, ...,
 a^{t-1})\)</span>, <span class="math inline">\(h^1 \equiv
 \varnothing\)</span></li>
-<li>Possible <span class="math inline">\(t\)</span>-histories <span class="math inline">\(\mathcal{H} \equiv A^{t-1}\)</span></li>
+<li>Possible <span class="math inline">\(t\)</span>-histories <span class="math inline">\(\mathcal{H}^t \equiv A^{t-1}\)</span></li>
 <li>Possible histories <span class="math inline">\(\mathcal{H} \equiv
 \cup_{t=1}^T\mathcal{H}^t\)</span></li>
-<li>Correlated behavior strategy profile <span class="math inline">\(\sigma: \mathcal{H} \rightarrow \Delta
-A\)</span></li>
 <li>A (pure) strategy is a function <span class="math inline">\(s_i:
 \mathcal{H} \rightarrow A_i\)</span></li>
-<li>a (behavioral) mixed strategy is defined in terms of strategy
-profiles to allow for correlation. So <span class="math inline">\(\sigma: \mathcal{H} \rightarrow \Delta
+<li>a correlated (behavioral) mixed strategy is defined in terms of
+strategy profiles to allow for correlation. So <span class="math inline">\(\sigma: \mathcal{H} \rightarrow \Delta
 A\)</span>.</li>
 </ul>
 <blockquote>
 <p>a behavioral mixed-strategy must specify not only what players play
-“sequentially”, but also in all other possible histories of the game.
-<!-- Write, $\alpha \in \Delta A$ for a (possibly correlated) mixed action profile. --></p>
+“sequentially”, but also in all other possible histories of the
+game.</p>
 </blockquote>
+<!-- Write, $\alpha \in \Delta A$ for a (possibly correlated) mixed action profile. -->
 <!-- $$\pi(\alpha) = \mathbb{E}[\pi(a)|\alpha]$$ -->
 </div>
 <div id="def-utility" class="section level3" number="2.1.3">
@@ -1733,6 +1732,11 @@ utility profile of an SPE given <span class="math inline">\(\delta\)</span>.</p>
 \mathbb{R}^n\)</span> is <em>Nash-individually rational</em> if <span class="math display">\[v_i &gt; \underline{v}_i^{Nash} \equiv
 \min_{\alpha \in \Delta A \text{ is Nash}} \pi_i(\alpha), \forall
 i.\]</span></p>
+<div id="result" class="section level4" number="2.3.3.1">
+<h4><span class="header-section-number">2.3.3.1</span> Result</h4>
+<p>Nash-individually rational in pure strategies <span class="math inline">\(\subseteq\)</span> Nash-individually rational in
+mixed strategies.</p>
+</div>
 </div>
 <div id="def-minimax-individually-rational" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Def
