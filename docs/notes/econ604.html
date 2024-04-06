@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-03-31</h4>
+<h4 class="date">Last Updated: 2024-04-05</h4>
 
 </div>
 
@@ -1933,15 +1933,122 @@ were close, or (2) profitable deviation??)</li>
 bids his expected value conditional on <span class="math inline">\(\theta_i\)</span> and <span class="math inline">\(\max_{j\neq i}\theta_j = \theta_i\)</span>.
 (Winner’s curse!)</li>
 </ul>
-<!-- # Perfect Bayesian Equilibrium -->
-<!-- ## Perfect Bayesian Equilibrium -->
-<!-- ### Def "Assessment" -->
-<!-- An *assessment* is a pair $(\beta, \mu)$, where -->
-<!-- 1. $\beta$ is an independent behavior strategy profile -->
-<!-- 2. $\mu$ is a belief system -->
-<!-- #### Term "belief system" -->
-<!-- For each information set, $I$, $\mu(\cdot | I)$ is a measure over nodes in $I$. -->
-<!-- #### Term "feasible paths ($H$)" -->
+</div>
+</div>
+</div>
+</div>
+<div id="perfect-bayesian-equilibrium" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Perfect Bayesian
+Equilibrium</h1>
+<div id="perfect-bayesian-equilibrium-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Perfect Bayesian
+Equilibrium</h2>
+<div id="def-assessment" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Def
+“Assessment”</h3>
+<p>An <em>assessment</em> is a pair <span class="math inline">\((\beta,
+\mu)\)</span>, where</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\beta\)</span> is an independent
+behavior strategy profile</li>
+<li><span class="math inline">\(\mu\)</span> is a belief system</li>
+</ol>
+<div id="term-belief-system" class="section level4" number="4.1.1.1">
+<h4><span class="header-section-number">4.1.1.1</span> Term “belief
+system”</h4>
+<p>For each information set, <span class="math inline">\(I\)</span>,
+<span class="math inline">\(\mu(\cdot | I)\)</span> is a measure over
+nodes in <span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="term-feasible-paths-h-aka-complete-histories" class="section level4" number="4.1.1.2">
+<h4><span class="header-section-number">4.1.1.2</span> Term “feasible
+paths (<span class="math inline">\(H\)</span>), aka complete
+histories”</h4>
+<p>Histories that reach terminal nodes are called <em>feasible
+paths</em> or sometimes <em>complete histories</em>. <span class="math inline">\(H\)</span> is the set of all feasible paths.</p>
+<ul>
+<li><span class="math inline">\(\phi_\beta(H)\)</span> is the
+probability of a set of feasible paths, <span class="math inline">\(H\)</span>.</li>
+<li><span class="math inline">\(\phi_\beta(H_x | H_I)\)</span> is the
+conditional probability that node <span class="math inline">\(x\)</span>
+is reached given that information set <span class="math inline">\(I\)</span> is reached. (<span class="math inline">\(H_x \subseteq H_I\)</span>)</li>
+</ul>
+</div>
+</div>
+<div id="def-weak-perfect-bayesian-equilibrium-wpbe" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Def “Weak perfect
+Bayesian Equilibrium (wPBE)”</h3>
+<p>An assessment <span class="math inline">\((\beta, \mu)\)</span> is a
+<em>weak perfect Bayesian equilibrium</em> (wPBE) if at each information
+set, <span class="math inline">\(I\)</span>, the following are
+satisfied:</p>
+<ol style="list-style-type: decimal">
+<li>Bayesian updating:</li>
+</ol>
+<p>If <span class="math inline">\(\underbrace{\phi_\beta (H_I) &gt;
+0}_{\text{i.e., on eqm path}}\)</span>, then <span class="math inline">\(\mu(x|I) = \phi_\beta (H_x | H_I)\)</span> for
+each node <span class="math inline">\(x \in I\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Sequential rationality:</li>
+</ol>
+<p><span class="math display">\[\beta_i(\cdot | H_i) \in
+arg\max_{\beta_i} \int_{x\in I} \int_{h \in H_x} u_i(h) d
+\phi_{\hat{\beta}_i, \beta_{-i}}(h|H_x)d\mu(x|I).\]</span></p>
+</div>
+</div>
+<div id="applications-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Applications</h2>
+<div id="relevant-models" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Relevant
+Models:</h3>
+<p>Gift Game, Simple Signaling, Simple Reputation (aka centipede or grab
+game)</p>
+</div>
+<div id="model-herding" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Model
+“Herding”</h3>
+</div>
+</div>
+<div id="limitations-of-pbe" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Limitations of
+PBE</h2>
+<div id="def-perfect-bayesian-equilibrium-informal" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Def “Perfect
+Bayesian Equilibrium” (informal)</h3>
+<p><span class="math display">\[PBE = wPBE \cap SPE\]</span></p>
+<blockquote>
+<p>PBE <span class="math inline">\(\not \Rightarrow\)</span> correct
+beliefs</p>
+</blockquote>
+<blockquote>
+<p>PBE <span class="math inline">\(\not \Rightarrow\)</span> strategic
+independence</p>
+</blockquote>
+</div>
+<div id="def-consistent-assessments" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Def “Consistent
+Assessments”</h3>
+<p>In a countable game, an assessment <span class="math inline">\((\beta, \mu)\)</span> is <em>consistent</em> if
+there exists a sequence of assessments <span class="math inline">\(\{(\beta^k, \mu^k)\}\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li>each behavior strategy <span class="math inline">\(\beta^k\)</span>
+assigns strictly positive probability to every action at every
+information set,</li>
+<li>each <span class="math inline">\(\mu^k\)</span> is derived from
+<span class="math inline">\(\phi_{\beta^k}\)</span> according to Bayes’
+rule, and</li>
+<li><span class="math inline">\((\beta^k, \mu^k)\)</span> converges
+uniformly to <span class="math inline">\((\beta, \mu)\)</span>.</li>
+</ol>
+</div>
+<div id="def-sequential-equilibrium" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Def “Sequential
+Equilibrium”</h3>
+<p>In a countable game, an assessment is a <em>sequential
+equilibrium</em> if it is sequentially rational and consistent.</p>
+<div id="model-sequential-jury-voting" class="section level4" number="4.3.3.1">
+<h4><span class="header-section-number">4.3.3.1</span> Model “Sequential
+Jury Voting”</h4>
 </div>
 </div>
 </div>
