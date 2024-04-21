@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 607 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-03</h4>
+<h4 class="date">Last Updated: 2024-04-12</h4>
 
 </div>
 
@@ -1741,15 +1741,57 @@ acquire the risk-reducing asset.</p>
 will want that asset. So demand will rise <span class="math inline">\(\Rightarrow\)</span> price will rise.”</p>
 </blockquote>
 </div>
-<div id="puzzle-1" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Puzzle 1</h3>
+<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Puzzle 1 “Log
+approximation suggests <span class="math inline">\(r \approx
+11%\)</span>”</h3>
 </div>
-<div id="equity-premium-puzzle" class="section level3" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> Equity Premium
-Puzzle</h3>
+<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Puzzle 2 “Equity
+Premium Puzzle”</h3>
 </div>
-<div id="jorgensons-model" class="section level3" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Jorgenson’s
+<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Model Lucas Asset
+Pricing (Trees)</h3>
+<ul>
+<li>Endowment economy.</li>
+<li>“Trees” - identical and correlated entities (think firms)</li>
+<li>Trees bear a dividend, <span class="math inline">\(x_t\)</span> each
+period.
+<ul>
+<li><span class="math inline">\(x_t \sim F(x | x_{t-1})\)</span> (Markov
+Process)</li>
+</ul></li>
+<li>No trade</li>
+<li>No storage</li>
+<li>In equilibrium <span class="math inline">\(c_t = x_t\)</span> (this
+is true for every agent)</li>
+</ul>
+<p>FOC:</p>
+<p><span class="math display">\[E_t \bigg[ \beta
+\frac{u&#39;(c_{t+1})}{u&#39;(c_t)} \frac{p_{t+1} +
+x_t{+1}}{p_t}   \bigg] = 1\]</span></p>
+</div>
+<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Def “Stochastic
+Competitive Equilibrium”</h3>
+<p>A <em>Stochastic Competitive Equilibrium</em> is an allocation rule
+<span class="math inline">\(c(x_t)\)</span> and a pricing function <span class="math inline">\(p_t = \varphi(x_t)\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li>goods market clears</li>
+<li>Euler equation holds:</li>
+</ol>
+<p><span class="math display">\[E_t \bigg[ \beta
+\frac{u&#39;(x_{t+1})}{u&#39;(x_t)} \frac{\varphi&#39;(x_{t+1}) +
+x_t{+1}}{\varphi&#39;(x_t)}   \bigg] = 1\]</span></p>
+<blockquote>
+<p>In this economy, shocks affect the aggregate economy–very different
+from previous equilibria in which a shock affected an individual. Shocks
+to the aggregate economy will cause price changes. # Investment</p>
+</blockquote>
+</div>
+<div id="jorgensons-model" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Jorgenson’s
 Model</h3>
 <p>Firm input demand: <span class="math inline">\(\max \sum_{t=0}^\infty
 (\frac{1}{1+r})^t\bigg(p F(K_t, N_t) - w_t N_t - p^k_t I_t
@@ -1771,8 +1813,11 @@ F_{k,t+j+1}\)</span></p>
 Q”</h3>
 <p><span class="math display">\[Q^{Tobin} = \frac{\text{Value of
 firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} = \text{average
-} Q\]</span> ### Model “Hayashi, Abel, Summers (i.e., Jorgenson’s with
-adj. cost)”</p>
+} Q\]</span></p>
+</div>
+<div id="model-hayashi-abel-summers-i.e.-jorgensons-with-adj.-cost" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Model “Hayashi,
+Abel, Summers (i.e., Jorgenson’s with adj. cost)”</h3>
 </div>
 </div>
 <div id="intertermporal-elasticity-of-investment-demand" class="section level2" number="5.3">
@@ -1822,6 +1867,46 @@ time <span class="math inline">\(K&#39; \neq K\)</span>.</li>
 <li></li>
 </ul>
 </div>
+</div>
+</div>
+<div id="real-business-cycle-rbc-models" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Real Business Cycle
+(RBC) Models</h1>
+<div id="regularities" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Regularities</h3>
+<ul>
+<li>General equilibrium</li>
+<li>Representative agent</li>
+<li>No market failures</li>
+<li>No money</li>
+<li>Productivity shocks</li>
+</ul>
+<p><strong>Households</strong> <span class="math display">\[\max E_t
+\bigg[\sum_j \beta^j (\frac{c_{t+j}^{1-1/\sigma}}{1-1/\sigma} - \phi
+\frac{\eta_{t+j}^{1 + 1/\eta}}{1 +  1/\eta})\bigg]\]</span> s. to</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(k_{t+1} = (1-\delta)k_t + I_t\)</span>
+(capital accumulation)</li>
+<li><span class="math inline">\(b_t + c_t + I_t = w_t n_t + R_t k_t +
+b_{t-1}(1+ r_{t-1})\)</span> (budget constraint)</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li><span class="math inline">\(\sigma\)</span>: IES</li>
+<li><span class="math inline">\(\eta\)</span>: Frisch elasticity of
+labor supply</li>
+<li>HH’s hold capital (this makes things easier, but could have firms
+hold and HHs own firms instead)</li>
+<li><span class="math inline">\(b_t = 0\)</span> in equilibrium</li>
+</ul>
+<p>FOCs:</p>
+<ol style="list-style-type: decimal">
+<li>Labor supply: <span class="math inline">\(w_t c_t ^{-1/\sigma} =
+\phi n_t ^ {1/\eta}\)</span></li>
+<li>Euler equations: <span class="math inline">\(c_t^{-1/\sigma} = \beta
+E_t\bigg[c_{t+1}^{-1/\sigma} (\underbrace{R_{t+1} + 1-\delta}_{=1+r_t})
+\bigg]\)</span></li>
+</ol>
 </div>
 </div>
 

@@ -1480,11 +1480,13 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-05</h4>
+<h4 class="date">Last Updated: 2024-04-21</h4>
 
 </div>
 
 
+<!-- header-includes: -->
+<!--   - \usepackage{mathrsfs} -->
 <div id="noncooperative-bargaining" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Noncooperative
 Bargaining</h1>
@@ -1622,8 +1624,8 @@ Games</h2>
 strategy profile”</h3>
 <p><span class="math inline">\(\sigma\)</span> is a non-contingent
 strategy profile if <span class="math display">\[\sigma(h^t) =
-\sigma(\hat{h}^t),  \forall h^t, \hat{h}^t \in \mathscr{H}^t, \forall t
-= 1, ..., T.\]</span></p>
+\sigma(\hat{h}^{t}),  \forall h^t, \hat{h}^{t} \in \mathcal{H}^t,
+\forall t = 1, ..., T.\]</span></p>
 <blockquote>
 <p><span class="math inline">\(\sigma\)</span> is non-contingent if it
 specifies that in each period players should play some period-specific
@@ -1648,7 +1650,7 @@ Stage Game Equilibrium”</h3>
 <p>Suppose <span class="math inline">\(T&lt;\infty\)</span>. If <span class="math inline">\(\alpha^*\)</span> is the unique NE in the stage
 game, then the unique SPE in the repeated game is a non-contingent
 strategy profile <span class="math inline">\(\sigma^*\)</span> such
-that, for all <span class="math inline">\(h \in \mathscr{H}, \sigma^*(h)
+that, for all <span class="math inline">\(h \in \mathcal{H}, \sigma^*(h)
 = \alpha^*\)</span>.</p>
 </div>
 <div id="def-profitable-one-shot-deviation" class="section level3" number="2.2.4">
@@ -1657,9 +1659,9 @@ one-shot deviation”</h3>
 <p>A <em>profitable one-shot deviation</em> from <span class="math inline">\(\sigma\)</span> is a strategy <span class="math inline">\(\hat{\sigma}_i \neq \sigma_i\)</span> for some
 player <span class="math inline">\(i\)</span> such that:</p>
 <ol style="list-style-type: decimal">
-<li>there exists a unique history <span class="math inline">\(\hat{h}^t
-\in \mathscr{H}\)</span> such that <span class="math inline">\(\hat{\sigma}_i(h) = \sigma_i(h), \forall h\neq
-\hat{h}\)</span> and</li>
+<li>there exists a unique history <span class="math inline">\(\hat{h}^{t} \in \mathcal{H}\)</span> such that
+<span class="math inline">\(\hat{\sigma}_{i} (h) = \sigma_i(h), \forall
+h \neq \hat{h}\)</span> and</li>
 <li><span class="math inline">\(\tilde{u}_i(\hat{\sigma}_i|_{\hat{h}},\sigma_{-i}|_{\hat{h}})
 &gt; \tilde{u}_i(\sigma_i|_{\hat{h}})\)</span>.</li>
 </ol>
@@ -1688,7 +1690,6 @@ Q\)</span>)</li>
 </ul>
 <p>Q. For what value of <span class="math inline">\(\delta\)</span> is
 this proposal a SPE?</p>
-<!-- Stage game NE is $produce$ FINISH   -->
 </div>
 <div id="model-infinite-bertrand-duopoly" class="section level3" number="2.2.7">
 <h3><span class="header-section-number">2.2.7</span> Model “Infinite
@@ -1943,6 +1944,9 @@ Equilibrium</h1>
 <div id="perfect-bayesian-equilibrium-1" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Perfect Bayesian
 Equilibrium</h2>
+<blockquote>
+<p>“PBE <span class="math inline">\(\subseteq\)</span> NE” -Selcuk</p>
+</blockquote>
 <div id="def-assessment" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Def
 “Assessment”</h3>
@@ -2016,6 +2020,7 @@ PBE</h2>
 <h3><span class="header-section-number">4.3.1</span> Def “Perfect
 Bayesian Equilibrium” (informal)</h3>
 <p><span class="math display">\[PBE = wPBE \cap SPE\]</span></p>
+<p>I.e., PBE requires wPBE in every subgame.</p>
 <blockquote>
 <p>PBE <span class="math inline">\(\not \Rightarrow\)</span> correct
 beliefs</p>
@@ -2046,10 +2051,412 @@ uniformly to <span class="math inline">\((\beta, \mu)\)</span>.</li>
 Equilibrium”</h3>
 <p>In a countable game, an assessment is a <em>sequential
 equilibrium</em> if it is sequentially rational and consistent.</p>
-<div id="model-sequential-jury-voting" class="section level4" number="4.3.3.1">
-<h4><span class="header-section-number">4.3.3.1</span> Model “Sequential
-Jury Voting”</h4>
+<blockquote>
+<p>Aka “perfect extended-Bayesian equilbrium”, right?????????? or are
+these separate concepts?</p>
+</blockquote>
+<!-- #### Model "Sequential Jury Voting" -->
+<!-- omitted -->
 </div>
+</div>
+</div>
+<div id="mechanism-design" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Mechanism Design</h1>
+<div id="quasilinear-environment" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Quasilinear
+Environment</h3>
+<ul>
+<li><span class="math inline">\(N = \{1, ..., n\}\)</span> agents</li>
+<li>A space <span class="math inline">\(\mathcal{X}\)</span> of
+alternatives/outcomes</li>
+<li>A space <span class="math inline">\(\Theta_i\)</span> of private
+info (i.e., types) for each agent
+<ul>
+<li>Type space <span class="math inline">\(\Theta = \Theta_i \times
+\cdot \cdot \cdot \times \Theta_n\)</span></li>
+<li>Common prior <span class="math inline">\(\phi\)</span> on <span class="math inline">\(\Theta\)</span></li>
+</ul></li>
+<li>Agent utility <span class="math inline">\(u_i(\chi, \theta, \tau) =
+v_i(\chi, \theta) + \tau_i\)</span>
+<ul>
+<li><span class="math inline">\(v\)</span> is how <span class="math inline">\(i\)</span> values the chosen outcome <span class="math inline">\(\chi\)</span> given <span class="math inline">\(\theta\)</span></li>
+<li><span class="math inline">\(\tau \in \mathbb{R}^n\)</span> is a
+vector of monetary transfers</li>
+</ul></li>
+</ul>
+</div>
+<div id="regularities" class="section level3" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Regularities</h3>
+<p>We construct a mechanism <span class="math inline">\(\langle M, x, t
+\rangle\)</span> that defines a game for the agents in which:</p>
+<ul>
+<li>Agents simultaneously report messages: <span class="math inline">\(m
+= (m_1, ..., m_n) \in M = M_1 \times \cdot \cdot \cdot \times
+M_n\)</span></li>
+<li>Outcome function <span class="math inline">\(x: M \rightarrow
+\mathcal{X}\)</span> selects an alternative, <span class="math inline">\(\chi\)</span> from <span class="math inline">\(\mathcal{X}\)</span>, given <span class="math inline">\(m\)</span>.</li>
+<li>Each agent <span class="math inline">\(i\)</span> receives transfer
+<span class="math inline">\(t_i(m)\)</span>.</li>
+</ul>
+</div>
+<div id="mechanism-design-problem" class="section level3" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Mechanism Design
+Problem</h3>
+<p>A mechanism design problem is the problem of choosing <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span>, subject to some constraints, to
+maximize some objective function.</p>
+<p>In the <strong>principal-agent interpretation</strong>, the objective
+function is (typically) either</p>
+<ul>
+<li>social welfare <span class="math inline">\(\sum_i v_i(x(m(\theta)),
+\theta)\)</span> or</li>
+<li>revenue <span class="math inline">\(-\sum_i
+t_i(m(\theta))\)</span></li>
+</ul>
+<p>In the <strong>repeated games interpretation</strong>, the objective
+function is typically</p>
+<ul>
+<li>a weighted sum of the players’ utilities, <span class="math inline">\(\sum_i \lambda_i(x(m(\theta)), \theta) +
+t_i(m(\theta))\)</span> for some vector of weights <span class="math inline">\(\lambda \in \mathbb{R}^n\)</span>.</li>
+</ul>
+<p><strong>principal-agent interpretation</strong></p>
+<p>utility transfer: money</p>
+<p><strong>repeated games interpretation</strong></p>
+<p>utility transfer: changes in continuation utility</p>
+</div>
+<div id="constraints" class="section level3" number="5.0.4">
+<h3><span class="header-section-number">5.0.4</span> Constraints</h3>
+<ol style="list-style-type: decimal">
+<li>Incentive compatibility IC (=equilibrium concept)
+<ul>
+<li>Interim IC (aka Bayesian IC) (weakest)
+<ul>
+<li>requires that the messages constitute a BNE, where each agent sends
+a message that maximizes her expected utility conditioning on her own
+info.</li>
+</ul></li>
+<li>Ex post IC (EPIC)
+<ul>
+<li>requires that the messages constitute and ex post equilibrium, where
+each agent’s message must max her ex post utility for all possible
+realizations of the other agents’ private info (where each other agent
+sends his eqm message).</li>
+</ul></li>
+<li>Dominant strategy IC (DSIC) (strongest)
+<ul>
+<li>requires each agent’s message is a (weakly) dominant strategy - that
+is, each agent’s message must maximize her ex post utility for all
+possible messages they could send.</li>
+</ul></li>
+</ul></li>
+<li>Individual Rationality (IR)
+<ul>
+<li>Ex ante IR (opt in: <em>before</em> learn type; <em>before</em>
+receive messages)</li>
+<li>Interim IR (opt in: <em>after</em> learn type; <em>before</em>
+receive messages)</li>
+<li>Ex post IR (opt in: <em>after</em> learn type; <em>after</em>
+receive messages)</li>
+</ul></li>
+<li>Budget Balance
+<ul>
+<li>Ex ante BB - requires that the principal pays the agents zero in
+expectation, though he may pay them a positive or negative amount for
+different realizations (balances to 0)</li>
+<li>(Ex post) No subsidy (no matter type vec, all transfers must sum to
+0)</li>
+<li>Ex post BB - principal cannot pay a nonzero amount for any
+realization of their private info (but agents may pay each other)</li>
+</ul></li>
+</ol>
+<blockquote>
+<p>In principal-agent interpretation: often interested in a principal
+with NO BB constraint</p>
+</blockquote>
+<blockquote>
+<p>In repeated-games interpretation: prefer no-subsidy constraint (this
+allows agents to burn money but not bring money from outside the
+game)</p>
+</blockquote>
+</div>
+<div id="def-bne-of-the-mechanism" class="section level3" number="5.0.5">
+<h3><span class="header-section-number">5.0.5</span> Def “BNE of the
+Mechanism”</h3>
+<p>The strategy profile, <span class="math inline">\(m^*\)</span> is a
+Bayesian Nash equilibrium of the mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span> if <span class="math display">\[E[v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta))
+| \theta_i] \geq E[v_i(x(m_i, m_{-1}^*(\theta_{-i})), \theta) + t_i(m_i,
+m_{-i}^*(\theta_{-i})) | \theta_i], \forall m_i \in M_i, \forall
+\theta_i \in \Theta_i, \forall i.\]</span></p>
+<p>The mechanism <span class="math inline">\(\langle M, x, t
+\rangle\)</span> <em>implements</em> the outcome rule <span class="math inline">\(\hat{x}: \Theta \rightarrow \chi\)</span> <em>in
+Bayesian Nash equilibrium</em> if there is a Bayesian Nash equilibrium
+<span class="math inline">\(m^*\)</span> of <span class="math inline">\(\langle M, x, t \rangle\)</span> with <span class="math inline">\(x(m^*(\theta)) = \hat{x}(\theta)\)</span> for all
+<span class="math inline">\(\theta\)</span>.</p>
+<blockquote>
+<p>Such a mechanism is interim incentive compatible (IIC) (aka Bayesian
+Incentive compatible)</p>
+</blockquote>
+</div>
+<div id="def-ex-post-incentive-compatible-epic" class="section level3" number="5.0.6">
+<h3><span class="header-section-number">5.0.6</span> Def “Ex post
+Incentive Compatible (EPIC)”</h3>
+<p>Strategy profile <span class="math inline">\(m^*\)</span> is an
+<em>ex post equilibrium</em> of <span class="math inline">\(\langle M,
+x, t \rangle\)</span> if <span class="math display">\[v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta))
+\geq v_i(x(m_i, m_{-i}^*(\theta)), \theta) + t_i(m_i, m_{-i}^*(\theta)),
+\forall m_i \in M_i, \forall \theta \in \Theta, \forall i.\]</span> The
+mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span>
+<em>implements</em> the outcome rule <span class="math inline">\(\hat{x}: \Theta \rightarrow \mathcal{X}\)</span>
+<em>in ex post equilibrium</em> if there is an ex post equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline">\(\langle M, x, t \rangle\)</span> with <span class="math inline">\(x(m^*(\theta)) = \hat{x}(\theta)\)</span> for all
+<span class="math inline">\(\theta\)</span>.</p>
+<p>Such an incentive is <strong>ex post incentive compatible
+(EPIC)</strong>.</p>
+</div>
+<div id="def-dominant-strategy-incentive-compatible-dsic" class="section level3" number="5.0.7">
+<h3><span class="header-section-number">5.0.7</span> Def “Dominant
+strategy incentive compatible (DSIC)”</h3>
+<p>Strategy profile <span class="math inline">\(m^*\)</span> is a
+dominant strategy equilibrium of <span class="math inline">\(\langle M,
+x, t\rangle\)</span> if <span class="math display">\[v_i(x(m_i^*(\theta_i), m_{-i}), \theta) +
+t_i(m^*_i(\theta_i), m_{-i}) \geq v_i(x(m)), \theta) + t_i(m)\]</span>
+for all <span class="math inline">\(m \in M\)</span> and all <span class="math inline">\(\theta \in \Theta\)</span>, and all <span class="math inline">\(i\)</span>.</p>
+<p>The mechanism <span class="math inline">\(\langle M, x, t
+\rangle\)</span> implements the outcome rule <span class="math inline">\(\hat{x}:\Theta \rightarrow \mathcal{X}\)</span> in
+dominant strategy equilibrium if there is a dominant strategy
+equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline">\(\langle M, x, t \rangle\)</span> with <span class="math inline">\(x(m^*(\theta)) = \hat{x}(\theta)\)</span> for all
+<span class="math inline">\(\theta\)</span>.</p>
+<p>Such a mechanism is dominant strategy incentive compatible
+(DSIC).</p>
+</div>
+<div id="thm-groves-mechanism" class="section level3" number="5.0.8">
+<h3><span class="header-section-number">5.0.8</span> Thm “Groves
+Mechanism”</h3>
+<p>Assume private values. If <span class="math inline">\(x^*(\theta)\)</span> maximizes social welfare for
+each <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(x^*\)</span> is truthfully implemented in ex post
+equilibrium by any direct mechanism <span class="math inline">\(\langle
+x^*, t \rangle\)</span> satisfying <span class="math display">\[t_i(\theta) = \sum_{j \neq i} v_j(x^*(\theta),
+\theta_j) + h_i(\theta_{-i})\]</span> where <span class="math inline">\(h_i: \Theta_{-i} \rightarrow \mathbb{R}\)</span>
+is an arbitrary function, for all <span class="math inline">\(\theta\)</span> and all <span class="math inline">\(i\)</span>.</p>
+<p>Aka VCG (Vickrey-Clarke-Groves) mechanisms.</p>
+<blockquote>
+<p><span class="math inline">\(h_i(\theta_{-i})\)</span> CANNOT depend
+on <span class="math inline">\(i\)</span>’s type!</p>
+</blockquote>
+<div id="example-public-project" class="section level4" number="5.0.8.1">
+<h4><span class="header-section-number">5.0.8.1</span> Example “Public
+Project”</h4>
+</div>
+<div id="example-externalities" class="section level4" number="5.0.8.2">
+<h4><span class="header-section-number">5.0.8.2</span> Example
+“Externalities”</h4>
+<blockquote>
+<p>2nd price auction is a Groves mechanism: people report truthfully,
+has efficient outcome.</p>
+</blockquote>
+</div>
+</div>
+<div id="result-1" class="section level3" number="5.0.9">
+<h3><span class="header-section-number">5.0.9</span> Result</h3>
+<p>In private values setting, Groves Mechanism <span class="math inline">\(\iff\)</span> efficient outcome AND EPIC</p>
+<p>Groves thm proves if, can use envelope thm to show only if.</p>
+</div>
+<div id="envelope-thm" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Envelope Thm</h2>
+<div id="def-equilibrium-payoff-function" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Def “Equilibrium
+payoff function”</h3>
+<p><span class="math inline">\(U_i(\theta; x, t) = v_i(x(\theta),
+\theta) + t_i(\theta)\)</span> is agent <span class="math inline">\(i\)</span>’s utility in a truthful equilibrium of
+mechanism <span class="math inline">\(\langle x, t \rangle\)</span>.</p>
+</div>
+<div id="lemma-milgrom-and-segal" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Lemma “Milgrom and
+Segal”</h3>
+<p>If <span class="math inline">\(v_i(\chi, (\cdot,
+\theta_{-i}))\)</span> is differentiable in <span class="math inline">\(\theta_i\)</span> and <span class="math inline">\(\frac{d}{d\theta_i} v_i(\chi, \theta)\)</span> is
+uniformly bounded for all <span class="math inline">\(\chi \in
+\mathcal{X}\)</span> and all <span class="math inline">\(\theta \in
+\Theta\)</span>, then in any EPIC mechanism <span class="math inline">\(U_i((\cdot, \theta_{-i}))\)</span> is continuous
+and piecewise differentiable in <span class="math inline">\(\theta_i\)</span>.</p>
+</div>
+<div id="thm-envelope-thm" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Thm “Envelope
+Thm”</h3>
+<p>If <span class="math inline">\(v_i(\chi, (\cdot,
+\theta_{-i}))\)</span> is differentiable in <span class="math inline">\(\theta_i\)</span> and <span class="math inline">\(\frac{d}{d\theta_i} v_i(\chi, \theta)\)</span> is
+uniformly bounded for all <span class="math inline">\(\chi \in
+\mathcal{X}\)</span> and all <span class="math inline">\(\theta_{-i}\)</span>, then, for any direct
+mechanism <span class="math inline">\(\langle x , t \rangle\)</span>
+that truthfully implements <span class="math inline">\(x\)</span> isn ex
+post equilibrium, for all <span class="math inline">\(\theta_{-i}\)</span>,</p>
+<p><span class="math display">\[U_i(\theta; x, t)
+=  U_i(\underline{\theta}, \theta_{-i}; x, t) +
+\int_{\underline{\theta}}^{\theta_i} \big(\frac{\partial}{\partial s_i}
+v_i(x(\hat{\theta}_i, \theta_{-i}), s_i,
+\theta_{-i})\big)\bigg|_{\hat{\theta}_i = s_i} ds_i.\]</span></p>
+<p>Example: A public project</p>
+</div>
+<div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Result “Groves
+<span class="math inline">\(\iff\)</span> Efficient and EPIC”</h3>
+<p>Example: Allocating an object</p>
+</div>
+</div>
+<div id="linear-private-values" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Linear Private
+Values</h2>
+<p>Linear Private values: <span class="math inline">\(v_i(\chi,
+\theta_i) = \theta_i \hat{v}_i(\chi)\)</span> where <span class="math inline">\(\hat{v}_i: \mathcal{X} \rightarrow
+\mathbb{R}_+\)</span></p>
+<div id="thm-linear-private-values" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Thm “Linear Private
+Values”</h3>
+<p>In the linear private values environment, a mechanism <span class="math inline">\(\langle x, t\rangle\)</span> implements <span class="math inline">\(x\)</span> in ex post equilibrium if and only if,
+for all <span class="math inline">\(i\)</span></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\hat{v}_i(x(\theta))\)</span> is
+non-decreasing in <span class="math inline">\(\theta_i\)</span> for all
+<span class="math inline">\(\theta_{-i}\)</span>, and</li>
+<li><span class="math inline">\(U_i(\theta; x, t) =
+U_i(\underline{\theta}_i \theta_{-i}; x, t) +
+\int_{\underline{\theta}_i}^{\theta_i} \hat{v}_i(x(s_i,
+\theta_{-i}))ds_i\)</span> for all <span class="math inline">\(\theta\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="bayesian-implementation" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Bayesian
+Implementation</h2>
+<div id="thm-daspremontgerard-varet-mechanisms" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Thm
+“D’Aspremont/Gerard-Varet mechanisms”</h3>
+<p>In the private values environment, if <span class="math inline">\(x(\theta)\)</span> maximizes social welfare for
+all <span class="math inline">\(\theta\)</span> and types are
+distributed independently, then <span class="math inline">\(x\)</span>
+is truthfully implemented in Bayesian Nash equilibrium by any mechanism
+<span class="math inline">\(\langle x, t \rangle\)</span> satisfying
+<span class="math display">\[t_i(\hat{\theta}) = E \big[\sum_{j\neq i}
+v_j(x(\hat{\theta}), \hat{\theta}_j) | \hat{\theta}_i  \big] +
+h_i(\hat{\theta}_{-i}),\]</span> where <span class="math inline">\(h_i:
+\Theta \rightarrow \mathbb{R}\)</span> is an arbitrary function, for all
+<span class="math inline">\(\hat{\theta}\)</span> and all <span class="math inline">\(i\)</span>.</p>
+</div>
+<div id="def-interim-equilibrium-utility" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Def “interim
+equilibrium utility”</h3>
+<p><span class="math display">\[\overline{U}_i(\theta_i; x, t) \equiv
+E[U_i(\theta; x, t) | \theta_i]\]</span></p>
+</div>
+<div id="thm-bayesian-envelope-theorem" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Thm “Bayesian
+envelope theorem”</h3>
+<p>Suppose that <span class="math inline">\(E[v_i(\chi, \theta) |
+\theta_i]\)</span> is differentiable in <span class="math inline">\(\theta_i\)</span> for all <span class="math inline">\(\chi \in \mathcal{X}\)</span>. Then, for any
+direct mechanism <span class="math inline">\(\langle x, t
+\rangle\)</span> that truthfully implements <span class="math inline">\(x\)</span> in Bayesian Nash equilibrium, <span class="math display">\[\overline{U_i}(\theta; x, t)
+=  \overline{U_i}(\underline{\theta}, \theta_{-i}; x, t) +
+\int_{\underline{\theta}}^{\theta_i} \frac{\partial}{\partial s_i}
+\mathbb{E} \big[ v_i(x(\hat{\theta}_i, \theta_{-i}), s_i, \theta_{-i})
+\big]\bigg|_{\hat{\theta}_i = s_i} ds_i.\]</span></p>
+</div>
+<div id="thm-independent-types-bne-rightarrow-epbb" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Thm “Independent
+types + BNE <span class="math inline">\(\Rightarrow\)</span> EPBB”</h3>
+<p>Suppose that the players’ types are distributed independently. Then,
+if <span class="math inline">\(x\)</span> is implementable in Bayesian
+Nash equilibrium, then <span class="math inline">\(x\)</span> is
+truthfully implementable in Bayesian Nash equilibrium with ex post
+budget balance; i.e., <span class="math inline">\(\sum_i t_i(\theta) =
+0\)</span> for all <span class="math inline">\(\theta\)</span>.</p>
+</div>
+<div id="def-linear-private-values" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Def “Linear Private
+Values”</h3>
+<p><span class="math display">\[v_i(\theta, \chi) = \theta
+\hat{v}_i(\chi), \text{ where } \hat{v}_i: \mathcal{X} \rightarrow
+\mathbb{R}.\]</span></p>
+</div>
+<div id="thm-linear-private-values-implements-x-in-bne-iff" class="section level3" number="5.3.6">
+<h3><span class="header-section-number">5.3.6</span> Thm “Linear Private
+Values implements <span class="math inline">\(x\)</span> in BNE
+iff”</h3>
+<p>In the linear private values environment, a mechanism <span class="math inline">\(\langle x, t \rangle\)</span> truthfully
+implements <span class="math inline">\(x\)</span> in Bayesian Nash
+equilbrium if, and only if</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(E[\hat{v}_i(x(\theta))|\theta_i]\)</span> is
+non-decreasing in <span class="math inline">\(\theta\)</span>, and</li>
+<li><span class="math inline">\(\bar{U}_i(\theta_i; x, t) =
+\bar{U}_i(\underline{\theta_i}; x, t) +
+\int_{\underline{\theta}}^{\theta_i} E[\hat{v}_i(x(s_i,
+\theta_{-i}))|s_i] ds_i\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="individual-rationality" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Individual
+Rationality</h2>
+<div id="thm-myerson-satterthwaite" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Thm
+“Myerson-Satterthwaite”</h3>
+<p>The efficient outcome function <span class="math inline">\(x^*\)</span> is not Bayesian implementable with ex
+post individual rationality and ex ante budget balance.</p>
+</div>
+</div>
+<div id="ex-post-implementation-and-budget-balance" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Ex post
+implementation and Budget Balance</h2>
+<div id="def-n-1-additive-separability" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Def “(N-1)-additive
+separability”</h3>
+<p>A function <span class="math inline">\(\psi: \Theta \rightarrow
+\mathbb{R}\)</span> is <span class="math inline">\((N-1)\)</span>-additively separable if there exist
+function <span class="math inline">\(\alpha_i: \Theta_{-i} \rightarrow
+\mathbb{R}, i=1, ..., N\)</span>, such that <span class="math inline">\(\psi(\theta) = \sum_i
+\alpha_i(\theta_{-i})\)</span> for <span class="math inline">\(\phi\)</span>-almost all <span class="math inline">\(\theta\)</span>.</p>
+</div>
+<div id="thm-epic-and-epbb" class="section level3" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Thm “EPIC and
+EPBB”</h3>
+<p>An outcome rule <span class="math inline">\(x\)</span> is ex post
+implementable with ex post budget balance only if <span class="math inline">\(\sum_i t_i^*(\theta)\)</span> is <span class="math inline">\((N-1)\)</span>-additively separable, where <span class="math display">\[t_i^*(\theta) =
+\int_{\underline{\theta}}^{\theta_i} \frac{\partial}{\partial
+s_i}v_i(x(\hat{\theta}_i, \theta_{-i})), s_i, \theta_{-i}) ds_i -
+v_i(x(\theta), \theta).\]</span> For sufficiency, add appropriate
+monotonicity condition.</p>
+</div>
+<div id="observation-groves-mechanisms-are-generally-not-budget-balanced" class="section level3" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Observation “Groves
+mechanisms are generally not budget balanced”</h3>
+<p>Recall <span class="math inline">\(t_i(\theta) = \sum_{j\neq i}
+v_j(x^*(\theta), \theta_j) + h_(\theta_{-i})\)</span>. Observe <span class="math inline">\(v_j(x^*(\theta), \theta_j)\)</span> itself
+generally not <span class="math inline">\((N-1)\)</span>-additively
+separable.</p>
+<blockquote>
+<p>2 players: usually (N-1)-additively separable!</p>
+</blockquote>
+<!-- # Algorithms to solve for each solution concept -->
+<!-- ### PSNE -->
+<!-- * Construct best-response correspondences -->
+<!--     * take FOCs (and SOCs) to max if continuous -->
+<!--     * split into cases -->
+<!-- ### MSNE -->
+<!-- 1. reduce to rationalizable/undominated strategies -->
+<!-- 2. split into cases on support sizes for each player -->
+<!-- 3. use indifference conditions -->
+<!-- ### BNE -->
+<!-- 1. Write in normal form -->
+<!-- ### SPE -->
+<!-- 1. draw out extensive form if possible -->
+<!-- 2. check one-shot deviation principle if repeated -->
+<!-- 3.  -->
+<!-- ### wPBE -->
+<!-- 1. is it a Beer-Quiche game? -->
+<!-- 2. figure out indifference conditions before starting analysis -->
+<!-- 3. iterate through: -->
+<!--     1. determine sequentially rational response -->
+<!--     2. ensure beliefs are consistent with Bayesian updating -->
+<!--     3. check for deviations. -->
+<!-- ### PBE -->
 </div>
 </div>
 </div>
