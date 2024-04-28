@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 607 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-12</h4>
+<h4 class="date">Last Updated: 2024-04-26</h4>
 
 </div>
 
@@ -1580,13 +1580,117 @@ Programming</h1>
 <h1><span class="header-section-number">3</span> Consumption</h1>
 <div id="def-pih" class="section level3" number="3.0.1">
 <h3><span class="header-section-number">3.0.1</span> Def “PIH”</h3>
+<p>Think of income as <span class="math inline">\(y_t = y_t^{Permanent}
++ y_t^{Transitory}\)</span>.</p>
+<p>PIH says consumption is a function of <span class="math inline">\(y_t^{Permanent}\)</span> only.</p>
+<p>Think of <span class="math inline">\(y_t^{Permanent}\)</span> as
+“annuity value” of lifetime income.</p>
+<blockquote>
+<p>MPC if you are old should be relatively high: you only have a few
+more years to live so an increase in income should be spent right
+away</p>
+</blockquote>
+<blockquote>
+<p>MPC if you are young should be relatively low: you have to spread an
+increase in income over the rest of your life</p>
+</blockquote>
 <blockquote>
 <p>As soon as income is promised, lifetime consumption should increase
 proportionally over each period.</p>
 </blockquote>
 </div>
-<div id="variations-on-pih" class="section level3" number="3.0.2">
-<h3><span class="header-section-number">3.0.2</span> Variations on
+<div id="random-walk-hypothesis-hall-1978" class="section level3" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Random Walk
+Hypothesis (Hall 1978)</h3>
+<p>We have stochastic Euler: <span class="math display">\[u&#39;(c_t) =
+\beta(1+r)E_t[u&#39;(c_{t+1})].\]</span> Hall looks at the Euler
+equation and realizes: <span class="math inline">\(E_t[u&#39;(c_{t+1})]\)</span> is NOT actual
+marginal utility of next period, it’s really <span class="math inline">\(u&#39;(c_{t+1}) + \varepsilon_{t+1}\)</span>, and
+the error is actually forecast error!</p>
+<p>And, if expectations are rational, then <span class="math inline">\(E_t[\varepsilon_{t+1}] = 0\)</span>!</p>
+<p>So, <span class="math inline">\(Cov_t(u&#39;(c_t),
+\varepsilon_{t+1})=0\)</span>! In fact, <span class="math inline">\(Cov_t(x_t, \varepsilon_{t+1})=0\)</span> for any
+date-<span class="math inline">\(t\)</span> information, <span class="math inline">\(x_t\)</span>. Plug this into the Euler equation to
+see that <span class="math display">\[u&#39;(c_{t+1}) = \frac{1}{\beta
+(1+r)} u&#39;(c_t) + \varepsilon_{t+1}.\]</span></p>
+<p>In other words, the marginal utility of consumption is following a
+random walk with drift! (Where drift=<span class="math inline">\(\frac{1}{\beta(1+r)}\)</span>).</p>
+<blockquote>
+<p>this may suggest that consumption inequality is growing without
+bound.</p>
+</blockquote>
+</div>
+<div id="pih-lit" class="section level3" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> PIH Lit</h3>
+<ul>
+<li>Hall
+<ul>
+<li>Questions the EE</li>
+</ul></li>
+<li>Johnson, Parker, and Suleilis
+<ul>
+<li>Use $300 checks randomly distributed to debunk.</li>
+</ul></li>
+<li>Shea
+<ul>
+<li>Uses union contracts stipulating when raises would occur</li>
+</ul></li>
+<li>Campbell + Mankiw 1989
+<ul>
+<li>Use IVs + null. Finds <span class="math inline">\(\hat{\lambda}
+\approx 0.5\)</span> meaning that half of all income goes to
+hand-to-mouth consumers. I.e., if PIH is true, it applies to half the
+population only.</li>
+</ul></li>
+<li>Hansen + Singleton 1982
+<ul>
+<li>Structural estimation, <span class="math inline">\(\sigma \in [.67,
+.97]\)</span></li>
+</ul></li>
+<li>Hall 1988
+<ul>
+<li>Using Hansen + Singleton spec. Assume <span class="math inline">\(c_t \sim Lognormal\)</span>, regress consumption
+growth on interest rates and get <span class="math inline">\(\hat{\sigma} \in [0, .2]\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="hansen-singleton-1982" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Hansen + Singleton
+1982</h3>
+<p>Have <span class="math inline">\(i = 1, ..., N\)</span> assets. Still
+a 1-good model, just have lots of assets now.</p>
+<p>Budget constraint: <span class="math display">\[c_t + \sum_{i=1}^N
+p_{i,t} a_{i,t} + s_t = y_t + s_{t-1}(1+r_{t-1}) + \sum_{i=1}^N a_{i,
+t-1} (p_{i,t} + d_{i,t})\]</span></p>
+<ul>
+<li>$a_i = $ number of units of asset <span class="math inline">\(i\)</span></li>
+<li>$d_i = $ dividend of asset i, received in the morning</li>
+<li>$p_i = $ price of asset i</li>
+</ul>
+<p>Euler Equation: <span class="math display">\[p_{i, t} u&#39;(c_t) =
+\beta E_t[(p_{i, t+1} + d_{i, t+1}) u&#39;(c_{t+1})], \forall
+i.\]</span> Define ex-post real rate of return <span class="math inline">\(R_{i, t+1} \equiv \frac{p_{i,t+1} +
+d_{i,t+1}}{p_{i,t}}\)</span>. Rewrite EE as <span class="math display">\[\beta E_t
+\bigg[\frac{u&#39;(c_{t+1})}{u&#39;(c_t)} R_{i, t+1}\bigg] = 1.\]</span>
+Define the ex-post difference between the forecast and actual: <span class="math display">\[\varepsilon_{i, t+1}(\theta) = \beta E_t
+\bigg[\frac{u&#39;(c_{t+1})}{u&#39;(c_t)} R_{i, t+1}\bigg] - 1\]</span>
+where <span class="math inline">\(\theta\)</span> is a set of parameters
+we will estimate using structural estimation. Impose functional form
+<span class="math inline">\(u(c) =
+\frac{c^{1-1/\sigma}}{1-1/\sigma}\)</span> to get: <span class="math display">\[\varepsilon_{i, t+1}(\theta) = \beta
+\bigg(\frac{c_{t+1}}{c_t}\bigg)^{-1/\sigma}R_{i, t+1} - 1.\]</span> We
+have data on <span class="math inline">\(R\)</span> and <span class="math inline">\(c\)</span>, so <span class="math inline">\(\theta
+= [\beta, \sigma]\)</span>.</p>
+<p>Then we’ll iterate through different values of <span class="math inline">\(\beta, \sigma\)</span> to get <span class="math inline">\(E_t[\varepsilon_{i, t+1}(\theta)]\)</span> to be
+close to 0.</p>
+<p>Imposing rational expectations means that <span class="math display">\[E_t[\varepsilon_{i, t+1}(\theta) z_t] = 0,
+\forall i \forall z, \text{ where z is any var. dated t or
+earlier}.\]</span></p>
+<p>They use GMM to get estimates: <span class="math inline">\(\beta \in
+[.942, .998], \sigma \in [.67, .97]\)</span>.</p>
+</div>
+<div id="variations-on-pih" class="section level3" number="3.0.5">
+<h3><span class="header-section-number">3.0.5</span> Variations on
 PIH</h3>
 <ol style="list-style-type: decimal">
 <li>Precautionary Savings</li>
@@ -1606,9 +1710,16 @@ E_t[u&#39;(c_{t+1})]\]</span></p>
 u&#39;&#39;(c_t)(c_{t+1} - c_t) +
 \frac{u&#39;&#39;&#39;(c_t)}{2!}(c_{t+1} - c_t)^2]\]</span> Note: you
 can pull anything dated <span class="math inline">\(t\)</span> or
-earlier out of expectation. Cancel, rearrange, divide by <span class="math inline">\(c_t\)</span> to get <span class="math display">\[E[\frac{c_{t+1} - c_t}{c_t}] \approx
+earlier out of expectation. Cancel, rearrange, divide by <span class="math inline">\(c_t\)</span> to get <span class="math display">\[E\bigg[\frac{c_{t+1} - c_t}{c_t}\bigg] \approx
 \bigg(-\frac{1}{2}\bigg)\bigg(\frac{u&#39;&#39;&#39;(c_t)}{u&#39;&#39;(c_t)}c_t\bigg)\bigg(E_t\bigg[\bigg(\frac{c_{t+1}
-- c_t}{c_t}\bigg) ^2\bigg]\bigg)\]</span> FINISH</p>
+- c_t}{c_t}\bigg) ^2\bigg]\bigg)\]</span> So Hall’s insight is true for
+all first-order approximations if all you care about is slope (i.e.,
+elasticity), but this says that under uncertainty…. SOMETHING???????
+WHAT HAPPENS?????</p>
+<blockquote>
+<p>Kimball (1980) calls <span class="math inline">\(-\frac{1}{2}(\frac{u&#39;&#39;&#39;(c_t)}{u&#39;&#39;(c_t)}c_t)\)</span>
+the coefficient of relative prudence.</p>
+</blockquote>
 </div>
 <div id="borrowing-constraints" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> 2. Borrowing
@@ -1659,9 +1770,27 @@ stationary</p>
 <div id="irrational-intertemporal-choice" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> 3. “Irrational”
 Intertemporal Choice</h2>
-<p>Commitment devices…</p>
-<p>Laibson (1997)…</p>
-<p>quasi-hyperbolic discounting…</p>
+<p>Let individual agents change preferences–essentially playing games
+against their past and future selves, finding Nash equilibria.</p>
+<div id="laibson-1997-commitment-devices" class="section level4" number="3.3.0.1">
+<h4><span class="header-section-number">3.3.0.1</span> Laibson (1997)
+“Commitment devices”</h4>
+<p>IRL people use commitment devices (e.g., tax withholding, destroying
+credit cards). This is indicative of self-control problems. But, the
+representative consumer doesn’t use these commitment devices. In fact,
+the representative consumer has credit card debt. Something about
+converting savings to illiquid assets.</p>
+<ul>
+<li>Standard discounting: <span class="math inline">\(u = u(c_0) + \beta
+u(c_1) + \beta^2 u(c_2) + \cdot \cdot \cdot\)</span></li>
+<li>Quasi-hyperbolic discounting: <span class="math inline">\(u = u(c_0)
++ \delta \{\beta u(c_1) + \beta^2 u(c_2) + \cdot \cdot
+\cdot\}\)</span></li>
+</ul>
+<blockquote>
+<p>Ainsle (1992) says <span class="math inline">\(\delta = 2/3\)</span>
+(very high!)</p>
+</blockquote>
 <p><strong>Compare <span class="math inline">\(t+k\)</span> vs <span class="math inline">\(t+k+1\)</span>:</strong></p>
 <p><strong>At time <span class="math inline">\(t\)</span>:</strong>
 <span class="math display">\[MRS = \frac{\delta \beta^{t+k}
@@ -1670,46 +1799,83 @@ u(c_{t+k})}{\delta \beta^{t+k+1} u(c_{t+k+1})} =
 <span class="math inline">\(t+k\)</span>:</strong> <span class="math display">\[MRS = \frac{\beta^{t+k} u(c_{t+k})}{\delta
 \beta^{t+k+1} u(c_{t+k+1})} = \frac{u&#39;(c_{t+k})}{\delta\beta
 u(c_{t+k+1})}\]</span></p>
-<p>Leahy (2004) Valuation of past consumption…</p>
-<p>FINISH</p>
+</div>
+<div id="caplin-leahy-2004-jpe-valuation-of-past-consumption" class="section level4" number="3.3.0.2">
+<h4><span class="header-section-number">3.3.0.2</span> Caplin + Leahy
+(2004, JPE) “Valuation of Past Consumption”</h4>
+<p>The only way to go through life without constantly regretting
+decisions is to ‘upgrade’ past experiences. E.g., “we’re not forgoing
+income during PhD in hopes of getting a reward later; we’re just still
+celebrating the candy bar we ate as a child.”</p>
+<p><img src="%22src/LeahyDiscounting.png%22" /></p>
+<p>If we really are different people at different stages of life, the
+conclusion is: young guy is screwing over old guy–we should save more at
+time <span class="math inline">\(t\)</span>.</p>
+</div>
 </div>
 </div>
 <div id="labor-supply-and-search" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Labor Supply and
 Search</h1>
+<p>Two ways of modeling: Supply or Search.</p>
+<div id="supply" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Supply</h2>
+<!-- Sargent + Ljungvist 6.1-6.3 -->
 <p>Neoclassical (price-taking, utility maximizing, single time period
 framework) Labor Supply: <span class="math inline">\(\max \{u(c) -
 \nu(N)\}\)</span></p>
-<p>e.g., <span class="math display">\[\frac{c^{1-\frac{1}{\sigma}}}{1-\frac{1}{\sigma}}
-- \phi \frac{N^{1+ \frac{1}{\eta}}}{1+ \frac{1}{\eta}}, \eta \geq 0
-\text{ s. to } pc = wN+A\]</span></p>
+<p>e.g., <span class="math display">\[\max_{c,N}
+\bigg\{\frac{c^{1-\frac{1}{\sigma}}}{1-\frac{1}{\sigma}} - \phi
+\frac{N^{1+ \frac{1}{\eta}}}{1+ \frac{1}{\eta}} \bigg\} \text{ s. to }
+pc = wN+A\]</span></p>
 <p>where <span class="math inline">\(N\)</span> = number hours worked,
-<span class="math inline">\(A\)</span> = other assets e.g.,</p>
+<span class="math inline">\(A\)</span> = other assets, <span class="math inline">\(\eta &gt; 0\)</span> is Frisch Labor Supply
+Elasticity.</p>
+<p>FOC:</p>
+<p><span class="math display">\[v&#39;(N) = \frac{w}{p} u&#39;(c)
+\Rightarrow \text{ using parametric form: } \phi N^{1/\eta} =
+\frac{w}{p} c^{-1/\sigma}\]</span> Taking logs: <span class="math display">\[\ln N = \eta \ln \frac{w}{p} -
+\frac{\eta}{\sigma} \ln c - \eta \ln \phi\]</span> This lends itself to
+a common regression. Applied economists often “tack on” an additional
+error term to account for structural things, omitted variables, or
+measurement bias.</p>
+<p>This implies that leisure is a normal good. We see an income effect
+on labor supply.</p>
+</div>
+<div id="search" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Search</h2>
+<p>LOTS HERE FINISH!!!!</p>
+</div>
 </div>
 <div id="asset-pricing" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Asset Pricing</h1>
 <div id="capm" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> CAPM</h2>
 <p>Recall Hansen and Singleton:</p>
-<p>max problem lets us derive the price given below.</p>
+<p>FINISH</p>
+<p>Maximization problem lets us derive the price given below.</p>
 <!-- $$\max E_t $$ -->
 <div id="def-stochastic-discount-factor" class="section level4" number="5.1.0.1">
 <h4><span class="header-section-number">5.1.0.1</span> Def “stochastic
 discount factor”</h4>
 <p><span class="math display">\[m_{t, t+j} = m_{t+j} \equiv \beta^j
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)}\]</span></p>
-<p>Gives rise to:</p>
+</div>
+<div id="def-price-of-asset-i" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Def “price of asset
+<span class="math inline">\(i\)</span>”</h3>
 <p><span class="math display">\[p_{i,t} = E_t \bigg[\sum_{j=1}^\infty
 m_{t,t+j} x_{i,t+j} \bigg] = E_t \bigg[\sum_{j=1}^\infty \beta^j
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)} x_{i,t+j}\bigg]\]</span></p>
-</div>
-<div id="def-r" class="section level4" number="5.1.0.2">
-<h4><span class="header-section-number">5.1.0.2</span> Def “R”</h4>
+<div id="def-r-payoff-of-asset" class="section level4" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Def “R (payoff of
+asset)”</h4>
 <p><span class="math display">\[R_{i,t+1} \equiv \frac{p_{i,t+1} + x_{i,
 t+1}}{p_{i,t}}\]</span></p>
 </div>
-<div id="def-capm" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Def “CAPM”</h3>
+</div>
+<div id="def-capm" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Def “CAPM”</h3>
 <ul>
 <li><span class="math inline">\(Cov(m, R) = 0 \Rightarrow\)</span>
 risk-adjsted return = safe return</li>
@@ -1741,17 +1907,19 @@ acquire the risk-reducing asset.</p>
 will want that asset. So demand will rise <span class="math inline">\(\Rightarrow\)</span> price will rise.”</p>
 </blockquote>
 </div>
-<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Puzzle 1 “Log
+<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Puzzle 1 “Log
 approximation suggests <span class="math inline">\(r \approx
 11%\)</span>”</h3>
+<p>do reading!</p>
 </div>
-<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> Puzzle 2 “Equity
+<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Puzzle 2 “Equity
 Premium Puzzle”</h3>
+<p>FINISH</p>
 </div>
-<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Model Lucas Asset
+<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Model Lucas Asset
 Pricing (Trees)</h3>
 <ul>
 <li>Endowment economy.</li>
@@ -1767,13 +1935,12 @@ Process)</li>
 <li>In equilibrium <span class="math inline">\(c_t = x_t\)</span> (this
 is true for every agent)</li>
 </ul>
-<p>FOC:</p>
-<p><span class="math display">\[E_t \bigg[ \beta
+<p>FOC: <span class="math display">\[E_t \bigg[ \beta
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)} \frac{p_{t+1} +
 x_t{+1}}{p_t}   \bigg] = 1\]</span></p>
 </div>
-<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.5">
-<h3><span class="header-section-number">5.1.5</span> Def “Stochastic
+<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Def “Stochastic
 Competitive Equilibrium”</h3>
 <p>A <em>Stochastic Competitive Equilibrium</em> is an allocation rule
 <span class="math inline">\(c(x_t)\)</span> and a pricing function <span class="math inline">\(p_t = \varphi(x_t)\)</span> such that</p>
@@ -1787,41 +1954,124 @@ x_t{+1}}{\varphi&#39;(x_t)}   \bigg] = 1\]</span></p>
 <blockquote>
 <p>In this economy, shocks affect the aggregate economy–very different
 from previous equilibria in which a shock affected an individual. Shocks
-to the aggregate economy will cause price changes. # Investment</p>
+to the aggregate economy will cause price changes.</p>
 </blockquote>
 </div>
-<div id="jorgensons-model" class="section level3" number="5.1.6">
-<h3><span class="header-section-number">5.1.6</span> Jorgenson’s
-Model</h3>
-<p>Firm input demand: <span class="math inline">\(\max \sum_{t=0}^\infty
-(\frac{1}{1+r})^t\bigg(p F(K_t, N_t) - w_t N_t - p^k_t I_t
-\bigg)\)</span> s. to <span class="math inline">\(K_{t+1} =
-K_t(1-\delta) + I_t\)</span></p>
+</div>
+</div>
+<div id="investment" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Investment</h1>
+<div id="facts-about-us-investment" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Facts about US
+Investment</h3>
+<ul>
+<li>Investment makes up 15-20% of GDP</li>
+<li><span class="math inline">\(\Delta\)</span> Inventories comprises
+0.1% of GDP, but unsold inventories account for 1/3 of variation in
+GDP</li>
+<li><span class="math inline">\(\delta\)</span> for equipment <span class="math inline">\(\approx\)</span> 7-15% per year</li>
+<li><span class="math inline">\(\delta\)</span> for structures <span class="math inline">\(\approx\)</span> 1-3% per year</li>
+</ul>
+</div>
+<div id="def-user-cost-of-capital" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> Def “User Cost of
+Capital”</h3>
+<p><span class="math display">\[\underbrace{p}_{=1} MPK = p_t^k (r +
+\delta  - \frac{\Delta p_{t+1}^k}{p_t^k}(1-\delta))\]</span> or in
+continuous time: <span class="math display">\[r_K(t) = p_K(t)\bigg[r(t)
++ \delta - \frac{\dot{p}_K(t)}{p_K(t)}\bigg]\]</span></p>
 <blockquote>
-<p>Note: we later assume <span class="math inline">\(p = 1\)</span></p>
+<p>works well for long-term rentals/purchases, but no so well for
+short-term.</p>
 </blockquote>
-<p>Solve through either Hamiltonian or Dynamic Programming.</p>
-<p><strong>Result:</strong> <span class="math inline">\(p_t^k =
-\frac{1}{1+r} \sum_{j=0}^\infty (\frac{1-\delta}{1+r}^j)
-F_{k,t+j+1}\)</span></p>
 </div>
+<div id="jorgensons-model" class="section level3" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> Jorgenson’s
+Model</h3>
+<p>Firm input demand: <span class="math display">\[\max
+\sum_{t=0}^\infty (\frac{1}{1+r})^t\bigg(\underbrace{p}_{=1} F(K_t, N_t)
+- w_t N_t - p^k_t I_t  \bigg) \text{ s. to } K_{t+1} = K_t(1-\delta) +
+I_t\]</span> Solving gives: <span class="math display">\[F_{K, t+1} =
+p_{t+1}^K (r + \delta  - \frac{\Delta
+p_{t+1}^k}{p_t^k}(1-\delta))\]</span> which is the user cost of capital
+we defined previously.</p>
+<p>In continuous time, <span class="math inline">\(1-\delta \rightarrow
+1\)</span>. We solve through one of:</p>
+<p><strong>Hamiltonian:</strong> <span class="math display">\[finish\]</span> or <strong>Dynamic
+Programming:</strong> <span class="math display">\[finish\]</span> to
+get: <span class="math display">\[p_t^k = \frac{1}{1+r}
+\sum_{j=0}^\infty (\frac{1-\delta}{1+r}^j) F_{k,t+j+1}.\]</span></p>
+<blockquote>
+<p>Summers: “this isn’t really even investment demand… it’s just capital
+demand.”</p>
+</blockquote>
 </div>
-<div id="q-theory" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Q-theory</h2>
-<div id="def-tobins-q" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Def “Tobin’s
+<div id="q-theory" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Q-theory</h2>
+<blockquote>
+<p>“Investment analog to the PIH”</p>
+</blockquote>
+<div id="def-tobins-q" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Def “Tobin’s
 Q”</h3>
 <p><span class="math display">\[Q^{Tobin} = \frac{\text{Value of
-firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} = \text{average
-} Q\]</span></p>
+firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} \equiv
+\text{average } Q\]</span></p>
 </div>
-<div id="model-hayashi-abel-summers-i.e.-jorgensons-with-adj.-cost" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Model “Hayashi,
-Abel, Summers (i.e., Jorgenson’s with adj. cost)”</h3>
+<div id="def-hayashi-form" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Def “Hayashi
+Form”</h3>
+<p>Common parametrization for adjustment costs: <span class="math display">\[C(I, K) = K \phi(\frac{I}{K}), \phi \text{
+convex. E.g., } C(I, K) = K \underbrace{\gamma(\frac{I}{K} -
+\delta)^2}_{\phi}.\]</span></p>
+</div>
+<div id="model-hayashi-abel-summers-i.e.-jorgensons-with-adjustment-costs" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Model “Hayashi,
+Abel, Summers (i.e., Jorgenson’s with adjustment costs)”</h3>
+<p><span class="math display">\[V(0)= \int_0^\infty e^{-rt} [F(K(t)) -
+\underbrace{p^K}_{=1} I(t) - C(I(t), K(t))]dt \text{ s. to } \dot{K}(t)
+= I(t) - \delta K(t)\]</span> <span class="math display">\[\mathcal{H}^{\text{current value}} = F(K) - I -
+C(I, K) + q(I - \delta K)\]</span></p>
+<p>Note that <span class="math inline">\(q=\)</span> Marginal value of
+additional capital = “marginal <span class="math inline">\(q\)</span>.”
+We want an expression for <span class="math inline">\(q\)</span></p>
+<p>Assume Hayashi form and take FOCs: <span class="math display">\[\frac{\partial \mathcal{H}}{\partial I} = 0
+\iff  -1 - \frac{\partial}{\partial I} (K \phi(\frac{I}{K})) + q = 0
+\iff \phi&#39;(\frac{I}{K}) = q - 1\]</span> <span class="math display">\[\frac{\partial \mathcal{H}}{\partial K} = H_K =
+rq - \dot{q} \iff F_K - C_K - \delta q = rq - \dot{q} \iff
+FINISH\]</span> In the end we get: <span class="math display">\[q(t) =
+\int_t^\infty e^{-(r+\delta)(s - t)} [F_K(s) - \Gamma(s)]ds\]</span></p>
+</div>
+<div id="thm-hayashis-thm" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Thm “Hayashi’s
+Thm”</h3>
+<p>If <span class="math inline">\(F(K, N)\)</span> and <span class="math inline">\(C(I, K)\)</span> are both homogeneous of degree 1
+(aka <span class="math inline">\(H^1\)</span> or CRS in all inputs) then
+<span class="math inline">\(Q = q\)</span>.</p>
+<p>Other assumptions Hayashi makes implicitly:</p>
+<ul>
+<li>No financing constraints</li>
+<li>Competitive</li>
+<li>Single type of capital</li>
+</ul>
+<p><strong>Intuition:</strong> value of the firm is linearly
+proportional to capital: <span class="math inline">\(V(t) = const(t)
+K(t)\)</span>.</p>
+<p>Given <span class="math inline">\(K(t)\)</span>, <span class="math inline">\(K(t+s), I(t+s), N(t+s)\)</span> are optimal if
+<span class="math inline">\(K(t)\)</span> doubles:</p>
+<ul>
+<li><span class="math inline">\(K^{new}(t+s) = 2 K(t+s)\)</span></li>
+<li><span class="math inline">\(I^{new}(t+s) = 2 I(t+s)\)</span></li>
+<li><span class="math inline">\(N^{new}(t+s) = 2 N(t+s)\)</span></li>
+</ul>
+<blockquote>
+<p>If I double <span class="math inline">\(K\)</span> I double the value
+of the firm</p>
+</blockquote>
 </div>
 </div>
-<div id="intertermporal-elasticity-of-investment-demand" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Intertermporal
+<div id="intertermporal-elasticity-of-investment-demand" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Intertermporal
 Elasticity of Investment Demand</h2>
 <p>“Lumpy” investment/inertia</p>
 <p>Same model as before, but we’ve shifted back to discrete:</p>
@@ -1836,13 +2086,13 @@ MPK_{t+j+1}\]</span></p>
 <p>if I know of some improvement in future MPK I should invest more
 today!</p>
 </blockquote>
-<div id="claim" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Claim</h3>
+<div id="claim" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Claim</h3>
 <p>If the subsidy is temporary and <span class="math inline">\(\delta\)</span> (and <span class="math inline">\(r\)</span>) are small then <span class="math inline">\(q_{j,t} \approx \bar{q}_j\)</span>. (i.e., <span class="math inline">\(\frac{\Delta q_{j,t}}{\bar{q}_j} \approx
 0\)</span>).</p>
 </div>
-<div id="model-investment-with-kinked-adjustment-costs" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Model Investment
+<div id="model-investment-with-kinked-adjustment-costs" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Model Investment
 with Kinked Adjustment Costs</h3>
 <ul>
 <li>purchase capital at <span class="math inline">\(p^k\)</span>
@@ -1858,8 +2108,8 @@ K) = \begin{cases} K&#39; - K \text{ if } K&#39; \geq K \\ \alpha(K&#39;
 </ul>
 <!-- * high $\varepsilon$ -->
 </div>
-<div id="model-investment-adjustment-with-fixed-costs" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Model Investment
+<div id="model-investment-adjustment-with-fixed-costs" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Model Investment
 Adjustment with Fixed Costs</h3>
 <ul>
 <li>Pay fixed cost, <span class="math inline">\(F &gt; 0\)</span> any
@@ -1869,11 +2119,11 @@ time <span class="math inline">\(K&#39; \neq K\)</span>.</li>
 </div>
 </div>
 </div>
-<div id="real-business-cycle-rbc-models" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Real Business Cycle
+<div id="real-business-cycle-rbc-models" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Real Business Cycle
 (RBC) Models</h1>
-<div id="regularities" class="section level3" number="6.0.1">
-<h3><span class="header-section-number">6.0.1</span> Regularities</h3>
+<div id="regularities" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Regularities</h3>
 <ul>
 <li>General equilibrium</li>
 <li>Representative agent</li>
@@ -1881,8 +2131,8 @@ time <span class="math inline">\(K&#39; \neq K\)</span>.</li>
 <li>No money</li>
 <li>Productivity shocks</li>
 </ul>
-<p><strong>Households</strong> <span class="math display">\[\max E_t
-\bigg[\sum_j \beta^j (\frac{c_{t+j}^{1-1/\sigma}}{1-1/\sigma} - \phi
+<p><strong>Household problem</strong> <span class="math display">\[\max
+E_t \bigg[\sum_j \beta^j (\frac{c_{t+j}^{1-1/\sigma}}{1-1/\sigma} - \phi
 \frac{\eta_{t+j}^{1 + 1/\eta}}{1 +  1/\eta})\bigg]\]</span> s. to</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(k_{t+1} = (1-\delta)k_t + I_t\)</span>
@@ -1897,7 +2147,8 @@ b_{t-1}(1+ r_{t-1})\)</span> (budget constraint)</li>
 labor supply</li>
 <li>HH’s hold capital (this makes things easier, but could have firms
 hold and HHs own firms instead)</li>
-<li><span class="math inline">\(b_t = 0\)</span> in equilibrium</li>
+<li><span class="math inline">\(b_t = 0\)</span> in equilibrium
+–WHY??</li>
 </ul>
 <p>FOCs:</p>
 <ol style="list-style-type: decimal">
@@ -1907,6 +2158,155 @@ hold and HHs own firms instead)</li>
 E_t\bigg[c_{t+1}^{-1/\sigma} (\underbrace{R_{t+1} + 1-\delta}_{=1+r_t})
 \bigg]\)</span></li>
 </ol>
+<p><strong>Firm’s problem</strong> <span class="math display">\[\max Y_t
+- w_t - R_t K_t \text{ s. to } Y_t = Z_t K_t^\alpha
+N_t^{1-\alpha}\]</span></p>
+</div>
+<div id="rbc-8-unknowns-and-equations" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> RBC 8 unknowns and
+equations</h3>
+<p>Unknowns: <span class="math inline">\(Z, K, I, Y, C, N, R,
+w\)</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Labor Supply (derive from HH FOCs for <span class="math inline">\(n\)</span> and <span class="math inline">\(c\)</span>) <span class="math display">\[w_t
+c_t^{-1/\sigma} = \phi n_t^{1/\eta}\]</span></p></li>
+<li><p>Euler equation(s) (derive from HH FOCs for <span class="math inline">\(I\)</span> and <span class="math inline">\(K\)</span> or <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>) <span class="math display">\[c_t^{-1/\sigma} = \beta E_t[c_{t+1}^{-1/\sigma}
+(R_{t+1} + 1-\delta)]\]</span></p></li>
+<li><p>Labor demand (derive from Firm’s FOCs for ??) <span class="math display">\[w_t = (1-\alpha)Z_t K_t^\alpha
+N_t^{-\alpha}\]</span></p></li>
+<li><p>Capital demand (derive from Firm’s FOCs for ??) <span class="math display">\[R_t = \alpha Z_t K_t^{\alpha - 1}
+N_t^{1-\alpha}\]</span></p></li>
+<li><p>Production Function <span class="math display">\[Y_t = Z_t
+K_t^\alpha N_t^{1-\alpha}\]</span></p></li>
+<li><p>Market Clearing/Resource Constraint <span class="math display">\[Y_t = C_t + I_t\]</span></p></li>
+<li><p>Capital Accumulation Equation <span class="math display">\[K_{t-1} = K_t(1-\delta) + I_t\]</span></p></li>
+<li><p>Productivity <span class="math display">\[Z_t \sim F(Z_t |
+Z_{t-1}), Z_t = (1-\rho)\bar{Z} + \rho Z_{t-1} +
+\varepsilon_t\]</span></p></li>
+<li><p>Intermediate from FOC <span class="math inline">\(\partial
+I_t\)</span> <span class="math display">\[q_t =
+C_t^{-\frac{1}{\sigma}}\]</span></p></li>
+<li><p>Intermediate from FOC <span class="math inline">\(\partial
+K_{t+1}\)</span> <span class="math display">\[q_t = \beta E_t
+[C_{t_1}^{-\frac{1}{\sigma}} R_{t+1} +
+(1-\delta)q_{t+1}]\]</span></p></li>
+</ol>
+</div>
+<div id="def-recursive-competitive-equilibrium" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Def “Recursive
+Competitive Equilibrium”</h3>
+<p>A <em>Recursive Competitive Equilibrium</em> is</p>
+<ul>
+<li>a set of pricing functions <span class="math inline">\(R(K, Z),
+w(K,Z)\)</span>;</li>
+<li>a set of individual policy functions <span class="math inline">\(k&#39;(k, K, Z), n(k, K,Z), c(k,K,Z)\)</span>,
+and</li>
+<li>aggregate allocation functions <span class="math inline">\(K&#39;(K,
+Z), n(K,Z), c(K,Z)\)</span></li>
+</ul>
+<p>such that</p>
+<ol style="list-style-type: decimal">
+<li>Taking <span class="math inline">\(R(\cdot), w(\cdot)\)</span>, and
+<span class="math inline">\(K(\cdot)\)</span> as given, <span class="math inline">\(n(\cdot), k(\cdot), c(\cdot)\)</span> are
+optimal,</li>
+<li>Firms max profits:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(R(K,Z) = \alpha Z K^{\alpha-1}
+N(K,Z)^{1-\alpha}\)</span>,</li>
+<li><span class="math inline">\(w(K,Z) = (1- \alpha) Z K^{\alpha}
+N(K,Z)^{-\alpha}\)</span></li>
+</ol></li>
+<li>Markets clear:
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(Z K^\alpha N(K, Z)^{1-\alpha} = C(K, Z)
++ K&#39;(K, Z) - K(1-\delta)\)</span></li>
+</ol></li>
+<li><span class="math inline">\(n(\cdot), k(\cdot), c(\cdot)\)</span>
+imply <span class="math inline">\(R(\cdot), w(\cdot), K(\cdot)\)</span>
+<ol style="list-style-type: lower-alpha">
+<li>i.e., <span class="math inline">\(k&#39;(K, K, Z) = K&#39;(K,
+Z)\)</span>, etc.</li>
+<li>Sargent calls this “big <span class="math inline">\(K\)</span>-little <span class="math inline">\(k\)</span> trick”</li>
+</ol></li>
+</ol>
+<blockquote>
+<p>Here we are accomodating for 2 types of uncertainty: (1) for
+consumers, and (2) prices–<span class="math inline">\(w_t\)</span> and
+<span class="math inline">\(R_t\)</span> are moving around!</p>
+</blockquote>
+<!-- Recall: we started with a stationary stocahastic equilibrium: instead of a sequence of allocations it was a set of policy functions. As soon as we allowed for uncertainty, we had to change  -->
+<p><strong>Dynamic Programming Solution</strong></p>
+<ol style="list-style-type: decimal">
+<li>Solve for “nonstochastic” steady state, <span class="math inline">\(\bar{k}, \bar{C},\bar{I},\bar{Y},
+...\)</span></li>
+<li>Linearize system and solve</li>
+</ol>
+</div>
+<div id="claim-1" class="section level3" number="7.0.4">
+<h3><span class="header-section-number">7.0.4</span> Claim</h3>
+</div>
+<div id="rbc-limiting-solution" class="section level3" number="7.0.5">
+<h3><span class="header-section-number">7.0.5</span> RBC Limiting
+Solution</h3>
+<ul>
+<li><span class="math inline">\(\rho\rightarrow 0\)</span> (short-lived
+shocks)</li>
+<li><span class="math inline">\(\delta\rightarrow 1\)</span> (long-lived
+capital)</li>
+<li><span class="math inline">\(\beta\rightarrow 1\)</span> (HHs more
+patient)</li>
+</ul>
+<p>this causes:</p>
+<p><span class="math inline">\(q_t \approx \bar{q} \iff \tilde{q}_t
+\approx 0\)</span> and <span class="math inline">\(K_t \approx \bar{K}
+\iff \tilde{K}_t \approx 0\)</span></p>
+<p><span class="math inline">\(\tilde{q}_t, \tilde{K}_t \approx 0
+\Rightarrow \tilde{C}_t \approx 0\)</span> (via FOC)</p>
+<p>FINISH</p>
+</div>
+</div>
+<div id="money-demand" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Money Demand</h1>
+<p>FINISH</p>
+</div>
+<div id="misc" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Misc</h1>
+<div id="law-of-iterated-expectations-lie" class="section level3" number="9.0.1">
+<h3><span class="header-section-number">9.0.1</span> Law of Iterated
+Expectations (LIE)</h3>
+<p><span class="math display">\[E[E[Y|X]] = E[Y]\]</span></p>
+</div>
+<div id="covariance" class="section level3" number="9.0.2">
+<h3><span class="header-section-number">9.0.2</span> Covariance</h3>
+<p><span class="math display">\[cov(X, Y) = E[(X - \mu_x)(Y - \mu_Y)] =
+E[XY] - E[X]E[Y]\]</span> ### Growth rates <span class="math display">\[g_{X,t} \equiv  \frac{X_{t} - X_{t-1}}{X_{t-1}}
+\approx \ln X_t - \ln X_{t-1} = \ln \frac{X_t}{X_{t-1}} =
+\ln(1+g_{X,t})\]</span></p>
+<blockquote>
+<p>gross <span class="math inline">\(\approx\)</span> 1 + net; Gross:
+<span class="math inline">\(\frac{c_{t+1}}{c_t}\)</span>; Net: $g_{c,
+t+1}</p>
+</blockquote>
+</div>
+<div id="log-linearization" class="section level3" number="9.0.3">
+<h3><span class="header-section-number">9.0.3</span> Log
+linearization</h3>
+<ol style="list-style-type: decimal">
+<li>take logs</li>
+<li>First order Taylor approximation about the steady state</li>
+<li>Simplify so everything is either in terms of percentage deviations
+from steady state, or is a steady state variable.</li>
+</ol>
+<p><span class="math inline">\(\tilde{x} \equiv \frac{1}{x^{ss}}(x -
+x^{ss})\)</span></p>
+</div>
+<div id="current-vs-present-value-lagrangian" class="section level3" number="9.0.4">
+<h3><span class="header-section-number">9.0.4</span> Current vs Present
+Value Lagrangian</h3>
+</div>
+<div id="current-vs-present-value-hamiltonian" class="section level3" number="9.0.5">
+<h3><span class="header-section-number">9.0.5</span> Current vs Present
+Value Hamiltonian</h3>
 </div>
 </div>
 

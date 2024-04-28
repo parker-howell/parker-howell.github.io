@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-21</h4>
+<h4 class="date">Last Updated: 2024-04-23</h4>
 
 </div>
 
@@ -2008,10 +2008,6 @@ Models:</h3>
 <p>Gift Game, Simple Signaling, Simple Reputation (aka centipede or grab
 game)</p>
 </div>
-<div id="model-herding" class="section level3" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Model
-“Herding”</h3>
-</div>
 </div>
 <div id="limitations-of-pbe" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Limitations of
@@ -2055,8 +2051,6 @@ equilibrium</em> if it is sequentially rational and consistent.</p>
 <p>Aka “perfect extended-Bayesian equilbrium”, right?????????? or are
 these separate concepts?</p>
 </blockquote>
-<!-- #### Model "Sequential Jury Voting" -->
-<!-- omitted -->
 </div>
 </div>
 </div>
@@ -2161,11 +2155,20 @@ receive messages)</li>
 <ul>
 <li>Ex ante BB - requires that the principal pays the agents zero in
 expectation, though he may pay them a positive or negative amount for
-different realizations (balances to 0)</li>
+different realizations (balances to 0)
+<ul>
+<li><span class="math inline">\(E[\sum_i t_i] = 0\)</span> - CHECK</li>
+</ul></li>
 <li>(Ex post) No subsidy (no matter type vec, all transfers must sum to
-0)</li>
+0)
+<ul>
+<li><span class="math inline">\(\sum_i t_i \leq 0\)</span></li>
+</ul></li>
 <li>Ex post BB - principal cannot pay a nonzero amount for any
-realization of their private info (but agents may pay each other)</li>
+realization of their private info (but agents may pay each other)
+<ul>
+<li><span class="math inline">\(\sum_i t_i = 0\)</span></li>
+</ul></li>
 </ul></li>
 </ol>
 <blockquote>
@@ -2178,9 +2181,9 @@ allows agents to burn money but not bring money from outside the
 game)</p>
 </blockquote>
 </div>
-<div id="def-bne-of-the-mechanism" class="section level3" number="5.0.5">
-<h3><span class="header-section-number">5.0.5</span> Def “BNE of the
-Mechanism”</h3>
+<div id="def-interimbayesian-ic-aka-bne-of-the-mechanism" class="section level3" number="5.0.5">
+<h3><span class="header-section-number">5.0.5</span> Def
+“Interim/Bayesian IC” (aka BNE of the Mechanism)</h3>
 <p>The strategy profile, <span class="math inline">\(m^*\)</span> is a
 Bayesian Nash equilibrium of the mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span> if <span class="math display">\[E[v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta))
 | \theta_i] \geq E[v_i(x(m_i, m_{-1}^*(\theta_{-i})), \theta) + t_i(m_i,
@@ -2208,7 +2211,7 @@ mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span>
 <em>implements</em> the outcome rule <span class="math inline">\(\hat{x}: \Theta \rightarrow \mathcal{X}\)</span>
 <em>in ex post equilibrium</em> if there is an ex post equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline">\(\langle M, x, t \rangle\)</span> with <span class="math inline">\(x(m^*(\theta)) = \hat{x}(\theta)\)</span> for all
 <span class="math inline">\(\theta\)</span>.</p>
-<p>Such an incentive is <strong>ex post incentive compatible
+<p>Such a mechanism is <strong>ex post incentive compatible
 (EPIC)</strong>.</p>
 </div>
 <div id="def-dominant-strategy-incentive-compatible-dsic" class="section level3" number="5.0.7">
@@ -2227,36 +2230,80 @@ equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline
 <p>Such a mechanism is dominant strategy incentive compatible
 (DSIC).</p>
 </div>
-<div id="thm-groves-mechanism" class="section level3" number="5.0.8">
-<h3><span class="header-section-number">5.0.8</span> Thm “Groves
-Mechanism”</h3>
+<div id="def-private-values" class="section level3" number="5.0.8">
+<h3><span class="header-section-number">5.0.8</span> Def “Private
+Values”</h3>
+<p><span class="math display">\[v_i(\chi, \theta) = v_i(\chi, \theta_i,
+\theta_{−i}&#39;), ~~~ \forall \theta_{−i}&#39;, \forall \theta, \forall
+i\]</span></p>
+</div>
+<div id="remark-dsic-vs-epic" class="section level3" number="5.0.9">
+<h3><span class="header-section-number">5.0.9</span> Remark “DSIC vs
+EPIC”</h3>
+<ul>
+<li>Private values <span class="math inline">\(\Rightarrow\)</span> DSIC
+= EPIC</li>
+<li>Interdependent values <span class="math inline">\(\Rightarrow\)</span> DSIC too strong to do
+anything</li>
+</ul>
+</div>
+<div id="remark-epic-vs.-biciic" class="section level3" number="5.0.10">
+<h3><span class="header-section-number">5.0.10</span> Remark “EPIC
+vs. BIC/IIC”</h3>
+<p>IIC:</p>
+<ul>
+<li>Relies on details of <span class="math inline">\(\phi\)</span></li>
+<li>Not robust to “higher order beliefs”</li>
+<li>Not robust to “information leakage”</li>
+</ul>
+<p>EPIC:</p>
+<ul>
+<li>Does not depend on <span class="math inline">\(\phi\)</span> at
+all</li>
+<li>Robust to “higher order beliefs”</li>
+<li>Robust to “information leakage”</li>
+<li>Simpler to work with!</li>
+</ul>
+</div>
+<div id="thm-the-revelation-principle" class="section level3" number="5.0.11">
+<h3><span class="header-section-number">5.0.11</span> Thm “The
+revelation principle”</h3>
+<p>If there exists a mechanism <span class="math inline">\(\langle M, x,
+t \rangle\)</span> that implements <span class="math inline">\(\hat{x}\)</span> in a (Bayesian, ex post, or
+dominant strategy) equilibrium <span class="math inline">\(m^*\)</span>,
+then there exists a mechanism <span class="math inline">\(\langle
+\Theta, \hat{x},\hat{t} \rangle\)</span>, where <span class="math inline">\(\hat{t}(\hat{\theta}) =
+t(m^*(\hat{\theta}))\)</span> for all <span class="math inline">\(\hat{\theta}\)</span>, with an equilibrium <span class="math inline">\(\hat{m}_i(\theta_i) = \theta_i\)</span> for all
+<span class="math inline">\(\theta_i\)</span> and all <span class="math inline">\(i\)</span>.</p>
+<p>We say that <span class="math inline">\(\langle \Theta, \hat{x},
+\hat{t} \rangle\)</span> truthfully implements <span class="math inline">\(\hat{x}\)</span>.</p>
+<p>For direct mechanisms we write <span class="math inline">\(\langle x,
+t \rangle\)</span>.</p>
+</div>
+<div id="thm-groves-mechanism-aka-vcg-vickrey-clarke-groves-mechanisms." class="section level3" number="5.0.12">
+<h3><span class="header-section-number">5.0.12</span> Thm “Groves
+Mechanism” (Aka VCG (Vickrey-Clarke-Groves) mechanisms.)</h3>
 <p>Assume private values. If <span class="math inline">\(x^*(\theta)\)</span> maximizes social welfare for
 each <span class="math inline">\(\theta\)</span>, then <span class="math inline">\(x^*\)</span> is truthfully implemented in ex post
 equilibrium by any direct mechanism <span class="math inline">\(\langle
 x^*, t \rangle\)</span> satisfying <span class="math display">\[t_i(\theta) = \sum_{j \neq i} v_j(x^*(\theta),
 \theta_j) + h_i(\theta_{-i})\]</span> where <span class="math inline">\(h_i: \Theta_{-i} \rightarrow \mathbb{R}\)</span>
 is an arbitrary function, for all <span class="math inline">\(\theta\)</span> and all <span class="math inline">\(i\)</span>.</p>
-<p>Aka VCG (Vickrey-Clarke-Groves) mechanisms.</p>
 <blockquote>
 <p><span class="math inline">\(h_i(\theta_{-i})\)</span> CANNOT depend
 on <span class="math inline">\(i\)</span>’s type!</p>
 </blockquote>
-<div id="example-public-project" class="section level4" number="5.0.8.1">
-<h4><span class="header-section-number">5.0.8.1</span> Example “Public
-Project”</h4>
-</div>
-<div id="example-externalities" class="section level4" number="5.0.8.2">
-<h4><span class="header-section-number">5.0.8.2</span> Example
-“Externalities”</h4>
+<p><strong>Example “Public Project”</strong></p>
+<p><strong>Example “Externalities”</strong></p>
 <blockquote>
 <p>2nd price auction is a Groves mechanism: people report truthfully,
 has efficient outcome.</p>
 </blockquote>
 </div>
-</div>
-<div id="result-1" class="section level3" number="5.0.9">
-<h3><span class="header-section-number">5.0.9</span> Result</h3>
-<p>In private values setting, Groves Mechanism <span class="math inline">\(\iff\)</span> efficient outcome AND EPIC</p>
+<div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.0.13">
+<h3><span class="header-section-number">5.0.13</span> Result “Groves
+<span class="math inline">\(\iff\)</span> Efficient and EPIC”</h3>
+<p>In the private values setting, Groves Mechanism <span class="math inline">\(\iff\)</span> efficient outcome AND EPIC</p>
 <p>Groves thm proves if, can use envelope thm to show only if.</p>
 </div>
 <div id="envelope-thm" class="section level2" number="5.1">
@@ -2294,21 +2341,21 @@ post equilibrium, for all <span class="math inline">\(\theta_{-i}\)</span>,</p>
 v_i(x(\hat{\theta}_i, \theta_{-i}), s_i,
 \theta_{-i})\big)\bigg|_{\hat{\theta}_i = s_i} ds_i.\]</span></p>
 <p>Example: A public project</p>
-</div>
-<div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Result “Groves
-<span class="math inline">\(\iff\)</span> Efficient and EPIC”</h3>
 <p>Example: Allocating an object</p>
 </div>
 </div>
 <div id="linear-private-values" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Linear Private
 Values</h2>
-<p>Linear Private values: <span class="math inline">\(v_i(\chi,
-\theta_i) = \theta_i \hat{v}_i(\chi)\)</span> where <span class="math inline">\(\hat{v}_i: \mathcal{X} \rightarrow
-\mathbb{R}_+\)</span></p>
-<div id="thm-linear-private-values" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Thm “Linear Private
+<div id="def-linear-private-values" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Def “Linear Private
+values”</h3>
+<p><span class="math display">\[v_i(\theta, \chi) = \theta
+\hat{v}_i(\chi), \text{ where } \hat{v}_i: \mathcal{X} \rightarrow
+\mathbb{R}.\]</span></p>
+</div>
+<div id="thm-linear-private-values" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Thm “Linear Private
 Values”</h3>
 <p>In the linear private values environment, a mechanism <span class="math inline">\(\langle x, t\rangle\)</span> implements <span class="math inline">\(x\)</span> in ex post equilibrium if and only if,
 for all <span class="math inline">\(i\)</span></p>
@@ -2326,9 +2373,9 @@ U_i(\underline{\theta}_i \theta_{-i}; x, t) +
 <div id="bayesian-implementation" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Bayesian
 Implementation</h2>
-<div id="thm-daspremontgerard-varet-mechanisms" class="section level3" number="5.3.1">
+<div id="thm-daspremontgerard-varet-agv-mechanisms" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Thm
-“D’Aspremont/Gerard-Varet mechanisms”</h3>
+“D’Aspremont/Gerard-Varet (AGV) mechanisms”</h3>
 <p>In the private values environment, if <span class="math inline">\(x(\theta)\)</span> maximizes social welfare for
 all <span class="math inline">\(\theta\)</span> and types are
 distributed independently, then <span class="math inline">\(x\)</span>
@@ -2364,19 +2411,10 @@ types + BNE <span class="math inline">\(\Rightarrow\)</span> EPBB”</h3>
 <p>Suppose that the players’ types are distributed independently. Then,
 if <span class="math inline">\(x\)</span> is implementable in Bayesian
 Nash equilibrium, then <span class="math inline">\(x\)</span> is
-truthfully implementable in Bayesian Nash equilibrium with ex post
-budget balance; i.e., <span class="math inline">\(\sum_i t_i(\theta) =
-0\)</span> for all <span class="math inline">\(\theta\)</span>.</p>
+truthfully implementable in Bayesian Nash equilibrium with ; i.e., <span class="math inline">\(\sum_i t_i(\theta) = 0\)</span> for all <span class="math inline">\(\theta\)</span>.</p>
 </div>
-<div id="def-linear-private-values" class="section level3" number="5.3.5">
-<h3><span class="header-section-number">5.3.5</span> Def “Linear Private
-Values”</h3>
-<p><span class="math display">\[v_i(\theta, \chi) = \theta
-\hat{v}_i(\chi), \text{ where } \hat{v}_i: \mathcal{X} \rightarrow
-\mathbb{R}.\]</span></p>
-</div>
-<div id="thm-linear-private-values-implements-x-in-bne-iff" class="section level3" number="5.3.6">
-<h3><span class="header-section-number">5.3.6</span> Thm “Linear Private
+<div id="thm-linear-private-values-implements-x-in-bne-iff" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Thm “Linear Private
 Values implements <span class="math inline">\(x\)</span> in BNE
 iff”</h3>
 <p>In the linear private values environment, a mechanism <span class="math inline">\(\langle x, t \rangle\)</span> truthfully
@@ -2434,6 +2472,19 @@ separable.</p>
 <blockquote>
 <p>2 players: usually (N-1)-additively separable!</p>
 </blockquote>
+</div>
+</div>
+</div>
+<div id="principal-agent-contracts" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Principal-Agent
+Contracts</h1>
+<div id="thm-inverse-function-theorem" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Thm “Inverse
+Function Theorem”</h3>
+<p>If <span class="math inline">\(f\)</span> is continuously
+differentiable with nonzero derivative at <span class="math inline">\(a\)</span> then <span class="math display">\[{\displaystyle {\bigl (}f^{-1}{\bigr
+)}&#39;(b)={\frac {1}{f&#39;(a)}}={\frac
+{1}{f&#39;(f^{-1}(b))}}.}\]</span></p>
 <!-- # Algorithms to solve for each solution concept -->
 <!-- ### PSNE -->
 <!-- * Construct best-response correspondences -->
@@ -2458,6 +2509,10 @@ separable.</p>
 <!--     3. check for deviations. -->
 <!-- ### PBE -->
 </div>
+<div id="clarke-pivot-rule" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> Clarke Pivot
+Rule</h3>
+<p>FINISH</p>
 </div>
 </div>
 
