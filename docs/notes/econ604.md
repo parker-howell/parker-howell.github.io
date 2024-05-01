@@ -1,7 +1,7 @@
 ---
 title: 'Econ 604 Notes'
 author: 'Parker Howell'
-date: 'Last Updated: 2024-04-23'
+date: 'Last Updated: 2024-05-01'
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../website/parker-howell.github.io/docs/notes")})
 output:  
@@ -11,7 +11,9 @@ output:
     toc_float: true
     toc_collapsed: true
     number_sections: true
-  # pdf_document: default
+  # pdf_document:
+  #       toc: true
+  #       number_sections: true
 ---
 
 <!-- header-includes: -->
@@ -268,6 +270,8 @@ Occurs when asymmetric information leads to undesirable outcomes in transactions
 * **Claim:** Everyone bidding their true expected values is not an equilibrium (suppose not: bid lower, now you (1) lose if you were close, or (2) profitable deviation??) 
 * **Claim:** Symmetric equilibrium in which each player bids his expected value conditional on $\theta_i$ and $\max_{j\neq i}\theta_j = \theta_i$. (Winner's curse!)
 
+\pagebreak
+
 # Perfect Bayesian Equilibrium
 
 ## Perfect Bayesian Equilibrium
@@ -330,8 +334,6 @@ In a countable game, an assessment $(\beta, \mu)$ is *consistent* if there exist
 ### Def "Sequential Equilibrium"
 In a countable game, an assessment is a *sequential equilibrium* if it is sequentially rational and consistent.
 
-> Aka "perfect extended-Bayesian equilbrium", right?????????? or are these separate concepts?
-
 # Mechanism Design
 
 ### Quasilinear Environment
@@ -343,6 +345,8 @@ In a countable game, an assessment is a *sequential equilibrium* if it is sequen
 * Agent utility $u_i(\chi, \theta, \tau) = v_i(\chi, \theta) + \tau_i$
     * $v$ is how $i$ values the chosen outcome $\chi$ given $\theta$
     * $\tau \in \mathbb{R}^n$ is a vector of monetary transfers
+        * $\tau_i > 0$ is a transfer TO player $i$;
+        * $\tau_i < 0$ is a transfer FROM player $i$;
 
 
 
@@ -390,7 +394,7 @@ utility transfer: changes in continuation utility
     * Ex post IR (opt in: *after* learn type; *after* receive messages)
 3. Budget Balance
     * Ex ante BB - requires that the principal pays the agents zero in expectation, though he may pay them a positive or negative amount for different realizations (balances to 0)
-        * $E[\sum_i t_i] = 0$ - CHECK
+        * $E[\sum_i t_i(\theta)] = 0$
     * (Ex post) No subsidy (no matter type vec, all transfers must sum to 0)
         * $\sum_i t_i \leq 0$
     * Ex post BB - principal cannot pay a nonzero amount for any realization of their private info (but agents may pay each other)
@@ -411,7 +415,8 @@ The mechanism $\langle M, x, t \rangle$ *implements* the outcome rule $\hat{x}: 
 
 ### Def "Ex post Incentive Compatible (EPIC)"
 Strategy profile $m^*$ is an *ex post equilibrium* of $\langle M, x, t \rangle$ if
-$$v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta)) \geq v_i(x(m_i, m_{-i}^*(\theta)), \theta) + t_i(m_i, m_{-i}^*(\theta)), \forall m_i \in M_i, \forall \theta \in \Theta, \forall i.$$
+$$v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta)) \geq v_i(x(m_i, m_{-i}^*(\theta)), \theta) + t_i(m_i, m_{-i}^*(\theta))$$
+For all $m_i \in M_i$, $\theta \in \Theta$, and all $i$.
 The mechanism $\langle M, x, t \rangle$ *implements* the outcome rule $\hat{x}: \Theta \rightarrow \mathcal{X}$ *in ex post equilibrium* if there is an ex post equilibrium $m^*$ of $\langle M, x, t \rangle$ with $x(m^*(\theta)) = \hat{x}(\theta)$ for all $\theta$.
 
 Such a mechanism is **ex post incentive compatible (EPIC)**.
@@ -425,8 +430,10 @@ The mechanism $\langle M, x, t \rangle$ implements the outcome rule $\hat{x}:\Th
 
 Such a mechanism is dominant strategy incentive compatible (DSIC).
 
+> "No regrets even if others deviate"
+
 ### Def "Private Values"
-$$v_i(\chi, \theta) = v_i(\chi, \theta_i, \theta_{−i}'), ~~~ \forall \theta_{−i}', \forall \theta, \forall i$$
+$$v_i(\chi, \theta) = v_i(\chi, \theta_i, \theta_{-i}'), ~~~ \forall \theta_{-i}', \forall \theta, \forall i$$
 
 
 ### Remark "DSIC vs EPIC"
@@ -455,6 +462,10 @@ We say that $\langle \Theta, \hat{x}, \hat{t} \rangle$ truthfully implements $\h
 
 For direct mechanisms we write $\langle x, t \rangle$.
 
+> "Direct" = we ask you to directly report your types rather than sending messages through an arbitrary message space.
+
+> Now we give players a message space equal to their type space
+
 
 ### Thm "Groves Mechanism" (Aka VCG (Vickrey-Clarke-Groves) mechanisms.)
 Assume private values. If $x^*(\theta)$ maximizes social welfare for each $\theta$, then $x^*$ is truthfully implemented in ex post equilibrium by any direct mechanism $\langle x^*, t \rangle$ satisfying
@@ -464,12 +475,29 @@ where $h_i: \Theta_{-i} \rightarrow \mathbb{R}$ is an arbitrary function, for al
 
 > $h_i(\theta_{-i})$ CANNOT depend on $i$'s type!
 
+> If we impose EPIC, efficient mechanisms MUST be Groves Mechanisms
+
+> Intuition: you're going to get your welfare (from the outcome), now you're going to get everyone else's welfare, and some arbitrary amount you can't affect
+
 **Example "Public Project"**
+
+FINISH - need to work through this example
+
 
 **Example "Externalities"**
 
+FINISH - need to work through this example
+
 
 > 2nd price auction is a Groves mechanism: people report truthfully, has efficient outcome.
+
+### Result "Clark Pivot Rule"
+$$h_i(\theta_{-i}) = -\max_{x}\sum_{j\neq i} v_j(x(\theta), \theta_j)$$
+
+Notice:
+$$t_i(\theta) = \underbrace{\sum_{j\neq i} v_j(x^*(\theta), \theta_j)}_{\text{ social welfare if } i \text{ present}} -  \underbrace{\max_{\hat{x}}\sum_{j\neq i} v_j(\hat{x}(\theta), \theta_j)}_{\text{ social welfare if } i \text{ absent}} \geq 0$$
+
+This is a useful form for $h_i(\theta_{-i})$ worth memorizing.
 
 ### Result "Groves $\iff$ Efficient and EPIC"
 In the private values setting, Groves Mechanism $\iff$ efficient outcome AND EPIC
@@ -553,7 +581,119 @@ Recall $t_i(\theta) = \sum_{j\neq i} v_j(x^*(\theta), \theta_j) + h_(\theta_{-i}
 > 2 players: usually (N-1)-additively separable!
 
 
-# Principal-Agent Contracts
+# Principal-Agent Contracts with Moral Hazard
+
+### Model "Moral Hazard"
+* Agent exerts $e \in \{e_L, e_H\}$
+* Principal receives revenue $\pi \in [\underline{\pi}, \overline{\pi}]$
+* Revenue distributed according to PDF $f(\pi | e)$ (has full support $\forall e$)
+    *  $f(\pi | e_H)$ FOSD $f(\pi | e_L)$
+* Agent risk-averse, principal is risk-neutral
+* Agent maxes the *expectation of* $u(w,e) = v(w) - g(e)$
+    * $v' > 0, v'' leq 0$ (equality $\Rightarrow$ risk neutral; inequality $Rightarrow$ risk-averse)
+    * has reservation utility $\bar{u}$ if doesn't work with principal
+* Principal maxes the *expectation of* $\pi - w$
+
+### Model "Contractible Effort (benchmark case/strawman)"
+* Principal makes TIOLI offer comprising BOTH effort $e^* \in \{e_L, e_H\}$ and wage ($w^*: \mathbb{R} \rightarrow \mathbb{R}$)
+* Effort is perfectly enforced
+* Principal solves
+
+$$\max_{e \in \{e_L, e_H\}} \max_{w: [\underline{\pi}, \overline{\pi}] \rightarrow \mathbb{R}} \int_{\underline{\pi}}^{\overline{\pi}}(\pi - w(\pi)) f(\pi | e) d\pi$$
+$$\text{ s to }  \int_{\underline{\pi}}^{\overline{\pi}}(v(w(\pi)) f(\pi | e) d\pi - g(e) \geq \overline{u} \text{ (IR)}$$
+
+> It's possible that the associated cost with $e_H$ is too high to make it worth it, so Principal asks only for $e_L$
+
+To analyze: 
+
+1. fix $e$
+2. note that IR constraint binds, so $\lambda_{IR} > 0$
+3. FOC for $w(\pi)$ is: $-f(\pi|e) = -\lambda_{IR} v'(w(\pi))f(\pi|e)$
+4. Agent is risk-averse ($v''<0$) so there is a constant wage, $\bar{w}_e = v^{-1}(\bar{u} + g(e))$. 
+    * the constant wage makes the integrals disappear
+5. Plug solution from inner problem into outer problem; principal picks effort level to solve the simplified outer max problem.
+
+> Economic lesson: can pay the risk-averse agent less if we pay a constant wage with no risk. Let the risk-neutral principal absorb the risk.
+
+
+### Model "Non-contractible effort, Risk Neutral Agent" (still strawman)
+* Principal makes TIOLI offer $w^*: \mathbb{R} \rightarrow \mathbb{R}$ (i.e., $w(\pi)$)
+* risk neutrality: let $v(w) = w$ (or any constant in front wlog)
+* sell the firm to the agent $w^*(\pi) = \pi - L$
+* now agent solves the problem the principal wanted to solve, but without a constraint:
+$$\max_{e\in \{e_L, e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}\pi f(\pi | e) d\pi - (L + g(e))$$
+
+* IR binds $\rightarrow L = E[\pi | e^*] - (g(e^*) - \overline{u})$
+* Now this is the same as the problem with contractible effort!
+
+> Just sell the firm to the agent! Then the agent solves the same problem the principal would have solved, but without the constraint. Agent is the "residual claimant"
+
+> In this model the principal doesn't do anything really other than collect revenue.
+
+
+#### Term "High effort offer from principal"
+$$\overline{v}(\pi) \equiv v(w(\pi))$$
+
+### Model "Non-contractible effort, Risk-averse Agent"
+Principal makes TIOLI offer of wage $w^*$ to solve:
+$$\max_{e \in \{e_L, e_H\}} \max_{w: [\underline{\pi}, \overline{\pi}] \rightarrow \mathbb{R}} \int_{\underline{\pi}}^{\overline{\pi}}(\pi - \underbrace{w(\pi)}_{v^{-1}(v(w(\pi)))}) f(\pi|e) d\pi$$
+subject to
+$$\int_{\underline{\pi}}^{\overline{\pi}}v(w(\pi))f(\pi|e)d\pi - g(e) \geq \overline{u}, \text{ and}   \tag{IR}$$
+$$e \in \arg\max_{\tilde{e} \in \{e_L, e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}v(w(\pi))f(\pi|\tilde{e})d\pi - g(\tilde{e}).\tag{IC}$$
+**Low effort:** 
+
+* Choose constant wage: $w(\pi) = v^{-1}(g(e_L) + \overline{u})$ to bind IR
+    * IR binds because we chose the wage to make this bind. 
+* Then IC is slack
+    * this makes sense because if the agent is getting a constant wage (i.e., effort doesn't affect wage), then of course low effort is better, since it's less costly!
+
+
+**High effort:** Rewrite the problem as:
+
+* Principal makes TIOLI offer of utility $\overline{v}: \mathbb{R} \rightarrow \mathbb{R}$ to solve:
+$$\min_{\overline{v}: [\underline{\pi}, \overline{\pi}] \rightarrow \mathbb{R}} \int_{\underline{\pi}}^{\overline{\pi}}v^{-1}(\overline{v}(\pi)) f(\pi|e_H) d\pi$$
+subject to
+
+$$\int_{\underline{\pi}}^{\overline{\pi}}\overline{v}(\pi)f(\pi|e_H)d\pi - g(e) \geq \overline{u}, \text{ and}   \tag{IR}$$
+$$\int_{\underline{\pi}}^{\overline{\pi}}\overline{v}(\pi)\underbrace{(f(\pi|e_H) - f(\pi | e_L))}_{\text{diff in benefits}}  d\pi \geq \underbrace{g(e_H) - g(e_L)}_{\text{diff in costs}}.\tag{IC}$$
+
+* IR Binds (i.e., $\lambda_{IR} > 0$)
+    * Proof: Suppose not. Subtract a constant utility from agent (for every possible outcome of $\pi$). IC will still be satisfied because the agent's payoff is linear (in utils). And because IR was slack, the principal will be better off while the agent still satisfies IC. This contradicts the assumption that we were at the optimal solution. So, IR binds.
+* IC Binds (i.e., $\lambda_{IC} > 0$)
+    * Proof: We know $\lambda_{IR} > 0$. Suppose IC doesn't bind. We can't subtract utility without adding back. Note that $v^{-1}$ is convex. So, we can subtract from cases with high utility (which is costly for the principal) and add to cases with low utility. So this makes the principal better off while IR is still satisfied, contradicting the assumption we were at the optimal solution. So, IC binds.
+    
+    
+FOC for $\overline{v}(\pi)$:
+$$-[v^{-1}]'(\overline{v}(\pi)) = - \lambda_{IR} f(\pi|e_H) - \lambda_{IC} (f(\pi|e_H) - f(\pi | e_L))$$
+convert back from $\overline{v}$ and divide by $f(\pi|e_H)$:
+$$[v^{-1}]'(v(w(\pi))) = \lambda_{IR} + \lambda_{IC}\bigg(1 - \frac{f(\pi|e_L)}{f(\pi|e_H)}\bigg)$$
+use inverse function theorem:
+$$\underbrace{\frac{1}{v'(w(\pi))}}_{\text{risk-averse } \Rightarrow v' \text{ str dec}} = \underbrace{\lambda_{IR}}_{>0} + \underbrace{\lambda_{IC}}_{>0}\bigg(1 - \underbrace{\frac{f(\pi|e_L)}{f(\pi|e_H)}}_{\text{inverse LR, so dec}}\bigg)$$
+
+So, $w(\pi)$ is strictly increasing in $LR_H$!
+
+* wages for $e_H$ are driven by posterior "inferences," not output
+* wages for $e_H$ not necessarily monotone in output, highly nonlinear
+* risk motivates the agent, but compensating him for it is costly
+
+
+<!-- possible that the principal could prefer $e_H$ is effort is contractible and $e_L$ if non-contractible -->
+
+> $\lambda_{IR}$ is the SAME for ALL the FOCs!
+
+> Imposing risk on the (risk-averse) agent "burns" suruplus; since the principal is less risk-averse than the agent it makes sense for the less risk averse party to take on the risk.
+
+#### Term "Likelihood Ratio"
+$$\frac{f(\pi|e_H)}{f(\pi|e_L)}$$
+
+> $LR_H$ high $\Rightarrow$ agent probably chose high effort.
+
+> $\frac{f(\pi|e_L)}{f(\pi|e_H)}$ is the "inverse likelihood ratio"
+
+
+
+### Example: Prove the IR constraint must bind (in a standard model). 
+Proof: Suppose not; then, given the optimal wage schedule $w$, the IR constraint is slack by the amount $\varepsilon > 0$, and the IC constraints are all satisfied. But then the principal can choose a deviant wage schedule $\hat{w}$ such that $v(\hat{w}(\pi)) = v(w(\pi)) - \varepsilon$ for all $\pi \in [0, \bar{\pi}]$. The IC constraints are all still satisfied, since this has the effect of reducing both the left and right sides of each IC constraint by $\varepsilon$. The IR constraint is still satisfied because by supposition it was slack by $\varepsilon$. The principal’s profits are now higher, because since $v' > 0$ it must be that $\hat{w}(\pi) < w(\pi)$ for all $\pi \in [0, \bar{\pi}]$. Hence $w$ could not have been an optimal wage schedule.
 
 ### Thm "Inverse Function Theorem"
 If $f$ is continuously differentiable with nonzero derivative at $a$ then
@@ -595,5 +735,33 @@ $${\displaystyle {\bigl (}f^{-1}{\bigr )}'(b)={\frac {1}{f'(a)}}={\frac {1}{f'(f
 
 <!-- ### PBE -->
 
-### Clarke Pivot Rule
-FINISH
+# Misc
+
+### Standard form
+If IR is something like $\int_{\underline{\pi}}^{\overline{\pi}} \cdot d\pi - g(e) \geq \overline{u}$ then need "$-$" in front of $\lambda_{IR}$
+
+### KKT Algorithm 2 Constraints
+Given want to max
+$$\mathcal{L} = f(x, y, z) + \lambda_1(constraint) +  \lambda_2(constraint)$$
+
+**Step 1:** 
+
+* assume constraint 2 slack ($\lambda_2 = 0$)
+* solve
+* test if constraint 2 really was satisfied
+    * if so, stop here
+    * if not, continue
+
+**Step 2:**
+
+* assume constraint 1 slack ($\lambda_1 = 0$)
+* solve
+* test if constraint 1 really was satisfied
+    * if so, stop here
+    * if not, continue
+
+**Step 3:**
+
+* Solve with both constraints non-binding (i.e., $\lambda_1=\lambda_2=0$)
+
+> "$-$" in front of objective if minimizing

@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-23</h4>
+<h4 class="date">Last Updated: 2024-05-01</h4>
 
 </div>
 
@@ -1934,6 +1934,7 @@ were close, or (2) profitable deviation??)</li>
 bids his expected value conditional on <span class="math inline">\(\theta_i\)</span> and <span class="math inline">\(\max_{j\neq i}\theta_j = \theta_i\)</span>.
 (Winner’s curse!)</li>
 </ul>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2047,10 +2048,6 @@ uniformly to <span class="math inline">\((\beta, \mu)\)</span>.</li>
 Equilibrium”</h3>
 <p>In a countable game, an assessment is a <em>sequential
 equilibrium</em> if it is sequentially rational and consistent.</p>
-<blockquote>
-<p>Aka “perfect extended-Bayesian equilbrium”, right?????????? or are
-these separate concepts?</p>
-</blockquote>
 </div>
 </div>
 </div>
@@ -2075,7 +2072,13 @@ v_i(\chi, \theta) + \tau_i\)</span>
 <ul>
 <li><span class="math inline">\(v\)</span> is how <span class="math inline">\(i\)</span> values the chosen outcome <span class="math inline">\(\chi\)</span> given <span class="math inline">\(\theta\)</span></li>
 <li><span class="math inline">\(\tau \in \mathbb{R}^n\)</span> is a
-vector of monetary transfers</li>
+vector of monetary transfers
+<ul>
+<li><span class="math inline">\(\tau_i &gt; 0\)</span> is a transfer TO
+player <span class="math inline">\(i\)</span>;</li>
+<li><span class="math inline">\(\tau_i &lt; 0\)</span> is a transfer
+FROM player <span class="math inline">\(i\)</span>;</li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -2157,7 +2160,7 @@ receive messages)</li>
 expectation, though he may pay them a positive or negative amount for
 different realizations (balances to 0)
 <ul>
-<li><span class="math inline">\(E[\sum_i t_i] = 0\)</span> - CHECK</li>
+<li><span class="math inline">\(E[\sum_i t_i(\theta)] = 0\)</span></li>
 </ul></li>
 <li>(Ex post) No subsidy (no matter type vec, all transfers must sum to
 0)
@@ -2205,9 +2208,10 @@ Incentive Compatible (EPIC)”</h3>
 <p>Strategy profile <span class="math inline">\(m^*\)</span> is an
 <em>ex post equilibrium</em> of <span class="math inline">\(\langle M,
 x, t \rangle\)</span> if <span class="math display">\[v_i(x(m^*(\theta)), \theta) + t_i(m^*(\theta))
-\geq v_i(x(m_i, m_{-i}^*(\theta)), \theta) + t_i(m_i, m_{-i}^*(\theta)),
-\forall m_i \in M_i, \forall \theta \in \Theta, \forall i.\]</span> The
-mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span>
+\geq v_i(x(m_i, m_{-i}^*(\theta)), \theta) + t_i(m_i,
+m_{-i}^*(\theta))\]</span> For all <span class="math inline">\(m_i \in
+M_i\)</span>, <span class="math inline">\(\theta \in \Theta\)</span>,
+and all <span class="math inline">\(i\)</span>. The mechanism <span class="math inline">\(\langle M, x, t \rangle\)</span>
 <em>implements</em> the outcome rule <span class="math inline">\(\hat{x}: \Theta \rightarrow \mathcal{X}\)</span>
 <em>in ex post equilibrium</em> if there is an ex post equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline">\(\langle M, x, t \rangle\)</span> with <span class="math inline">\(x(m^*(\theta)) = \hat{x}(\theta)\)</span> for all
 <span class="math inline">\(\theta\)</span>.</p>
@@ -2229,12 +2233,15 @@ equilibrium <span class="math inline">\(m^*\)</span> of <span class="math inline
 <span class="math inline">\(\theta\)</span>.</p>
 <p>Such a mechanism is dominant strategy incentive compatible
 (DSIC).</p>
+<blockquote>
+<p>“No regrets even if others deviate”</p>
+</blockquote>
 </div>
 <div id="def-private-values" class="section level3" number="5.0.8">
 <h3><span class="header-section-number">5.0.8</span> Def “Private
 Values”</h3>
 <p><span class="math display">\[v_i(\chi, \theta) = v_i(\chi, \theta_i,
-\theta_{−i}&#39;), ~~~ \forall \theta_{−i}&#39;, \forall \theta, \forall
+\theta_{-i}&#39;), ~~~ \forall \theta_{-i}&#39;, \forall \theta, \forall
 i\]</span></p>
 </div>
 <div id="remark-dsic-vs-epic" class="section level3" number="5.0.9">
@@ -2279,6 +2286,13 @@ t(m^*(\hat{\theta}))\)</span> for all <span class="math inline">\(\hat{\theta}\)
 \hat{t} \rangle\)</span> truthfully implements <span class="math inline">\(\hat{x}\)</span>.</p>
 <p>For direct mechanisms we write <span class="math inline">\(\langle x,
 t \rangle\)</span>.</p>
+<blockquote>
+<p>“Direct” = we ask you to directly report your types rather than
+sending messages through an arbitrary message space.</p>
+</blockquote>
+<blockquote>
+<p>Now we give players a message space equal to their type space</p>
+</blockquote>
 </div>
 <div id="thm-groves-mechanism-aka-vcg-vickrey-clarke-groves-mechanisms." class="section level3" number="5.0.12">
 <h3><span class="header-section-number">5.0.12</span> Thm “Groves
@@ -2293,15 +2307,37 @@ is an arbitrary function, for all <span class="math inline">\(\theta\)</span> an
 <p><span class="math inline">\(h_i(\theta_{-i})\)</span> CANNOT depend
 on <span class="math inline">\(i\)</span>’s type!</p>
 </blockquote>
+<blockquote>
+<p>If we impose EPIC, efficient mechanisms MUST be Groves Mechanisms</p>
+</blockquote>
+<blockquote>
+<p>Intuition: you’re going to get your welfare (from the outcome), now
+you’re going to get everyone else’s welfare, and some arbitrary amount
+you can’t affect</p>
+</blockquote>
 <p><strong>Example “Public Project”</strong></p>
+<p>FINISH - need to work through this example</p>
 <p><strong>Example “Externalities”</strong></p>
+<p>FINISH - need to work through this example</p>
 <blockquote>
 <p>2nd price auction is a Groves mechanism: people report truthfully,
 has efficient outcome.</p>
 </blockquote>
 </div>
-<div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.0.13">
-<h3><span class="header-section-number">5.0.13</span> Result “Groves
+<div id="result-clark-pivot-rule" class="section level3" number="5.0.13">
+<h3><span class="header-section-number">5.0.13</span> Result “Clark
+Pivot Rule”</h3>
+<p><span class="math display">\[h_i(\theta_{-i}) = -\max_{x}\sum_{j\neq
+i} v_j(x(\theta), \theta_j)\]</span></p>
+<p>Notice: <span class="math display">\[t_i(\theta) =
+\underbrace{\sum_{j\neq i} v_j(x^*(\theta), \theta_j)}_{\text{ social
+welfare if } i \text{ present}} -  \underbrace{\max_{\hat{x}}\sum_{j\neq
+i} v_j(\hat{x}(\theta), \theta_j)}_{\text{ social welfare if } i \text{
+absent}} \geq 0\]</span></p>
+<p>This is a useful form for <span class="math inline">\(h_i(\theta_{-i})\)</span> worth memorizing.</p>
+</div>
+<div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.0.14">
+<h3><span class="header-section-number">5.0.14</span> Result “Groves
 <span class="math inline">\(\iff\)</span> Efficient and EPIC”</h3>
 <p>In the private values setting, Groves Mechanism <span class="math inline">\(\iff\)</span> efficient outcome AND EPIC</p>
 <p>Groves thm proves if, can use envelope thm to show only if.</p>
@@ -2475,11 +2511,234 @@ separable.</p>
 </div>
 </div>
 </div>
-<div id="principal-agent-contracts" class="section level1" number="6">
+<div id="principal-agent-contracts-with-moral-hazard" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Principal-Agent
-Contracts</h1>
-<div id="thm-inverse-function-theorem" class="section level3" number="6.0.1">
-<h3><span class="header-section-number">6.0.1</span> Thm “Inverse
+Contracts with Moral Hazard</h1>
+<div id="model-moral-hazard" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Model “Moral
+Hazard”</h3>
+<ul>
+<li>Agent exerts <span class="math inline">\(e \in \{e_L,
+e_H\}\)</span></li>
+<li>Principal receives revenue <span class="math inline">\(\pi \in
+[\underline{\pi}, \overline{\pi}]\)</span></li>
+<li>Revenue distributed according to PDF <span class="math inline">\(f(\pi | e)\)</span> (has full support <span class="math inline">\(\forall e\)</span>)
+<ul>
+<li><span class="math inline">\(f(\pi | e_H)\)</span> FOSD <span class="math inline">\(f(\pi | e_L)\)</span></li>
+</ul></li>
+<li>Agent risk-averse, principal is risk-neutral</li>
+<li>Agent maxes the <em>expectation of</em> <span class="math inline">\(u(w,e) = v(w) - g(e)\)</span>
+<ul>
+<li><span class="math inline">\(v&#39; &gt; 0, v&#39;&#39; leq
+0\)</span> (equality <span class="math inline">\(\Rightarrow\)</span>
+risk neutral; inequality <span class="math inline">\(Rightarrow\)</span>
+risk-averse)</li>
+<li>has reservation utility <span class="math inline">\(\bar{u}\)</span>
+if doesn’t work with principal</li>
+</ul></li>
+<li>Principal maxes the <em>expectation of</em> <span class="math inline">\(\pi - w\)</span></li>
+</ul>
+</div>
+<div id="model-contractible-effort-benchmark-casestrawman" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> Model “Contractible
+Effort (benchmark case/strawman)”</h3>
+<ul>
+<li>Principal makes TIOLI offer comprising BOTH effort <span class="math inline">\(e^* \in \{e_L, e_H\}\)</span> and wage (<span class="math inline">\(w^*: \mathbb{R} \rightarrow
+\mathbb{R}\)</span>)</li>
+<li>Effort is perfectly enforced</li>
+<li>Principal solves</li>
+</ul>
+<p><span class="math display">\[\max_{e \in \{e_L, e_H\}} \max_{w:
+[\underline{\pi}, \overline{\pi}] \rightarrow \mathbb{R}}
+\int_{\underline{\pi}}^{\overline{\pi}}(\pi - w(\pi)) f(\pi | e)
+d\pi\]</span> <span class="math display">\[\text{ s to
+}  \int_{\underline{\pi}}^{\overline{\pi}}(v(w(\pi)) f(\pi | e) d\pi -
+g(e) \geq \overline{u} \text{ (IR)}\]</span></p>
+<blockquote>
+<p>It’s possible that the associated cost with <span class="math inline">\(e_H\)</span> is too high to make it worth it, so
+Principal asks only for <span class="math inline">\(e_L\)</span></p>
+</blockquote>
+<p>To analyze:</p>
+<ol style="list-style-type: decimal">
+<li>fix <span class="math inline">\(e\)</span></li>
+<li>note that IR constraint binds, so <span class="math inline">\(\lambda_{IR} &gt; 0\)</span></li>
+<li>FOC for <span class="math inline">\(w(\pi)\)</span> is: <span class="math inline">\(-f(\pi|e) = -\lambda_{IR}
+v&#39;(w(\pi))f(\pi|e)\)</span></li>
+<li>Agent is risk-averse (<span class="math inline">\(v&#39;&#39;&lt;0\)</span>) so there is a constant
+wage, <span class="math inline">\(\bar{w}_e = v^{-1}(\bar{u} +
+g(e))\)</span>.
+<ul>
+<li>the constant wage makes the integrals disappear</li>
+</ul></li>
+<li>Plug solution from inner problem into outer problem; principal picks
+effort level to solve the simplified outer max problem.</li>
+</ol>
+<blockquote>
+<p>Economic lesson: can pay the risk-averse agent less if we pay a
+constant wage with no risk. Let the risk-neutral principal absorb the
+risk.</p>
+</blockquote>
+</div>
+<div id="model-non-contractible-effort-risk-neutral-agent-still-strawman" class="section level3" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> Model
+“Non-contractible effort, Risk Neutral Agent” (still strawman)</h3>
+<ul>
+<li><p>Principal makes TIOLI offer <span class="math inline">\(w^*:
+\mathbb{R} \rightarrow \mathbb{R}\)</span> (i.e., <span class="math inline">\(w(\pi)\)</span>)</p></li>
+<li><p>risk neutrality: let <span class="math inline">\(v(w) =
+w\)</span> (or any constant in front wlog)</p></li>
+<li><p>sell the firm to the agent <span class="math inline">\(w^*(\pi) =
+\pi - L\)</span></p></li>
+<li><p>now agent solves the problem the principal wanted to solve, but
+without a constraint: <span class="math display">\[\max_{e\in \{e_L,
+e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}\pi f(\pi | e) d\pi - (L +
+g(e))\]</span></p></li>
+<li><p>IR binds <span class="math inline">\(\rightarrow L = E[\pi | e^*]
+- (g(e^*) - \overline{u})\)</span></p></li>
+<li><p>Now this is the same as the problem with contractible
+effort!</p></li>
+</ul>
+<blockquote>
+<p>Just sell the firm to the agent! Then the agent solves the same
+problem the principal would have solved, but without the constraint.
+Agent is the “residual claimant”</p>
+</blockquote>
+<blockquote>
+<p>In this model the principal doesn’t do anything really other than
+collect revenue.</p>
+</blockquote>
+<div id="term-high-effort-offer-from-principal" class="section level4" number="6.0.3.1">
+<h4><span class="header-section-number">6.0.3.1</span> Term “High effort
+offer from principal”</h4>
+<p><span class="math display">\[\overline{v}(\pi) \equiv
+v(w(\pi))\]</span></p>
+</div>
+</div>
+<div id="model-non-contractible-effort-risk-averse-agent" class="section level3" number="6.0.4">
+<h3><span class="header-section-number">6.0.4</span> Model
+“Non-contractible effort, Risk-averse Agent”</h3>
+<p>Principal makes TIOLI offer of wage <span class="math inline">\(w^*\)</span> to solve: <span class="math display">\[\max_{e \in \{e_L, e_H\}} \max_{w:
+[\underline{\pi}, \overline{\pi}] \rightarrow \mathbb{R}}
+\int_{\underline{\pi}}^{\overline{\pi}}(\pi -
+\underbrace{w(\pi)}_{v^{-1}(v(w(\pi)))}) f(\pi|e) d\pi\]</span> subject
+to <span class="math display">\[\int_{\underline{\pi}}^{\overline{\pi}}v(w(\pi))f(\pi|e)d\pi
+- g(e) \geq \overline{u}, \text{ and}   \tag{IR}\]</span> <span class="math display">\[e \in \arg\max_{\tilde{e} \in \{e_L, e_H\}}
+\int_{\underline{\pi}}^{\overline{\pi}}v(w(\pi))f(\pi|\tilde{e})d\pi -
+g(\tilde{e}).\tag{IC}\]</span> <strong>Low effort:</strong></p>
+<ul>
+<li>Choose constant wage: <span class="math inline">\(w(\pi) =
+v^{-1}(g(e_L) + \overline{u})\)</span> to bind IR
+<ul>
+<li>IR binds because we chose the wage to make this bind.</li>
+</ul></li>
+<li>Then IC is slack
+<ul>
+<li>this makes sense because if the agent is getting a constant wage
+(i.e., effort doesn’t affect wage), then of course low effort is better,
+since it’s less costly!</li>
+</ul></li>
+</ul>
+<p><strong>High effort:</strong> Rewrite the problem as:</p>
+<ul>
+<li>Principal makes TIOLI offer of utility <span class="math inline">\(\overline{v}: \mathbb{R} \rightarrow
+\mathbb{R}\)</span> to solve: <span class="math display">\[\min_{\overline{v}: [\underline{\pi},
+\overline{\pi}] \rightarrow \mathbb{R}}
+\int_{\underline{\pi}}^{\overline{\pi}}v^{-1}(\overline{v}(\pi))
+f(\pi|e_H) d\pi\]</span> subject to</li>
+</ul>
+<p><span class="math display">\[\int_{\underline{\pi}}^{\overline{\pi}}\overline{v}(\pi)f(\pi|e_H)d\pi
+- g(e) \geq \overline{u}, \text{ and}   \tag{IR}\]</span> <span class="math display">\[\int_{\underline{\pi}}^{\overline{\pi}}\overline{v}(\pi)\underbrace{(f(\pi|e_H)
+- f(\pi | e_L))}_{\text{diff in benefits}}  d\pi \geq \underbrace{g(e_H)
+- g(e_L)}_{\text{diff in costs}}.\tag{IC}\]</span></p>
+<ul>
+<li>IR Binds (i.e., <span class="math inline">\(\lambda_{IR} &gt;
+0\)</span>)
+<ul>
+<li>Proof: Suppose not. Subtract a constant utility from agent (for
+every possible outcome of <span class="math inline">\(\pi\)</span>). IC
+will still be satisfied because the agent’s payoff is linear (in utils).
+And because IR was slack, the principal will be better off while the
+agent still satisfies IC. This contradicts the assumption that we were
+at the optimal solution. So, IR binds.</li>
+</ul></li>
+<li>IC Binds (i.e., <span class="math inline">\(\lambda_{IC} &gt;
+0\)</span>)
+<ul>
+<li>Proof: We know <span class="math inline">\(\lambda_{IR} &gt;
+0\)</span>. Suppose IC doesn’t bind. We can’t subtract utility without
+adding back. Note that <span class="math inline">\(v^{-1}\)</span> is
+convex. So, we can subtract from cases with high utility (which is
+costly for the principal) and add to cases with low utility. So this
+makes the principal better off while IR is still satisfied,
+contradicting the assumption we were at the optimal solution. So, IC
+binds.</li>
+</ul></li>
+</ul>
+<p>FOC for <span class="math inline">\(\overline{v}(\pi)\)</span>: <span class="math display">\[-[v^{-1}]&#39;(\overline{v}(\pi)) = -
+\lambda_{IR} f(\pi|e_H) - \lambda_{IC} (f(\pi|e_H) - f(\pi |
+e_L))\]</span> convert back from <span class="math inline">\(\overline{v}\)</span> and divide by <span class="math inline">\(f(\pi|e_H)\)</span>: <span class="math display">\[[v^{-1}]&#39;(v(w(\pi))) = \lambda_{IR} +
+\lambda_{IC}\bigg(1 - \frac{f(\pi|e_L)}{f(\pi|e_H)}\bigg)\]</span> use
+inverse function theorem: <span class="math display">\[\underbrace{\frac{1}{v&#39;(w(\pi))}}_{\text{risk-averse
+} \Rightarrow v&#39; \text{ str dec}} =
+\underbrace{\lambda_{IR}}_{&gt;0} +
+\underbrace{\lambda_{IC}}_{&gt;0}\bigg(1 -
+\underbrace{\frac{f(\pi|e_L)}{f(\pi|e_H)}}_{\text{inverse LR, so
+dec}}\bigg)\]</span></p>
+<p>So, <span class="math inline">\(w(\pi)\)</span> is strictly
+increasing in <span class="math inline">\(LR_H\)</span>!</p>
+<ul>
+<li>wages for <span class="math inline">\(e_H\)</span> are driven by
+posterior “inferences,” not output</li>
+<li>wages for <span class="math inline">\(e_H\)</span> not necessarily
+monotone in output, highly nonlinear</li>
+<li>risk motivates the agent, but compensating him for it is costly</li>
+</ul>
+<!-- possible that the principal could prefer $e_H$ is effort is contractible and $e_L$ if non-contractible -->
+<blockquote>
+<p><span class="math inline">\(\lambda_{IR}\)</span> is the SAME for ALL
+the FOCs!</p>
+</blockquote>
+<blockquote>
+<p>Imposing risk on the (risk-averse) agent “burns” suruplus; since the
+principal is less risk-averse than the agent it makes sense for the less
+risk averse party to take on the risk.</p>
+</blockquote>
+<div id="term-likelihood-ratio" class="section level4" number="6.0.4.1">
+<h4><span class="header-section-number">6.0.4.1</span> Term “Likelihood
+Ratio”</h4>
+<p><span class="math display">\[\frac{f(\pi|e_H)}{f(\pi|e_L)}\]</span></p>
+<blockquote>
+<p><span class="math inline">\(LR_H\)</span> high <span class="math inline">\(\Rightarrow\)</span> agent probably chose high
+effort.</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(\frac{f(\pi|e_L)}{f(\pi|e_H)}\)</span> is
+the “inverse likelihood ratio”</p>
+</blockquote>
+</div>
+</div>
+<div id="example-prove-the-ir-constraint-must-bind-in-a-standard-model." class="section level3" number="6.0.5">
+<h3><span class="header-section-number">6.0.5</span> Example: Prove the
+IR constraint must bind (in a standard model).</h3>
+<p>Proof: Suppose not; then, given the optimal wage schedule <span class="math inline">\(w\)</span>, the IR constraint is slack by the
+amount <span class="math inline">\(\varepsilon &gt; 0\)</span>, and the
+IC constraints are all satisfied. But then the principal can choose a
+deviant wage schedule <span class="math inline">\(\hat{w}\)</span> such
+that <span class="math inline">\(v(\hat{w}(\pi)) = v(w(\pi)) -
+\varepsilon\)</span> for all <span class="math inline">\(\pi \in [0,
+\bar{\pi}]\)</span>. The IC constraints are all still satisfied, since
+this has the effect of reducing both the left and right sides of each IC
+constraint by <span class="math inline">\(\varepsilon\)</span>. The IR
+constraint is still satisfied because by supposition it was slack by
+<span class="math inline">\(\varepsilon\)</span>. The principal’s
+profits are now higher, because since <span class="math inline">\(v&#39;
+&gt; 0\)</span> it must be that <span class="math inline">\(\hat{w}(\pi)
+&lt; w(\pi)\)</span> for all <span class="math inline">\(\pi \in [0,
+\bar{\pi}]\)</span>. Hence <span class="math inline">\(w\)</span> could
+not have been an optimal wage schedule.</p>
+</div>
+<div id="thm-inverse-function-theorem" class="section level3" number="6.0.6">
+<h3><span class="header-section-number">6.0.6</span> Thm “Inverse
 Function Theorem”</h3>
 <p>If <span class="math inline">\(f\)</span> is continuously
 differentiable with nonzero derivative at <span class="math inline">\(a\)</span> then <span class="math display">\[{\displaystyle {\bigl (}f^{-1}{\bigr
@@ -2509,10 +2768,49 @@ differentiable with nonzero derivative at <span class="math inline">\(a\)</span>
 <!--     3. check for deviations. -->
 <!-- ### PBE -->
 </div>
-<div id="clarke-pivot-rule" class="section level3" number="6.0.2">
-<h3><span class="header-section-number">6.0.2</span> Clarke Pivot
-Rule</h3>
-<p>FINISH</p>
+</div>
+<div id="misc" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Misc</h1>
+<div id="standard-form" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Standard form</h3>
+<p>If IR is something like <span class="math inline">\(\int_{\underline{\pi}}^{\overline{\pi}} \cdot d\pi
+- g(e) \geq \overline{u}\)</span> then need “<span class="math inline">\(-\)</span>” in front of <span class="math inline">\(\lambda_{IR}\)</span></p>
+</div>
+<div id="kkt-algorithm-2-constraints" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> KKT Algorithm 2
+Constraints</h3>
+<p>Given want to max <span class="math display">\[\mathcal{L} = f(x, y,
+z) + \lambda_1(constraint) +  \lambda_2(constraint)\]</span></p>
+<p><strong>Step 1:</strong></p>
+<ul>
+<li>assume constraint 2 slack (<span class="math inline">\(\lambda_2 =
+0\)</span>)</li>
+<li>solve</li>
+<li>test if constraint 2 really was satisfied
+<ul>
+<li>if so, stop here</li>
+<li>if not, continue</li>
+</ul></li>
+</ul>
+<p><strong>Step 2:</strong></p>
+<ul>
+<li>assume constraint 1 slack (<span class="math inline">\(\lambda_1 =
+0\)</span>)</li>
+<li>solve</li>
+<li>test if constraint 1 really was satisfied
+<ul>
+<li>if so, stop here</li>
+<li>if not, continue</li>
+</ul></li>
+</ul>
+<p><strong>Step 3:</strong></p>
+<ul>
+<li>Solve with both constraints non-binding (i.e., <span class="math inline">\(\lambda_1=\lambda_2=0\)</span>)</li>
+</ul>
+<blockquote>
+<p>“<span class="math inline">\(-\)</span>” in front of objective if
+minimizing</p>
+</blockquote>
 </div>
 </div>
 
