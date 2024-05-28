@@ -1,0 +1,461 @@
+---
+title: 'Econ 605 Notes'
+author: 'Parker Howell'
+date: 'Last Updated: `r Sys.Date()`'
+output:  
+  html_document:
+    keep_md: yes
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    number_sections: true
+  # pdf_document:
+  #       toc: true
+  #       number_sections: true
+---
+
+```{r, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+```
+
+
+# Macro Variables, Capital, and Wealth
+
+
+<!-- ### Def "" -->
+<!-- * GDP = flow. "bricks per quarter" -->
+<!-- * $Y_t$ = (stock/flow) total output - not always GDP -->
+<!-- * $C_t$ = (stock/flow) consumption -->
+<!-- * $K_t$ = (stock/flow) capital - sometimes includes IP, sometimes just physical -->
+<!-- * $X_t$ = (stock/flow) QUANTITY of capital... -->
+<!-- * $m = e^{-\bar{r}(s,t)}$: discount factor - sometimes with integral???? -->
+
+### "GDP"
+Product = Income = Expenditure
+
+
+Product = Income:
+$$Y = wL + RK$$
+Product = Expenditure:
+$$Y = C + I + G + NX$$
+
+> $RK$ = Dividends & Interest + Retained Earnings
+
+### "Income accounting"
+Household:
+
+* $Y - T$ = after-tax income is either saved or consumed:
+* $S_p = Y - T - C$
+
+Government:
+
+* $G = C_G + I_G$
+* $S_G = T - G$
+
+
+
+
+### Def "Deflating Nominal Variables"
+$$X_t = \frac{X_t^{nom}}{P_{X,t}}$$
+where $P_X$ is the deflator or price index which converts base year dollars into $t$-year dollars for variable $X$.
+
+> Must deflate $Y^{nom}, C^{nom}, I^{nom}$ with  the same price index to maintain additive relationship between real and nominal variables.
+
+Typically choose $p_{C,t}$:
+
+Given $Y_t^{nom} = C_t^{nom} + I_t^{nom}$, we have that $Y_t = C_t + I_t \iff Y_t = \frac{Y_t^{nom}}{p_{C, t}}, C_t = \frac{C_t^{nom}}{p_{C, t}}$, and $I_t = \frac{I_t^{nom}}{p_{C, t}}$
+
+Unless otherwise stated: $K \neq \frac{K^{nom}}{p_I}$. Instead: $K = \frac{K^{nom}}{p_C} = \frac{p_I}{p_C} X$
+
+
+### "$p_X$"
+$$p_X \equiv \frac{P_I}{P_C} = \text{price of capital} = \frac{apples}{bricks}$$
+So,
+$$K = \frac{P_I}{P_C}X = p_X X$$
+
+### Def "Stocks, Flows, and Rates"
+
+* Stocks: "dollars variables"
+    * e.g., $A, K, X$
+* Flows: "dollars per year"
+    * e.g., $Y, C, I$
+* Rates: "inverse time"
+    * e.g., $d, r, g_X \equiv \frac{\frac{dX}{dt}}{X}$
+
+### "Dollars, Apples, and Bricks; Units of Measurement"
+* Dollars: current year, or nominal, dollars; units of $Y^{nom}, C^{nom}, I^{nom}$
+* Apples: base year dollars; units of real $Y, C, I$, and wealth, $K, A$
+* Bricks: base year investment dollars; units of $X, \frac{I^{nom}}{P_I}$, where $P_I$ is an investment price index that tracks inflation in new capital goods.
+
+
+**Units of Measurement**
+
+* Prices
+    * Consumer Price Index: $P_C$: $\frac{\$}{apples}$
+    * Investment Price Index: $P_I$: $\frac{\$}{bricks}$
+* Stocks
+    * Wealth: $K, A$: apples
+    * Capital (quantity): $X$: bricks
+* Flows (Nominal and Real):
+    * $Y^{nom}, C^{nom}, I^{nom}$: $\frac{\$}{year}$
+    * $Y, C, I$: $\frac{apple}{year}$
+    
+### "Wealth"
+Wealth is the quantity of apples the households can currently buy if they sell everything they own.
+
+Nominal wealth: $$K^{nom} = P_I * X$$
+
+Real wealth is the number of apples that can be bought with nominal wealth:
+$$K = \frac{K^{nom}}{P_C} = \frac{P_I}{P_C} X$$
+
+> $p_X = \frac{p_I}{p_C}$
+
+### "$K$ vs $X$"
+* $K = $ market value of capital
+* $X = $ quantity of capital
+* $K = P_X * X = \frac{P_I}{P_C} X$
+
+### Def "Capital Accumulation Equation"
+
+Discrete:
+$$K_{t+1} - K_t = I_t - dK_t = I_t - (\delta - g_{p,t})K_t$$
+Continuous:
+$$\dot{K}_t = I_t - d K_t$$
+Sometimes given as:
+$$\dot{X}_t = q_t I_t - \delta X_t$$
+where $q_t$ is given a functional form
+
+
+### "Depreciation rate"
+$$d \equiv \underbrace{\delta}_{\text{wear + tear}} - \underbrace{g_p}_{\text{capital gain}} = \text{depreciation rate on MARKET VALUE of capital}$$
+
+### "Average growth rate"
+
+![](src/growth_q.png)
+
+![](src/growth_a.png)
+
+CAUTION: don't just do: $\frac{332 - 100}{100} = 2.23\%$!
+
+
+### "Relationship between capital stock and past investment history"
+Market value of capital ($K$) is the sum of undepreciated parts of past real investment expenditures. I.e.,
+$$K_{t+1} = \sum_{\tau \geq 0} I_{t-\tau} (1-d)^\tau$$
+
+### "Household Wealth"
+$$A_t = K_t + D_t$$
+where
+
+* $A_t$ = household financial assets at date $t$
+* $K_t$ = market value of private business assets
+* $D_t$ = market value of government debt
+
+### "Debt Accumulation Equation"
+$$D_{t+1} - D_t = \underbrace{r_t D_t}_{\text{interest due}} + \underbrace{(G_t - T_t)}_{\text{primary deficit}}$$
+* In-flow: $r_t D_t + G_t$
+* Stock: $B_t$
+* Out-flow: $T_t$
+
+### "Wealth Accumulation Equation"
+$$\begin{align}
+A_{t+1} - A_t &= K_{t+1} - K_t +  D_{t+1} - D_t \\
+&=I_t - dK_t + r_t D_t + (G_t - T_t) \\
+&= Y_t - C_t -dK_t + r_t D_t - T_t\\
+&= \underbrace{Y_t + r_t D_t}_{\text{inflow}} - \underbrace{(C_t + T_t + dK_t)}_{\text{outflow}}
+\end{align}$$
+
+* Stock: $A_t = K_t + D_t$
+
+
+> Government debt is a form of wealth
+
+# (Neoclassical) Production
+
+
+
+
+
+# Investment
+
+
+# Solow
+
+* $\dot{A_t}$: (flow) wealth??
+
+# OLG
+
+* ??
+
+# Ramsey
+
+## Planner's Problem
+
+* $H$: total number of households
+* $l_t$: household size (exogenous)
+* $L_t = 1 *l_t * H$ (1 = labor supply per person)
+* $C_t = Hx_t$
+* $x_t$: household consumption - CONTROL! (state is $K$) but we replace this with:
+* $c_t = \frac{C_t}{e^{g_t}L_t}$
+* $k_t = \frac{K_t}{e^{g_t}L_t}$
+* $\rho$: time discounting (impatience)
+* $\theta$: IES intertemporal elasticity of substitution
+* $\theta=-{\frac {u_{c}(c)}{c\cdot u_{cc}(c)}}=-{\frac {d\ln c}{d\ln(u'(c))}}$
+* $g_Y = n + g$
+* $\frac{\dot{c}}{c}+g$: growth rate of per-capita consumption
+* $\vec{\alpha} = (\rho, \theta, n, d, g)$ ALL ARE EXOGENOUS
+* $PD(\vec{\alpha})$: phase diagram for comparative dynamics
+
+**From Optimal Control Slides:**
+
+* $\bar{k}$: max debt constraint or min wealth constraint IN TERMINAL STATE
+* $\Gamma$: law of motion for capital/wealth/the state variable: $\Gamma(k_t,c_t,t) = \dot{k}$
+* $\lambda_t$: marginal benefit of one unit of $k_t$
+* $\lambda_t k_t$ = agent's wealth measured in units of utility (i.e., potential to receive future utility)
+
+
+LOM for capital:
+$$\dot{K} = I - dK = Y - C - dK$$
+
+LOM for capital, intensive form:
+$$\dot{k_t} = y_t - c_t - (n+d)k_t = \underbrace{f(k_t) - c_t}_{\substack{\text{actual investment} \\ \text{per effective worker}}} - \underbrace{(n+d+g)k_t}_{\substack{\text{replacement investment} \\ \text{per effective worker}}}$$
+
+Production Function/Total Output
+$$Y = F(K, e^{gt}L) = C_t + I_t$$
+
+### Planner's Problem
+$$\underbrace{V(k_0, t)}_{\text{indirect utility}} = \max_{c_t} \int_t^\infty e^{\rho t}e^{nt} u(c_t)dt \text{    s to}$$
+
+1. $\dot{k} = y_t - c_t - (n+d)k_t$
+2. $k_0 >0$ given
+3. $\lim_{t \rightarrow \infty} \lambda_t k_t$ (transversality condition with exponential discounting)
+4. implicitly: $k_t, c_t \geq 0$ - will never bind due to Inada so we usually ignore them
+
+
+Planner's Problem FOCs:
+
+* $\frac{\partial \mathcal H}{\partial c_t} = 0$
+* $\frac{\partial \mathcal H}{\partial k_t} = -\dot{\lambda}$
+* $\frac{\partial \mathcal H}{\partial \lambda_t} = \dot{k_t}$
+
+### Euler Equation for Consumption (Solution to the Ramsey Problem)
+
+$$\frac{\dot{c_t}}{c_t}=\frac{1}{\theta}(r_t- (\rho + \theta g ))$$
+
+Phase Diagram Equations (steady state)
+
+$$\dot{k} = 0 \iff c_t = f(k_t) - (n + d + g)k_t$$
+$$\dot{c} = 0 \iff k_t = k_*, \text{ where } f'(k_*) = d + \rho + \theta g$$
+$$c_* = f(k_*) - (n+d+g)k_*$$
+
+
+### Golden Rule vs Steady State Capital
+* $f'(k_*) = d + \rho + \theta g$
+* $f'(k_G) = d + n + g$
+
+So 
+$$f'(k_*) > f'(k_G) \iff \rho > n + (1-\theta)g$$
+
+
+### Isoclines
+* $\dot{k} = 0$: $c_t = f(k_t) - (n+d+g)k_t$
+* $\dot{c} = 0$: $r = \rho + \theta g$ or $k_t=k_*$, where $f'(k_*)=d+\rho + \theta g$
+
+> Usually, $g = 0$, especially if you get the EE from the consumer max problem.
+
+
+> $\lambda$ never jumps at $t_A$ (unless capital is destroyed which is rare)
+> $c$ always jumps at $t_A$ (i.e., when there is a surprise). We don't know which way it jumps without more clues though.
+
+![](src/jump_or_no.png)
+
+### Algorithm to solve Ramsey Shocks
+
+1. Transition $K$ to $k$
+2. Solve Planner's Problem
+    1. Derive EE
+    2. Check that you have two DEs (should look like this):
+        1. $\frac{\dot{c_t}}{c_t} = \alpha k^{\alpha - 1} - d - \rho$
+        2. $\dot{k_t} = k_t^\alpha - c_t - (n+d)k_t$
+3. Derive isoclines. How do they move (if at all)?
+    1. $\dot{c} = 0 \Rightarrow k = (\frac{\alpha}{d + \rho})^{\frac{1}{1-\alpha}}$ (hint: make sure exponent is positive)
+    2. $\dot{k} = 0 \Rightarrow c_t = k_t^\alpha - (n+d)k_t$
+5. Is there a jump in $c_t$ at $t_c$?
+    1. Capital not destroyed, so co-state is continuous
+    2. Set $\lambda_{t-0} = \lambda_{t+0}$ to see if $c_t$ is continuous or not.
+6. Draw diagram
+    1. old/new curves + old/new arrows
+    2. where should you be at $t_{c-0}$ to be able the new stable arm?
+    3. what is plausible behavior at $t=t_A$? Options are
+        1. stay
+        2. jump up
+        3. jump down (can't always choose which one--sometimes either 2 or 3 is correct in drawings)
+    4. Label jumps and their timing
+
+
+## Ramsey - Competitive Equilibrium/Household Expectations
+
+* $c_{it}$: per-capita consumption (not consumption per effective worker)
+* $g$: tech growth. We usually assume $g = 0$ - no technology growth in the consumer problem so the Euler equations of the Household and Planner coincide.
+* $\varepsilon_u$: elasticity of Marginal Utility growth with respect to consumption growth. If $\varepsilon_u$ rises, then consumption growth is less sensitive to changes in the interest rate. In other words, consumers prefer smooth consumption despite time-varying interest rates. 
+* $\Phi(K):$ an expectation/belief function that allows households to forecast future factor prices
+
+
+### Household Utility Maximization
+
+$$\max_{c_{it}} \int_0^\infty e^{-\rho t} L_{it}u(c_{it})dt \text{ s. to: }$$
+
+1. $\dot{A_{it}} = r_tA_{it} + w_t L_t - c_{it}L_{it}$ (aka household flow budget constraint) DON'T USE $\dot{K}$ here!! 
+2. $A_{i0}$: given
+3. $\lim_{T \rightarrow \infty} e^{-\bar{r}(0,T)}A_{it}\geq 0$
+
+* Individual State Variable: $A_{it}$
+* Aggregate state variables: can use $r_t, w_t$ or $K_t, L_t$. Both will give the same answer, but we use $K_t, L_t$ in this class.
+
+Household's Utility Maximization Problem FOCs:
+
+* $\frac{\partial \mathcal H}{\partial c_{it}} = 0 \iff$
+* $\frac{\partial \mathcal H}{\partial A_{it}} = -\dot{\mu_{it}}$
+
+<!-- * $\frac{\partial \mathcal H}{\partial \mu_t} = \dot{FINISH}$ -->
+
+Then eliminate $\mu_t$, do some nasty rearranging and define $\varepsilon_u = |\frac{u''(c_{it})c_{it}}{u'(c_{it})}|$
+
+
+### Euler Equation for Consumption (Solution to the Ramsey Problem)
+
+$$\frac{\dot{c_{it}}}{c_{it}}=\frac{1}{\varepsilon_u}(r_t- \rho) = -\frac{u'(c_t)}{u''(c_t)}(r_t - \rho)$$
+
+> This is identical to the Euler equation in the planner's problem if $g = 0$ and $\theta = \varepsilon_u$.
+
+
+
+### Ramsey Asset Market Clearing
+$$A_t = K_t$$
+Technically also have the capital leasing sector which requires
+$$A_D = K_t \text{ and } L_D = L_t$$
+
+#### Ramsey Capital leasing max problem 
+Idk if this is important, so don't get sidetracked, but here it is:
+
+$$\max_{A_D}(R_t - r_t - d)A_D$$ 
+where $A_D$ is the decision of the capital leasing firms.
+
+
+### Ramsey Goods Market Clearing
+$$Y_t = C_t + I_t$$
+
+> Note: Asset Market Clearing implies goods market clearing in Ramsey 
+
+
+
+### Def "Competitive (Walrasian) Equilibrium"
+Competitive equilibrium is a list of quantities $\{C_t, Y_t, I_t, K_t, A_t\}$ and prices $\{w_t, r_t, R_t\}$ such that
+
+1. $\{C_t, A_t\}$ solves the household problem given $\{w_t,r_t\}$
+2. Production side equilibrium holds for all $t$
+    1. $w_t = \frac{\partial Y_t}{\partial L_t}, R_t = \frac{\partial Y_t}{\partial K_t}, r_t = R_t - d$
+3. Market clearing for all $t$
+    1. $A_t = K_t \Rightarrow Y_t = C_t + I_t$
+
+
+### Def "Production Side Equilibirum"
+A list of quantities $\{C_t, Y_t,K_t\}$ and prices $\{w_t, r_t, R_t\}$ satisfying, for all $t$:
+
+1. Aggregate production function: $Y_t = F(K_t, L_t)$
+2. Profit maximization and factor market clearing
+    1. Final goods sector: $(K,L) \in argmax_{(K,L)}(F(K,L) - R_tK - w_tL)$ given $(w_t, R_t)$
+    2. Value maximization and asset market clearing, capital leasing: $K_t \in argmax_{K}(\int_t^\infty e^{-\bar{r}(t,s) - d(s - t)} R_s K ds - K)$ given $(r_t, R_t)$
+3. Free entry (automatic given profit maximization and market clearing)
+    1. $\max_{(K,L)}(F(K,L) - R_tK - w_tL) = 0$
+
+
+
+### Def "Household Agrees with the Planner"
+When we have (1) production side equilibrium, and (2) Asset market clearing ($A = K$), then planner and household have the same (1) utility, (2) LOM for wealth ($\dot{K}$), (3) transversality condition.
+
+Careful: if we don't have asset market clearing and/or production side equilibrium, HH would have different resources and the stable arms would not coincide.
+
+### Def "Rational Expectations Equilibrium (REE)"
+Refinement of WE - we add an expectation/belief function $\Phi(K) = c_t, C_t = \Phi(K_t) L_t$ that allows households to forecast future factor prices
+
+![](src/def_ree.png)
+FINISH MEE
+
+### Def "Representative Household flow budget constraint"
+$$\dot{A_t} = r_tA_t+w_tL_t - C_t$$
+
+
+## Government and fiscal policy in the Ramsey model
+
+
+
+
+
+
+
+
+
+
+\newpage
+# Endogenous Growth
+
+* $A$: (stock?) patent number (index)
+* $P_{A,t}$: price of idea
+* $M$ (?) market value of patents
+* $\dot{M}$: Capital gain
+* $\varphi$: Knowledge externality. Stepping on toes or synergy.
+* $\lambda$: Labor externality...
+* $\theta$: ???????????????????????????
+
+
+* flow = quantity measured as bricks per quarter
+* stock = total number of bricks
+
+
+
+
+\newpage
+# Misc
+
+On the balanced growth path, all components of expenditure have to grow at the same rate as Y
+
+### Def "Euler equation"
+An Euler equation is something that relates choice in one period to choice in another period.
+
+
+### Remark "discrete to continuous, stocks vs flows"
+REMEMBER HOW TO CONVERT - one of them gets multiplied by delta t
+
+
+**In steady state $\dot{K} \neq 0$!!!!** ONLY RATIOS ARE UNCHANGING IN STEADY STATES!!
+
+## Prereqs
+
+<!-- ```{r} -->
+<!-- gsub(.pdf, , list.files(ECON 605 - Macro I/Notes/Slides/)) -->
+<!-- ``` -->
+
+### Def "Annual growth rate"
+
+### Def "Annualized growth rate"
+
+### Def "Instantaneous growth rate"
+
+### Fact "Arithmetic with growth rates"
+* $g_{XY} = g_X + g_Y$
+* $g_{X/Y} = g_X - g_Y$
+* $g_{X^\alpha} = \alpha g_X$
+
+
+### Def "Rules of growth rates"
+* Product rule: $g_{XY} = g_X + g_Y$
+* Ratio rule: $g_{X/Y} = g_X - g_Y$ 
+* Power rule : $g_{X^\alpha} = \alpha g_X$.
+

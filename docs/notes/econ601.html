@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Micro I Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-01-01</h4>
+<h4 class="date">Last Updated: 2024-05-28</h4>
 
 </div>
 
@@ -1488,16 +1488,17 @@ border-radius: 0px;
 <div id="preference" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Preference</h1>
 <!-- 1. consider $X \times X = $ -->
-<div id="def-binary-relation" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Def “binary
-relation”</h2>
+<div id="def-binary-relation" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Def “binary
+relation”</h3>
 <p>A binary relation <span class="math inline">\(R\)</span> on <span class="math inline">\(X\)</span> is a subset of <span class="math inline">\(X \times X\)</span>.</p>
 <p>The ordered pair <span class="math inline">\((x,y) \in R\)</span>
 means <span class="math inline">\(x\)</span> is (weakly) preferred to
 <span class="math inline">\(y\)</span>.</p>
-<div id="remark-about-notation" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Remark about
-notation</h3>
+</div>
+<div id="remark-binary-relation-notation" class="section level3" number="1.0.2">
+<h3><span class="header-section-number">1.0.2</span> Remark “binary
+relation notation”</h3>
 <p>We use <span class="math inline">\(\succsim\)</span> to denote <span class="math inline">\(R\)</span> but all these methods are the same
 thing: <span class="math display">\[(x,y)  \iff xRy \iff x \succsim
 y\]</span></p>
@@ -1507,10 +1508,9 @@ y\]</span></p>
 <!-- 2. $X$ = real line; $R$ is "$\geq$" -->
 <!--   * Then $(x,y) \in R \iff x \geq y$ -->
 </div>
-</div>
-<div id="def-attributes-of-binary-relations" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Def “attributes of
-binary relations”</h2>
+<div id="def-attributes-of-binary-relations" class="section level3" number="1.0.3">
+<h3><span class="header-section-number">1.0.3</span> Def “attributes of
+binary relations”</h3>
 <p>A binary relation <span class="math inline">\(\succsim\)</span>
 is</p>
 <ol style="list-style-type: decimal">
@@ -1526,19 +1526,20 @@ x\)</span></li>
 \not\succsim x\)</span></li>
 <li>asymmetric if for all <span class="math inline">\(x,y\in X, x
 \succsim y \Rightarrow y \not\succsim x\)</span></li>
+<li>antisymmetric…</li>
 </ol>
 </div>
-<div id="def-rational" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Def “rational”</h2>
+<div id="def-rational" class="section level3" number="1.0.4">
+<h3><span class="header-section-number">1.0.4</span> Def “rational”</h3>
 <p>A binary relation <span class="math inline">\(\succsim\)</span> is
 <em>rational</em> if it is complete and transitive</p>
 </div>
 </div>
 <div id="choice" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Choice</h1>
-<div id="def-choice-function" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Def “choice
-function”</h2>
+<div id="def-choice-function" class="section level3" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Def “choice
+function”</h3>
 <p>A function <span class="math inline">\(c: \mathcal{B} \rightarrow
 \mathcal{P}(X)\)</span> is called a <em>choice function</em> if for all
 <span class="math inline">\(A \in \mathcal{B}, c(A) \subseteq
@@ -1550,14 +1551,14 @@ A\)</span>.</p>
 <li><span class="math inline">\(|c(A)| \geq 1\)</span></li>
 </ol>
 </div>
-<div id="def-choice-structure" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Def “choice
-structure”</h2>
+<div id="def-choice-structure" class="section level3" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Def “choice
+structure”</h3>
 <p>The pair <span class="math inline">\((\mathcal{B}, c)\)</span> is
 called a <em>choice structure</em>.</p>
 </div>
-<div id="def-warp" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Def “WARP”</h2>
+<div id="def-warp" class="section level3" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Def “WARP”</h3>
 <p>Weak Axiom of Revealed Preference. The following are equivalent for
 all <span class="math inline">\(A, B \in \mathcal{B}\)</span>:</p>
 <ul>
@@ -1571,8 +1572,8 @@ c(B) \Rightarrow x \in c(B), y \in c(A)\)</span></li>
 <li>Sen’s <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> both hold</li>
 </ul>
 </div>
-<div id="def-sens-alpha-and-beta" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Def Sen’s <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></h2>
+<div id="def-sens-alpha-and-beta" class="section level3" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Def Sen’s <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span></h3>
 <p>For all <span class="math inline">\(A, B \in
 \mathcal{B}\)</span>:</p>
 <ol style="list-style-type: decimal">
@@ -1580,18 +1581,18 @@ c(B) \Rightarrow x \in c(B), y \in c(A)\)</span></li>
 <li>Sen’s <span class="math inline">\(\beta\)</span>: If <span class="math inline">\(x,y \in c(B), B \subseteq A\)</span> and <span class="math inline">\(y \in c(A)\)</span> then <span class="math inline">\(x\in c(A)\)</span></li>
 </ol>
 </div>
-<div id="prop-1-warp-iff-alpha-and-beta" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Prop 1 “WARP <span class="math inline">\(\iff \alpha\)</span> and <span class="math inline">\(\beta\)</span>”</h2>
+<div id="prop-1-warp-iff-alpha-and-beta" class="section level3" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Prop 1 “WARP <span class="math inline">\(\iff \alpha\)</span> and <span class="math inline">\(\beta\)</span>”</h3>
 </div>
-<div id="term-single-valued" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Term
-“single-valued”</h2>
+<div id="term-single-valued" class="section level3" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> Term
+“single-valued”</h3>
 <p>We say <span class="math inline">\(c\)</span> is single-valued if
 <span class="math inline">\(\forall A \in \mathcal{B}, |c(A)| =
 1\)</span></p>
 </div>
-<div id="prop-2-alpha-and-single-valued-rightarrow-warp" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Prop 2 “<span class="math inline">\(\alpha\)</span> and single-valued <span class="math inline">\(\Rightarrow\)</span> WARP”</h2>
+<div id="prop-2-alpha-and-single-valued-rightarrow-warp" class="section level3" number="2.0.7">
+<h3><span class="header-section-number">2.0.7</span> Prop 2 “<span class="math inline">\(\alpha\)</span> and single-valued <span class="math inline">\(\Rightarrow\)</span> WARP”</h3>
 <p>If <span class="math inline">\((\mathcal{P}(X), c)\)</span> satisfies
 <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(c\)</span> is single-valued, then it satisfies
 WARP.</p>
@@ -1600,56 +1601,58 @@ WARP.</p>
 <div id="choice-and-preference" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Choice and
 Preference</h1>
-<div id="def-c_succsim" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Def “<span class="math inline">\(c_\succsim\)</span>”</h2>
+<div id="def-c_succsim" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Def “<span class="math inline">\(c_\succsim\)</span>”</h3>
 <p>For any binary relation <span class="math inline">\(\succsim\)</span>
 define <span class="math display">\[c_\succsim(A) = \{x \in A: x
 \succsim y, \forall y \in A\}, \forall A \in \mathcal{P}(X)\]</span></p>
 </div>
-<div id="def-succsim_c" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Def “<span class="math inline">\(\succsim_c\)</span>”</h2>
+<div id="def-succsim_c" class="section level3" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Def “<span class="math inline">\(\succsim_c\)</span>”</h3>
 <p>For a choice structure <span class="math inline">\((\mathcal{P}(X),
 c)\)</span> define a binary relation <span class="math inline">\(\succsim_c\)</span> such that <span class="math display">\[x \succsim_c y \iff x \in c(\{x,y\})\]</span></p>
 </div>
-<div id="prop-satisfies-warp-iff-succsim-rational" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Prop “satisfies WARP
-<span class="math inline">\(\iff \succsim\)</span> rational</h2>
+<div id="prop-satisfies-warp-iff-succsim-rational" class="section level3" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> Prop “satisfies
+WARP <span class="math inline">\(\iff \succsim\)</span> rational”</h3>
 <p>If <span class="math inline">\(\succsim\)</span> is a binary relation
 on a finite set <span class="math inline">\(X\)</span> then <span class="math inline">\((\mathcal{P}(X), c_\succsim)\)</span> is a choice
 structure that satisfies WARP if and only if <span class="math inline">\(\succsim\)</span> is rational.</p>
 </div>
-<div id="prop-warp-rightarrow-cc_succsim" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Prop “WARP <span class="math inline">\(\Rightarrow c=c_\succsim\)</span>”</h2>
+<div id="prop-warp-rightarrow-cc_succsim" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Prop “WARP <span class="math inline">\(\Rightarrow c=c_\succsim\)</span>”</h3>
 <p>If <span class="math inline">\((\mathcal{P}, c)\)</span> is a choice
 structure that satisfies WARP then there exists a unique rational binary
 relation <span class="math inline">\(\succsim\)</span> such that <span class="math inline">\(c=c_\succsim\)</span> (i.e., for all <span class="math inline">\(A \in \mathcal{P}, c(A) = c_\succsim
 (A)\)</span>).</p>
-<!-- ## Def "$\succsim^*$ from MWG" -->
+<!-- ### Def "$\succsim^*$ from MWG" -->
 </div>
 </div>
 <div id="utility" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Utility</h1>
-<div id="def-utility-function" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Def “utility
-function”</h2>
+<div id="def-utility-function" class="section level3" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> Def “utility
+function”</h3>
 <p>A function <span class="math inline">\(U: X \rightarrow
 \mathbb{R}\)</span> represents <span class="math inline">\(\succsim\)</span> if and only if, for all <span class="math inline">\(x, y \in X\)</span> <span class="math display">\[x
 \succsim y \iff U(x) \geq U(y).\]</span></p>
 </div>
-<div id="prop-u-represents-succsim-rightarrow-rational" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Prop “<span class="math inline">\(U\)</span> represents <span class="math inline">\(\succsim \Rightarrow\)</span> rational”</h2>
+<div id="prop-u-represents-succsim-rightarrow-rational" class="section level3" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> Prop “<span class="math inline">\(U\)</span> represents <span class="math inline">\(\succsim \Rightarrow\)</span> rational”</h3>
 <p>If <span class="math inline">\(U: X \rightarrow \mathbb{R}\)</span>
 represents <span class="math inline">\(\succsim\)</span>, then <span class="math inline">\(\succsim\)</span> is rational.</p>
+<blockquote>
 <p>Note: this proposition does NOT require finiteness!</p>
+</blockquote>
 </div>
-<div id="prop-x-finite-succsim-rational-rightarrow-exists-u" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Prop “<span class="math inline">\(X\)</span> finite + <span class="math inline">\(\succsim\)</span> rational <span class="math inline">\(\Rightarrow \exists U\)</span></h2>
+<div id="prop-x-finite-succsim-rational-rightarrow-exists-u" class="section level3" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> Prop “<span class="math inline">\(X\)</span> finite + <span class="math inline">\(\succsim\)</span> rational <span class="math inline">\(\Rightarrow \exists U\)</span></h3>
 <p>If <span class="math inline">\(X\)</span> is finite and <span class="math inline">\(\succsim\)</span> is rational then there exists
 <span class="math inline">\(U: X \rightarrow \mathbb{R}\)</span> that
 represents <span class="math inline">\(\succsim\)</span>.</p>
 </div>
-<div id="prop-v-iff-phi-and-phi-strictly-increasing" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Prop “<span class="math inline">\(V \iff \phi\)</span> and <span class="math inline">\(\phi\)</span> strictly increasing”</h2>
+<div id="prop-v-iff-phi-and-phi-strictly-increasing" class="section level3" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Prop “<span class="math inline">\(V \iff \phi\)</span> and <span class="math inline">\(\phi\)</span> strictly increasing”</h3>
 <p>Suppose <span class="math inline">\(U: X \rightarrow
 \mathbb{R}\)</span> represents <span class="math inline">\(\succsim\)</span>. Then <span class="math inline">\(V: X \rightarrow \mathbb{R}\)</span> represents
 <span class="math inline">\(\succsim\)</span> if and only if there
@@ -1660,8 +1663,8 @@ such that <span class="math inline">\(V = \phi \circ U\)</span> and
 </div>
 <div id="expected-utility" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Expected Utility</h1>
-<div id="def-lottery" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Def “lottery”</h2>
+<div id="def-lottery" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Def “lottery”</h3>
 <p>Suppose <span class="math inline">\(X\)</span> is a non-empty and
 finite set of prizes (consequences). Then a <em>lottery</em>, <span class="math inline">\(p\)</span> is a probability distribution over
 <span class="math inline">\(X\)</span>: <span class="math display">\[p:
@@ -1669,19 +1672,19 @@ X \rightarrow [0,1], \text{ such that } \sum_{x\in X} p(x) =
 1.\]</span></p>
 <p>We denote <span class="math inline">\(\mathcal{L}\)</span> as the set
 of all lotteries.</p>
-<div id="term-degenerate-lottery" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Term “degenerate
+</div>
+<div id="term-degenerate-lottery" class="section level3" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Term “degenerate
 lottery”</h3>
 <p>If <span class="math inline">\(p(x)=1\)</span> for some <span class="math inline">\(x \in X\)</span> then we write <span class="math inline">\(\delta_x\)</span>.</p>
 </div>
-<div id="remark-mathcall-is-the-set-of-alternatives-and-unlike-x-is-infinite" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Remark: <span class="math inline">\(\mathcal{L}\)</span> is the set of alternatives,
+<div id="remark-mathcall-is-the-set-of-alternatives-and-unlike-x-is-infinite" class="section level3" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Remark: <span class="math inline">\(\mathcal{L}\)</span> is the set of alternatives,
 and unlike <span class="math inline">\(X\)</span> is infinite!</h3>
 </div>
-</div>
-<div id="def-expected-utility-functionutility-index" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Def “expected utility
-function/utility index”</h2>
+<div id="def-vnm-expected-utility-functionutility-index" class="section level3" number="5.0.4">
+<h3><span class="header-section-number">5.0.4</span> Def “vNM expected
+utility function/utility index”</h3>
 <p><span class="math inline">\(U: \mathcal{L} \rightarrow
 \mathbb{R}\)</span> is an expected utility function if there exists
 <span class="math inline">\(u: X \rightarrow \mathbb{R}\)</span> such
@@ -1690,9 +1693,9 @@ p \in \mathcal{L}\)</span>.</p>
 <p>Called a “von Neumann–Morgenstern utility index” or a “Bernoulli
 index.”</p>
 </div>
-<div id="def-mixture-operation" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Def “Mixture
-operation”</h2>
+<div id="def-mixture-operation" class="section level3" number="5.0.5">
+<h3><span class="header-section-number">5.0.5</span> Def “Mixture
+operation”</h3>
 <p>For all <span class="math inline">\(p, q \in \mathcal{L}, \alpha \in
 [0,1]\)</span>:</p>
 <ul>
@@ -1702,29 +1705,30 @@ such that for all <span class="math inline">\(x\in X, r(x) = \alpha p(x)
 + (1-\alpha)q(x)\)</span>.</li>
 </ul>
 </div>
-<div id="def-expected-utility-representation" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Def “expected utility
-representation”</h2>
+<div id="def-expected-utility-representation" class="section level3" number="5.0.6">
+<h3><span class="header-section-number">5.0.6</span> Def “expected
+utility representation”</h3>
 <p><span class="math inline">\(\succsim\)</span> on <span class="math inline">\(\mathcal{L}\)</span> has an expected utility
 representation if there exists <span class="math inline">\(u: X
 \rightarrow \mathbb{R}\)</span> such that for <span class="math inline">\(p,q \in \mathcal{L}\)</span> <span class="math display">\[p \succsim q \iff U(p) = \sum_{x\in X} p(x)u(x)
 \geq U(q) = \sum_{x\in X} q(x)u(x)\]</span></p>
 </div>
-<div id="def-linear-function" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Def “linear
-function”</h2>
+<div id="def-linear-function" class="section level3" number="5.0.7">
+<h3><span class="header-section-number">5.0.7</span> Def “linear
+function”</h3>
 <p>A function <span class="math inline">\(U: \mathcal{L} \rightarrow
 \mathbb{R}\)</span> is <em>linear</em> if for all <span class="math inline">\(\alpha \in [0,1]\)</span> and <span class="math inline">\(p,q \in \mathcal{L}\)</span>: <span class="math display">\[U(\alpha p + (1-\alpha)q) = \alpha U(p) +
 (1-\alpha) U(q).\]</span></p>
 </div>
-<div id="lemma-linear-iff-u-is-an-expected-utility-function" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Lemma “linear <span class="math inline">\(\iff U\)</span> is an expected utility
-function”</h2>
+<div id="lemma-linear-iff-u-is-an-expected-utility-function" class="section level3" number="5.0.8">
+<h3><span class="header-section-number">5.0.8</span> Lemma “linear <span class="math inline">\(\iff U\)</span> is an expected utility
+function”</h3>
 <p>A function <span class="math inline">\(U: \mathcal{L} \rightarrow
 \mathbb{R}\)</span> is <em>linear</em> if and only if <span class="math inline">\(U\)</span> is an expected utility function.</p>
 </div>
-<div id="def-vnm-axioms" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Def “vNM Axioms”</h2>
+<div id="def-vnm-axioms" class="section level3" number="5.0.9">
+<h3><span class="header-section-number">5.0.9</span> Def “vNM
+Axioms”</h3>
 <p>The von Neumann–Morgenstern axioms are:</p>
 <ul>
 <li>A1. (Rationality): <span class="math inline">\(\succsim\)</span> is
@@ -1746,9 +1750,9 @@ p + (1-\beta) r\)</span>.</li>
 </ul></li>
 </ul>
 </div>
-<div id="lemma-applying-vnm-axioms" class="section level2" number="5.8">
-<h2><span class="header-section-number">5.8</span> Lemma “applying vNM
-Axioms”</h2>
+<div id="lemma-applying-vnm-axioms" class="section level3" number="5.0.10">
+<h3><span class="header-section-number">5.0.10</span> Lemma “applying
+vNM Axioms”</h3>
 <p>Suppose <span class="math inline">\(\succsim\)</span> satisfies A1,
 A2, and A3 of vNM axioms.</p>
 <ol style="list-style-type: lower-roman">
@@ -1770,28 +1774,29 @@ A2, and A3 of vNM axioms.</p>
 (1-\alpha)s\)</span></li>
 </ol>
 </div>
-<div id="thm-a1-a3-iff-eu-representation" class="section level2" number="5.9">
-<h2><span class="header-section-number">5.9</span> Thm “A1-A3 <span class="math inline">\(\iff\)</span> EU representation”</h2>
+<div id="thm-a1-a3-iff-eu-representation" class="section level3" number="5.0.11">
+<h3><span class="header-section-number">5.0.11</span> Thm “A1-A3 <span class="math inline">\(\iff\)</span> EU representation”</h3>
 <p>Suppose <span class="math inline">\(X\)</span> is finite and <span class="math inline">\(\succsim\)</span> is a binary relation on <span class="math inline">\(\mathcal{L}\)</span>. Then <span class="math display">\[[\succsim \text{ satisfies A1, A2, and A3 }] \iff
 \succsim \text{ has an Expected Utility representation.}\]</span></p>
-<div id="thm-v-linear-representation-iff-vp-aupb" class="section level3" number="5.9.1">
-<h3><span class="header-section-number">5.9.1</span> Thm “<span class="math inline">\(V\)</span> linear representation <span class="math inline">\(\iff V(p) = aU(p)+b\)</span>”</h3>
+</div>
+<div id="thm-v-linear-representation-iff-vp-aupb" class="section level3" number="5.0.12">
+<h3><span class="header-section-number">5.0.12</span> Thm “<span class="math inline">\(V\)</span> linear representation <span class="math inline">\(\iff V(p) = aU(p)+b\)</span>”</h3>
 <p>Suppose <span class="math inline">\(U\)</span> is a linear
 representation of <span class="math inline">\(\succsim\)</span>, and
 <span class="math inline">\(V: \mathcal{L}\rightarrow
 \mathbb{R}\)</span> is a linear function. Then <span class="math display">\[[V \text{ is a linear representation of }
 \succsim] \iff [\exists a&gt;0, b\in\mathbb{R} \text{ such that }
 V(p)=aU(p) + b, \forall p \in \mathcal{L}]\]</span></p>
-<div id="term-affine" class="section level4" number="5.9.1.1">
-<h4><span class="header-section-number">5.9.1.1</span> Term
+<div id="term-affine" class="section level4" number="5.0.12.1">
+<h4><span class="header-section-number">5.0.12.1</span> Term
 “affine”</h4>
 <p>Basically a line, but the intercept doesn’t have to be zero. “A
 function composed of a linear function and a constant and its graph is a
 straight line.”</p>
 </div>
 </div>
-<div id="def-simple-lottery" class="section level3" number="5.9.2">
-<h3><span class="header-section-number">5.9.2</span> Def “simple
+<div id="def-simple-lottery" class="section level3" number="5.0.13">
+<h3><span class="header-section-number">5.0.13</span> Def “simple
 lottery”</h3>
 <p><span class="math inline">\(p: X \rightarrow \mathbb{R}\)</span> is a
 <em>simple lottery</em> if</p>
@@ -1802,8 +1807,8 @@ finite</li>
 p(x)&gt;0\}} p(x) = 1\)</span></li>
 </ol>
 </div>
-<div id="def-simple-improvement" class="section level3" number="5.9.3">
-<h3><span class="header-section-number">5.9.3</span> Def “simple
+<div id="def-simple-improvement" class="section level3" number="5.0.14">
+<h3><span class="header-section-number">5.0.14</span> Def “simple
 improvement”</h3>
 <p>For all (simple) lotteries <span class="math inline">\(p,q \in
 \mathcal{L}\)</span>, <span class="math inline">\(p\)</span> is a simple
@@ -1812,8 +1817,8 @@ improvement of <span class="math inline">\(q\)</span> if there exists
 m&gt;m&#39;;, r \in \mathcal{L}\)</span> such that <span class="math display">\[p = \lambda \delta_m + (1-\lambda)r \text{ and }
 q = \lambda \delta_m&#39; + (1-\lambda)r.\]</span></p>
 </div>
-<div id="def-fosd" class="section level3" number="5.9.4">
-<h3><span class="header-section-number">5.9.4</span> Def “FOSD”</h3>
+<div id="def-fosd" class="section level3" number="5.0.15">
+<h3><span class="header-section-number">5.0.15</span> Def “FOSD”</h3>
 <p>For <span class="math inline">\(p, q \in \mathcal{L}\)</span>, <span class="math inline">\(p\)</span> first-order stochastically dominates
 (FOSD) <span class="math inline">\(q\)</span> if</p>
 <ol style="list-style-type: decimal">
@@ -1826,12 +1831,12 @@ X\)</span></li>
 CDF of <span class="math inline">\(q\)</span> means <span class="math inline">\(p\)</span> dominates <span class="math inline">\(q\)</span>, not the other way around</p>
 </blockquote>
 </div>
-<div id="fact-p-fosd-q-iff-p-is-a-complex-improvement-of-q" class="section level3" number="5.9.5">
-<h3><span class="header-section-number">5.9.5</span> Fact “<span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \iff
+<div id="fact-p-fosd-q-iff-p-is-a-complex-improvement-of-q" class="section level3" number="5.0.16">
+<h3><span class="header-section-number">5.0.16</span> Fact “<span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \iff
 p\)</span> is a complex improvement of <span class="math inline">\(q\)</span>”</h3>
 </div>
-<div id="thm-eu-representation-means-p-fosd-q-rightarrow-p-succ-q-and-u-strictly-increasing" class="section level3" number="5.9.6">
-<h3><span class="header-section-number">5.9.6</span> Thm “EU
+<div id="thm-eu-representation-means-p-fosd-q-rightarrow-p-succ-q-and-u-strictly-increasing" class="section level3" number="5.0.17">
+<h3><span class="header-section-number">5.0.17</span> Thm “EU
 representation means <span class="math inline">\(p\)</span> FOSD <span class="math inline">\(q \Rightarrow p \succ q\)</span> and <span class="math inline">\(u\)</span> strictly increasing”</h3>
 <p>Suppose <span class="math inline">\(\succsim\)</span> has an expected
 utility representation. Then the following are equivalent:</p>
@@ -1844,24 +1849,23 @@ utility index (<span class="math inline">\(U(p) = \sum_{x \in supp(p)}
 \underline{u(x)}p(x)\)</span>)</li>
 </ol>
 </div>
-<div id="def-betweenness-axiom" class="section level3" number="5.9.7">
-<h3><span class="header-section-number">5.9.7</span> Def “Betweenness
+<div id="def-betweenness-axiom" class="section level3" number="5.0.18">
+<h3><span class="header-section-number">5.0.18</span> Def “Betweenness
 Axiom”</h3>
 <p><span class="math display">\[\forall p,q \in \mathcal{L}, \lambda \in
 (0,1):\]</span> <span class="math display">\[p \sim q \Rightarrow
 \lambda p + (1-\lambda)q \sim p\]</span></p>
 </div>
-<div id="def-allais-paradox" class="section level3" number="5.9.8">
-<h3><span class="header-section-number">5.9.8</span> Def “Allais
+<div id="def-allais-paradox" class="section level3" number="5.0.19">
+<h3><span class="header-section-number">5.0.19</span> Def “Allais
 paradox”</h3>
 <p>Individuals prefer certainty over a risky outcome even if this defies
 the expected utility axiom</p>
 </div>
-</div>
-<div id="risk-attitudes" class="section level2" number="5.10">
-<h2><span class="header-section-number">5.10</span> Risk Attitudes</h2>
-<div id="lemma" class="section level3" number="5.10.1">
-<h3><span class="header-section-number">5.10.1</span> Lemma</h3>
+<div id="risk-attitudes" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Risk Attitudes</h2>
+<div id="lemma" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Lemma</h3>
 <p>Suppose <span class="math inline">\(\succsim\)</span> has an expected
 utility representation with a strictly increasing and continuous index
 <span class="math inline">\(u\)</span>. Then <span class="math inline">\(\forall p \in \mathcal{L}, \exists\)</span> unique
@@ -1870,8 +1874,8 @@ utility representation with a strictly increasing and continuous index
 equivalent</em> of <span class="math inline">\(p\)</span>. <span class="math display">\[CE(p) = u^{-1}(U(p)) = u^{-1}(\sum_{x\in
 supp(p)}u(x)p(x))\in X \iff u(CE(p))=U(p)\]</span></p>
 </div>
-<div id="def-risk-attitudes" class="section level3" number="5.10.2">
-<h3><span class="header-section-number">5.10.2</span> Def “risk
+<div id="def-risk-attitudes" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Def “risk
 attitudes”</h3>
 <p>Let <span class="math inline">\(\bar{p} = \sum_{x \in supp(p)}
 p(x)x\)</span> be the expected value of <span class="math inline">\(p\)</span>. Then <span class="math inline">\(p\)</span> is riskier than <span class="math inline">\(\delta_{\bar{p}}\)</span>. For all <span class="math inline">\(p \in \mathcal{L}\)</span>, <span class="math inline">\(\succsim\)</span> is</p>
@@ -1883,16 +1887,16 @@ p(x)x\)</span> be the expected value of <span class="math inline">\(p\)</span>. 
 \delta_{\bar{p}}\)</span></li>
 </ol>
 </div>
-<div id="def-simple-mean-preserving-spread-mps" class="section level3" number="5.10.3">
-<h3><span class="header-section-number">5.10.3</span> Def “simple
+<div id="def-simple-mean-preserving-spread-mps" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Def “simple
 Mean-Preserving Spread (MPS)”</h3>
 <p>Say <span class="math inline">\(\hat{p} = \lambda p +
 (1-\lambda)r\)</span> is a simple mean-preserving spread of <span class="math inline">\(\hat{q} = \lambda \delta_{\bar{p}} +
 (1-\lambda)r\)</span>. <span class="math inline">\(\hat{p}\)</span> is
 riskier than <span class="math inline">\(\hat{q}\)</span>.</p>
 </div>
-<div id="thm-risk-averse-iff-u-concave-iff-mps" class="section level3" number="5.10.4">
-<h3><span class="header-section-number">5.10.4</span> Thm “risk-averse
+<div id="thm-risk-averse-iff-u-concave-iff-mps" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Thm “risk-averse
 <span class="math inline">\(\iff u\)</span> concave <span class="math inline">\(\iff\)</span> MPS”</h3>
 <p><span class="math inline">\(\succsim\)</span> has an EU
 representation such that its utility index, <span class="math inline">\(u\)</span>, is strictly increasing and continuous.
@@ -1903,21 +1907,21 @@ Then the following are equivalent:</p>
 <li><span class="math inline">\(u\)</span> is concave / <span style="color: red;">convex</span> / <span style="color: green;">affine</span></li>
 </ol>
 </div>
-<div id="def-more-risk-averse" class="section level3" number="5.10.5">
-<h3><span class="header-section-number">5.10.5</span> Def “more risk
+<div id="def-more-risk-averse" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Def “more risk
 averse”</h3>
 <p><span class="math inline">\(\succsim_1\)</span> is more risk averse
 than <span class="math inline">\(\succsim_2\)</span> if for all <span class="math inline">\(m\in X, p \in \mathcal{L}\)</span> we have <span class="math display">\[\delta_m \succsim_2 p \Rightarrow \delta_m
 \succsim_1 p.\]</span></p>
-<div id="term-absolute-risk-aversion" class="section level4" number="5.10.5.1">
-<h4><span class="header-section-number">5.10.5.1</span> Term “Absolute
+<div id="term-absolute-risk-aversion" class="section level4" number="5.1.5.1">
+<h4><span class="header-section-number">5.1.5.1</span> Term “Absolute
 risk aversion”</h4>
 <p>Call <span class="math inline">\(-\frac{u_1&#39;&#39;}{u_2&#39;}\)</span>
 Arrow-Pratt’s measure of absolute risk aversion (ARA).</p>
 </div>
 </div>
-<div id="thm-more-risk-averse-iff-concave-composition" class="section level3" number="5.10.6">
-<h3><span class="header-section-number">5.10.6</span> Thm “more risk
+<div id="thm-more-risk-averse-iff-concave-composition" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Thm “more risk
 averse <span class="math inline">\(\iff\)</span> concave
 composition”</h3>
 <p><span class="math inline">\(\succsim_1, \succsim_2\)</span> have an
@@ -1931,21 +1935,21 @@ risk averse than <span class="math inline">\(\succsim_2\)</span>.</li>
 X\)</span></li>
 <li><span class="math inline">\(ARA_{u_1} \geq ARA_{u_2}\)</span></li>
 </ol>
-<div id="term-smooth" class="section level4" number="5.10.6.1">
-<h4><span class="header-section-number">5.10.6.1</span> Term
+<div id="term-smooth" class="section level4" number="5.1.6.1">
+<h4><span class="header-section-number">5.1.6.1</span> Term
 “smooth”</h4>
 <p>Twice continuously differentiable</p>
 </div>
 </div>
-<div id="def-cara" class="section level3" number="5.10.7">
-<h3><span class="header-section-number">5.10.7</span> Def “CARA”</h3>
+<div id="def-cara" class="section level3" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> Def “CARA”</h3>
 <p><span class="math display">\[ARA = -\frac{u&#39;&#39;(x)}{u&#39;(x)}
 = a (\text{const} \in \mathbb{R})\]</span> Constant Absolute Risk
 Aversion (CARA) means risk attitude does not depend on the initial
 wealth level.</p>
 </div>
-<div id="def-functional-form-for-cara" class="section level3" number="5.10.8">
-<h3><span class="header-section-number">5.10.8</span> Def “functional
+<div id="def-functional-form-for-cara" class="section level3" number="5.1.8">
+<h3><span class="header-section-number">5.1.8</span> Def “functional
 form for CARA”</h3>
 <p><span class="math display">\[u(x) = \begin{cases} \frac{1-e^{-ax}}{a}
 \text{ if } a \neq 0 \\ x \text{ if } a=0\end{cases}\]</span></p>
@@ -1963,14 +1967,14 @@ averse (e.g., <span class="math inline">\(a_1 &gt; a_2
 \Rightarrow\)</span> person 1 more risk-averse)</p>
 </blockquote>
 </div>
-<div id="def-crra" class="section level3" number="5.10.9">
-<h3><span class="header-section-number">5.10.9</span> Def “CRRA”</h3>
+<div id="def-crra" class="section level3" number="5.1.9">
+<h3><span class="header-section-number">5.1.9</span> Def “CRRA”</h3>
 <p><span class="math display">\[RRA = -x\frac{u&#39;&#39;(x)}{u&#39;(x)}
 = \text{const} = r\]</span></p>
-<p>Constant Absolute Risk Aversion (CARA) means risk attitude does not
-depend on inflation. <span class="math display">\[u(x) = \begin{cases}
-\frac{x^{1-r}}{1-r} \text{ if } r \neq 1 \\ \ln x \text{ if }
-r=1\end{cases}\]</span></p>
+<p>Constant Absolute?? CHECK Risk Aversion (CARA) means risk attitude
+does not depend on inflation. <span class="math display">\[u(x) =
+\begin{cases} \frac{x^{1-r}}{1-r} \text{ if } r \neq 1 \\ \ln x \text{
+if } r=1\end{cases}\]</span></p>
 <blockquote>
 <p>person is risk-neutral when <span class="math inline">\(u(x) =
 x\)</span>.</p>
@@ -2046,10 +2050,10 @@ by continuous <span class="math inline">\(U\)</span>”</h3>
 <p><span class="math inline">\(\succsim\)</span> is an economic
 preference <span class="math inline">\(\Rightarrow \succsim\)</span> can
 be represented by a continuous utility function <span class="math inline">\(U\)</span>.</p>
-<div id="remark-u-is-also-monotone-and-mwg-monotone-but-not-strong" class="section level4" number="6.0.6.1">
-<h4><span class="header-section-number">6.0.6.1</span> Remark <span class="math inline">\(U\)</span> is also monotone and MWG monotone, but
-not strong</h4>
 </div>
+<div id="remark-u-is-also-monotone-and-mwg-monotone-but-not-strong" class="section level3" number="6.0.7">
+<h3><span class="header-section-number">6.0.7</span> Remark <span class="math inline">\(U\)</span> is also monotone and MWG monotone, but
+not strong</h3>
 </div>
 </div>
 <div id="demand" class="section level1" number="7">
@@ -2091,8 +2095,8 @@ B(p,m)\)</span> and</li>
 m\geq 0\} \subsetneq \mathcal{P}(X).\)</span> We can verify that <span class="math inline">\((\mathcal{B}, D)\)</span> is a choice
 structure.</p>
 </div>
-<div id="demand-function" class="section level3" number="7.0.3">
-<h3><span class="header-section-number">7.0.3</span> “demand
+<div id="def-demand-function" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Def “demand
 function”</h3>
 <p>If <span class="math inline">\(D(B(p,m))\)</span> is always a
 singleton we can define: <span class="math display">\[x: P \times

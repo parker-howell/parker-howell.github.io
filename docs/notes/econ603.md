@@ -1,0 +1,452 @@
+
+
+
+
+
+### Def "what resources available?"
+---
+1. $L$ goods, $l = 1, ..., L$ (finite).
+  i. consumption: apples, leisure time, location, etc.
+  ii. inputs: labor, land, capital
+  iii. dated goods: apple today vs apple tomorrow
+  iv. contingent goods: umbrella w rain vs umbrella w/o rain
+2. Initial (total) Endowment: $\omega = (\omega_1, ... ,\omega_L) \in \mathbb{R}_+^L$
+3. Production
+  ii. Production set $Y \subseteq \mathbb{R}_L$.
+  i. Call $y \in \mathbb{R}^L$ a "feasible production plan" if $y \in Y$.
+4. Feasibility Set/Resource Set: $R = \{x \in \mathbb{R}^L: x = \omega + y \text{ for some } y \in Y\}$.
+
+
+### Def "Properties on $Y$"
+---
+1. $Y$ is closed and nonempty
+2. Possible to do nothing: $(0, ..., 0) = \vec{0} \in Y$
+3. No free lunch: $Y \cap \mathbb{R}^L_+ = \emptyset$
+4. Free disposal: $y\in Y, \hat{y}\leq y \Rightarrow \hat{y}\in Y$
+
+### Def "feasible"
+---
+$x$ is *feasible* if:
+
+1. $x_i \in X_i, \forall i = 1, ..., I$ and 
+2. $\sum_{i = 1}^I x_i = R$ (i.e., $\exists y \in Y: \sum_{i = 1}^I x_i = \omega + y$)
+
+
+### Def "Pareto Efficient"
+---
+A feasible consumption plan, $x$ is *Pareto Efficient* (Pareto Optimal) if there does not exist any other feasible $\hat{x}$ such that
+
+1. $\hat{x_i} \succsim_i x_i \forall i = 1, 2, ..., I$ and
+2. $\hat{x_i} \succ_i x_i$ for at least one $i \in \{1, ..., I\}$.
+
+If such $\hat{x}$ exists, we say $\hat{x}$ *Pareto-dominates* $x$.
+
+### Remark
+1. firms are not people (agents).
+2. Pareto efficiency is not about equity.
+
+
+### Def "algorithm"
+---
+Steps:
+
+1. compute $R$ from $\omega$ and $Y$ to figure out feasible consumption plans.
+2. $U_i = \{u_i(x_i): x \text{ is feasible}\}, \forall i = 1, ..., I$. (set of all possible utility levels)
+3. Fix $\bar{u_i} \in U_i, i = 2, ..., I$.
+  a. $\max_{x} u_1(x_1)$ subject to $u_i(x_i) \geq \bar{u_i}, i = 2, ..., I$.
+4. Change values: $u_i \in U_i, i = 2, ..., I$ and repeat step 3.
+
+#### Remark: the algorithm is not sufficient UNLESS 
+1. $u_i$ is continuous and strongly monotone, and
+2. $Y = \{y \in \mathbb{R}^L: \vec{y} \leq \vec{0}\}$.
+
+### Prop "Pareto $\Rightarrow x^*$ solution"
+---
+If $x^*$ is Pareto efficient, then $x^*$ solves step 3 above for some $\bar{u_2}, ..., \bar{u_I}, \bar{u_i} \in U_i \forall i = 2, ..., I.$
+
+
+
+
+
+### Def "Primitives"
+---
+1. Individual firms
+    * $j = 1, ..., J, Y_j \in \mathbb{R}^L$ such that 
+    * $$Y = \sum_{j=1}^J Y_j = \{y \in \mathbb{R}^L: \exists y_j \in Y_j, \forall j = 1, ..., J \text{ s.t. } y = \sum_{j=1}^J y_j  \}$$
+2. Individual endowment
+    * $\omega_i \in \mathbb{R}_+^L, \forall i = 1, ..., I$ such that $\omega = \sum^I_{i=1}\omega_i$ (previously we had only $\omega$ and not $\omega_i$)
+3. Consumer $i$ share in firm $j$'s profits
+    * $\underbrace{\theta_i^j \in [0,1]}_{\text{share of firm j's profits to consumer i for consumption}}, \forall j$ such that $\sum_{i=1}^I \theta_i^j = 1$ (consumers own 100% of firms)
+
+### Def "Allocation"
+---
+An allocation is
+$$(\underbrace{x_1, ..., x_I}_{\text{consumption plans}}, \underbrace{y_1, ..., y_J}_{\text{production plans}}) \subseteq \mathbb{R}^{IL + JL}, \underbrace{\forall i, x_i \in X_i}_{\text{consumption is feasible}}, \underbrace{\forall j, y_j \in Y_j}_{\text{production is feasible}}.$$
+
+### Def "Walrasian Equilibrium"
+---
+$p^*, (x^*, y^*)$ are a Walrasian Equilibrium if the following are satisfied:
+
+1. Profit Maximization: $p^* \cdot y_j^* \geq p^* \cdot y_j, \forall y_j \in Y_j, \forall j = 1, ..., J$
+2. Preference maximization: $\underbrace{p^* \cdot x_i^*}_{\text{expenditure}} \leq \underbrace{p^* \cdot w_i}_{\text{endowment income}} + \underbrace{\sum_{j=1}^J \theta_i^j (p^* \cdot y_{j,l}^*)}_{\text{income from profits}}  \forall y_j \in Y_j, \forall i = 1, ..., I$
+3. Market clearing: $\sum_{i=1}^I x_{i,l}^* = \sum_{i=1}^I \omega_{i,l}^* + \sum_{j=1}^J y_{j,l}^*, \forall l = 1, ..., l$.
+
+### Obs 1 "normalizing prices"
+---
+If $(p^*, x^*, y^*)$ is a Walrasian Equilibrium, then $(\lambda p^*, x^*, y^*)$ is a Walrasian Equilibrium $\forall \lambda>0$
+
+### Obs 2 "Walras' law"
+---
+If $\succsim_i$ is locally nonsatiated and $(p^*, x^*, y^*)$ satisfies profit maximization then
+$$\underbrace{p^* \cdot \sum_{i=1}^I x_i^*}_{\text{agg demand}} = \underbrace{p^* \cdot \sum_{i=1}^I \omega_i + p^* \cdot \sum_{j=1}^J \overbrace{\sum_{i=1}^I \theta_i^j}^{=1}(y_j^*)}_{\text{agg supply}}.$$
+
+### Obs 3 "markets clear for all but one, then markets clear for all"
+---
+If 
+1. $\succsim_i$ is locally nonsatiated, 
+2. $(p^*, x^*, y^*)$ satisfies profit maximization, 
+3. $p_L^*\neq 0$, and 
+4. $\sum_{i=1}^I x_{i,l}^* = \sum_{i=1}^I \omega_{i,l} + \sum_{j=1}^J (y_{j,l}^*), \forall l = 1, ..., L-1$,
+
+Then $\sum_{i=1}^I x_{i,L}^* = \sum_{i=1}^I \omega_{i,L} + \sum_{j=1}^J (y_{j,L}^*)$ 
+
+In words: if market clearing holds for all other goods, and the price of the last good is nonzero, then I have market clearing for the last good.
+
+
+
+### Thm "First Welfare Theorem (WE $\Rightarrow$ Pareto-efficient)"
+---
+Suppose $\succsim_i$ is locally nonsatiated $\forall i = 1, ..., I$ and $(p^*, x^*, y^*)$ is a Walrasian Equilibrium. Then $(x^*, y^*)$ is Pareto-efficient.
+
+### Remark: "Implicit assumptions First Welfare Thm"
+---
+1. firms are price-taking
+2. no externalities
+3. markets are complete (less relevant to this course, but an important assumption in finance theory.)
+
+
+### Def "system of transfers"
+---
+A system of transfers, $T$ is a vector $T = (T_1, ..., T_I) \in \mathbb{R}^I$ such that $\sum_{i=1}^I T_i = 0$. 
+
+Note:
+
+* $T_i > 0 \Rightarrow$ "receiving transfer"
+---
+* $T_i < 0 \Rightarrow$ "paying transfer (tax)"
+---
+
+### Def "WE with transfers"
+---
+$(p^*, x^*, y^*)$ is a Walrasian equilibrium with transfers $T$ if it satisfies 
+1. Profit maximization (no change here),
+2. Preference maximization: $x_i^*$ maximizes $\succsim_i$ (represented by $u_i$ subject to $p^* \cdot x_i^* \leq p^* \omega_i + \sum_{j=1}^J \theta_i^j p^* \cdot y_j^* + T_i$), and 
+3. Market clearing (no change here either).
+
+Note: we always add $T_i$ even if $T_i < 0$.
+
+
+### Thm "First Welfare Theorem with transfers"
+---
+Suppose $T$ is a system of transfers, $\succsim_i$ is locally nonsatiated $\forall i = 1, ..., I$ and $(p^*, x^*, y^*)$ is a Walrasian Equilibrium with T. Then $(x^*, y^*)$ is Pareto-efficient.
+
+
+### Thm "Second Welfare Theorem (PE $\Rightarrow$ WE)"
+---
+Under assumptions 1-4, if $(x^*,y^*)$ is Pareto-Efficient then there exists a system of transfers $T$ and $p^* \neq \vec{0}$ such that $(p^*, x^*, y^*)$ is a Walrasian Equilibrium with transfers $T$.
+
+Assumptions:
+1. $\forall i, X_i, \succsim_i$ satisfies
+    * convexity: $x_i \succsim x_i' \Rightarrow \lambda x_i + (1-\lambda) x_i' \succsim x_i', \forall \lambda \in (0,1)$, and
+    * something slightly weaker than strict convexity: $\forall x_i, x_i', \hat{x_i} \in X_i: [x_i \succ_i \hat{x_i}, x_i' \succ_i \hat{x_i}] \Rightarrow \lambda x_i + (1-\lambda) x_i' \succ_i \hat{x_i}, \forall \lambda \in (0,1).$)
+2. $Y_j$ is convex $\forall j = 1, ..., J$.
+3. $\succsim_i$ is locally nonsatiated
+4. $\forall i$
+    * $\succsim_i$ is continuous, and
+    * $X_i \in \mathbb{R}_{++}^L$. This one is VERY STRONG -- means that EVERY individual has a nonzero amount of EVERY good.
+    
+Note: assumption 4 is weaker in MWG and other places, but we will always use this version in this class.
+
+
+
+### Def "set of price vectors"
+---
+$\Delta = \{p \in \mathbb{R}^L: \forall l, p_l \geq 0 \text{ and } \sum_{l=1}^L p_l = 1\}$
+
+### Def "excess demand function"
+---
+$\varphi: \Delta \rightarrow \mathbb{R}^L$ such that $\forall p \in \Delta$:
+$$\varphi(p) = \sum_{i=1}^I x_i^*(p) - \sum_{i=1}^I \omega_i - \sum_{j=1}^J y_j^*(p)$$
+is called the excess demand function.
+
+$\varphi(p) = \vec{0} \Rightarrow$ WE exists (in WE: demand$(p)$ = supply$(p) \iff$ demand$(p)$ - supply = 0 $\iff$ excess demand$(p) = 0$). And, under some assumptions we can get the converse:
+
+WE exists $\Rightarrow \varphi(p) = \vec{0}$.
+
+### Note "Implicit assumptions of excess demand fn"
+---
+1. We can focus on $p \in \Delta$. That is, in WE, $p_l \geq 0 \forall l$ and for at least one good $l, p_l > 0$.
+2. There is a unique solution to the profit and preference maximizing problems (i.e., $\varphi$ is a function, not a correspondence.). This one isn't really a problem though because we can always generalize later and use Kakutani's instead of Brouwer's fixed point theorem.
+3. Excess demand for any good is finite (even for $0-priced goods).
+
+### Thm "sufficient conditions on $\varphi$"
+---
+Suppose $\varphi: \Delta \rightarrow \mathbb{R}^L$ is well-defined (i.e., satisfies implicit assumptions 1-3) and satisfies
+
+1. $\varphi$ is continuous, 
+2. $\varphi$ satisfies Walras' law ($p \cdot \varphi(p) = 0, \forall p \in \Delta$), and
+3. if $p_l = 0$ for some $l$ then $\varphi(p_l) > 0, \forall p \in \Delta$, 
+
+Then, there exists at least one $p \in \Delta$ such that $\varphi(p) = \vec{0}$
+
+
+> Note (exercise): $f(p) = p \iff \varphi(p) = 0$
+
+### Thm "sufficient conditions on primitives"
+---
+Suppose $\forall i, \forall j$:
+
+1. $X_i \in [0, m]^L$ where $m$ is "large" (i.e, $m = \max_{l =1, ..., L}\{\max_{(x,y)} \{x_l\}\} + 1$)
+2. $\omega_{i,l} > 0, \forall l, i$
+3. $\succsim_i$ is continuous, strongly monotone, and strictly convex, and
+4. $\vec{0} \in Y_j, Y_j$ is convex and satisfies $\forall y_j, y_j': y_j \neq y_j' \Rightarrow \exists \hat{y}_j \in Y_j$ such that $\hat{y}_{j,l} > \lambda \hat{y}_{j,l} + (1-\lambda)\hat{y}_{j,l}', \forall l$.
+
+Then, $\varphi$ is well-defined and satisfies 1-3 of Thm "sufficient conditions on $\varphi$".
+
+
+
+### Def "setting for Arrow's Impossibility Theorem"
+---
+1. Finite set of "alternatives," $A = \{a,b,c, ...\}$ 
+2. Finite set of individuals, $N = \{1, ...,N\}$
+3. $\mathcal{R}$ is the set of all rational (and antisymmetric) preferences over $A$, ruling out indifferences ($R_i \in \mathcal{R}$ is the preference of individual $i$).
+4. A preference profile is $R = (R_1, ... R_n) \in \mathcal{R}^n$
+
+Goal: $f: \mathcal{R}^n \rightarrow \mathcal{R}$
+
+
+### Thm "Arrow's Impossibility Theorem"
+---
+Assumptions:
+1. Universal domain: any ranking is possible (so long as it is complete, transitive, and anti-symmetric)
+2. society's preference must be complete, transitive, and anti-symmetric
+3. $|A| \geq 3$
+
+Axioms:
+1. Pareto: $aR_ib, \forall i \Rightarrow af(R)b$
+2. Independence of irrelevant alternatives: $\forall i [aR_ib\iff a\hat{R_i}b] \Rightarrow [af(R)b \iff af(\hat{R})b]$
+3. No dictator: $\not \exists i \in N: \forall R \in \mathcal{R}^n, f(R)=R_i$
+
+There is no $f: \mathcal{R}^n \rightarrow R$ that satisfies all three axioms at the same time.
+
+### Def "winning coalition"
+---
+Denote $\mathcal{P}(N)$ to be the set of all nonempty subsets of $N$ ($2^N \setminus \{\emptyset\}$).
+
+We say $\mathcal{G} \subseteq \mathcal{P}(N)$ is a set of winning coalition if
+
+1. $\forall G \subseteq \mathcal{P}(N)$ either $G \in \mathcal{G}$ or $N \setminus G \in \mathcal{G}$, but not both. And
+2. $[G \in \mathcal{G}, G' \supseteq G] \Rightarrow G' \in \mathcal{G}$
+
+
+
+
+### Def "Generalized majority voting"
+---
+$f: \mathcal{R}^n \rightarrow R$ is a GMV if there exists a set of winning coalitions $\mathcal{G}$ such that $\forall a, b \in A, \forall R \in \mathcal{R}^n:$
+$$af(R)b \iff \{i\in N: a R_i b\} \in \mathcal{G}.$$
+
+
+### Term "Condorcet Winner/Condorcet cycle"
+---
+the pairwise champion or beats-all winner, is formally called the Condorcet winner. The head-to-head elections need not be done separately; a voter's choice within any given pair can be determined from the ranking.
+
+Some elections may not yield a Condorcet winner because voter preferences may be cyclic—that is, it is possible (but rare) that every candidate has an opponent that defeats them in a two-candidate contest. (This is similar to the game rock paper scissors, where each hand shape wins against one opponent and loses to another one).
+
+
+### Term "Social Welfare Function (SWF)"
+---
+Function with preferences as inputs and a complete ranking as outputs.
+
+
+### Term "Collective Choice Rule (CCR)"
+---
+Function with preferences as inputs and a winner as output.
+
+
+
+
+
+
+### Term "Quasilinear economy"
+---
+$$U(x_i, m_i) = g_i(x_i) + m_i, \forall i \text{ where } g_i \text{ is strictly concave.}$$
+
+> Called quasilinear because utility is linear in money but not in the consumption good.
+
+### Def "cost function"
+---
+$c_j: \mathbb{R}_+ \rightarrow \mathbb{R}_+$ is a cost function. $c_j(y_j)$ is the amount of money needed to produce $y_j$ units of consumption good $l$. $c_j$ must be
+
+1. smooth,
+2. increasing, $c_j'(y_j) > 0, \forall y_j > 0$,
+3. convex $c_j''(y_j)>0 \forall y_j > 0$ (i.e., the more you produce, the harder it becomes to produce more.)
+
+
+### Def "primitives on quasilinear economy"
+---
+1. Goods:
+    1. $l = 1$ is "money," $l = 2$ is consumption good
+2. Consumers $i = 1, ... , I$:
+    1. $\forall i = 1, ..., I, X_i = \mathbb{R} \times \mathbb{R}_+$ (means negative amounts of money are allowed!)
+    2. Initial endowment of $(\omega_i, 0)$.
+    3. $u_i(m_i, x_i) = m_i + g_i(x_i)$
+        1. money has constant marginal utility and MRS does not depend on $m_i$.
+        2. Assumptions on $g_i$ is smooth and $g_i'(x_i) > 0, g_i''(x_i) < 0, \forall x_i>0$ (this is concave, but more restrictive - $log$ satisfies, but $x^2$ does not). No need for Inada conditions.
+3. Firms $j = 1, ..., J$:
+    1. firm $j$'s production set: $Y_j = \{(-z_j,y_j): y_j \geq 0, z_j \geq c_j(y_j)\}$
+        1. $z_j > c_j$ would mean that free disposal is employed
+        2. $z_j \geq 0$ - we can write this separately, it's just redundant since $c_j$ maps to/from $\mathbb{R}_+$ and $z_j \geq c_j(y_j)$.
+4. Consumer $i$'s share of firm $j$'s profits is as before: $\theta_i^j$
+    
+
+### Def "allocation"
+---
+A vector $(m,x,z,y) \in \mathbb{R}^I \times \mathbb{R}_+^{I + 2J}$ where
+
+1. $m_i$: money of consumer $i$
+2. $x_i$: consumption good of consumer $i$
+3. $z_j$: input of money firm $j$ uses
+4. $y_j$: consumption good firm $j$ produces.
+
+An allocation is *feasible* if
+
+1. Plans are feasible:
+    1. $\forall i, (m_i, x_i) \in X_i$
+    2. $\forall j, (-z_j, y_j) \in Y_j$
+2. Markets clear:
+    1. $\sum_{i=1}^I m_i = \sum_{i=1}^I \omega_i - \sum_{j=1}^J z_j$  (money is all used up)
+    2. $\sum_{i=1}^I x_i = \sum_{j=1}^J y_j$ (demand = supply)
+
+
+### Def "Walrasian Allocations"
+---
+1. Simplifications without loss:
+    1. Normalize price of money to 1, price of $l=2$ to $p>0$.
+        1. always works in a quasilinear economy since utility is strictly increasing in both goods.
+        2. focus on the market for the consumption good (since $p>0$ we apply observation 3)
+2. Solve for Demand
+
+UMP is:
+
+$$\max_{m_i \in \mathbb{R}, x_i \in \mathbb{R}_+} m_i + g_i(x_i) \text{ s to } m_i + px_i \leq \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))$$
+
+But we can assume that $m_i + px_i \leq \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))$, isolate, and plug $m_i$ into the objective function to get the unconstrained maximization problem:
+
+$$\max_{x_i \geq 0} \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j)) - px_i + g_i(x_i)$$
+
+Which is the same as
+
+$$\max_{x_i \geq 0} g_i(x_i) - px_i$$
+
+> So, the UMP for demand in a quasilinear economy is unaffected by money
+
+By FOC and SOCs we get the Econ 101 result that consumers will demand more until MU = MC (unless demand is 0):
+
+$$\begin{cases}MU = g_i'(x_i) = p = MC \text{ if } p \leq g_i'(0) \\ 0, \text{ otherwise}\end{cases}$$
+
+> $p \leq g_i'(0)$ since MU is decreasing, so MU is highest at zero 
+
+
+> Caution: watch out for corner solutions since $x_i$ can equal 0!
+
+> This is why the partial equilibrium from intermediate micro leads to the same conclusions as general equilibrium - we just always studied quasilinear economies in intermediate micro
+
+
+
+3. Solve for Supply
+
+Profit max problem:
+
+$$\max_{y_j \geq 0} py_j - c_j(y_j$$
+
+which is the same as
+
+$$\begin{cases} MC = c_j'(y_j) = p \text{ if } p \geq c_j'(0) \\ 0 \text{ otherwise.} \end{cases}$$
+
+> The above assumes that MC of production is increasing, so $c_j'(0)$ is the lowest marginal cost
+
+> Econ 101: MC = p, unless supply = 0.
+
+
+### Remark: Market supply = sum of all firm's supply
+
+
+
+
+> Allocation of money does not matter
+
+> Summing utilities is okay to do in a quasilinear economy - in general it is not!
+
+### Prop 1 "PE iff max welfare"
+---
+In the quasilinear model a feasible allocation $(m,x,z,y)$ is Pareto Efficient if and only if $(x,y)$ maximize $\sum_{i=1}^I g_i (x_i) - \sum_{j=1}^J c_j(y_j)$ among all feasible allocations. 
+
+That is, $\forall i,j, x_i \geq 0, y_j \geq 0:$
+
+1. $\sum_{i=1}^I x_i = \sum_{j=1}^J y_j$ and 
+2. $\sum_{i=1}^I m_i = \sum_{i=1}^I \omega_i - \sum_{j=1}^J z_j,$ where $z_j = c_j(y_j)$.
+
+
+### Prop 2 "PE iff max over all feasible allocations"
+---
+In the quasilinear model a feasible allocation $(m,x,z,y)$ is Pareto Efficient if and only if $(x,y)$ maximizes the sum of consumer utilities, $\sum_{i=1}^I (m_i + g_i(x_i))$, among all feasible allocations.
+
+
+> Econ 101: surplus = sum of utilities of consumption good - sum of firms' costs
+
+
+
+### Term "summation of sets"
+---
+$$M_1 + M_2 = \{x_1 + x_2: x_1 \in M_1, x_2 \in M_2\}$$
+
+### Def "Supply correspondence of firm $j$"
+---
+The supply correspondence of firm $j$ with production set $Y_j$ is $S_j$, where $\forall p \in \mathbb{R}^L$:
+$$S_j(p) = \{y_j \in Y_j: p \cdot y_j \geq p \cdot \hat{y}_j, \forall \hat{y}_j \in Y_j\}$$
+
+* We assume $S_j(p)$ is well defined $\forall p$ -- that is, profit maximization has a solution
+* In general, $S_j(p)$ is NOT a singleton set.
+
+
+### Def "Aggregate supply correspondence"
+---
+$$S^*(p) = (S_1 + \cdot \cdot \cdot+ S_J)(p) = S_1(p) + \cdot \cdot \cdot+ S_J(p)$$
+
+### Prop "$S$ looks like the supply correspondence of just one firm"
+---
+Denote production set, $Y = Y_1 + \cdot \cdot \cdot Y_J$ and $S$ is the supply correspondence of a firm with production set $Y$. Then $S = S_1 + \cdot \cdot \cdot S_J$. 
+
+### Def "Setting for demand aggregation"
+---
+
+
+### Prop "demand fns allow aggregation iff"
+---
+FINISH
+
+
+
+
+
+
+### Def "numeraire"
+---
+a tradable economic entity in terms of whose price the relative prices of all other tradables are expressed (i.e., the price that is normalized to [1 or p - need to figure this out!] )
+
+
+w/o free disposal, have to consume everything. w/ free disposal, need strongly monotone preferences to guarantee that consumers consume the entire endowment (budget constraint will bind).
+
+
+

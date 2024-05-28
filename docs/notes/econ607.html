@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 607 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-04-26</h4>
+<h4 class="date">Last Updated: 2024-05-28</h4>
 
 </div>
 
@@ -1488,8 +1488,9 @@ border-radius: 0px;
 <div id="simple-endowment-economy" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Simple Endowment
 Economy</h1>
-<div id="primitives" class="section level3" number="1.0.1">
-<h3><span class="header-section-number">1.0.1</span> Primitives</h3>
+<div id="def-primitives-simple-endowment-economy" class="section level3" number="1.0.1">
+<h3><span class="header-section-number">1.0.1</span> Def “Primitives
+Simple Endowment Economy”</h3>
 <ul>
 <li>Last for <span class="math inline">\(T+1\)</span> periods, <span class="math inline">\(T\)</span> is odd</li>
 <li>One good, perishable (i.e., no storage)</li>
@@ -1515,9 +1516,9 @@ return (aka Fisher Equation)”</h3>
 \underbrace{r_t \approx i_t - \pi_{t+1}}_{\substack{\text{by logs:} \\
 \text{approx in discrete} \\ \text{exact in cont time}}}\]</span></p>
 </div>
-<div id="budget-constraints" class="section level3" number="1.0.4">
-<h3><span class="header-section-number">1.0.4</span> Budget
-constraints:</h3>
+<div id="def-see-budget-constraints" class="section level3" number="1.0.4">
+<h3><span class="header-section-number">1.0.4</span> Def “SEE Budget
+constraints”</h3>
 <ul>
 <li>period 0: <span class="math inline">\(\underbrace{ p_0
 y_0^j}_{\text{sell all}} \geq \underbrace{p_0 c_0^j}_{\text{buy some
@@ -1575,6 +1576,138 @@ Equation”</h3>
 <div id="dynamic-programming" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Dynamic
 Programming</h1>
+<div id="thm-theorem-of-the-maximum" class="section level3" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Thm “Theorem of the
+Maximum”</h3>
+<p>If <span class="math inline">\(u(x, s)\)</span> is continuous then
+<span class="math inline">\(v(s) = \max_x \{u(x,s)\}\)</span> is
+continuous, and <span class="math inline">\(h(s) = arg \max_x
+\{u(x,s)\}\)</span> is upper hemicontinuous</p>
+<p><strong>Additionally:</strong> If <span class="math inline">\(u(x,
+s)\)</span> is strictly concave in <span class="math inline">\(x\)</span> for any <span class="math inline">\(s\)</span>, then <span class="math inline">\(h(s)\)</span> is single-valued and continuous.</p>
+<blockquote>
+<p>Recall: upper hemicontinuity is what says convergent sequence
+converges in the set</p>
+</blockquote>
+</div>
+<div id="def-bellman" class="section level3" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Def “Bellman”</h3>
+<p>The value of being in state <span class="math inline">\(s_0\)</span>
+is: <span class="math display">\[V(s_0)=\max_{\{c_t, s_{t+1}
+\}_{t=0}^\infty} \sum_{t=0}^\infty \beta^t u(c_t, s_t) \text{ s. to }
+\underbrace{s_{t+1} = g(c_t, s_t)}_{\text{transition eq}} \text{ and }
+s_0 \text{ given.}\]</span> where $c = $ choice variable(s), $s = $
+state variable(s).</p>
+<p><span class="math inline">\(V(\cdot)\)</span> satisfies the
+“principle of optimality” (I’m going to pick everything I possibly can
+to try to maximize given that I am now in <span class="math inline">\(s_0\)</span>).</p>
+<p>Bellman: <span class="math display">\[V(s_0)=\max_{c} \{ u(c,s) +
+\beta V(s&#39;) \}\]</span></p>
+</div>
+<div id="def-contraction-mapping" class="section level3" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Def “Contraction
+Mapping”</h3>
+<p>Define the mapping <span class="math inline">\(T: X \rightarrow
+X\)</span> where <span class="math display">\[T(f(s)) \equiv \max_c \{
+u(c,s) + \beta f(g(c,s))  \}.\]</span></p>
+<p><span class="math inline">\(T\)</span> is a <em>contraction
+mapping</em> with modulus <span class="math inline">\(\lambda\in
+(0,1)\)</span> if <span class="math inline">\(\forall x, y\in
+X\)</span>: <span class="math display">\[d(T(x), T(y)) \leq d(x,
+y).\]</span> For us, <span class="math inline">\(x, y\)</span> are
+functions and the metric norm we use is the supnorm: <span class="math inline">\(d(x, y) = \sup_{s\in S} |x(s) -
+y(s)|\)</span>.</p>
+</div>
+<div id="thm-contraction-mapping-thm" class="section level3" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Thm “Contraction
+Mapping Thm”</h3>
+<p>If <span class="math inline">\(X\)</span> is <em>complete</em> metric
+space and <span class="math inline">\(T: X \rightarrow X\)</span> is a
+contraction (with <span class="math inline">\(\lambda\)</span>),
+then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(T\)</span> has a <em>unique</em> fixed
+point: <span class="math inline">\(x^* = T(x^*)\)</span></li>
+<li>for all <span class="math inline">\(x_0 \in X\)</span>: <span class="math inline">\(d(T^n(x_0), x^*) \leq \lambda^n d(x_0,
+x^*)\)</span> for all <span class="math inline">\(n = 0, 1,
+2...\)</span> where <span class="math inline">\(T^n(x_0) =
+T(T^{n-1}(x_0))\)</span></li>
+</ol>
+<blockquote>
+<p>Complete: “Cauchy sequences converge to a point in the space”</p>
+</blockquote>
+</div>
+<div id="thm-blackwells-sufficient-conditions-for-a-contraction" class="section level3" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Thm “Blackwell’s
+Sufficient Conditions for a Contraction”</h3>
+<p>Let <span class="math inline">\(X(s)\)</span> be the set of bounded
+functions on <span class="math inline">\(S \subseteq
+\mathbb{R}^m\)</span>.</p>
+<p>Let <span class="math inline">\(T: X(s) \rightarrow X(s)\)</span>
+satisfy</p>
+<ol style="list-style-type: decimal">
+<li>monotonicity: <span class="math inline">\(x, y \in X: x \geq y
+\Rightarrow T(x) \geq T(y)\)</span></li>
+<li>discounting: Let <span class="math inline">\(k \in X(s)\)</span> be
+a constant function. Then <span class="math inline">\(x\in X(s)
+\Rightarrow T(x+k) \leq T(x) + \beta k\)</span>, for some <span class="math inline">\(\beta \in (0,1)\)</span>.</li>
+</ol>
+<p>Then, <span class="math inline">\(T\)</span> is a contraction.</p>
+<blockquote>
+<p>Caution: this monotonicity is different from the monotonicity of the
+value function</p>
+</blockquote>
+</div>
+<div id="what-should-you-know-about-math-of-dynamic-programming" class="section level3" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> “What should you
+know about math of dynamic programming?”</h3>
+<ol style="list-style-type: decimal">
+<li>Our functional equation exists and has a unique solution.</li>
+<li><span class="math inline">\(V\)</span> is strictly concave if <span class="math inline">\(u(c, s)\)</span> is strictly concave and <span class="math inline">\(g\)</span>… MISSING SOMETHING HERE</li>
+<li><span class="math inline">\(V\)</span> is approached by iterations:
+<span class="math inline">\(v_{j+1}(s) = \max_c \{ u(c,s) + \beta
+v_j(g(c, s)) \}\)</span></li>
+<li>In the interior of <span class="math inline">\(s\)</span>, <span class="math inline">\(V\)</span> is often differentiable.</li>
+</ol>
+<p><img src="%22src/dynprog_fp%22" /></p>
+</div>
+<div id="value-function-properties" class="section level3" number="2.0.7">
+<h3><span class="header-section-number">2.0.7</span> “Value Function
+Properties”</h3>
+<ol style="list-style-type: decimal">
+<li>Continuity</li>
+<li>Monotonicity (not the same as the monotonicity of Blackwell’s)
+<ol style="list-style-type: lower-alpha">
+<li>this is: “is the value function itself monotone”</li>
+<li>remember: we don’t need strict increasing (think about the
+reservation wage in search model–flat is fine)</li>
+</ol></li>
+<li>Differentiability (usually assume concavity to prove
+differentiability)</li>
+</ol>
+</div>
+<div id="to-have-a-unique-solution-to-the-bellman" class="section level3" number="2.0.8">
+<h3><span class="header-section-number">2.0.8</span> “To have a unique
+solution to the Bellman”</h3>
+<ol style="list-style-type: decimal">
+<li>Generate a <span class="math inline">\(T\)</span>-mapping from our
+value function
+<ol style="list-style-type: lower-alpha">
+<li>literally just replace <span class="math inline">\(V\)</span> with
+<span class="math inline">\(Tf\)</span>: go from <span class="math inline">\(v(x, z) = \sup_{x&#39; \in \Gamma(x, z)} \{F(x,
+x&#39;, z) + \beta E[v(x&#39;, z&#39;)]\}\)</span> to <span class="math inline">\(Tf(x, z) = \sup_{x&#39; \in \Gamma(x, z)} \{F(x,
+x&#39;, z) + \beta E[Tf(x&#39;, z&#39;)]\}\)</span></li>
+</ol></li>
+<li>Check that the value function is bounded</li>
+<li>Assume the value function is continuous and weakly increasing</li>
+<li>Check monotonicity and discounting</li>
+<li>If both hold, invoke Blackwells to show that <span class="math inline">\(T\)</span> is a contraction mapping</li>
+<li>If <span class="math inline">\(T\)</span> is a contraction mapping
+then it will converge (under the supnorm) to a unique fixed point <span class="math inline">\(v\)</span> by the Contraction Mapping
+Theorem.</li>
+</ol>
+<!-- ### "Benveniste-Sheinkman (Pancake Thm)" -->
+</div>
 </div>
 <div id="consumption" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Consumption</h1>
@@ -1599,9 +1732,9 @@ increase in income over the rest of your life</p>
 proportionally over each period.</p>
 </blockquote>
 </div>
-<div id="random-walk-hypothesis-hall-1978" class="section level3" number="3.0.2">
-<h3><span class="header-section-number">3.0.2</span> Random Walk
-Hypothesis (Hall 1978)</h3>
+<div id="model-random-walk-hypothesis-hall-1978" class="section level3" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Model “Random Walk
+Hypothesis (Hall 1978)”</h3>
 <p>We have stochastic Euler: <span class="math display">\[u&#39;(c_t) =
 \beta(1+r)E_t[u&#39;(c_{t+1})].\]</span> Hall looks at the Euler
 equation and realizes: <span class="math inline">\(E_t[u&#39;(c_{t+1})]\)</span> is NOT actual
@@ -1620,8 +1753,8 @@ random walk with drift! (Where drift=<span class="math inline">\(\frac{1}{\beta(
 bound.</p>
 </blockquote>
 </div>
-<div id="pih-lit" class="section level3" number="3.0.3">
-<h3><span class="header-section-number">3.0.3</span> PIH Lit</h3>
+<div id="def-pih-lit" class="section level3" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> Def “PIH Lit”</h3>
 <ul>
 <li>Hall
 <ul>
@@ -1654,18 +1787,20 @@ growth on interest rates and get <span class="math inline">\(\hat{\sigma} \in [0
 </ul></li>
 </ul>
 </div>
-<div id="hansen-singleton-1982" class="section level3" number="3.0.4">
-<h3><span class="header-section-number">3.0.4</span> Hansen + Singleton
-1982</h3>
+<div id="paper-hansen-singleton-1982" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Paper “Hansen +
+Singleton 1982”</h3>
 <p>Have <span class="math inline">\(i = 1, ..., N\)</span> assets. Still
 a 1-good model, just have lots of assets now.</p>
 <p>Budget constraint: <span class="math display">\[c_t + \sum_{i=1}^N
 p_{i,t} a_{i,t} + s_t = y_t + s_{t-1}(1+r_{t-1}) + \sum_{i=1}^N a_{i,
 t-1} (p_{i,t} + d_{i,t})\]</span></p>
 <ul>
-<li>$a_i = $ number of units of asset <span class="math inline">\(i\)</span></li>
-<li>$d_i = $ dividend of asset i, received in the morning</li>
-<li>$p_i = $ price of asset i</li>
+<li><span class="math inline">\(a_i =\)</span> number of units of asset
+<span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(d_i =\)</span> dividend of asset i,
+received in the morning</li>
+<li><span class="math inline">\(p_i =\)</span> price of asset i</li>
 </ul>
 <p>Euler Equation: <span class="math display">\[p_{i, t} u&#39;(c_t) =
 \beta E_t[(p_{i, t+1} + d_{i, t+1}) u&#39;(c_{t+1})], \forall
@@ -1689,9 +1824,9 @@ earlier}.\]</span></p>
 <p>They use GMM to get estimates: <span class="math inline">\(\beta \in
 [.942, .998], \sigma \in [.67, .97]\)</span>.</p>
 </div>
-<div id="variations-on-pih" class="section level3" number="3.0.5">
-<h3><span class="header-section-number">3.0.5</span> Variations on
-PIH</h3>
+<div id="def-variations-on-pih" class="section level3" number="3.0.5">
+<h3><span class="header-section-number">3.0.5</span> Def “Variations on
+PIH”</h3>
 <ol style="list-style-type: decimal">
 <li>Precautionary Savings</li>
 <li>Borrowing Constraints</li>
@@ -1701,6 +1836,9 @@ PIH</h3>
 <div id="precautionary-savings" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> 1. Precautionary
 Savings</h2>
+<div id="model-precautionary-savings" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Model
+“Precautionary Savings”</h3>
 <p>Assume <span class="math inline">\(1+r = \frac{1}{\beta}\)</span>.
 Start with Euler Equation:</p>
 <p><span class="math display">\[u&#39;(c_t) =
@@ -1720,6 +1858,7 @@ WHAT HAPPENS?????</p>
 <p>Kimball (1980) calls <span class="math inline">\(-\frac{1}{2}(\frac{u&#39;&#39;&#39;(c_t)}{u&#39;&#39;(c_t)}c_t)\)</span>
 the coefficient of relative prudence.</p>
 </blockquote>
+</div>
 </div>
 <div id="borrowing-constraints" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> 2. Borrowing
@@ -1770,10 +1909,13 @@ stationary</p>
 <div id="irrational-intertemporal-choice" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> 3. “Irrational”
 Intertemporal Choice</h2>
+<div id="model-irrational-intertemporal-choice" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Model “Irrational
+Intertemporal Choice”</h3>
 <p>Let individual agents change preferences–essentially playing games
 against their past and future selves, finding Nash equilibria.</p>
-<div id="laibson-1997-commitment-devices" class="section level4" number="3.3.0.1">
-<h4><span class="header-section-number">3.3.0.1</span> Laibson (1997)
+<div id="laibson-1997-commitment-devices" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Laibson (1997)
 “Commitment devices”</h4>
 <p>IRL people use commitment devices (e.g., tax withholding, destroying
 credit cards). This is indicative of self-control problems. But, the
@@ -1800,8 +1942,8 @@ u(c_{t+k})}{\delta \beta^{t+k+1} u(c_{t+k+1})} =
 \beta^{t+k+1} u(c_{t+k+1})} = \frac{u&#39;(c_{t+k})}{\delta\beta
 u(c_{t+k+1})}\]</span></p>
 </div>
-<div id="caplin-leahy-2004-jpe-valuation-of-past-consumption" class="section level4" number="3.3.0.2">
-<h4><span class="header-section-number">3.3.0.2</span> Caplin + Leahy
+<div id="caplin-leahy-2004-jpe-valuation-of-past-consumption" class="section level4" number="3.3.1.2">
+<h4><span class="header-section-number">3.3.1.2</span> Caplin + Leahy
 (2004, JPE) “Valuation of Past Consumption”</h4>
 <p>The only way to go through life without constantly regretting
 decisions is to ‘upgrade’ past experiences. E.g., “we’re not forgoing
@@ -1814,6 +1956,7 @@ time <span class="math inline">\(t\)</span>.</p>
 </div>
 </div>
 </div>
+</div>
 <div id="labor-supply-and-search" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Labor Supply and
 Search</h1>
@@ -1821,6 +1964,9 @@ Search</h1>
 <div id="supply" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Supply</h2>
 <!-- Sargent + Ljungvist 6.1-6.3 -->
+<div id="def-labor-supply-setup" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Def “Labor Supply
+Setup”</h3>
 <p>Neoclassical (price-taking, utility maximizing, single time period
 framework) Labor Supply: <span class="math inline">\(\max \{u(c) -
 \nu(N)\}\)</span></p>
@@ -1842,6 +1988,7 @@ measurement bias.</p>
 <p>This implies that leisure is a normal good. We see an income effect
 on labor supply.</p>
 </div>
+</div>
 <div id="search" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Search</h2>
 <p>LOTS HERE FINISH!!!!</p>
@@ -1855,27 +2002,27 @@ on labor supply.</p>
 <p>FINISH</p>
 <p>Maximization problem lets us derive the price given below.</p>
 <!-- $$\max E_t $$ -->
-<div id="def-stochastic-discount-factor" class="section level4" number="5.1.0.1">
-<h4><span class="header-section-number">5.1.0.1</span> Def “stochastic
-discount factor”</h4>
+<div id="def-stochastic-discount-factor" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Def “stochastic
+discount factor”</h3>
 <p><span class="math display">\[m_{t, t+j} = m_{t+j} \equiv \beta^j
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)}\]</span></p>
 </div>
-<div id="def-price-of-asset-i" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Def “price of asset
+<div id="def-price-of-asset-i" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Def “price of asset
 <span class="math inline">\(i\)</span>”</h3>
 <p><span class="math display">\[p_{i,t} = E_t \bigg[\sum_{j=1}^\infty
 m_{t,t+j} x_{i,t+j} \bigg] = E_t \bigg[\sum_{j=1}^\infty \beta^j
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)} x_{i,t+j}\bigg]\]</span></p>
-<div id="def-r-payoff-of-asset" class="section level4" number="5.1.1.1">
-<h4><span class="header-section-number">5.1.1.1</span> Def “R (payoff of
-asset)”</h4>
+</div>
+<div id="def-r-payoff-of-asset" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Def “R (payoff of
+asset)”</h3>
 <p><span class="math display">\[R_{i,t+1} \equiv \frac{p_{i,t+1} + x_{i,
 t+1}}{p_{i,t}}\]</span></p>
 </div>
-</div>
-<div id="def-capm" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Def “CAPM”</h3>
+<div id="def-capm" class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Def “CAPM”</h3>
 <ul>
 <li><span class="math inline">\(Cov(m, R) = 0 \Rightarrow\)</span>
 risk-adjsted return = safe return</li>
@@ -1907,19 +2054,23 @@ acquire the risk-reducing asset.</p>
 will want that asset. So demand will rise <span class="math inline">\(\Rightarrow\)</span> price will rise.”</p>
 </blockquote>
 </div>
-<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> Puzzle 1 “Log
+<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Puzzle 1 “Log
 approximation suggests <span class="math inline">\(r \approx
 11%\)</span>”</h3>
 <p>do reading!</p>
 </div>
-<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Puzzle 2 “Equity
+<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Puzzle 2 “Equity
 Premium Puzzle”</h3>
-<p>FINISH</p>
+<p>Mehra &amp; Prescott (1985) show that equity (risky) return over last
+100 years is approx 8% compared to 1% for bonds.</p>
+<p>We would need an implausibly high level of risk aversion to make this
+7% difference plausible.</p>
+<p>Potential (incomplete) solution: Myopic Loss Aversion</p>
 </div>
-<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.5">
-<h3><span class="header-section-number">5.1.5</span> Model Lucas Asset
+<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> Model Lucas Asset
 Pricing (Trees)</h3>
 <ul>
 <li>Endowment economy.</li>
@@ -1939,18 +2090,23 @@ is true for every agent)</li>
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)} \frac{p_{t+1} +
 x_t{+1}}{p_t}   \bigg] = 1\]</span></p>
 </div>
-<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.6">
-<h3><span class="header-section-number">5.1.6</span> Def “Stochastic
+<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.8">
+<h3><span class="header-section-number">5.1.8</span> Def “Stochastic
 Competitive Equilibrium”</h3>
-<p>A <em>Stochastic Competitive Equilibrium</em> is an allocation rule
-<span class="math inline">\(c(x_t)\)</span> and a pricing function <span class="math inline">\(p_t = \varphi(x_t)\)</span> such that</p>
+<p>A <em>Stochastic Competitive Equilibrium</em> is</p>
+<ul>
+<li>a pricing function <span class="math inline">\(p_t =
+\varphi(x_t)\)</span> and</li>
+<li>an allocation rule <span class="math inline">\(sc(x_t)\)</span> such
+that</li>
+</ul>
 <ol style="list-style-type: decimal">
-<li>goods market clears</li>
-<li>Euler equation holds:</li>
-</ol>
-<p><span class="math display">\[E_t \bigg[ \beta
+<li>goods market clears: <span class="math inline">\(c(x_t) =
+x_t\)</span> and</li>
+<li>Euler equation holds: <span class="math inline">\(E_t \bigg[ \beta
 \frac{u&#39;(x_{t+1})}{u&#39;(x_t)} \frac{\varphi&#39;(x_{t+1}) +
-x_t{+1}}{\varphi&#39;(x_t)}   \bigg] = 1\]</span></p>
+x_{t+1}}{\varphi&#39;(x_t)} \bigg] = 1\)</span></li>
+</ol>
 <blockquote>
 <p>In this economy, shocks affect the aggregate economy–very different
 from previous equilibria in which a shock affected an individual. Shocks
@@ -2172,10 +2328,10 @@ w\)</span></p>
 c_t^{-1/\sigma} = \phi n_t^{1/\eta}\]</span></p></li>
 <li><p>Euler equation(s) (derive from HH FOCs for <span class="math inline">\(I\)</span> and <span class="math inline">\(K\)</span> or <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>) <span class="math display">\[c_t^{-1/\sigma} = \beta E_t[c_{t+1}^{-1/\sigma}
 (R_{t+1} + 1-\delta)]\]</span></p></li>
-<li><p>Labor demand (derive from Firm’s FOCs for ??) <span class="math display">\[w_t = (1-\alpha)Z_t K_t^\alpha
-N_t^{-\alpha}\]</span></p></li>
-<li><p>Capital demand (derive from Firm’s FOCs for ??) <span class="math display">\[R_t = \alpha Z_t K_t^{\alpha - 1}
-N_t^{1-\alpha}\]</span></p></li>
+<li><p>Labor demand (derive from Firm’s FOC for <span class="math inline">\(N\)</span>) <span class="math display">\[w_t =
+(1-\alpha)Z_t K_t^\alpha N_t^{-\alpha}\]</span></p></li>
+<li><p>Capital demand (derive from Firm’s FOC for <span class="math inline">\(K\)</span>) <span class="math display">\[R_t =
+\alpha Z_t K_t^{\alpha - 1} N_t^{1-\alpha}\]</span></p></li>
 <li><p>Production Function <span class="math display">\[Y_t = Z_t
 K_t^\alpha N_t^{1-\alpha}\]</span></p></li>
 <li><p>Market Clearing/Resource Constraint <span class="math display">\[Y_t = C_t + I_t\]</span></p></li>
@@ -2244,6 +2400,7 @@ consumers, and (2) prices–<span class="math inline">\(w_t\)</span> and
 </div>
 <div id="claim-1" class="section level3" number="7.0.4">
 <h3><span class="header-section-number">7.0.4</span> Claim</h3>
+<p>finish</p>
 </div>
 <div id="rbc-limiting-solution" class="section level3" number="7.0.5">
 <h3><span class="header-section-number">7.0.5</span> RBC Limiting
@@ -2267,7 +2424,85 @@ patient)</li>
 </div>
 <div id="money-demand" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> Money Demand</h1>
-<p>FINISH</p>
+<div id="theory-of-money-demand" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Theory of Money
+Demand</h3>
+<ul>
+<li>Kiyotaki + Wright
+<ul>
+<li>Matching model - A, B, C produce and consume one good each but never
+have a coincidence of wants. Suppose <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are a pain to carry around, but <span class="math inline">\(c\)</span> not so much. Then <span class="math inline">\(c\)</span> becomes money.</li>
+</ul></li>
+<li>Townsend’s turnpike</li>
+<li>Banerjee and Maskin
+<ul>
+<li>Asymmetric info: some goods are counterfeit. A good that is easy to
+identify as noncounterfeit emerges as medium of exchange.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>Walrasian models do not allow <em>fiat</em> money.</p>
+</blockquote>
+<p>Alternative to these pure theory models:</p>
+<p><strong>Assume money has a “convenience yield”</strong></p>
+</div>
+<div id="money-demand-modeling" class="section level3" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Money Demand
+Modeling</h3>
+<p><span class="math display">\[U = E\bigg[\sum_{t=0}^T \beta^t \bigg\{
+u(c_t) + \Lambda\bigg(\frac{M_t}{P_t}\bigg)  \bigg\}\bigg]\]</span></p>
+<ul>
+<li><span class="math inline">\(\Lambda(\cdot) &gt; 0,
+\Lambda&#39;&#39;(\cdot) &lt; 0\)</span></li>
+<li>Could have a point where <span class="math inline">\(\Lambda&#39;(\cdot) = 0\)</span> but not
+necessary</li>
+</ul>
+<p><em>Nominal</em> Budget Constraint <span class="math display">\[P_t
+C_t + S_t + M_t = P_t Y_t + S_{t-1}(1+i_{t-1} + M_{t-1})\]</span> FOCs
+wrt <span class="math inline">\(C, S, M\)</span> give</p>
+<p><strong>(Hall’s) Euler Equation</strong> <span class="math display">\[u&#39;(c_t) = \beta (1+i_t)
+E\bigg[\frac{p_t}{p_{t+1}}  u&#39;(c_{t+1})\bigg]\]</span></p>
+<p><strong>Money Demand Equation</strong> <span class="math display">\[\Lambda&#39;\bigg(\frac{M_t}{P_t}\bigg) =
+u&#39;(C_t)\frac{i_t}{1+i_t}\]</span></p>
+</div>
+<div id="friedman-rule" class="section level3" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Friedman Rule</h3>
+<p>Set monetary policy so <span class="math inline">\(i_t = 0\)</span>:
+<span class="math display">\[\Lambda&#39;\bigg(\frac{M_t}{P_t}\bigg) =
+u&#39;(C_t)\frac{i_t}{1+i_t} = 0\]</span></p>
+<blockquote>
+<p><span class="math inline">\(M\)</span> changes nominal variables only
+up to this point, so no real effect except Friedman’s rule.</p>
+</blockquote>
+<blockquote>
+<p>Very stupid in practice because of zero lower limit. One way to get
+Friedman allocation is to pay an “interest on reserves” so government
+isn’t punishing banks holding resources.</p>
+</blockquote>
+</div>
+<div id="nominal-rigidity---mankiw-akerlof-yellen-1985-menu-costs" class="section level3" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> Nominal Rigidity -
+Mankiw, Akerlof, Yellen (1985) Menu Costs</h3>
+<ul>
+<li>Firm with payoff <span class="math inline">\(\Pi(p)\)</span></li>
+<li>optimal price solves <span class="math inline">\(\Pi&#39;(p^*) =
+0\)</span></li>
+<li>suppose current price <span class="math inline">\(p \neq
+p^*\)</span> but the firm has to pay a menu cost, <span class="math inline">\(z&gt;0\)</span> to change the price</li>
+<li>assume firm can affect prices (this assumption is ubiquitous in this
+literature)</li>
+</ul>
+<p>Loss from not adjusting: <span class="math display">\[L(p) = \Pi(p) -
+\Pi(p^*)\]</span> Notice: <span class="math display">\[\Pi(p) \approx
+\Pi(p^*) + \Pi&#39;(p^*)(p-p^*) + \frac{1}{2}
+\underbrace{\Pi&#39;&#39;(p^*)}_{\text{curvature}}(p-p^*)^2\]</span> So,
+<span class="math display">\[L(p) \approx \frac{1}{2}
+\Pi&#39;&#39;(p^*)(p-p^*)^2.\]</span> So, the firm suffers only a
+second-order loss to not adjusting (remember–severity of this loss will
+depend on curvature of <span class="math inline">\(\Pi(\cdot)\)</span>).</p>
+<p>BUT, aggregate up to Welfare and you get first-order price rigidities
+from second-order menu costs!</p>
+</div>
 </div>
 <div id="misc" class="section level1" number="9">
 <h1><span class="header-section-number">9</span> Misc</h1>
@@ -2279,17 +2514,21 @@ Expectations (LIE)</h3>
 <div id="covariance" class="section level3" number="9.0.2">
 <h3><span class="header-section-number">9.0.2</span> Covariance</h3>
 <p><span class="math display">\[cov(X, Y) = E[(X - \mu_x)(Y - \mu_Y)] =
-E[XY] - E[X]E[Y]\]</span> ### Growth rates <span class="math display">\[g_{X,t} \equiv  \frac{X_{t} - X_{t-1}}{X_{t-1}}
-\approx \ln X_t - \ln X_{t-1} = \ln \frac{X_t}{X_{t-1}} =
-\ln(1+g_{X,t})\]</span></p>
+E[XY] - E[X]E[Y]\]</span></p>
+</div>
+<div id="growth-rates" class="section level3" number="9.0.3">
+<h3><span class="header-section-number">9.0.3</span> Growth rates</h3>
+<p><span class="math display">\[g_{X,t} \equiv  \frac{X_{t} -
+X_{t-1}}{X_{t-1}} \approx \ln X_t - \ln X_{t-1} = \ln
+\frac{X_t}{X_{t-1}} = \ln(1+g_{X,t})\]</span></p>
 <blockquote>
 <p>gross <span class="math inline">\(\approx\)</span> 1 + net; Gross:
 <span class="math inline">\(\frac{c_{t+1}}{c_t}\)</span>; Net: $g_{c,
 t+1}</p>
 </blockquote>
 </div>
-<div id="log-linearization" class="section level3" number="9.0.3">
-<h3><span class="header-section-number">9.0.3</span> Log
+<div id="log-linearization" class="section level3" number="9.0.4">
+<h3><span class="header-section-number">9.0.4</span> Log
 linearization</h3>
 <ol style="list-style-type: decimal">
 <li>take logs</li>
@@ -2300,13 +2539,55 @@ from steady state, or is a steady state variable.</li>
 <p><span class="math inline">\(\tilde{x} \equiv \frac{1}{x^{ss}}(x -
 x^{ss})\)</span></p>
 </div>
-<div id="current-vs-present-value-lagrangian" class="section level3" number="9.0.4">
-<h3><span class="header-section-number">9.0.4</span> Current vs Present
-Value Lagrangian</h3>
-</div>
-<div id="current-vs-present-value-hamiltonian" class="section level3" number="9.0.5">
+<div id="current-vs-present-value-lagrangian" class="section level3" number="9.0.5">
 <h3><span class="header-section-number">9.0.5</span> Current vs Present
+Value Lagrangian</h3>
+<p>Example: want to max: <span class="math display">\[\sum_{t=0}^\infty
+\beta^t u(c_t) \text{ s. to } k_t^{\alpha} \geq c_t + k_{t+1}\]</span>
+<strong>Present-value Lagrangian:</strong> <span class="math display">\[\mathcal{L} = \sum_{t=0}^\infty \beta^t u(c_t) +
+\sum_{t=0}^\infty \lambda_t(k_t^{\alpha} - c_t + k_{t+1})\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\lambda_t\)</span> reflects the marginal
+increase in lifetime utility that would result from an incremental
+reduction in the constraint in period <span class="math inline">\(t\)</span>.</p>
+</blockquote>
+<p><strong>Current-value Lagrangian:</strong> <span class="math display">\[\mathcal{L} = \sum_{t=0}^\infty \beta^t [u(c_t) +
+\lambda_t(k_t^{\alpha} - c_t + k_{t+1})]\]</span></p>
+<blockquote>
+<p><span class="math inline">\(\lambda_t\)</span> reflects the marginal
+increase in period-<span class="math inline">\(t\)</span> utility that
+would result from an incremental reduction in the constraint in period
+<span class="math inline">\(t\)</span>.</p>
+</blockquote>
+</div>
+<div id="current-vs-present-value-hamiltonian" class="section level3" number="9.0.6">
+<h3><span class="header-section-number">9.0.6</span> Current vs Present
 Value Hamiltonian</h3>
+<p>Example: Continuous-time version of the discrete-time problem
+considered above: <span class="math display">\[\max \int_{t=0}^\infty
+e^{-\rho t} u(c(t)) \text{ s. to } \dot{k}(t) \geq k(t)^\alpha -
+c(t)\]</span> <strong>Present-value Hamiltonian:</strong> <span class="math display">\[\mathcal{H} = e^{-\rho t} u(c(t)) +
+\lambda(t)[k(t)^\alpha - c(t)]\]</span> FONCs:</p>
+<ol style="list-style-type: decimal">
+<li>for control variables: <span class="math inline">\(\mathcal{H}_c = 0
+\Rightarrow e^{-\rho t} u&#39;(c(t)) - \lambda(t) = 0\)</span></li>
+<li>for state variables: <span class="math inline">\(\mathcal{H}_k =
+-\dot{\lambda}(t) \Rightarrow \lambda(t) \alpha k(t)^{\alpha - 1} =
+-\dot{\lambda}(t)\)</span></li>
+<li><span class="math inline">\(\dot{k}(t) = k(t)^\alpha -
+c(t)\)</span></li>
+</ol>
+<p><strong>Current-value Hamiltonian:</strong> <span class="math display">\[\mathcal{H} = u(c(t)) + \lambda(t)[k(t)^\alpha -
+c(t)]\]</span> FONCs:</p>
+<ol style="list-style-type: decimal">
+<li>for control variables: <span class="math inline">\(\mathcal{H}_c = 0
+\Rightarrow u&#39;(c(t)) - \lambda(t) = 0\)</span></li>
+<li>for state variables: <span class="math inline">\(\mathcal{H}_k =
+\rho \lambda(t) -\dot{\lambda}(t) \Rightarrow \lambda(t) \alpha
+k(t)^{\alpha - 1} = \rho \lambda(t) -\dot{\lambda}(t)\)</span></li>
+<li><span class="math inline">\(\dot{k}(t) = k(t)^\alpha -
+c(t)\)</span></li>
+</ol>
 </div>
 </div>
 

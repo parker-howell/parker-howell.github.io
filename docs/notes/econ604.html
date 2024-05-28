@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-05-01</h4>
+<h4 class="date">Last Updated: 2024-05-03</h4>
 
 </div>
 
@@ -2068,7 +2068,7 @@ info (i.e., types) for each agent
 <li>Common prior <span class="math inline">\(\phi\)</span> on <span class="math inline">\(\Theta\)</span></li>
 </ul></li>
 <li>Agent utility <span class="math inline">\(u_i(\chi, \theta, \tau) =
-v_i(\chi, \theta) + \tau_i\)</span>
+\underbrace{v_i(\chi, \theta)}_{\text{Payoff fn}} + \tau_i\)</span>
 <ul>
 <li><span class="math inline">\(v\)</span> is how <span class="math inline">\(i\)</span> values the chosen outcome <span class="math inline">\(\chi\)</span> given <span class="math inline">\(\theta\)</span></li>
 <li><span class="math inline">\(\tau \in \mathbb{R}^n\)</span> is a
@@ -2334,7 +2334,12 @@ i} v_j(x(\theta), \theta_j)\]</span></p>
 welfare if } i \text{ present}} -  \underbrace{\max_{\hat{x}}\sum_{j\neq
 i} v_j(\hat{x}(\theta), \theta_j)}_{\text{ social welfare if } i \text{
 absent}} \geq 0\]</span></p>
-<p>This is a useful form for <span class="math inline">\(h_i(\theta_{-i})\)</span> worth memorizing.</p>
+<p>With the Clarke pivot rule, the total amount paid by the player is:
+(social welfare of others if <span class="math inline">\(i\)</span> were
+absent) - (social welfare of others when <span class="math inline">\(i\)</span> is present).</p>
+<blockquote>
+<p>This is exactly the externality of player <span class="math inline">\(i\)</span>.</p>
+</blockquote>
 </div>
 <div id="result-groves-iff-efficient-and-epic" class="section level3" number="5.0.14">
 <h3><span class="header-section-number">5.0.14</span> Result “Groves
@@ -2759,7 +2764,41 @@ differentiable with nonzero derivative at <span class="math inline">\(a\)</span>
 <!-- 1. draw out extensive form if possible -->
 <!-- 2. check one-shot deviation principle if repeated -->
 <!-- 3.  -->
-<!-- ### wPBE -->
+</div>
+<div id="wpbe-algorithm" class="section level3" number="6.0.7">
+<h3><span class="header-section-number">6.0.7</span> wPBE algorithm</h3>
+<ol start="0" style="list-style-type: decimal">
+<li>label beliefs and check for dominated strategies.
+<ul>
+<li>be careful to bring dominated strategies back into the wPBE when
+giving an answer</li>
+</ul></li>
+<li>Write out strategy spaces for each player.</li>
+<li>Split smallest strategy space into cases. E.g.,
+<ul>
+<li>Case 1: Firm plays <span class="math inline">\(M^{Edu}/C^{No
+Edu}\)</span></li>
+<li>seq rat <span class="math inline">\(\Rightarrow\)</span> Worker
+plays <span class="math inline">\(E^H/E^M/N^L\)</span></li>
+<li>Bayes’ <span class="math inline">\(\Rightarrow p = 1/4, q =
+1/4\)</span></li>
+<li>Check whether the strategy guessed in the case really was seq rat.
+Get either:
+<ul>
+<li><span class="math inline">\(E[M^{Edu}] = 15/4 \geq E[\text{best
+alternative}^{Edu}] = 16 \Rightarrow\)</span> CONTRADICTION! or</li>
+<li><span class="math inline">\(E[M^{Edu}] = 17/4 \geq E[\text{best
+alternative}^{Edu}] = 16 \Rightarrow\)</span> wPBE!
+<ul>
+<li>if beliefs unconstrained, still need to be sure that <span class="math inline">\(E[C^{NoEdu}] \geq E[\text{best
+alternative}^{NoEdu}]\)</span> (e.g., <span class="math inline">\(10r +
+5s \geq 4\)</span>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>All cases analyzed <span class="math inline">\(\Rightarrow\)</span>
+complete set of wPBE.</li>
+</ol>
 <!-- 1. is it a Beer-Quiche game? -->
 <!-- 2. figure out indifference conditions before starting analysis -->
 <!-- 3. iterate through: -->
@@ -2773,8 +2812,8 @@ differentiable with nonzero derivative at <span class="math inline">\(a\)</span>
 <h1><span class="header-section-number">7</span> Misc</h1>
 <div id="standard-form" class="section level3" number="7.0.1">
 <h3><span class="header-section-number">7.0.1</span> Standard form</h3>
-<p>If IR is something like <span class="math inline">\(\int_{\underline{\pi}}^{\overline{\pi}} \cdot d\pi
-- g(e) \geq \overline{u}\)</span> then need “<span class="math inline">\(-\)</span>” in front of <span class="math inline">\(\lambda_{IR}\)</span></p>
+<p>Finish
+<!-- If IR is something like $\int_{\underline{\pi}}^{\overline{\pi}} \cdot d\pi - g(e) \geq \overline{u}$ then need "$-$" in front of $\lambda_{IR}$ --></p>
 </div>
 <div id="kkt-algorithm-2-constraints" class="section level3" number="7.0.2">
 <h3><span class="header-section-number">7.0.2</span> KKT Algorithm 2
