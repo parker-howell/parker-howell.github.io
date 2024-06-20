@@ -286,6 +286,25 @@ Fix a finite game. $R^m = U^m, ~\forall m.$
 Fix a finite game. A strategy $s_i$ is justifiable if, and only if, it is undominated.
 
 
+### "Algorithms for $m$- undominated and rationalizable"
+
+*Rationalizable:*
+
+FINISH
+
+
+
+*Undominated:*
+
+shortcut: NE ==> Rationalizable/undominated
+
+shortcut: X is a best response to something as indicated by the checkmarks on the normal form of the game, so it cannot be dominated.
+
+
+
+
+
+
 ### Def "Hyperplane"
 A hyperplane in $\mathbb{R}^n$ is a set of the form
 $$H[\vec{p}, \alpha] = \{\vec{x} \in \mathbb{R}^n: \vec{p} \cdot \vec{x}= \alpha\}$$

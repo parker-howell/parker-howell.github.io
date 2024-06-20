@@ -1,9 +1,7 @@
 ---
 title: 'Econ 607 Notes'
 author: 'Parker Howell'
-date: 'Last Updated: 2024-05-28'
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../website/parker-howell.github.io/docs/notes")})
+date: 'Last Updated: 2024-06-07'
 output:  
   html_document:
     keep_md: yes
@@ -15,6 +13,12 @@ output:
   #       toc: true
   #       number_sections: true
 ---
+
+
+<!-- knit: (function(inputFile, encoding) { -->
+<!--   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../website/parker-howell.github.io/docs/notes")}) -->
+
+
 
 
 
@@ -389,6 +393,15 @@ $$R_{i,t+1} \equiv \frac{p_{i,t+1} + x_{i, t+1}}{p_{i,t}}$$
 > "If I tell you this asset will come through in your darkest hour you will want that asset. So demand will rise $\Rightarrow$ price will rise."
 
 
+### "CAPM expected return of risky versus risk-free asset"
+$$E_t[R_{t+1}] = \frac{1 - Cov(R_{t+1}, m_{t, t+1})}{E_t[m_{t, t+1}]}$$
+$$E_t[R_{risk-free}] = \frac{1 - 0}{E_t[m_{t, t+1}]} = \frac{1}{E_t[\beta\frac{u'(c_{t+1})}{u'(c_t)}]} = \frac{1}{\beta}$$
+
+> risk-free means that the return is independent of the relationship between $R$ and $m$
+
+
+
+
 ### Puzzle 1 "Log approximation suggests $r \approx 11%$"
 do reading!
 
@@ -399,7 +412,11 @@ Mehra & Prescott (1985) show that equity (risky) return over last 100 years is a
 
 We would need an implausibly high level of risk aversion to make this 7% difference plausible. 
 
-Potential (incomplete) solution: Myopic Loss Aversion
+Potential (incomplete) solutions: Habit Formation, Myopic Loss Aversion
+
+
+
+
 
 ### Model Lucas Asset Pricing (Trees)
 
@@ -471,6 +488,8 @@ $$p_t^k = \frac{1}{1+r} \sum_{j=0}^\infty (\frac{1-\delta}{1+r}^j) F_{k,t+j+1}.$
 ### Def "Tobin's Q"
 $$Q^{Tobin} = \frac{\text{Value of firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} \equiv \text{average } Q$$
 
+* $Q>1 \Rightarrow$ should invest! (increase capital)
+* $Q>1 \Rightarrow$ should disinvest! (decrease capital)
 
 
 ### Def "Hayashi Form"
@@ -499,7 +518,7 @@ If $F(K, N)$ and $C(I, K)$ are both homogeneous of degree 1 (aka $H^1$ or CRS in
 Other assumptions Hayashi makes implicitly:
 
 * No financing constraints
-* Competitive
+* Firms perfectly competitive
 * Single type of capital
 
 
@@ -732,7 +751,7 @@ $$cov(X, Y) = E[(X - \mu_x)(Y - \mu_Y)] = E[XY] - E[X]E[Y]$$
 ### Growth rates
 $$g_{X,t} \equiv  \frac{X_{t} - X_{t-1}}{X_{t-1}} \approx \ln X_t - \ln X_{t-1} = \ln \frac{X_t}{X_{t-1}} = \ln(1+g_{X,t})$$
 
-> gross $\approx$ 1 + net; Gross: $\frac{c_{t+1}}{c_t}$; Net: $g_{c, t+1}
+> gross $\approx$ 1 + net; Gross: $\frac{c_{t+1}}{c_t}$; Net: $g_{c, t+1}$
 
 
 ### Log linearization

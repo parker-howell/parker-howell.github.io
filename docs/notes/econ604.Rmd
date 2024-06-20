@@ -606,11 +606,11 @@ Recall $t_i(\theta) = \sum_{j\neq i} v_j(x^*(\theta), \theta_j) + h_(\theta_{-i}
     *  $f(\pi | e_H)$ FOSD $f(\pi | e_L)$
 * Agent risk-averse, principal is risk-neutral
 * Agent maxes the *expectation of* $u(w,e) = v(w) - g(e)$
-    * $v' > 0, v'' leq 0$ (equality $\Rightarrow$ risk neutral; inequality $Rightarrow$ risk-averse)
+    * $v' > 0, v'' \leq 0$ (equality $\Rightarrow$ risk neutral; inequality $\Rightarrow$ risk-averse)
     * has reservation utility $\bar{u}$ if doesn't work with principal
 * Principal maxes the *expectation of* $\pi - w$
 
-### Model "Contractible Effort (benchmark case/strawman)"
+### Model "Contractible (i.e., observable) Effort (benchmark case/strawman)"
 * Principal makes TIOLI offer comprising BOTH effort $e^* \in \{e_L, e_H\}$ and wage ($w^*: \mathbb{R} \rightarrow \mathbb{R}$)
 * Effort is perfectly enforced
 * Principal solves
@@ -622,7 +622,7 @@ $$\text{ s to }  \int_{\underline{\pi}}^{\overline{\pi}}(v(w(\pi)) f(\pi | e) d\
 
 To analyze: 
 
-1. fix $e$
+1. fix $e$ (this lets us ignore IC)
 2. note that IR constraint binds, so $\lambda_{IR} > 0$
 3. FOC for $w(\pi)$ is: $-f(\pi|e) = -\lambda_{IR} v'(w(\pi))f(\pi|e)$
 4. Agent is risk-averse ($v''<0$) so there is a constant wage, $\bar{w}_e = v^{-1}(\bar{u} + g(e))$. 
@@ -636,7 +636,7 @@ To analyze:
 * Principal makes TIOLI offer $w^*: \mathbb{R} \rightarrow \mathbb{R}$ (i.e., $w(\pi)$)
 * risk neutrality: let $v(w) = w$ (or any constant in front wlog)
 * sell the firm to the agent $w^*(\pi) = \pi - L$
-* now agent solves the problem the principal wanted to solve, but without a constraint:
+* now agent solves the problem the principal wanted to solve, but without the IC constraint:
 $$\max_{e\in \{e_L, e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}\pi f(\pi | e) d\pi - (L + g(e))$$
 
 * IR binds $\rightarrow L = E[\pi | e^*] - (g(e^*) - \overline{u})$
@@ -700,11 +700,11 @@ So, $w(\pi)$ is strictly increasing in $LR_H$!
 > Imposing risk on the (risk-averse) agent "burns" suruplus; since the principal is less risk-averse than the agent it makes sense for the less risk averse party to take on the risk.
 
 #### Term "Likelihood Ratio"
-$$\frac{f(\pi|e_H)}{f(\pi|e_L)}$$
+$$\frac{f(\pi|e_L)}{f(\pi|e_H)}$$
 
 > $LR_H$ high $\Rightarrow$ agent probably chose high effort.
 
-> $\frac{f(\pi|e_L)}{f(\pi|e_H)}$ is the "inverse likelihood ratio"
+<!-- > $\frac{f(\pi|e_L)}{f(\pi|e_H)}$ is the "inverse likelihood ratio" -->
 
 
 
@@ -715,9 +715,12 @@ Proof: Suppose not; then, given the optimal wage schedule $w$, the IR constraint
 If $f$ is continuously differentiable with nonzero derivative at $a$ then
 $${\displaystyle {\bigl (}f^{-1}{\bigr )}'(b)={\frac {1}{f'(a)}}={\frac {1}{f'(f^{-1}(b))}}.}$$
 
+<!-- ### "3+ effort levels" -->
+
+<!-- would have a separate multiplier for each. So, if doing the high case with a medium and low levels, we'd have: $\lambda_IC_{HL}$, $\lambda_IC_{HM}$. -->
 
 
-<!-- # Algorithms to solve for each solution concept -->
+# Algorithms to solve for each solution concept
 
 <!-- ### PSNE -->
 <!-- * Construct best-response correspondences -->

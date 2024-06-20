@@ -1480,11 +1480,13 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 607 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-05-28</h4>
+<h4 class="date">Last Updated: 2024-06-07</h4>
 
 </div>
 
 
+<!-- knit: (function(inputFile, encoding) { -->
+<!--   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../../website/parker-howell.github.io/docs/notes")}) -->
 <div id="simple-endowment-economy" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Simple Endowment
 Economy</h1>
@@ -2054,23 +2056,36 @@ acquire the risk-reducing asset.</p>
 will want that asset. So demand will rise <span class="math inline">\(\Rightarrow\)</span> price will rise.”</p>
 </blockquote>
 </div>
-<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.5">
-<h3><span class="header-section-number">5.1.5</span> Puzzle 1 “Log
+<div id="capm-expected-return-of-risky-versus-risk-free-asset" class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> “CAPM expected
+return of risky versus risk-free asset”</h3>
+<p><span class="math display">\[E_t[R_{t+1}] = \frac{1 - Cov(R_{t+1},
+m_{t, t+1})}{E_t[m_{t, t+1}]}\]</span> <span class="math display">\[E_t[R_{risk-free}] = \frac{1 - 0}{E_t[m_{t,
+t+1}]} = \frac{1}{E_t[\beta\frac{u&#39;(c_{t+1})}{u&#39;(c_t)}]} =
+\frac{1}{\beta}\]</span></p>
+<blockquote>
+<p>risk-free means that the return is independent of the relationship
+between <span class="math inline">\(R\)</span> and <span class="math inline">\(m\)</span></p>
+</blockquote>
+</div>
+<div id="puzzle-1-log-approximation-suggests-r-approx-11" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Puzzle 1 “Log
 approximation suggests <span class="math inline">\(r \approx
 11%\)</span>”</h3>
 <p>do reading!</p>
 </div>
-<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.6">
-<h3><span class="header-section-number">5.1.6</span> Puzzle 2 “Equity
+<div id="puzzle-2-equity-premium-puzzle" class="section level3" number="5.1.7">
+<h3><span class="header-section-number">5.1.7</span> Puzzle 2 “Equity
 Premium Puzzle”</h3>
 <p>Mehra &amp; Prescott (1985) show that equity (risky) return over last
 100 years is approx 8% compared to 1% for bonds.</p>
 <p>We would need an implausibly high level of risk aversion to make this
 7% difference plausible.</p>
-<p>Potential (incomplete) solution: Myopic Loss Aversion</p>
+<p>Potential (incomplete) solutions: Habit Formation, Myopic Loss
+Aversion</p>
 </div>
-<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.7">
-<h3><span class="header-section-number">5.1.7</span> Model Lucas Asset
+<div id="model-lucas-asset-pricing-trees" class="section level3" number="5.1.8">
+<h3><span class="header-section-number">5.1.8</span> Model Lucas Asset
 Pricing (Trees)</h3>
 <ul>
 <li>Endowment economy.</li>
@@ -2090,8 +2105,8 @@ is true for every agent)</li>
 \frac{u&#39;(c_{t+1})}{u&#39;(c_t)} \frac{p_{t+1} +
 x_t{+1}}{p_t}   \bigg] = 1\]</span></p>
 </div>
-<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.8">
-<h3><span class="header-section-number">5.1.8</span> Def “Stochastic
+<div id="def-stochastic-competitive-equilibrium" class="section level3" number="5.1.9">
+<h3><span class="header-section-number">5.1.9</span> Def “Stochastic
 Competitive Equilibrium”</h3>
 <p>A <em>Stochastic Competitive Equilibrium</em> is</p>
 <ul>
@@ -2173,6 +2188,12 @@ Q”</h3>
 <p><span class="math display">\[Q^{Tobin} = \frac{\text{Value of
 firm}}{\text{Replacement Cost of Capital}} = \frac{V}{K} \equiv
 \text{average } Q\]</span></p>
+<ul>
+<li><span class="math inline">\(Q&gt;1 \Rightarrow\)</span> should
+invest! (increase capital)</li>
+<li><span class="math inline">\(Q&gt;1 \Rightarrow\)</span> should
+disinvest! (decrease capital)</li>
+</ul>
 </div>
 <div id="def-hayashi-form" class="section level3" number="6.1.2">
 <h3><span class="header-section-number">6.1.2</span> Def “Hayashi
@@ -2207,7 +2228,7 @@ Thm”</h3>
 <p>Other assumptions Hayashi makes implicitly:</p>
 <ul>
 <li>No financing constraints</li>
-<li>Competitive</li>
+<li>Firms perfectly competitive</li>
 <li>Single type of capital</li>
 </ul>
 <p><strong>Intuition:</strong> value of the firm is linearly
@@ -2523,8 +2544,7 @@ X_{t-1}}{X_{t-1}} \approx \ln X_t - \ln X_{t-1} = \ln
 \frac{X_t}{X_{t-1}} = \ln(1+g_{X,t})\]</span></p>
 <blockquote>
 <p>gross <span class="math inline">\(\approx\)</span> 1 + net; Gross:
-<span class="math inline">\(\frac{c_{t+1}}{c_t}\)</span>; Net: $g_{c,
-t+1}</p>
+<span class="math inline">\(\frac{c_{t+1}}{c_t}\)</span>; Net: <span class="math inline">\(g_{c, t+1}\)</span></p>
 </blockquote>
 </div>
 <div id="log-linearization" class="section level3" number="9.0.4">

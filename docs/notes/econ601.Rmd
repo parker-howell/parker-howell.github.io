@@ -467,3 +467,9 @@ This is the counterpart to Roy's identity, just on the Hickisan side (and simple
 ### Thm "relating $x(\cdot)$ and $x^h(\cdot)$ (Slutsky equation)"
 Suppose $U$ is neoclassical, $x(\cdot)$ is continuously differentiable, and $x(p,m)$ is in the interior of $X$. Then
 $$\frac{\partial x_i^h}{\partial p_k} (p, V(p,m)) = \underbrace{\frac{\partial x_i}{\partial p_k} (p, m)}_{\text{substitution effect}} + \underbrace{\frac{\partial x_i}{\partial m} (p, m) x_k(p,m)}_{\text{income effect}}, \forall i, k \in \{1, ... ,n\}$$
+
+# Misc
+
+### "Utility Maximization"
+Utility is maximized when
+$$\frac{MU_x}{p_x} = \frac{MU_y}{p_y}$$
