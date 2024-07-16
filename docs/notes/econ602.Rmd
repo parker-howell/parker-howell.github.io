@@ -3,15 +3,15 @@ title: 'Econ 602 Notes'
 author: 'Parker Howell'
 date: 'Last Updated: `r Sys.Date()`'
 output:  
+  pdf_document:
+     toc: true
+     number_sections: true
   html_document:
     keep_md: yes
     toc: true
     toc_float: true
     toc_collapsed: true
     number_sections: true
-  # pdf_document:
-  #       toc: true
-  #       number_sections: true
 ---
 
 ```{r, echo=FALSE}
@@ -29,7 +29,7 @@ colorize <- function(x, color) {
 ```
 
 
-
+\newpage
 # Simultaneous-move Games of Complete Information
 
 Can model these as strategic-form games
@@ -95,10 +95,10 @@ $$u_i(\sigma_1, ..., \sigma_I) = \Sigma_{S_I}\cdot \cdot \cdot \Sigma_{S_1}u_i(s
 
 
 
-### Def "MSNE"
+### Def "Mixed Strategy Nash Equilibrium (MSNE)"
 Call $(\sigma_1, ..., \sigma_I)$ a "Mixed Strategy Nash Equilibrium" (MSNE) if, and only if, for each $i=1, ..., I$
 
-$$u_i(\sigma_i^*, \sigma_{-i}^*) \geq u_i(\sigma_i, \sigma_{-i}), \forall \sigma_i \in \Delta(S_i).$$
+$$u_i(\sigma_i^*, \sigma_{-i}^*) \geq u_i(\sigma_i, \sigma_{-i}^*), \forall \sigma_i \in \Delta(S_i).$$
 
 
 
@@ -208,6 +208,8 @@ Glicksberg's thm only tells us there is some equilibrium--there may be many.
 Existence results are most useful if there are qualitative results of how equlibria vary with interesting parameters of the model/game.
 
 
+
+\newpage
 # Rationalizability and Iterated Dominance
 
 
@@ -265,6 +267,9 @@ Say *$s_i$ is undominated given $\Pi_{j=1}^I Q_j$* if it is not dominated given 
 Say *$s_i$ is (un)dominated* if it is (un)dominated given $S$.
 
 
+> Dominance is established given $i$'s OWN strategies: $\Pi_{j=1}^I Q_j$; Rationalizability is established given $-i$'s strategies: $Q_{-i}$
+
+
 ### Def "undominated sets"
 Let $U_i^0 = S_i.$ 
 
@@ -286,19 +291,6 @@ Fix a finite game. $R^m = U^m, ~\forall m.$
 Fix a finite game. A strategy $s_i$ is justifiable if, and only if, it is undominated.
 
 
-### "Algorithms for $m$- undominated and rationalizable"
-
-*Rationalizable:*
-
-FINISH
-
-
-
-*Undominated:*
-
-shortcut: NE ==> Rationalizable/undominated
-
-shortcut: X is a best response to something as indicated by the checkmarks on the normal form of the game, so it cannot be dominated.
 
 
 
@@ -356,6 +348,8 @@ Set $W_i^\infty = \cap_{m\geq 0}W_i^m$. Then $W^\infty = \Pi_{i=1}^I W_i^\infty$
 
 
 
+
+\newpage
 # Sequential Games of Complete Information
 
 **Example 1** Entrant (E) can *enter* or stay *out*. If E enters, then incumbent monopolist (I) can **F**ight or **A**cquiesce. 
@@ -376,7 +370,7 @@ Visualization vs Formalization - omitted for now.
 
 ### Def Extensive Form (model a sequential game as an extensive-form game)
 
-We model a sequential game as an extensive form game: $\Gamma = (A1, ..., A_J; N; H_1, ..., H_I; U_1, ..., U_I)$.
+We model a sequential game as an extensive form game: $\Gamma = (A_1, ..., A_J; N; H_1, ..., H_I; U_1, ..., U_I)$.
 
 **Extensive-Form 1:** Players $1, ..., I$
 
@@ -390,7 +384,7 @@ We model a sequential game as an extensive form game: $\Gamma = (A1, ..., A_J; N
 
 > $A_i(n) \neq \phi$ but might be a singleton (e.g., $A_i(\phi) = \{*\}$).
 
-> $Z = $ set of terminal nodes. We don't define $A_i(n)$ at terminal nodes.
+> $Z =$ set of terminal nodes. We don't define $A_i(n)$ at terminal nodes.
 
 
 Think of nodes as being defined by sequences of action profiles. E.g., 
@@ -493,7 +487,7 @@ $(s_1^{*h}, ..., s_I^{*h})$ is a (pure strategy) Nash equilibrium of $G^h$.
 
 ### Object "Backward-induction algorithm"
 1. Look at each last nonterminal node and the player who moves there. Find *an* action that is a best response for that player at that node.
-2. Look at nonterminal nodes that are followed only by "last nonterminal nodes". Find an action (for the player who moves at such a node) that is a best response given the behavior specified in step 1. 
+2. Look at nonterminal nodes that are followed only by "last nonterminal nodes". Find an action (for the player who moves at such a node) that is a best response given the behavior specified in step 1.
 3. Repeat until we reach the start of the game.
 
 This delivers an action associated with each information set. Collect these actions into strategies of each player and we have an SPE.
@@ -520,12 +514,20 @@ $$\forall h_i \in H_i, b_i(h_i)(A_i(h_i))=1.$$
 
 E.g., $b_2(h)(l) = P(l|h) = \frac{1}{4} + \frac{1}{2}$ and $b_2(h')(l) = P(l|h') = \frac{1}{4} + \frac{1}{8}$.
 
+> A behavioral strategy assigns probabilities to all player $i$'s *actions at a given information set*.
+
+> A mixed strategy assigns probabilities to all of player $i$’s *strategies across the entire game*.
+
+
+
 **Example 5** Extending SPE to behavioral strategies (note: we do this in example only because the notation is cumbersome.)
 
 
 
 
 
+
+\newpage
 # Misc
 
 
@@ -537,15 +539,203 @@ Say a strategy profile $(s_1', ..., s_I')$ Pareto dominates $(s_1, ..., s_I)$ if
 
 
 
+### "Random tips/facts"
+
+
+### "Mistakes to avoid"
+
+* Symmetric BR correspondences don't necessarily have a fixed point. You need to check the limits! E.g., if $\{0\}$ is a BR for all players, but only when $s_{-i} > 0$ then it's not a fixed point!
+* More than two players means you can't use the BR $\Rightarrow m$-rat shortcut!
+
+
+### "Algorithm Construct BR Correspondence"
+
+1. write down directly if obvious
+2. maximize objective function wrt $s_i$
+    a. may need cases to make objective differentiable (e.g., suppose price > 0, maximize, then check whether price really was > 0)
+    b. if using cases, plug in the found value of $s_i$ to test whether case was satisfied (don't plug back into the full objective fn, just need to test validity of case!)
+3. DON'T FORGET TO check if there's a BR in the case when p = 0!
+
+
+Common mistakes: 
+
+* plugging $s_i$ into the objective function to check validity of a case that depended only on part of the objective function. This may make simplifying too hard.
+* assuming BR doesn't have a fixed point just because strategy sets are hard to compare (e,g., categories and numbers)
+* assuming BR has a fixed point just because the same value pops up in everyone's individual BR correspondence--YOU HAVE TO CHECK THE BOUNDARIES!!
+* starting with too many cases when deriving a BR correspondence - and even worse: not checking enough cases after coming up with a few initial cases. e.g., if $p_{-i} < v$ is a case, don't forget to check negative values, $0$, or even just small values -- even if there's not a clear "cut-line" like 0, it's possible that you need another case at $p_{-i} \leq v/2$.  
+
+
+### "Algorithm Find all PSNE - infinite"
+
+1. Write down $BR_i, \forall i$
+    a. just think through it and do a bunch of cases, splitting $s_{-i}$ at natural split points (e.g., 0)
+    b. checking everything twice and try with both more and fewer cases after you get the first version of the BR correspondence to check that everything is right
+2. Say "PSNE $\iff$ fixed point of $BR = \Pi_i BR_i$"
+3. Look for fixed points or mutual best responses
+    a. if all are numeric, then great. look for matching numbers and then ALWAYS check the limits over which those numbers are a BR.
+    b. if fixed point hard to see (or doesn't exist which can sorta happen if some strats are infinite and others are categorical), pick one player, go case-by-case through her BR correspondence and ask whether all players have a best response to that best response
+
+
+> don't be afraid to make a table if there are too many cases! it ended up being pretty quick to do 18 cases this way!
+
+> if finding just one PSNE sometimes faster to guess and check
+
+### "Algorithm show no PSNE exists"
+
+1. Suppose for contradiction that $s^*$ is PSNE.
+2. Break into cases in terms of what $-i$ does
+    a. can sometimes copy the cases given in the objective function, may need to manipulate some
+    b. try starting with fewer cases and then adding additional cases to check the fewer cases
+    c. 0 is usually a nice starter case
+3. Find a profitable deviation in each case
+    a. e.g., in this case, $u_i(p_i^*, p_{-i}^*) = p_i^* \overline{q} < (p_i^* + \varepsilon) \overline{q} = u_i(p_i^*+\varepsilon, p_{-i}^*)$
+    b. it's nice to find an interval of $\varepsilon$'s that will work, but if time-pressed just assert the existence of some $\varepsilon > 0$.
+4. Say, "I've checked all possible cases and player $i$ always wants to deviate so no PSNE!"
+
+
+### "Algorithm Find all MSNE (finite)"
+
+0. Find/rule out all PSNE
+    a. write: "So, the set of degenerate MSNE are..."
+1. Eliminate dominated strategies
+2. Notice whether symmetric in payoffs or not
+3. Fix a MSNE, $\sigma^* = (\sigma_1^*, ..., \sigma_I^*)$, assign probabilities.
+4. The BR correspondence as shown by the checkmarks on the matrix show that the only best response to a pure strategy is a pure strategy, so it suffices to consider only the case in which all players mix.
+4. Do cases (invoking Cor. 1) for just one player first:
+    * Case 0: Neither mixes: "only MSNE is the degenerate MSNE already identified"
+    * Case 1: P1 mixes over 3 options
+        * usually easy to find contradiction with nothing more than Cor 1 applied to P1
+    * Case 2: P1 mixes over 2 options (will have 3 subcases)
+        i. look at BRs of $-i$ and figure out $supp(\sigma_{-i})$
+            * will need to use the additional equation induced by the case (e.g., case is $\sigma_1^*(U), \sigma_1^*(M) > 0 \Rightarrow p_U, p_M > 0$ and $p_U + p_M = 1$)
+        ii. invoke Cor 1 on $i$'s strategies - you'll need to use what you learned in (i) to simplify and find the contradiction (or lack thereof)
+5. If cases return no additional MSNE, done!
+    a. Else, do cases for other player(s) to look for additional contradictions
+6. Do a sanity check of any positive result; remember you should have an odd number of MSNE
+7. Write complete set, adding 0's in the place of any dominated strategies
+
+
+**Example**: suppose $S_1 = \{U,M,D\}, S_2 = \{L,C, R\}$.
+
+Case $supp(\sigma_1^*) = \{M,D\}$:
+
+* Cor 1 $\Rightarrow u_1(M, \sigma_2^*) = u_1(D, \sigma_2^*) \iff q_L = a - bq_C$. 
+    * Call this $(*)$
+* Know P1 won't play $U$, so simplify P2's expected payoffs and notice that $R$ is never a BR. We then recall that P2 must be mixing or else we're back in PS world. So we have two options:
+    1. apply Cor 1 to P2's two remaining strategies
+    2. apply what we learned to check whether $(*)$ is still valid.
+* ALWAYS DO (2) first!
+* If no contradiction after plugging the new knowledge into $(*)$ then do (1)
+* If still no contradiction then do subcases on $\sigma_2^*$'s support size
+    * max of 4 possible subcases, but usually can eliminate 2 easily
+    * go straight to $(*)$ to find the contradiction!
+* Contradictions in all subcases, then done. Otherwise, solve for MSNE probabilities
+* Sanity check the MSNE (numbers AND number of MSNE should still be odd)
+* Write out the MSNE in that case and highlight so you don't miss it later
+
+
+> Tip: write ALL numbers out in big matrix with signs before adding probabilities or deciding which numbers to scribble out
+
+> if you've eliminated dominated strategies, don't forget to add them in as 0's in the MSNE in the end. Automatic fail if you forget!!
+
+
+### "Algorithm find a MSNE (infinite)"
+
+0. Find/rule out all PSNE
+1. Say, "I look for a symmetric MSNE, $F^* = F_1^* = \cdot \cdot \cdot = F_I^*$ with
+    i. no atoms, and 
+    ii. support $[\underline{s}, \overline{s}]$"
+2. Say, "I'll take a trick from the finite case and ask that $i$'s payoff from any $s \in [\underline{s}, \overline{s}]$ be such that 
+    i. $\forall s_i \in S_i: u_i(F^*, F^*) \geq u_i(s_i, F^*)$ (i.e. it's at least as good as that of any other action)
+    ii. $\forall s_i, s_i' \in [\underline{s}, \overline{s}]: u_i(s_i, F^*) = u_i(s_i', F^*)$ (i.e., it's the same as the payoff of any other strategy in the support of the CDF)"
+3. Use logic to establish one of the boundaries of the CDF's support
+    i. e.g., "if such an equilibrium exists then $\overline{s} = 1$"
+4. Use the indifference condition with that boundary to solve for the closed form of the CDF:
+    i. $u_i(s \in [\underline{s}, \overline{s}], F_{-i}^*) = u_i(\overline{s}, F_{-i}^*)$
+    ii. e.g., if payoff is just revenue would have $p*[\underbrace{F_{-i}^*(p)}_{Pr(p_{-i} \leq p)} * (\text{qty i gets if -i has lower price}) + \underbrace{(1-F_{-i}^*(p) )}_{Pr(p_{-i} > p)}(\text{qty i gets if -i has higher price})] = u_i(\overline{p}, F_{-i}^*)$
+5. Use the fact that CDFs are bounded by 0 and 1 to solve for the other boundary
+6. To show the CDF I found is a MSNE: need that $u_i(F_i^*, F_{-i}^*) \geq u_i(s_i, F_{-i}^*), \forall s_i$. 
+    i. write out $u_i(s_i, F^*), \forall s_{i}$ - this will have cases: (a) below, (b) in, and (c) above the support of the CDF.
+    ii. case (b) better be greater than or equal to cases (a) and (c). Otherwise, no MSNE (which can happen--no guarantees of MSNE in infinite case)
+
+
+> Recall def of CDF: $F(\underline{x}) = 0$ and $F(\overline{x}) = 1$
 
 
 
-<!-- # Steps to approach common questions - see Goodnotes -->
+### "Algorithm for $m$- rationalizable / undominated"
 
-<!-- ### Find all PSNE -->
+0. Let $R_i^0 = S_i$
+1. For player 1 and strategy $U$:
+    i. If you see the belief:
+        i. "$U$ is a BR to the belief $\mu(L) = 1$. So, $U \in R_1^m$"
+    ii. If you don't see the belief:
+        i. Define $\mu$
+        ii. "$U$ is a BR under $\mu$ if for all $r_1 \in R_1^m$":
+            i. $u_1(U, \mu) \geq \begin{cases} u_1(M, \mu) \\ ... \\ u_1(D, \mu)\end{cases}$
+        iii. Do algebra. 
+            i. If contradiction: "contradiction, $\Rightarrow U$ is never a BR under any $\mu$"
+            ii. If found a legitimate belief: "$U$ is a BR to the belief $\mu = \{...\}$ "
+2. $m = m+1$
+3. For each player, ask: $R_i^m = R_i^{m-1}$?
+    i. "Player $-i$'s set of rationalizable strategies did not change, so Player $i$'s set will not change here either"
+4. Else, back to step 1.
+5. "Clearly the set of $m$-rationalizable strategies has stopped shrinking. Since this game is finite, an inductive argument will show that $R^\infty = ...$."
 
-<!-- ### Show no PSNE Exists -->
 
-<!-- ### Find all MSNE (finite) -->
+> Tip: put $p$ on the same side for all equations when comparing. (e.g., it's hard to see the contradiction when comparing $p \leq 2/5$ and $1/2 \geq p$ but easier to see when written as $p \leq 2/5, p \geq 1/2$) 
 
-<!-- ### Find a MSNE (infinite) -->
+
+shortcut: NE ==> Rationalizable/undominated
+
+shortcut: "X is a best response to something as indicated by the checkmarks on the normal form of the game, so it cannot be dominated."
+
+
+### "Algorithm weak dominance"
+
+0. Derive BR correspondence
+1. Write out the definition of weak dominance and number the two conditions.
+2. Be clever if possible. Options include:
+    i. Shortcut: unique best response cannot be weakly dominated!
+    i. start with an endpoint of $S_i$, (e.g., if 0 is an endpoint it's easy to show $\geq \forall s_{-i} \in W_{-i}^0$ if everything is just 0)
+    ii. take derivatives and show that everything above/below an extrema is weakly dominated
+3. If brute force needed: "Suppose $s_i$ is weakly dominated by some $\sigma_i$ such that $\sigma_i(0) = p_0, \sigma_i(1) = p_1, ..., \sigma_i(N) = p_N$. Then, for starters, I need
+    i. $u_i(\sigma_i, \begin{pmatrix} 0 \\ 1 \\... \\ N \end{pmatrix}) = \begin{pmatrix} p_0 * 0 + 0 \\ p_0 * 0 + p_1 * \frac{\Delta}{2} + 0 \\ ... p_0 * 0 + \cdot \cdot \cdot p_N N\Delta \end{pmatrix} \geq u_i(s_i, \begin{pmatrix} 0 \\ 1 \\... \\ N \end{pmatrix})$
+    ii. don't waste time with the second condition if you can violate the $\forall$ bit!
+
+
+1. Look for strategies that are best responses to the simplest beliefs.
+2. Look for strategies that are dominated by other pure strategies
+3. Test each remaining strategy to see if it is dominated by a mixed strategy.
+
+
+### "Algorithm SPE"
+
+1. pick a subgame without any other subgame
+2. compute NE
+3. Pick *a* NE and collapse subgame to that payoff
+4. iterate until no more subgames
+5. this gives *an* SPE
+    a. we have an action associated with each information set. Collect these actions into strategies of each player and we have an SPE.
+6. repeat with all combinations of NE in every subgame to find all SPE
+    a. notation to write set of all SPE: $\{(Out-U, L), (In-D, R)\}$
+
+
+
+
+<!-- 1. Look at each last nonterminal node and the player who moves there. Find *an* action that is a best response for that player at that node. -->
+<!-- 2. Look at nonterminal nodes that are followed only by "last nonterminal nodes". Find an action (for the player who moves at such a node) that is a best response given the behavior specified in step 1. -->
+<!-- 3. Repeat until we reach the start of the game. -->
+
+<!-- This delivers an action associated with each information set. Collect these actions into strategies of each player and we have an SPE. -->
+
+<!-- (re-run the algorithm for each action that is a best response at each node to find the full set of SPE) -->
+
+> Caution: Backward-induction applies only to perfect information games.
+
+
+### "Common question types"
+
+1. rationalizability
+2. Infinite MSNE
+...

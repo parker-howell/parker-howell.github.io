@@ -1,7 +1,7 @@
 ---
 title: 'Micro I Notes'
 author: "Parker Howell"
-date: 'Last Updated: 2024-05-28'
+date: 'Last Updated: 2024-07-09'
 output:  
   html_document:
     keep_md: yes
@@ -47,7 +47,14 @@ A binary relation $\succsim$ is
 4. symmetric if for all $x,y\in X, x \succsim y \iff y \succsim x$
 5. irreflexive if for all $x \in X, x \not\succsim x$
 6. asymmetric if for all $x,y\in X, x \succsim y \Rightarrow y \not\succsim x$
-7. antisymmetric...
+7. antisymmetric if for all $x,y \in X, [x \succsim y$ AND $x\neq y] \Rightarrow y \not\succsim x$
+    * i.e., $xRy$ and $yRx$ implies $x=y$
+
+### "Lemma 1 (handout) rational implies"
+
+A. $\succsim$ rational $\Rightarrow \succ$ asymmetric and transitive
+B. $\succsim$ rational $\Rightarrow \sim$ symmetric and transitive
+C. $\succsim$ rational $\Rightarrow x \succsim y \succsim z$ and either $x\not\sim y$ or $y \not\sim z$ implies $x\succ z$
 
 
 ### Def "rational"
@@ -340,10 +347,12 @@ $$x \succsim y, x \neq y \Rightarrow \alpha x + (1-\alpha)y \succ y$$
 
 ### Claim "$\succsim$ is rational $\not\Rightarrow \succsim$ has a utility representation"
 
+
 ### Term "lexicographic preferences"
 1. $\succsim$ is rational
 2. $\succsim$ is not continuous
 3. $\succsim$ does not have a utility representation
+
 
 ### Def "economic preference / well-behaved preference"
 A binary relation $\succsim$ is an *economic preference* (well-behaved preference) if it is 
@@ -458,3 +467,26 @@ This is the counterpart to Roy's identity, just on the Hickisan side (and simple
 ### Thm "relating $x(\cdot)$ and $x^h(\cdot)$ (Slutsky equation)"
 Suppose $U$ is neoclassical, $x(\cdot)$ is continuously differentiable, and $x(p,m)$ is in the interior of $X$. Then
 $$\frac{\partial x_i^h}{\partial p_k} (p, V(p,m)) = \underbrace{\frac{\partial x_i}{\partial p_k} (p, m)}_{\text{substitution effect}} + \underbrace{\frac{\partial x_i}{\partial m} (p, m) x_k(p,m)}_{\text{income effect}}, \forall i, k \in \{1, ... ,n\}$$
+
+# Misc
+
+### "Utility Maximization"
+Utility is maximized when
+$$\frac{MU_x}{p_x} = \frac{MU_y}{p_y}$$
+
+Note that the objective function is linear in $t$. Thus, maximization occurs at a "corner," where either $t=0$ or $t=1$.If $a_1 > a_2$, then it is best to set $t = 1$; otherwise, it is best to set $t = 0$.
+
+
+
+## Algorithms
+
+### "Hicksian..."
+finish
+
+### "Random tips/facts"
+TBD
+
+### "Mistakes to avoid"
+
+TBD
+

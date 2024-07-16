@@ -798,3 +798,11 @@ $$\mathcal{L} = f(x, y, z) + \lambda_1(constraint) +  \lambda_2(constraint)$$
 * Solve with both constraints non-binding (i.e., $\lambda_1=\lambda_2=0$)
 
 > "$-$" in front of objective if minimizing
+
+
+### "Random tips/facts"
+TBD
+
+### "Mistakes to avoid"
+
+TBD

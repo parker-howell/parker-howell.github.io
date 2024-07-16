@@ -28,7 +28,7 @@ colorize <- function(x, color) {
 # Misc
 
 ### "Which way standard form"
-$X \leq Y \Rightarrow OBJECTIVE + \lambda(Y - X)$
+$$X \leq Y \Rightarrow OBJECTIVE + \lambda(Y - X)$$
 
 
 ### "Utility Functions"
@@ -68,3 +68,10 @@ $$\ln(E[XY]) \neq \ln E[\ln(X) + \ln(Y)]$$
 Recall Jensen's inequality:
 
 $$\ln (\operatorname {E} [X])\leq \operatorname{E} \left[\ln (X)\right]$$
+
+
+
+### "Induction"
+1. Base Case: show that $p(n)$ is true for the smallest possible value of $n, n_0$.
+2. Induction Hypothesis: Assume that the statement $p(n)$ is true for any positive integer $n=k$, for $k\geq n_0$.
+3. Inductive Step: Show that the statement $p(n)$ is true for $n=k+1$.

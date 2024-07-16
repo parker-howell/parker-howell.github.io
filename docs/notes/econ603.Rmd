@@ -3,15 +3,15 @@ title: 'Micro III Notes'
 author: "Parker Howell"
 date: 'Last Updated: `r Sys.Date()`'
 output:  
+  pdf_document:
+    toc: true
+    number_sections: true
   html_document:
     keep_md: yes
     toc: true
     toc_float: true
     toc_collapsed: true
     number_sections: true
-  # pdf_document:
-  #       toc: true
-  #       number_sections: true
 ---
 
 
@@ -26,6 +26,8 @@ colorize <- function(x, color) {
 }
 ```
 
+
+\newpage
 # General Equilibrium
 
 <!-- Pareto Efficiency $\underbrace{\overbrace{\iff}}_{\text{2nd welfare}}^{\text{1st welfare}}$ Walrasian Equilibrium -->
@@ -53,7 +55,7 @@ colorize <- function(x, color) {
 $x$ is *feasible* if:
 
 1. $x_i \in X_i, \forall i = 1, ..., I$ and 
-2. $\sum_{i = 1}^I x_i = R$ (i.e., $\exists y \in Y: \sum_{i = 1}^I x_i = \omega + y$)
+2. $\sum_{i = 1}^I x_i \in R$ (i.e., $\exists y \in Y: \sum_{i = 1}^I x_i = \omega + y$)
 
 
 ### Def "Pareto Efficient"
@@ -75,17 +77,25 @@ Steps:
 1. compute $R$ from $\omega$ and $Y$ to figure out feasible consumption plans.
 2. $U_i = \{u_i(x_i): x \text{ is feasible}\}, \forall i = 1, ..., I$. (set of all possible utility levels)
 3. Fix $\bar{u_i} \in U_i, i = 2, ..., I$.
-  a. $\max_{x} u_1(x_1)$ subject to $u_i(x_i) \geq \bar{u_i}, i = 2, ..., I$.
+    a. $\max_{x} u_1(x_1)$ subject to $u_i(x_i) \geq \bar{u_i}, i = 2, ..., I$.
 4. Change values: $u_i \in U_i, i = 2, ..., I$ and repeat step 3.
 
-##### Remark "the PE algorithm is not sufficient UNLESS" 
+### Remark "the PE algorithm is not sufficient UNLESS" 
 1. $u_i$ is continuous and strongly monotone, and
 2. $Y = \{y \in \mathbb{R}^L: \vec{y} \leq \vec{0}\}$.
+
+
+The other way to show that the solution fo the UMP is PE is to show that the utility frontier is down-sloping:
+
+$$\frac{\partial u^*_2}{\partial u_1^*} = \frac{\frac{\partial u^*_2}{\partial x_{11}^*}} {\frac{\partial u^*_1}{\partial x_{11}^*}} < 0$$
 
 ### Prop "Pareto $\Rightarrow x^*$ solution"
 If $x^*$ is Pareto efficient, then $x^*$ solves step 3 above for some $\bar{u_2}, ..., \bar{u_I}, \bar{u_i} \in U_i \forall i = 2, ..., I.$
 
 
+
+
+\newpage
 # Walrasian Equilibrium
 
 ### Def "WE Primitives"
@@ -104,9 +114,14 @@ $$(\underbrace{x_1, ..., x_I}_{\text{consumption plans}}, \underbrace{y_1, ..., 
 ### Def "Walrasian Equilibrium"
 $p^*, (x^*, y^*)$ are a Walrasian Equilibrium if the following are satisfied:
 
-1. Profit Maximization: $p^* \cdot y_j^* \geq p^* \cdot y_j, \forall y_j \in Y_j, \forall j = 1, ..., J$
-2. Preference maximization: $\underbrace{p^* \cdot x_i^*}_{\text{expenditure}} \leq \underbrace{p^* \cdot w_i}_{\text{endowment income}} + \underbrace{\sum_{j=1}^J \theta_i^j (p^* \cdot y_{j,l}^*)}_{\text{income from profits}}  \forall y_j \in Y_j, \forall i = 1, ..., I$
-3. Market clearing: $\sum_{i=1}^I x_{i,l}^* = \sum_{i=1}^I \omega_{i,l}^* + \sum_{j=1}^J y_{j,l}^*, \forall l = 1, ..., l$.
+1. Profit Maximization: each firm $j$ maximizes profits given prices: $p^* \cdot y_j^* \geq p^* \cdot y_j, \forall y_j \in Y_j, \forall j = 1, ..., J$
+2. Preference maximization: 
+    i. $\max_{x_i} u_i(x_i)$ s. to $\underbrace{p^* \cdot x_i^*}_{\text{expenditure}} \leq \underbrace{p^* \cdot w_i}_{\text{endowment income}} + \underbrace{\sum_{j=1}^J \theta_i^j (p^* \cdot y_{j}^*)}_{\text{income from profits}}  \forall y_j \in Y_j, \forall i = 1, ..., I$ and
+    ii. $x_i^* \succsim_i x_i$ for all $x_i \in X_i$ s. to   $\underbrace{p^* \cdot x_i^* \leq p^* \cdot w_i + \sum_{j=1}^J \theta_i^j (p^* \cdot y_{j}^*)}_{\text{budget set}}$
+3. All markets clear: $\sum_{i=1}^I x_{i,l}^* = \sum_{i=1}^I \omega_{i,l}^* + \sum_{j=1}^J y_{j,l}^*, \forall l = 1, ..., l$.
+
+
+> Don't forget: the budget set is NOT related to what is available on the market - this is why 0 prices create infinite demand and can't exist in WE
 
 ### Obs 1 "normalizing prices"
 If $(p^*, x^*, y^*)$ is a Walrasian Equilibrium, then $(\lambda p^*, x^*, y^*)$ is a Walrasian Equilibrium $\forall \lambda>0$
@@ -117,6 +132,7 @@ $$\underbrace{p^* \cdot \sum_{i=1}^I x_i^*}_{\text{agg demand}} = \underbrace{p^
 
 ### Obs 3 "markets clear for all but one, then markets clear for all"
 If 
+
 1. $\succsim_i$ is locally nonsatiated, 
 2. $(p^*, x^*, y^*)$ satisfies profit maximization, 
 3. $p_L^*\neq 0$, and 
@@ -147,6 +163,7 @@ Note:
 
 ### Def "WE with transfers"
 $(p^*, x^*, y^*)$ is a Walrasian equilibrium with transfers $T$ if it satisfies 
+
 1. Profit maximization (no change here),
 2. Preference maximization: $x_i^*$ maximizes $\succsim_i$ (represented by $u_i$ subject to $p^* \cdot x_i^* \leq p^* \omega_i + \sum_{j=1}^J \theta_i^j p^* \cdot y_j^* + T_i$), and 
 3. Market clearing (no change here either).
@@ -162,17 +179,22 @@ Suppose $T$ is a system of transfers, $\succsim_i$ is locally nonsatiated $\fora
 Under assumptions 1-4, if $(x^*,y^*)$ is Pareto-Efficient then there exists a system of transfers $T$ and $p^* \neq \vec{0}$ such that $(p^*, x^*, y^*)$ is a Walrasian Equilibrium with transfers $T$.
 
 Assumptions:
-1. $\forall i, X_i, \succsim_i$ satisfies
-    * convexity: $x_i \succsim x_i' \Rightarrow \lambda x_i + (1-\lambda) x_i' \succsim x_i', \forall \lambda \in (0,1)$, and
-    * something slightly weaker than strict convexity: $\forall x_i, x_i', \hat{x_i} \in X_i: [x_i \succ_i \hat{x_i}, x_i' \succ_i \hat{x_i}] \Rightarrow \lambda x_i + (1-\lambda) x_i' \succ_i \hat{x_i}, \forall \lambda \in (0,1).$)
+
+1. $\forall$ consumers $i, X_i$ is convex and $\succsim_i$ satisfies
+    i. convexity: $x_i \succsim x_i' \Rightarrow \lambda x_i + (1-\lambda) x_i' \succsim x_i', \forall \lambda \in (0,1)$, and
+    ii. something slightly weaker than strict convexity: $\forall x_i, x_i', \hat{x_i} \in X_i: [x_i \succ_i \hat{x_i}, x_i' \succsim_i \hat{x_i}] \Rightarrow \lambda x_i + (1-\lambda) x_i' \succ_i \hat{x_i}, \forall \lambda \in (0,1).$
 2. $Y_j$ is convex $\forall j = 1, ..., J$.
 3. $\succsim_i$ is locally nonsatiated
-4. $\forall i$
-    * $\succsim_i$ is continuous, and
-    * $X_i \in \mathbb{R}_{++}^L$. This one is VERY STRONG -- means that EVERY individual has a nonzero amount of EVERY good.
+4. $\forall i, \succsim_i$ is continuous, and $X_i \in \mathbb{R}_{++}^L$.
+    * This one is VERY STRONG -- means that EVERY individual has a nonzero amount of EVERY good.
+
+<!-- * actually, Mu says, "consumption of every good cannot be 0". -->
+<!-- * I think it makes more sense that every good has to  -->
     
 Note: assumption 4 is weaker in MWG and other places, but we will always use this version in this class.
 
+
+\newpage
 # Existence of Walrasian Equilibria
 
 ### Def "set of price vectors"
@@ -183,14 +205,16 @@ $\varphi: \Delta \rightarrow \mathbb{R}^L$ such that $\forall p \in \Delta$:
 $$\varphi(p) = \sum_{i=1}^I x_i^*(p) - \sum_{i=1}^I \omega_i - \sum_{j=1}^J y_j^*(p)$$
 is called the excess demand function.
 
-$\varphi(p) = \vec{0} \Rightarrow$ WE exists (in WE: demand$(p)$ = supply$(p) \iff$ demand$(p)$ - supply = 0 $\iff$ excess demand$(p) = 0$). And, under some assumptions we can get the converse:
-
-WE exists $\Rightarrow \varphi(p) = \vec{0}$.
+* $\varphi(p) = \vec{0} \Rightarrow$ WE exists 
+    * (in WE: demand$(p)$ = supply$(p) \iff$ demand$(p)$ - supply = 0 $\iff$ excess demand$(p) = 0$). 
+* And, under some assumptions we can get the converse:
+    * WE exists $\Rightarrow \varphi(p) = \vec{0}$.
 
 ### Note "Implicit assumptions of excess demand fn"
 1. We can focus on $p \in \Delta$. That is, in WE, $p_l \geq 0 \forall l$ and for at least one good $l, p_l > 0$.
 2. There is a unique solution to the profit and preference maximizing problems (i.e., $\varphi$ is a function, not a correspondence.). This one isn't really a problem though because we can always generalize later and use Kakutani's instead of Brouwer's fixed point theorem.
 3. Excess demand for any good is finite (even for $0-priced goods).
+
 
 ### Thm "sufficient conditions on $\varphi$"
 Suppose $\varphi: \Delta \rightarrow \mathbb{R}^L$ is well-defined (i.e., satisfies implicit assumptions 1-3) and satisfies
@@ -201,8 +225,8 @@ Suppose $\varphi: \Delta \rightarrow \mathbb{R}^L$ is well-defined (i.e., satisf
 
 Then, there exists at least one $p \in \Delta$ such that $\varphi(p) = \vec{0}$
 
-
 > Note (exercise): $f(p) = p \iff \varphi(p) = 0$
+
 
 ### Thm "sufficient conditions on primitives"
 Suppose $\forall i, \forall j$:
@@ -214,12 +238,14 @@ Suppose $\forall i, \forall j$:
 
 Then, $\varphi$ is well-defined and satisfies 1-3 of Thm "sufficient conditions on $\varphi$".
 
+
+\newpage
 # Arrow's Impossibility Theorem
 
 ### Def "setting for Arrow's Impossibility Theorem"
 1. Finite set of "alternatives," $A = \{a,b,c, ...\}$ 
 2. Finite set of individuals, $N = \{1, ...,N\}$
-3. $\mathcal{R}$ is the set of all rational (and antisymmetric) preferences over $A$, ruling out indifferences ($R_i \in \mathcal{R}$ is the preference of individual $i$).
+3. $\mathcal{R}$ is the set of all rational and antisymmetric preferences over $A$, ruling out indifferences ($R_i \in \mathcal{R}$ is the preference of individual $i$).
 4. A preference profile is $R = (R_1, ... R_n) \in \mathcal{R}^n$
 
 Goal: $f: \mathcal{R}^n \rightarrow \mathcal{R}$
@@ -227,11 +253,13 @@ Goal: $f: \mathcal{R}^n \rightarrow \mathcal{R}$
 
 ### Thm "Arrow's Impossibility Theorem"
 Assumptions:
+
 1. Universal domain: any ranking is possible (so long as it is complete, transitive, and anti-symmetric)
 2. society's preference must be complete, transitive, and anti-symmetric
 3. $|A| \geq 3$
 
 Axioms:
+
 1. Pareto: $aR_ib, \forall i \Rightarrow af(R)b$
 2. Independence of irrelevant alternatives: $\forall i [aR_ib\iff a\hat{R_i}b] \Rightarrow [af(R)b \iff af(\hat{R})b]$
 3. No dictator: $\not \exists i \in N: \forall R \in \mathcal{R}^n, f(R)=R_i$
@@ -241,7 +269,7 @@ There is no $f: \mathcal{R}^n \rightarrow R$ that satisfies all three axioms at 
 ### Def "winning coalition"
 Denote $\mathcal{P}(N)$ to be the set of all nonempty subsets of $N$ ($2^N \setminus \{\emptyset\}$).
 
-We say $\mathcal{G} \subseteq \mathcal{P}(N)$ is a set of winning coalition if
+We say $\mathcal{G} \subseteq \mathcal{P}(N)$ is a set of winning coalitions if
 
 1. $\forall G \subseteq \mathcal{P}(N)$ either $G \in \mathcal{G}$ or $N \setminus G \in \mathcal{G}$, but not both. And
 2. $[G \in \mathcal{G}, G' \supseteq G] \Rightarrow G' \in \mathcal{G}$
@@ -270,6 +298,8 @@ Function with preferences as inputs and a winner as output.
 
 
 
+
+\newpage
 # Quasilinear Economy
 
 #### Term "Quasilinear economy"
@@ -330,7 +360,7 @@ UMP is:
 
 $$\max_{m_i \in \mathbb{R}, x_i \in \mathbb{R}_+} m_i + g_i(x_i) \text{ s to } m_i + px_i \leq \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))$$
 
-But we can assume that $m_i + px_i \leq \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))$, isolate, and plug $m_i$ into the objective function to get the unconstrained maximization problem:
+But we can assume that $m_i + px_i = \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j))$, isolate, and plug $m_i$ into the objective function to get the unconstrained maximization problem:
 
 $$\max_{x_i \geq 0} \omega_i + \sum_{j=1}^J \theta_i^j(py_j - c_j(y_j)) - px_i + g_i(x_i)$$
 
@@ -386,12 +416,14 @@ That is, $\forall i,j, x_i \geq 0, y_j \geq 0:$
 2. $\sum_{i=1}^I m_i = \sum_{i=1}^I \omega_i - \sum_{j=1}^J z_j,$ where $z_j = c_j(y_j)$.
 
 
-### Prop 2 "PE iff max over all feasible allocations"
+### Prop 2 "PE iff max sum of utility"
 In the quasilinear model a feasible allocation $(m,x,z,y)$ is Pareto Efficient if and only if $(x,y)$ maximizes the sum of consumer utilities, $\sum_{i=1}^I (m_i + g_i(x_i))$, among all feasible allocations.
 
 
 > Econ 101: surplus = sum of utilities of consumption good - sum of firms' costs
 
+
+\newpage
 # Aggregation
 
 #### Term "summation of sets"
@@ -408,18 +440,45 @@ $$S_j(p) = \{y_j \in Y_j: p \cdot y_j \geq p \cdot \hat{y}_j, \forall \hat{y}_j 
 ### Def "Aggregate supply correspondence"
 $$S^*(p) = (S_1 + \cdot \cdot \cdot+ S_J)(p) = S_1(p) + \cdot \cdot \cdot+ S_J(p)$$
 
-### Prop "$S$ looks like the supply correspondence of just one firm"
+> "$S$ looks like the supply correspondence of just one firm"
+
 Denote production set, $Y = Y_1 + \cdot \cdot \cdot Y_J$ and $S$ is the supply correspondence of a firm with production set $Y$. Then $S = S_1 + \cdot \cdot \cdot S_J$. 
 
 ### Def "Setting for demand aggregation"
+* $X_i \in \mathbb{R}_{+}^L, p \in \mathbb{R}_{++}^L, m_i \geq 0$, budget set: $p \cdot x_i \leq m_i$
+* demand function: $D_i: \underbrace{\mathbb{R}_{++}^L}_{p} \times \underbrace{\mathbb{R}_{+}^L}_{m_i} \rightarrow \mathbb{R}_{+}^L$
+* $D_i$ continuous
 
+### "representative consumer"
+Means that a consumer has a preference and a demand function $D$ that maximizes her preferences:
+$$D(p, \sum_i m_i) = \sum_i D_i(p, m_i), \forall p \in \mathbb{R}_{++}^L, m_i \geq 0, i = 1, ..., I$$
+
+### "Necessary Conditions to have a representative consumer"
+
+1. Income aggregation
+    * $\forall p \in \mathbb{R}_{++}^L, m_i \geq 0, \hat{m}_i \geq 0, \forall i$:
+        * $\sum_i m = \sum_i \hat{m}_i \Rightarrow \sum_i D_i(p,m_i) = \sum_i D_i(p,\hat{m}_i)$
+2. Preference Maximization
+    * there exists a preference $\succsim$ such that $D(p, m)$ maximizes $\succsim$ on $\{x \in \mathbb{R}_{+}^L: p \cdot x \leq m \}$
+    * this is "WARP for demand": $\forall (p, m), (p', m')$:
+$$[p \cdot D(p', m') \leq m \text{ and } D(p, m) \neq D(p',m')] \Rightarrow p' \cdot D(p,m) > m'$$
+
+> same as WARP from 601 when we had a singleton!
+
+> if your choice in the first menu is also contained in the second menu
 
 ### Prop "demand fns allow aggregation iff"
-FINISH
+
+Suppose $D_i(p, 0) = \vec{0}, \forall i = 1, ..., I$ and $p\in \mathbb{R}_{++}^L$. Then income aggregation for $D_1, ..., D_I$ if and only if
+
+1. $D_i = D_j, \forall i, j$, and
+2. there exists a function $\alpha: \mathbb{R}_{++}^L \rightarrow \mathbb{R}_{+}^L$ s.t. $D_i(p, m_i) = m_i \alpha(p), \forall i, \forall p, \forall m_i \geq 0$
+
+> technically a positive result, but we interpret it as a negative result because the assumption are so hard to satisfy IRL
 
 
 
-
+\newpage
 # Misc
 
 ### Def "numeraire"
@@ -428,5 +487,122 @@ a tradable economic entity in terms of whose price the relative prices of all ot
 
 w/o free disposal, have to consume everything. w/ free disposal, need strongly monotone preferences to guarantee that consumers consume the entire endowment (budget constraint will bind).
 
+
+### Def "Marginal rate of substitution  - MRS"
+
+$$MRS_1 = \frac{\frac{\partial u_1}{\partial x_{11}}}{\frac{\partial u_1}{\partial x_{12}}}$$
+
+
+> MRS is the absolute value of the slope of the indifference curve at whichever commodity bundle quantities are of interest.
+
+
+### "Common Question Types"
+
+1. GE
+    * find all PE consumption plans (with and without production)
+    * show that $x^*$ is PE
+2. WE
+    * find all WE (with and without Edgeworth)
+    * find one WE
+    * show that PE allocations are on the edges of the Edgeworth box (2x)
+3. Existence of WE
+    * show no WE
+    * convert PE to WE
+    * is a given WE also PE?
+4. Arrow
+    * given aggregation rule, which assumptions/axioms (not) satisfied
+5. Q-linear economies
+    * find all PE
+    * find all WE
+6. Aggregation
+    * is there a representative consumer? (for which values of $\alpha_i$ is there a rep cons)
+
+
+### "Random tips/facts"
+
+* $\ln x + \ln y$ is ?????
+
+
+
+
+### "Mistakes to avoid"
+
+* consumer always likes 2 sugars (i.e., 2 units of x) with each coffee (i.e., for every 1 y). Might be tempted to think that if the consumer wants 2x for every 1y, then the ICs in this case are kinked on the line y = 2x. Wrong! 
+    * Think about which bundles have the "right" proportions of the goods in this case. We know
+that if the consumer has 1 coffee (1y) she wants 2 sugars (2x). If she has 2 coffees (2x) she wants 4 sugars (4y).
+* don't use duality unless utility is *strictly* convex!
+
+
+  
+### "Algorithm Find ALL PE consumption plans"
+
+
+0. if possible/helfpul draw Edgeworth box.
+    a. PE is where ICs intersect--just be careful that you compare the correct ICs
+    b. check edges/corners separately
+1. identify feasible consumption plans, $R$
+2. figure out $U_i = \{u_i(x_i): x \text{ is feasible}\}$
+    a. this will usually be something like $[0, 250]$ if, e.g. $\omega = (5, 10), u_2 = x_{21}^2x_{22}$
+3. if production
+    a. say "if we want to preserve $x_l$ of good $l$, then the max of good $-l$ we can produce is $\sqrt{\omega_l - x_l}$"
+    b. say "by free disposal: consider only points along the frontier, not inside the frontier."
+3. Check corners:
+    * $\bar{u}_2 = 0 \Rightarrow ((5,10), (0,0))$
+    * $\bar{u}_2 = 250 \Rightarrow ((0,0), (5,10))$
+4. Solve Umax (Fix some $\bar{u} \in U_2$)
+6. Write or describe the set
+    a. often easier to describe--certainly better to describe if you're unsure of answer or notation since you may get partial credit for a good explanation but not for the wrong set.
+7. Explain why the set is complete. One of:
+    * "utility is continuous and strongly monotone (Cobb-Douglas satisfies if excluding 0's), so by thm all solutions to the maximization are PE."
+    * utility frontier is down-sloping: $\frac{\partial u^*_2}{\partial u_1^*} = \frac{\frac{\partial u^*_2}{\partial x_{11}^*}} {\frac{\partial u^*_1}{\partial x_{11}^*}} < 0$
+
+
+Common Edgeworth Box Solutions:
+
+* Convex: path from corner to corner
+* Linear symmetric: any point in the Edgeworth box is a solution
+* Linear nonsymmetric: $i$ must have no good 2 to give out, or $-i$ must have no good 1 to give out
+* symmetric Leontief: range in the center over which vertical portions of ICs overlap
+
+
+> prices irrelevant to PE!!
+
+> initial endowment to one player is irrelevant -- PE is what the planner looks at, doesn't matter if PE allocations are worse than initial endowment!
+
+> if production is IRS it probably makes sense to allocate EVERYTHING to production before allocating to consumers.... (unless, of course, utility of a specific non-producible good is increasing even faster than the returns to production)
+
+
+### "Algorithm Solve for WE"
+
+0. assert prices nonzero. Normalize $p_L = 1$.
+1. Solve profit max
+2. Calculate $\pi$
+3. derive budget constraint
+4. Solve Umax
+    a. if nondifferentiable, use budget constraint in Edgeworth box
+        i. recall: slope of budget line is $-p_1/p_2$ (or just $-p$ since $p_2=1$)
+            * you'll need to solve for $p$ (using logic) BEFORE trying to plot this
+        ii. you'll never actually get Edgeworth right by drawing it... so plot budget line and then solve for actual quantities naively:
+        ii. set $u_1 = BC$ and $u_2 = BC$ to see where intersections happen
+            * e.g., $x_{11}^2 + x_{12}^2 = \underbrace{-1}_{p_1/p_2} * x_{12} + 3$ and $x_{11} + x_{22} = -1 * x_{22} + 3$
+        ii. rule out infeasible intersections
+5. Use Goods market clearing to relate $x^*$ to $p$
+    a. discard negative prices
+7. plug $p$ back in to get actual values for $x^*, y^*$!
+
+
+
+
+<!-- Ask: -->
+
+<!-- 1. is there production? -->
+<!-- 2. Is utility (of all agents) convex -->
+<!--     a. If so, just set $MRS_1 = MRS_2$ -->
+
+
+
+<!-- 1. Find the firm's optima for each price. -->
+<!-- 2. Find the consumers' optima for each price. -->
+<!-- 3. Determine whether any prices satisfy the equilibrium conditions. -->
 
 

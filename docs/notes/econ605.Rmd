@@ -30,6 +30,8 @@ colorize <- function(x, color) {
 \newpage
 # Macro Variables, Capital, and Wealth; Productivity
 
+## Accounting
+
 
 ### "GDP"
 Product = Income = Expenditure
@@ -85,11 +87,11 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
 
 ### Def "Stocks, Flows, and Rates"
 
-* Stocks: "dollars variables"
+* Stocks: 'dollars variables'
     * e.g., $A, K, X$
-* Flows: "dollars per year"
+* Flows: 'dollars per year'
     * e.g., $Y, C, I$
-* Rates: "inverse time"
+* Rates: 'inverse time'
     * e.g., $d, r, g_X \equiv \frac{\frac{dX}{dt}}{X}$
     
 > flow = quantity measured as bricks per quarter
@@ -99,12 +101,6 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
     
 
 ### "Dollars, Apples, and Bricks; Units of Measurement"
-* Dollars: current year, or nominal, dollars; units of $Y^{nom}, C^{nom}, I^{nom}$
-* Apples: base year dollars; units of real $Y, C, I$, and wealth, $K, A$
-* Bricks: base year investment dollars; units of $X, \frac{I^{nom}}{P_I}$, where $P_I$ is an investment price index that tracks inflation in new capital goods.
-
-
-**Units of Measurement**
 
 * Prices
     * Consumer Price Index: $P_C$: $\frac{\$}{apples}$
@@ -116,6 +112,13 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
     * $Y^{nom}, C^{nom}, I^{nom}$: $\frac{\$}{year}$
     * $Y, C, I$: $\frac{apple}{year}$
     
+* Dollars: current year, or nominal, dollars; units of $Y^{nom}, C^{nom}, I^{nom}$
+* Apples: base year dollars; units of real $Y, C, I$, and wealth, $K, A$
+* Bricks: base year investment dollars; units of $X, \frac{I^{nom}}{P_I}$, where $P_I$ is an investment price index that tracks inflation in new capital goods.
+
+
+> current year = nominal!
+
 ### "Wealth"
 Wealth is the quantity of apples the households can currently buy if they sell everything they own.
 
@@ -343,6 +346,8 @@ Definition: present value is future wealth expressed in units of current wealth 
 ### "Financial Rate of return"
 $$\text{Rate of return} = \frac{\text{dividend + capital gains}}{\text{Value of asset}} = \frac{MPX_{t+\Delta t} - \delta p_{X, t + \Delta t} + (p_{X, t + \Delta t} - p_{X, t})/\Delta t}{p_{X,t}}$$
 
+> The financial rate of return is defined as the sum of dividend per dollar of asset plus capital gain/loss per dollar of asset.
+
 
 ### "Investment Decision"
 The optimal investment decision equates the firm’s financial rate of return (on its stock of bricks) to the market rate of return:
@@ -360,7 +365,7 @@ when $r$ is constant:
 $$m_{t,s} = e^{-r(s-t)}$$
 
 Present Value:
-$$PV(\{y_t\}) = \int_t^\infty m_{t,s} y_s ds \underbrace{= \frac{y_t}{\bar{r} - n}}_{\text{?? when is this true}}$$
+$$PV(\{y_t\}) = \int_t^\infty m_{t,s} y_s ds = \underbrace{\frac{y_t}{\bar{r} - n}}_{\text{On BGP  profits grow at rate }n}$$
 
 > $m$ always has a growth rate of $-r$
 
@@ -372,6 +377,8 @@ Competitive economy: $MPK = R$
 
 * $R > r + d$ - capital leasing business can make positive economic profits for any $K$ (demand for capital assets is infinite $\Rightarrow$ asset market does not clear)
 * $R < r + d$ -  renting capital is preferred to owning (no one wants to own capital $\Rightarrow$ asset market does not clear)
+
+> Caution: in Endogenous Growth we start using $MPK \neq R = r+d$....
 
 *3 Interpretations:*
 
@@ -591,7 +598,7 @@ free entry makes price of existing capital $p_X$ equal to its supply cost, $\fra
 
 **Find $\bar{r}$**
 
-1. Start with Jorgy
+1. Start with Jorgenson's
 2. You should have $k_*$ by this point. Just plug in and simplify.
 
 **Pareto-Inefficient?**
@@ -633,7 +640,6 @@ $$PVLC_t = c_{1,t} + \frac{c_{2, t+1}}{1 + r_{t+1}} = w_t = PVLR_t$$
 $$\frac{u'(c_{2, t+1})}{u'(c_{1, t})} = \beta (1+r_{t+1})$$
 Conclusion: optimal consumption profile equalizes marginal utility of wealth across periods
 
-![](src/tangency.png){width=25%}
 
 
 ### "OLG Market Clearing"
@@ -648,6 +654,9 @@ Conclusion: optimal consumption profile equalizes marginal utility of wealth acr
     * $S_{1,t} = a_{t+1}L_t = A_{t+1} = K_{t+1}$.
 * Which gives the following final form:
 $$a_{t+1} L_t = K_{t+1}$$
+
+If government debt:
+$$\underbrace{a_{t+1} L_t}_{\text{total asset demand}} = \underbrace{K_{t+1} + D_{t+1}}_{\text{total asset supply}}$$
 
 **Goods Market** (Implied by AMC - observe that $S_1 + S_2 = I$)):
 $$Y_t - C_t = I_t$$
@@ -951,7 +960,7 @@ Usually have:
 * $c_t = \frac{C_t}{e^{g_t}L_t}$
 * $k_t = \frac{K_t}{e^{g_t}L_t}$
 * $f(k_t) = y_t = \frac{Y_t}{e^{g_t}L_t}$
-* $\rho$: time discounting (impatience)
+* $\rho$: time discounting (impatience) <- I think this is $1-\beta$ where $\beta$ is discounting in 607...
 * $\theta$: IES intertemporal elasticity of substitution
 * $\theta=-{\frac {u_{c}(c)}{c\cdot u_{cc}(c)}}=-{\frac {d\ln c}{d\ln(u'(c))}}$
 * $\frac{\dot{c}}{c}+g$: growth rate of per-capita consumption
@@ -996,7 +1005,7 @@ $$Y_t = C_t + I_t$$
 
 ## Planner's Problem
 
-### "Planner's Problem"
+### "Ramsey Planner's Problem"
 The planner's problem is to max discounted utility for each household.
 
 Start with:
@@ -1017,6 +1026,8 @@ subject to:
 3. $\lim_{t \rightarrow \infty} \lambda_t k_t$ (transversality condition with exponential discounting)
 4. implicitly: $k_t, c_t \geq 0$ - will never bind due to Inada so we usually ignore them
 
+Standard Hamiltonian with CRRA preferences:
+$$\mathcal{H} = e^{-\rho t} e^{nt} e^{g(1-\theta)t)} \frac{c_t^{1-\theta}}{1-\theta} +  \lambda_t[f(k_t) - c_t - (n + d + g)k_t]$$
 
 $\mathcal{H} = U + \lambda \dot{k}$ gives:
 
@@ -1046,9 +1057,7 @@ Often written as
 $$\underbrace{\frac{\dot{c_t}}{c_t} + g}_{\substack{\text{growth rate per} \\\text{capita consumption}}} =\frac{1}{\theta}(r_t- \rho)$$
 
 
-ALWAYS CHECK THAT EE SAYS THINGS THAT MAKE SENSE:
-
-* Higher $\rho$ higher means $\frac{\dot{c}_t}{c_t}$ is lower (makes sense bc higher discounting means you don’t want growth of consumption to be as large (you would rather consume today))
+> Higher $\rho$ higher means $\frac{\dot{c}_t}{c_t}$ is lower (makes sense bc higher discounting means you don’t want growth of consumption to be as large (you would rather consume today))
 
 
 ### "Intertemporal elasticity of substitution"
@@ -1056,7 +1065,7 @@ $\theta$ = IES, i.e. elasticity of the marginal utility ratio with respect to co
 
 
 * Higher $\theta$ means the agent dislikes volatile consumption (i.e. they really really want consumption to be smooth and are very inelastic to changes in the interest rate).
-      * $\theta$ measures sensitivity to changes in consumption
+    * $\theta$ measures sensitivity to changes in consumption
 * $\theta \in (0, \infty)$
 
 
@@ -1103,8 +1112,10 @@ $$f'(k_*) > f'(k_G) \iff \rho > n + (1-\theta)g$$
 ### "Ramsey Parameters"
 There are only 5 parameters that shift the isoclines:
 
-1. $\rho$: ??
-2. $\theta$: ???
+1. $\rho$: discounting
+    * High $\rho$: low $\frac{\dot{c}_t}{c_t}$ (makes sense bc higher discounting means you don’t want growth of consumption to be as large (you would rather consume today))
+2. $\theta$: Intertemporal elasticity of substitution (IES)
+    * High $\theta$: agent dislikes volatile consumption (i.e. want consumption to be smooth and are inelastic to changes in the interest rate)
 3. $n$: affects just $\dot{k} = 0$ because it affects replacement investment
 4. $d$: affects just $\dot{k} = 0$ because it affects replacement investment
 5. $g$: affects both because it affects both $\overline{r}$ and replacement investment
@@ -1126,6 +1137,7 @@ There are only 5 parameters that shift the isoclines:
 
 
 IMPORTANT:
+
 * $k, w$ nearly always move together
 * $k, r$ nearly always move opposite
 
@@ -1159,6 +1171,8 @@ All of the following are pre-announced (at $t_A$) changes (at $t_C$):
 * Pre-announced decrease in $n$
     * $c_t$ jumps up 
     * know there will be fewer mouths to feed soon, adjust consumption right away
+* Temporary decrease in wage tax
+    * IDK.....
 * ADD MORE HERE INCREMENTALLY! FINISH
 
 
@@ -1257,6 +1271,14 @@ Careful: if we don't have asset market clearing and/or production side equilibri
 * Unique Pareto Optimum $\Rightarrow$ will also be a competitive equilibrium
 * TVC: Prod-side eqm and Asset market clearing make it so TVCs are identical
 
+
+Planner's Hamiltonian:
+$$\mathcal{H} = e^{-\rho t} e^{nt} e^{g(1-\theta)t)} \frac{c_t^{1-\theta}}{1-\theta} +  \lambda_t[f(k_t) - c_t - (n + d + g)k_t]$$
+
+Household's Hamiltonian:
+$$\mathcal{H}_i = e^{-\rho t} L_{it} u(c_t) +  \mu_{it}[r_t A_{it} + w_t L_{it} - c_{it}\underbrace{L_{it}}_{\text{# HH members}}]$$
+
+
 <!-- * Controls -->
 <!--     * Planner: $c$ -->
 <!--     * Household: own financial wealth and agg wealth -->
@@ -1322,7 +1344,7 @@ In general need to solve and do phase diagrams to solve. But, should also memori
 *Alternative definition*: a tax system is nondistortionary if and only if the competitive equilibrium is Pareto optimal.
 
 
-### "Government in Planner's and HH Problems"
+### "Government in Ramsey"
 
 *Assume*: $G_t$ does not depend on aggregate state.
 
@@ -1330,7 +1352,7 @@ In general need to solve and do phase diagrams to solve. But, should also memori
 
 <!-- *Result 2*: If taxes are non-distortionary, the $\dot{c} = 0$ isoclines for the household and the planner coincide. -->
 
-Non-distortionary AND budget balanced $\Rightarrow$ both isoclines coincide
+Non-distortionary AND budget balanced $\Rightarrow$ isoclines for HH and Planner coincide
 
 
 ### "Proposition: nondistortionary taxes = reduction in initial wealth"
@@ -1359,10 +1381,7 @@ If taxes are non-distortionary, then
 Implication: If taxes are non-distortionary, the amount and timing of intergenerational transfers implemented through $D_t$ (e.g. Social Security, Medicare) does not affect the economy’s consumption and interest rate trajectory. Sorta makes sense: dynastic households receiving a stimulus today will save it instead of spending so that their progeny will be able to pay off the debt later.
 
 
-<!-- ### "Irrelevance result" -->
-<!-- eqm allocations and prices do not depend on the level of gov debt under certain conditions... -->
-
-
+> No jumps in Ramsey if tax is nondistortionary. 
 
 
 
@@ -1383,6 +1402,7 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 **Planner's Problem**
 
 1. setup Hamiltonian with two states ($A$, $K$) and two constraints ($\dot{A}, \dot{K}$)
+    a. Nonstandard problems usually have 1 state. In this case, can often write the Hamiltonian with the resource constraint plugged into the utility function before taking FOCs (e.g., $Y$ in place of $C$ if there is no capital) 
 2. eliminate $\mu_K$ to get EE
 3. eliminate $\mu_K$ to get $\frac{\dot{\mu}_A}{\mu_A} = - \frac{z}{w} \frac{\partial Y}{\partial A}$.
     a. recall: social value of idea, $P_A^* = \frac{\mu_A}{\mu_K}$
@@ -1394,6 +1414,7 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 1. Start with Euler
 2. Invoke BGP
     a. DON'T MAKE THE MISTAKE OF SAYING $\dot{c}=0$!!
+        i. ($c = C/L$ will not be constant on the growth path but grow at $g_C - n$)
 3. By BGP, $g_c = g_{C/L} = g_Y - n = g_A$
 4. Derive $g_A$
     a. trick is to assert $g_A$ is const, divide $\dot{A}$ by $A$, then log-diff
@@ -1402,10 +1423,22 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 
 **Important to have memorized**
 
+* $MPK \neq R = \alpha p = \alpha MPx_j = r+d$
 * $\dot{V} = rV + wL - cL$
-* $\dot{P}_A = -\pi + rPA$
-* $P_A^*=PV(\{\frac{\partial Y}{\partial A} \}) + PV(\{ P_A^* * \frac{\partial \dot{A}}{\partial A}\})$
+* $V = K + P_AA$
+* $\dot{P}_A = -\pi + rP_A$ or for planner: $\dot{P}^*_A = -\frac{\partial Y}{\partial A} + rP_A^*$
+* $P_A^*=PV(\{\frac{\partial Y}{\partial A} \}) + PV(\{ P_A^* * \frac{\partial \dot{A}}{\partial A}\})$ 
 * $g_Y = g_A + n$
+* $MPL_A = \frac{\partial \dot{A}}{\partial L_A} * P_A$ (don't forget extra $P_A$ term on $MPL_A$ just because it's not there on $MPL_Y$!!!!!!!!!!!!)
+
+### "Jorgenson's in EG"
+In CE, the noncompetitive sector means that
+$$MPK \neq R$$
+Instead:
+$$R = \alpha p(x) = \alpha MPK = \alpha^2 \frac{Y}{K} = r+d$$
+
+> Of course, we'll still have $MPK = R = r+d$ in the planner's solution
+
 
 ### "Endogenous Growth Facts"
 
@@ -1424,7 +1457,7 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 
 Marginal products of labor are equal across sectors in standard models, but be careful to not assert that $w = MPL_Y = MPL$ without checking things first...
 
-<!-- > Mechanism of growth: $A \uparrow \Rightarrow x_j = \frac{K}{A} \downarrow \Rightarrow MPx_j \uparrow \Rightarrow Y \uparrow$ (don't get this backwards!) -->
+> Mechanism of growth: $A \uparrow \Rightarrow x_j = \frac{K}{A} \downarrow \Rightarrow MPx_j \uparrow \Rightarrow Y \uparrow$ (don't get this backwards!)
 
 > wages always equal; interest rate on assets always equal; but capital income rates not equal - physical capital will be higher (since $d$ added to $R$ and $\frac{\dot{P}_A}{P_A}$ subtracted from patent return rate)!
 
@@ -1481,9 +1514,8 @@ $$\dot{P}_{A,t} = \frac{d}{dt} PV(\{\pi_t\}) = \frac{d}{dt} \int_t^\infty e^{-\o
 
 **2. Determining rental fee on each bundle:**
 
-
 Inverse demand curve (for each $j$):
-$$p_t(x) = \alpha (\frac{L_{Y,t}}{x})^{1-\alpha}$$
+$$p_t(x) = MPx_j = \frac{\partial Y }{\partial x_j} = \frac{\partial}{\partial x_j} \big(L^{1-\alpha}( x_1^\alpha + \cdot \cdot \cdot + x_A^\alpha)\big) =    \alpha (\frac{L_{Y,t}}{x_j})^{1-\alpha}$$
 
 Monopolists' problem:
 $$\pi_t = \max_x \{ p_t(x) x - R_t x\} \tag{2}$$
@@ -1491,12 +1523,13 @@ $$\pi_t = \max_x \{ p_t(x) x - R_t x\} \tag{2}$$
 $$MR = p(x) + x p'(x) = p + (\alpha - 1)p = R = MC$$
 Gives:
 $$p(x) = \underbrace{\frac{1}{\alpha}}_{\text{Markup}} \underbrace{R}_{\text{MC}}$$
+
 ### "Monopolist's markup on bundle price"
 $$p(x) = \underbrace{\frac{1}{\alpha}}_{\text{Markup}} \underbrace{R}_{\text{MC}}$$
 
 ### "Research Sector (3/4)"
 
-Why is this household??????
+Representative household:
 $$\dot{a} = z_t l_A$$
 where 
 
@@ -1509,6 +1542,7 @@ $$\text{Profit} = P_{A,t} \dot{a}_t - w_t l_{A,t} = (P_{A,t}z_t - w_t) l_{A,t}$$
 
 So, the only prices ($P_A$ and $w$) consistent with positive and finite labor demand are those such that
 $$P_A z= w \iff 0 < l_A < \infty$$
+
 > Relative size of the production and research sectors is the free variable that makes the MPL rise/fall to ensure we have a wage that makes workers indifferent between $w_A$ and $w_L$ 
 
 ### "EG Physical Capital Goods Producing Sector (4/4)"
@@ -1531,6 +1565,9 @@ $$\underbrace{P_A \dot{A}}_{\text{agg value of research output}} = \underbrace{w
 ### "Patents as financial assets"
 A patent is like a financial asset which means there is a no arbitrage condition:
 $$r_t = \frac{\overbrace{\pi_t}^{\text{Dividend}} + \overbrace{\dot{P}_{A,t}}^{\text{cap gains}}}{  \underbrace{P_{A,t}}_{\text{purchase price}}} \iff \underbrace{\dot{P_A} = P_A r - \pi}_{\text{usually use in this form}}$$
+
+> If you have $P_A$ to invest, you can either invest at the risk-free rate, $r$ in the capital market, or buy a patent and establish a startup!
+
 
 > Memorize this, because differentiating $P{A,t}$ wrt $t$ requires Leibniz rule twice! 
 
@@ -1607,7 +1644,7 @@ $$\pi_t = rP_A - \dot{P}_A$$
 
 Also:
 
-$$P_A = PV(\{\pi_t\}) = \int_t^\infty e^{-\overline{r}(t, s)}\pi_s ds \underbrace{= \frac{\pi_t}{\bar{r} - n}}_{\text{is this always true??}}$$
+$$P_A = PV(\{\pi_t\}) = \int_t^\infty e^{-\overline{r}(t, s)}\pi_s ds =\underbrace{ \frac{\pi_t}{\bar{r} - n}}_{\text{On BGP profits grow at rate } n}$$
 
 
 
@@ -1669,7 +1706,7 @@ $$V = P_A A + K \underbrace{\iff}_{\text{dont forget this!!}} g_V = g_{P_A} + g_
 
 ## Planner's Problem
 
-### "Planner's Problem"
+### "EG Planner's Problem"
 
 * States: $A, K$
 * Controls: $C, L_A, L_Y$
@@ -1768,7 +1805,7 @@ Monopolists choose an output level below that of a competitive market and charge
 2. Capital income rate is lower than $MPK^*$, incentives to save are weakened, which lowers long-run labor productivity: $y = \alpha y^*$
 
 
-![](src/eg_dwl.png)
+![](src/eg_dwl.png){width=50%}
 
 
 
@@ -1785,9 +1822,6 @@ On the balanced growth path, all components of expenditure have to grow at the s
 
 ### Def "Euler equation"
 An Euler equation relates choice in one period to choice in another period.
-
-
-## Prereqs
 
 
 ### "Combining stocks vs flows"
@@ -1812,7 +1846,7 @@ $$g_{X,t} = \frac{X_t - X_{t-1}}{X_{t-1}}$$
 
 
 
-### Relate growth rates to rates of change
+### "Relate growth rates to rates of change"
 The growth rate is approximately equal to the logged rate of change:
 $$g_{X,t} = \frac{X_t - X_{t-1}}{X_{t-1}} \approx \ln(X_t) - \ln(X_{t-1})$$
 
@@ -1858,3 +1892,33 @@ $$MPK \equiv \frac{\partial Y}{\partial K} \neq \frac{\partial F}{\partial K} \t
 
 * $k, w$ nearly always move together
 * $k, r$ nearly always move opposite
+
+
+### "Random tips/facts"
+
+
+* In OLG: Consumption of the old does not change, because the old consume only the market value of the undepreciated capital stock plus the current period capital income.
+* With non-distortionary taxes, competitive equilibrium is Pareto optimal. The Pareto optimum is the solution to a planner's problem. The Pareto optimum trajectories are independent of government debt level and the timing of taxes. 
+    * $C, Y, I$ do not respond to nondistortionary taxes. Households save the entire tax cut amount - in the form of government debt - expecting to use the entire principal and interest on government bonds to pay higher future taxes.
+
+
+### "Mistakes to avoid"
+
+**OLG**
+
+* writing asset market clearing wrong:
+    * remember, if government debt is present that's an asset and should be on the total asset supply side
+* aggregating consumption
+    * $C_t = c_{1,t} L_t + c_{2, t} L_{t-1}$. Don't use Euler here....
+
+**Ramsey**
+
+* don't use $\dot{K}$ for the household problem...... need to convert to $\dot{A}$.
+* don't solve the planner's when you should solve household and vice-versa
+
+
+**Endogenous Growth**
+
+* In Household Problem: don't think $MPK = R = r+d$. $R=r+d$, but $R\neq MPK$! 
+* In planner's problem: remember that now $MPK = R$!!
+**Misc**

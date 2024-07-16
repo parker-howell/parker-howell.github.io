@@ -3,15 +3,15 @@ title: 'Micro I Notes'
 author: "Parker Howell"
 date: 'Last Updated: `r Sys.Date()`'
 output:  
+  pdf_document:
+    toc: true
+    number_sections: true
   html_document:
     keep_md: yes
     toc: true
     toc_float: true
     toc_collapsed: true
     number_sections: true
-  # pdf_document:
-  #       toc: true
-  #       number_sections: true
 ---
 
 
@@ -27,7 +27,7 @@ colorize <- function(x, color) {
 ```
 
 
-
+\newpage
 # Preference
 
 <!-- 1. consider $X \times X = $ -->
@@ -56,12 +56,21 @@ A binary relation $\succsim$ is
 4. symmetric if for all $x,y\in X, x \succsim y \iff y \succsim x$
 5. irreflexive if for all $x \in X, x \not\succsim x$
 6. asymmetric if for all $x,y\in X, x \succsim y \Rightarrow y \not\succsim x$
-7. antisymmetric...
+7. antisymmetric if for all $x,y \in X, [x \succsim y$ AND $x\neq y] \Rightarrow y \not\succsim x$
+    * i.e., $xRy$ and $yRx$ implies $x=y$
+
+### "Lemma 1 (handout) rational implies"
+
+1. $\succsim$ rational $\Rightarrow \succ$ asymmetric and transitive
+2. $\succsim$ rational $\Rightarrow \sim$ symmetric and transitive
+3. $\succsim$ rational $\Rightarrow x \succsim y \succsim z$ and either $x\not\sim y$ or $y \not\sim z$ implies $x\succ z$
 
 
 ### Def "rational"
 A binary relation $\succsim$ is *rational* if it is complete and transitive
 
+
+\newpage
 # Choice
 
 ### Def "choice function"
@@ -98,6 +107,8 @@ We say $c$ is single-valued if $\forall A \in \mathcal{B}, |c(A)| = 1$
 If $(\mathcal{P}(X), c)$ satisfies $\alpha$ and $c$ is single-valued, then it satisfies WARP.
 
 
+
+\newpage
 # Choice and Preference
 
 ### Def "$c_\succsim$"
@@ -118,6 +129,8 @@ If $(\mathcal{P}, c)$ is a choice structure that satisfies WARP then there exist
 
 <!-- ### Def "$\succsim^*$ from MWG" -->
 
+
+\newpage
 # Utility
 
 ### Def "utility function"
@@ -139,6 +152,8 @@ If $X$ is finite and $\succsim$ is rational then there exists $U: X \rightarrow 
 Suppose $U: X \rightarrow \mathbb{R}$ represents $\succsim$. Then $V: X \rightarrow \mathbb{R}$ represents $\succsim$ if and only if there exists $\phi: U(X) \rightarrow V(X)$ such that $V = \phi \circ U$ and $\phi$ is strictly increasing.
 
 
+
+\newpage
 # Expected Utility
 
 ### Def "lottery"
@@ -308,13 +323,15 @@ $$u(x) = \begin{cases} \frac{1-e^{-ax}}{a} \text{ if } a \neq 0 \\ x \text{ if }
 ### Def "CRRA"
 $$RRA = -x\frac{u''(x)}{u'(x)} = \text{const} = r$$
 
-Constant Absolute?? CHECK Risk Aversion (CARA) means risk attitude does not depend on inflation.
+Constant Relative Risk Aversion (CRRA) means risk attitude does not depend on inflation.
 $$u(x) = \begin{cases} \frac{x^{1-r}}{1-r} \text{ if } r \neq 1 \\ \ln x \text{ if } r=1\end{cases}$$
 
 
 > person is risk-neutral when $u(x) = x$.
 
 
+
+\newpage
 # Demand Theory
 
 ### Def "Well-behaved" preference
@@ -349,13 +366,16 @@ $$x \succsim y, x \neq y \Rightarrow \alpha x + (1-\alpha)y \succ y$$
 
 ### Claim "$\succsim$ is rational $\not\Rightarrow \succsim$ has a utility representation"
 
+
 ### Term "lexicographic preferences"
 1. $\succsim$ is rational
 2. $\succsim$ is not continuous
 3. $\succsim$ does not have a utility representation
 
+
 ### Def "economic preference / well-behaved preference"
 A binary relation $\succsim$ is an *economic preference* (well-behaved preference) if it is 
+
 1. rational, 
 2. continuous, 
 3. monotone, and 
@@ -367,6 +387,8 @@ $\succsim$ is an economic preference $\Rightarrow \succsim$ can be represented b
 ### Remark $U$ is also monotone and MWG monotone, but not strong
 
 
+
+\newpage
 # Demand
 
 #### Term "price vector"
@@ -450,6 +472,7 @@ Suppose $U$ is neoclassical. Then
 3. $e(\cdot)$ is concave in $p$ for fixed $u \in U(X)$,
 4. $e(\lambda p, u) = \lambda e(p,u), \forall \lambda>0$, and
 5. $\frac{\partial}{\partial p_i} e(p,u) = x^h_i(p,u), \forall i = 1, ..., n.$
+    * This is Shephard's Lemma. It's the counterpart to Roy's identity, just on the Hickisan side (and simpler).
 
 
 ### Thm "relating $x(\cdot)$ and $V(\cdot)$ (Roy's identity)"
@@ -457,19 +480,68 @@ Suppose $U$ is neoclassical, $V(p,m)$ is differentiable at $(p,m)$ and $x(p,m)$,
 $$x_i(p,m) = -\frac{\frac{\partial }{\partial p_i}V(p,m)}{\frac{\partial }{\partial m}V(p,m)}$$
 
 
-### Lemma "Shephard's Lemma"
-Use this to go from expenditure function ($e(\cdot)$) to Hicksian demand ($x^h$):
-
-$$x^h_i(\mathbf{p},u) = \frac{\partial e(\mathbf{p}, u)}{\partial p_i}$$
-This is the counterpart to Roy's identity, just on the Hickisan side (and simpler).
-
 
 ### Thm "relating $x(\cdot)$ and $x^h(\cdot)$ (Slutsky equation)"
 Suppose $U$ is neoclassical, $x(\cdot)$ is continuously differentiable, and $x(p,m)$ is in the interior of $X$. Then
 $$\frac{\partial x_i^h}{\partial p_k} (p, V(p,m)) = \underbrace{\frac{\partial x_i}{\partial p_k} (p, m)}_{\text{substitution effect}} + \underbrace{\frac{\partial x_i}{\partial m} (p, m) x_k(p,m)}_{\text{income effect}}, \forall i, k \in \{1, ... ,n\}$$
 
+> $i,k$ can be same (sensitivity of demand to price of own good) or different (sensitivity of demand to price of another good)
+
+
+\newpage
 # Misc
 
 ### "Utility Maximization"
 Utility is maximized when
 $$\frac{MU_x}{p_x} = \frac{MU_y}{p_y}$$
+
+Note that the objective function is linear in $t$. Thus, maximization occurs at a "corner," where either $t=0$ or $t=1$.If $a_1 > a_2$, then it is best to set $t = 1$; otherwise, it is best to set $t = 0$.
+
+
+
+## Algorithms
+
+### "Typical 601 questions"
+1. Choice/ Decision theory
+    * silly transitivity/completeness proofs
+    * WARP and choice structures (proofs)
+2. Utility
+    * what amount of wealth to make you indifferent
+    * what is expected value of bet
+    * is $U$ neoclassical?
+3. Demand theory
+    * write down indirect utility function
+    * derive demand / use duality
+
+
+
+
+
+
+### Algorithm "Does this choice function satisfy WARP?"
+
+1. Assume violation
+    i. try minimal counterexample (3-4 elements, + WARP def)
+    ii. can try to violate just $\alpha$ or just $\beta$
+2. No violation
+    i. Choose appropriate WARP def
+    ii. define $A, B, c(A), c(B), x, y, ...$
+    iii. prove, usually with cases
+    
+### Algorithm "expected utility questions"
+
+WHAT QUESTIONS ARE TYPICAL HERE??
+
+
+### Algorithm "Hicksian..."
+finish
+
+
+
+### "Random tips/facts"
+TBD
+
+### "Mistakes to avoid"
+
+TBD
+

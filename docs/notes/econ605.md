@@ -1,25 +1,6 @@
----
-title: "Econ 605 Notes"
-author: "Parker Howell"
-date: 'Last Updated: 2024-06-20'
-output:
-  html_document:
-    keep_md: yes
-    toc: yes
-    toc_float: yes
-    toc_collapsed: yes
-    number_sections: yes
----
-
-
-
-
-
-\newpage
-# Macro Variables, Capital, and Wealth; Productivity
-
 
 ### "GDP"
+---
 Product = Income = Expenditure
 
 Product = Income:
@@ -33,6 +14,7 @@ $$Y = C + I + G + NX$$
 
 
 ### "Income accounting"
+---
 Household:
 
 * $Y - T$ = after-tax income is either saved or consumed:
@@ -45,6 +27,7 @@ Government:
 
 
 ### Def "Deflating Nominal Variables"
+---
 $$X_t = \frac{X_t^{nom}}{P_{X,t}}$$
 where $P_X$ is the deflator or price index which converts base year dollars into $t$-year dollars for variable $X$.
 
@@ -58,6 +41,7 @@ Unless otherwise stated: $K \neq \frac{K^{nom}}{P_I}$. Instead: $K = \frac{K^{no
 
 
 ### "$p_X$"
+---
 $$p_X \equiv \text{price of capital} = \frac{P_I}{P_C} = \frac{apples}{bricks}$$
 So,
 $$K = p_X X$$
@@ -72,12 +56,16 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
 
 
 ### Def "Stocks, Flows, and Rates"
+---
 
 * Stocks: "dollars variables"
+---
     * e.g., $A, K, X$
 * Flows: "dollars per year"
+---
     * e.g., $Y, C, I$
 * Rates: "inverse time"
+---
     * e.g., $d, r, g_X \equiv \frac{\frac{dX}{dt}}{X}$
     
 > flow = quantity measured as bricks per quarter
@@ -87,6 +75,7 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
     
 
 ### "Dollars, Apples, and Bricks; Units of Measurement"
+---
 * Dollars: current year, or nominal, dollars; units of $Y^{nom}, C^{nom}, I^{nom}$
 * Apples: base year dollars; units of real $Y, C, I$, and wealth, $K, A$
 * Bricks: base year investment dollars; units of $X, \frac{I^{nom}}{P_I}$, where $P_I$ is an investment price index that tracks inflation in new capital goods.
@@ -105,6 +94,7 @@ Will also see $p_X = \frac{1}{q}$ where $q_t$ = efficiency units of capital that
     * $Y, C, I$: $\frac{apple}{year}$
     
 ### "Wealth"
+---
 Wealth is the quantity of apples the households can currently buy if they sell everything they own.
 
 Nominal wealth: $$K^{nom} = P_I * X$$
@@ -113,12 +103,14 @@ Real wealth is the number of apples that can be bought with nominal wealth:
 $$K = \frac{K^{nom}}{P_C} = \frac{P_I}{P_C} X$$
 
 ### "$K$ vs $X$"
+---
 * $K =$ market value of capital
 * $X =$ quantity of capital
 * $K = P_X * X = \frac{P_I}{P_C} X = \frac{X}{q}$ (where $q$ is efficiency units of capital that can be purchased with one apple of investment expenditure)
 
 
 ### Def "Capital Accumulation Equation"
+---
 
 **Discrete:**
 $$K_{t+1} - K_t = I_t - dK_t = I_t - (\delta - g_{p,t})K_t$$
@@ -140,15 +132,18 @@ This is what we (iteratively) plot to solve the Solow model!
 
 
 ### "Depreciation rate"
+---
 $$d \equiv \underbrace{\delta}_{\text{wear + tear}} - \underbrace{g_p}_{\text{capital gain}} = \text{depreciation rate on MARKET VALUE of capital}$$
 
 > In Solow ISTC: $d = \delta + g_q$
 
 ### "Relationship between capital stock and past investment history"
+---
 Market value of capital ($K$) is the sum of undepreciated parts of past real investment expenditures. I.e.,
 $$K_{t+1} = \sum_{\tau \geq 0} I_{t-\tau} (1-d)^\tau$$
 
 ### "Household Wealth"
+---
 $$A_t = K_t + D_t$$
 where
 
@@ -157,12 +152,14 @@ where
 * $D_t$ = market value of government debt
 
 ### "Debt Accumulation Equation"
+---
 $$D_{t+1} - D_t = \underbrace{r_t D_t}_{\text{interest due}} + \underbrace{(G_t - T_t)}_{\text{primary deficit}}$$
 * In-flow: $r_t D_t + G_t$
 * Stock: $B_t$
 * Out-flow: $T_t$
 
 ### "Wealth Accumulation Equation"
+---
 
 \begin{align}
 A_{t+1} - A_t &= K_{t+1} - K_t +  D_{t+1} - D_t \\
@@ -177,16 +174,18 @@ A_{t+1} - A_t &= K_{t+1} - K_t +  D_{t+1} - D_t \\
 > Government debt is a form of wealth
 
 
-## Measuring Productivity
 
-<!-- CaptionedISTC. Sources of growth -->
-<!-- 9/27/2023 • 9:58 AM • ECON 605 001 -->
+
+
+
 
 ### Def "Productivity"
+---
 GDP per hour worked.
 
 
 ### "Labor supply"
+---
 Labor supply is the weighted sum of hours worked.
 
 Separate workers into categories $i$ by education, age, sex, health etc.
@@ -198,6 +197,7 @@ $$L_t = h_{0,t} N_{0,t} + h_{1,t} N_{1,t} + ... + h_{I,t} N_{I,t}$$
 
 
 ### "Growth Decomposition"
+---
 
 $\alpha_K = \frac{RX}{Y}$ and $\alpha_L = \frac{wL}{Y}$. Makes sense because numerator is total quantity of Labor or Capital times the factor price and the denominator is total income (i.e., total output)
 
@@ -205,10 +205,11 @@ $\alpha_K = \frac{RX}{Y}$ and $\alpha_L = \frac{wL}{Y}$. Makes sense because num
 $$g_Y = \alpha_K g_X + (1-\alpha_K) g_L + g_Z$$
 $$g_{Y/N} = \underbrace{\alpha_K g_{X/N}}_{\text{capital intensity}} + \underbrace{(1-\alpha_K) g_{h}}_{\text{labor quality}} + \underbrace{g_Z}_{\text{TFP growth}}$$
 
-\newpage
-# (Neoclassical) Production
+
+
 
 ### "(Non)Zero Profits"
+---
 
 $$Y \equiv wL + RK + \Pi$$
 
@@ -235,11 +236,13 @@ Y &= (\lambda + \alpha - \alpha\lambda) Y + \Pi \\
 
 
 ### "Constant Returns to Scale (CRS)"
+---
 
 Implies $\alpha_K = 1- \alpha_L$
 
 
 ### "Competitive economy: main assumptions"
+---
 * Large number of agents (households and firms)--any agent takes prices as given/individual choices have negligible effect on prices.
 * Complete markets (every good is traded).
 * Centralized markets (Prices determined through market clearing)
@@ -252,6 +255,7 @@ Implies $\alpha_K = 1- \alpha_L$
 
 
 ### "Neoclassical production function assumptions"
+---
 1. $F \in C^2$
 2. Positive marginal products ($\frac{\partial F}{\partial K} > 0$ $\frac{\partial F}{\partial L} > 0$)
 3. Decreasing marginal products ($F_{KK} < 0$ $F_{LL} < 0$)
@@ -269,6 +273,7 @@ Implies $\alpha_K = 1- \alpha_L$
 
 
 ### "Inada Conditions"
+---
 Inada conditions guarantee an interior solution for any pair of positive factor prices $R, w$:
 
 * $\lim_{K \rightarrow 0}\frac{\partial F}{\partial K} = \infty$, $\lim_{K \rightarrow \infty}\frac{\partial F}{\partial K} = 0$
@@ -277,6 +282,7 @@ Inada conditions guarantee an interior solution for any pair of positive factor 
 
 
 ### "Aggregate Production Function"
+---
 The APF is an indirect objective function $F (K, L)$ corresponding to the solution to the output maximization problem 
 $$F(K, L) = \max \{ K_1^\alpha L_1^{1-\alpha} + \cdot \cdot \cdot K_N^\alpha L_N^{1-\alpha}  \}$$
 with aggregate labor and capital constraints
@@ -286,6 +292,7 @@ $$0 \leq K_1 \leq K, ...,  0 \leq K_N \leq K \text{ and } 0 \leq L_1 \leq L, ...
 
 
 ### Def "Production side equilibrium - $N$ firms"
+---
 A production side equilibrium is a list of factor demands $(K_i, L_i)|_{i=1}^N$ and factor prices ($R, w$) satisfying
 
 1. Profit maximization:
@@ -319,25 +326,30 @@ $$\max_{K \geq 0, L \geq 0} \{ F_i(K, L) - RK - wL  \} = 0, \forall i = 1, ...N.
 
 
 ### "Euler theorem for homogenous functions"
+---
 $$F(K, L) = F_K K + F_L L$$
 
 
-\newpage
-# Investment
+
+
 
 ### "Present Value"
+---
 Definition: present value is future wealth expressed in units of current wealth (units: stock, apples)
 
 ### "Financial Rate of return"
+---
 $$\text{Rate of return} = \frac{\text{dividend + capital gains}}{\text{Value of asset}} = \frac{MPX_{t+\Delta t} - \delta p_{X, t + \Delta t} + (p_{X, t + \Delta t} - p_{X, t})/\Delta t}{p_{X,t}}$$
 
 
 ### "Investment Decision"
+---
 The optimal investment decision equates the firm’s financial rate of return (on its stock of bricks) to the market rate of return:
 
 $$r_{t + \Delta t} =^{set} \text{Financial Rate of return}$$
 
 ### "Present Value Discount factor"
+---
 $N$ periods forward, discrete:
 $$m_{t, t + N\Delta t} = \Pi_{j=1}^N\frac{1}{(1+r_{t + j\Delta t} * \Delta t)}$$
 
@@ -354,6 +366,7 @@ $$PV(\{y_t\}) = \int_t^\infty m_{t,s} y_s ds \underbrace{= \frac{y_t}{\bar{r} - 
 
 
 ### "Jorgenson's Formula"
+---
 $$\frac{MPX_t}{p_{X,t}}  =MPK_t = \underbrace{r_t + d_t}_{\text{user cost}}$$
 
 Competitive economy: $MPK = R$
@@ -379,6 +392,7 @@ $$V_t = PV(\{R_tK_t\}) - PV(\{I_t\})$$
 $$V_t = K_t + PV(\{\pi_t\})$$
 
 ### "Law of motion for (corporate bonds) debt"
+---
 $$\dot{B}_t = r_t B_t - b_t$$
 
 * $B_t$ = market value of the current stock of debt (pre-determined)
@@ -386,6 +400,7 @@ $$\dot{B}_t = r_t B_t - b_t$$
 
 
 ### "Investment Financing Constraint"
+---
 Decision variables: $D_t, \dot{N}_t, \dot{B}_t$
 
 $$I_t = \underbrace{R_t K_t - D_t}_{\text{internal financing}} + \underbrace{\dot{N}_t P_t}_{\text{equity financing}} + \underbrace{\overbrace{\dot{B}_t - r_t B_t}^{=-b_t}}_{\text{Debt financing}}$$
@@ -397,6 +412,7 @@ $$I_t = \underbrace{R_t K_t - D_t}_{\text{internal financing}} + \underbrace{\do
 
 
 ### Thm "Modigliani-Miller"
+---
 $$V_t = M_t + B_t$$
 Means:
 
@@ -405,10 +421,11 @@ Means:
 
 
 
-\newpage
-# Solow
+
+
 
 ### "Solow Algorithm"
+---
 
 1. Derive LOM for $k$
     1. replace $I$ with $I = S = sY$ instead of $I = Y - C$
@@ -416,12 +433,14 @@ Means:
     1. show $k_*$ is unique and positive
     2. Alternatively: show exponent on $k_t$ in LOM is < 1 (e.g., $\alpha$). This implies LOM is concave
     3. If asked about stability: "Solow's steady state is globally stable since productivity growth fueled by investment eventually stops"
+---
 3. Plot
     1. just put $k_{t+1}$ on Y axis instead of bothering to convert from continuous to discrete time...
 
 
 
 ### "Uses of Solow Model"
+---
 
 * Make predictions about trajectories for macro variables $Y, C, I, K, w, R, r$.
 * Easy to take to the data
@@ -432,6 +451,7 @@ Means:
 
 
 ### "Solow 5 Key Equations"
+---
 1. Capital Accumulation $\dot{K} = I - dK$
 2. Household Saving: $S = sY$ and $C = (1-s)Y$ 
 3. Goods Market Clearing: $Y = C + I$
@@ -440,6 +460,7 @@ Means:
 
 
 ### "Solow Saving/Consumption Rule"
+---
 $$S_t = s Y_t$$
 and
 $$C_t = Y_t - S_t = (1-s)Y_t$$
@@ -448,12 +469,14 @@ $$C_t = Y_t - S_t = (1-s)Y_t$$
 
 
 ### "Solow Market Clearing"
+---
 Goods: $Y_t = C_t + I_t$. Implies: $S_t = I_t$
 
 (and don't forget: $S_t = sY_t$, so $I_t = sY_t$)
 
 
 ### "Solow Solution/Properties in the long run"
+---
 * Capital-labor ratio $k_t = k_*$ Stays constant
 * Output per worker $y_t = Y_t/L_t = Z k_*^\alpha = y_*$ Stays constant
 * Labor force $L_t = L_0 e^{nt}$ Given, grows at rate $n$
@@ -462,15 +485,17 @@ Goods: $Y_t = C_t + I_t$. Implies: $S_t = I_t$
 
 
 ### "Solow Wage and interest rate: properties (given Cobb-Douglas)"
+---
 * $w_t = (1-\alpha) \frac{Y_t}{L_t} = (1-\alpha) y_t$ 
 * $R_t = \alpha \frac{Y_t}{K_t} = \alpha \frac{Y_t/L_t}{K_t/L_t} = \alpha \frac{y_t}{k_t} = \alpha Zk^{\alpha - 1}$ 
 * $r_t = R_t - d = \alpha Zk^{\alpha - 1} - d$
 
 So, Wage positively depends on capital per worker and interest rate negatively depends on capital per worker.
 
-<!-- In long-run: $r_t = \bar{r} = \alpha \frac{d+n}{s} - d$ -->
+
 
 ### "Solow: TFP and long-run productivity"
+---
 
 Output per worker rises more than proportionately with TFP:
 
@@ -483,6 +508,7 @@ $$y_* = \frac{\bar{Y}}{L} = Zk_*^\alpha = Z [\frac{sZ}{n+d}]^{\frac{\alpha}{1-\a
 
 
 ### "Globally Stable"
+---
 Solow's steady state is globally stable. This means no matter the shock, Solow will go back to the steady state.
 
 > No matter where the economy starts in terms of its initial capital stock, it approaches the steady state capital-labor ratio, $k_*$ in the long run
@@ -490,12 +516,14 @@ Solow's steady state is globally stable. This means no matter the shock, Solow w
 Productivity growth fueled by investment eventually stops
 
 ### "Solow Long-Run Interest Rate"
+---
 ![](src/solow_growth.png){width=50%}
 
 $$\bar{r} = \alpha \frac{g_A + n + d}{s} - d$$
 
 
 ### "Solow Golden Rule"
+---
 Golden rule savings rate = The rate of savings that maximizes household consumption. Any savings level above this golden rule is inefficient.
 
 Find Golden rule by taking the derivative with respect to $s$. E.g.,
@@ -515,6 +543,7 @@ In basic Solow the golden rule occurs when $s = \alpha$. So $s> \alpha$ leads to
 
 
 ### "Solow with Tech Change"
+---
 In basic Solow, $k, y$ const, $g_Y = g_L = g_k = n$.
 
 With Cobb-Douglas type of tech change doesn't matter:
@@ -526,6 +555,7 @@ $$\dot{k} = sf(k) - (g_A + n + d)$$
 
 
 ### "Constant Growth Path + BGP"
+---
 A trajectory in which $Y, C, I, K$ grow at constant (possibly zero and possibly different) exponential rates.
 
 **Prop** If constant growth equilibrium in neoclassical economy with $C_t, I_t > 0$ then we have a BGP with $g_Y = g_K = g_I = g_C$.
@@ -534,6 +564,7 @@ A trajectory in which $Y, C, I, K$ grow at constant (possibly zero and possibly 
 
 
 ### "Uzawa Thm"
+---
 If a one-sector model with technological change has a constant growth equilibrium, then technological change has to be labor augmenting.
 
 > Uzawa is a  necessary  condition for constant growth long-run equilibrium
@@ -542,6 +573,7 @@ If a one-sector model with technological change has a constant growth equilibriu
 
 
 ### "Investment-specific technological change (ISTC)"
+---
 An improvement in the economy’s ability to produce capital goods out of investment expenditure:
 $$\dot{X}_t = q_t I_t - \delta X_t$$
 where $q_t$ = efficiency units of capital that can be purchased with one apple of investment expenditure at time $t$.
@@ -557,10 +589,11 @@ free entry makes price of existing capital $p_X$ equal to its supply cost, $\fra
 
 
 
-\newpage
-# OLG
+
+
 
 ### "OLG Algorithm"
+---
 
 **UMP**
 
@@ -589,6 +622,7 @@ free entry makes price of existing capital $p_X$ equal to its supply cost, $\fra
 
 
 ### "OLG Facts"
+---
 * Solow-type aggregate dynamics of $k$: unique and globally stable steady state (assuming log preferences)
 * Neoclassical production - standard except that it's discrete - can be labor-augmenting: $Y_t = F(K_t, (1+g)^tL_t)$
 * Saving: $s_t = \underbrace{r_t a_t}_{\text{capital income}} + \underbrace{w_t l_t}_{\text{labor income}} - c_t$
@@ -601,6 +635,7 @@ free entry makes price of existing capital $p_X$ equal to its supply cost, $\fra
 
 
 ### "(Canonical) OLG Household Problem"
+---
 $$\max_{c_{1,t}, c_{2, t+1}, a_{t+1}} \bigg(u(c_{1,t}) + \beta u(c_{2, t+1})  \bigg)$$
 
 * $a_{t+1} = (1+ r_t)\underbrace{ a_t }_{\text{initial assets}} +  w_t \underbrace{l_1}_{=1} - c_{1,t}$
@@ -618,6 +653,7 @@ $$PVLC_t = c_{1,t} + \frac{c_{2, t+1}}{1 + r_{t+1}} = w_t = PVLR_t$$
 
 
 ### "OLG Consumption Euler Equation"
+---
 $$\frac{u'(c_{2, t+1})}{u'(c_{1, t})} = \beta (1+r_{t+1})$$
 Conclusion: optimal consumption profile equalizes marginal utility of wealth across periods
 
@@ -625,6 +661,7 @@ Conclusion: optimal consumption profile equalizes marginal utility of wealth acr
 
 
 ### "OLG Market Clearing"
+---
 
 **Asset Market:**
 
@@ -642,6 +679,7 @@ $$Y_t - C_t = I_t$$
 
 
 ### Def "OLG Equilibrium"
+---
 The equilibrium consists of quantities $\{c_{1,t}, c_{2,t+1}, a_{t+1}, C_t, L_t, K_t, Y_t, I_t\}, \forall t$ and prices $\{w_t, R_t, r_t\}, \forall t$ such that
 
 
@@ -657,15 +695,18 @@ The equilibrium consists of quantities $\{c_{1,t}, c_{2,t+1}, a_{t+1}, C_t, L_t,
 
 
 ### "Canonical OLG Solution to household problem"
+---
 $$a_{t+1} = \frac{\beta}{1+\beta} w_t$$
 
 ### "OLG Lifetime Budget Constraint"
+---
 $$PVLC_t = c_{1,t} + \frac{c_{2, t+1}}{1+r_{t+1}} = w_t = PVLR_t$$
 
 > Note: PVLR does NOT include interest on savings! Lifetime Resources (LR) includes interest earnings on savings, but PVLR ignores this interest because it's discounted to PV!
 
 
 ### "OLG LOM for Capital"
+---
 
 Aggregate capital accumulation equation is standard: $K_{t+1} - K_t = I_t + dK_t$
 
@@ -677,11 +718,13 @@ intensive capital accumulation equation is usually implicit:
 which means multiple equilibria are possible... log preferences fix this!
 
 ### "OLG Intensive Form"
+---
 $$k_t = \frac{K_t}{(1+g)^t L_t}; y_t = \frac{Y_t}{(1+g)^t L_t}$$
 
 
 
 ### "OLG LOM for Capital, Log Preferences"
+---
 \begin{align}
 K_{t+1} &= a_{t+1} L_t \\
 &= \frac{\beta}{1+\beta} w_t L_t \tag{Sol to HH problem}\\
@@ -700,6 +743,7 @@ k_{t+1} &= \frac{\beta(1-\alpha)}{1+\beta} \frac{Y_t}{(1+g)^{t+1} L_{t+1}} \\
 
 
 ### "OLG Golden Rule"
+---
 In canonical model, $\bar{r} = g_Y$ (since $g_Y = n$ and using Jorgenson's). $\bar{r} < g_Y \Rightarrow$ oversaving - Pareto improvement is to throw away capital.
 
 
@@ -709,6 +753,7 @@ As in Solow, the golden rule capital-labor ratio $k_G$ is the capital-labor rati
 
 
 ### "OLG and Efficiency"
+---
 The OLG model has infinitely many Pareto efficient consumption plans.
 
 $\bar{r} < g_Y$ is Pareto-inefficient. Note that competitive equilibrium results in $\bar{r} < g_Y$, so competitive equilibrium is inefficient. Just consume excess capital today and everyone is better off.
@@ -718,6 +763,7 @@ $\bar{r} < g_Y$ is Pareto-inefficient. Note that competitive equilibrium results
 
 
 ### "OLG with Government Debt"
+---
 $D_{t+1} = (1+r_t)D_t + G_t - T_t$
 
 $G_t > T_t$ means the government has a deficit
@@ -729,12 +775,14 @@ LOM for debt: $D_{t+1} - D_t = r_t D_t + G_t - T_t$
 
 
 ### "Service Fee"
+---
 $r_t D_t$ is the *service fee* on debt.
 
 
-<!-- Life-cycle model vs. dynastic model of households -->
+
 
 ### "OLG with bequests"
+---
 $$U = u(c_{1,t}) + \beta u(c_{2,t+1}) + \beta (1+n) \varphi U_{t+1}$$
 where $\varphi$ = intergenerational discount factor (aka altruism)
 
@@ -772,16 +820,18 @@ $$\frac{u'(c_{1,s})}{u'(c_{2,s+1})} = \beta (1 + r_{s+1})$$
 
 $$\frac{u'(c_{1,s})}{u'(c_{1,s+1})} = \beta \varphi (1+r_{s+1}), \forall s \geq t$$
 *notice both consumptions are subscripted with the "1"
+---
 
 > Optimal bequest equalizes the marginal utility of date-$t$ wealth across the current and the future generation.
 
 
 
-\newpage
-# Optimal Control
+
+
 
 
 ### "Optimal Control Terms"
+---
 * $\bar{k}$: max debt constraint or min wealth constraint IN TERMINAL STATE
 * $\Gamma$: law of motion for capital/wealth/the state variable: $\Gamma(k_t,c_t,t) = \dot{k}$
 * $\lambda_t$: marginal benefit of one unit of $k_t$
@@ -789,6 +839,7 @@ $$\frac{u'(c_{1,s})}{u'(c_{1,s+1})} = \beta \varphi (1+r_{s+1}), \forall s \geq 
 
 
 ### "Hamiltonian"
+---
 $\mathcal{H} = u + \lambda \Gamma$ is the Hamiltonian
 
 FONC interpretation:
@@ -798,32 +849,34 @@ FONC interpretation:
 
 
 ### "Standard dynamic optimization problem"
+---
 
 * State: $k_t$; Control: $c_t$
 * Solution is a decision rule: $c_t = \hat{c}(k_t)$
 * Equality constraints describe the LOM for the state: $\Gamma(k_t, c_t, t) = k_{t+1} - k_t$
 
-<!-- 4-term representation of the Lagrangian: -->
-
-<!-- 1. head -->
-<!-- 2. Hamiltonian -->
-<!-- 3. co-state -->
-<!-- 4. tail -->
 
 
 
-<!-- ### "Principle of optimality" -->
-<!-- Continuation trajectory solves continuation problem. -->
 
-<!-- Let $\hat{k}_t$ be the solution to $V(k_0, t_0) = \max_{c_t} \int_{t_0}^T u(k_t, c_t, t) dt$ subject to $\dot{k} = \Gamma(k_t, c_t, t)$ and $k_0$ given. -->
 
-<!-- Then, for any $\tau \in [t_0, T]$: -->
-<!-- $$V(k_0, t_0) = \int_{\tau}^T u(\hat{k}_t, \hat{c}_t, t) dt +  V(\hat{k}_t, \tau)$$ -->
 
-<!-- > useful for corners, discontinuity, etc. -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### "End Point (Transversality) Conditions"
+---
 
 * Constrained end-point (original problem)
     * $\lambda_T(k_T - \bar{k}) = 0$
@@ -842,10 +895,11 @@ Usually have:
 * HH problem: $\lim_{t\rightarrow \infty} e^{\overline{r}(0,t)}a_t = 0$
 
 
-\newpage
-# Ramsey
+
+
 
 ### "Ramsey Algorithm"
+---
 
 **Planner's Problem**
 
@@ -926,6 +980,7 @@ Usually have:
 
 
 ### "Ramsey Facts"
+---
 * representative dynasty
     * the only heterogeneity this model can handle is in "income," but even then, income ratios must stay constant over time
 * no welfare thm guarantees equilibrium will be Pareto-optimal, but it is optimal nonetheless
@@ -951,6 +1006,7 @@ Usually have:
 The solution is $\hat{c}(k_t) = SA(k_t; \alpha)$.
 
 ### "Ramsey Assumptions"
+---
 * Identical preferences $\Rightarrow$ there exists a representative household $\Rightarrow$ *behavior depends only on aggregate wealth $K_t$*
       * Conditions for existence of representative household without assuming identical preferences are only slightly less restrictive than assuming identical preferences
       * Requires that household wealth be proportional and income ratios must stay constant over time
@@ -962,6 +1018,7 @@ The solution is $\hat{c}(k_t) = SA(k_t; \alpha)$.
 
 
 ### "Ramsey Household Utility"
+---
 $$U(x, l) = l \cdot u(\frac{x}{l})$$
 
 where $x$ represents household expenditure and $l$ is the size of the household. 
@@ -972,6 +1029,7 @@ Note: $\lim_{\theta \rightarrow 1} \frac{c^{1-\theta} - 1}{1-\theta} = \ln c$
 
 
 ### "Ramsey Market Clearing"
+---
 Asset:
 $$A_t = K_t$$
 Implies Goods market (just like in OLG):
@@ -982,9 +1040,10 @@ $$Y_t = C_t + I_t$$
 > In HH problem we use AMC.
 
 
-## Planner's Problem
+
 
 ### "Planner's Problem"
+---
 The planner's problem is to max discounted utility for each household.
 
 Start with:
@@ -1019,6 +1078,7 @@ $\mathcal{H} = U + \lambda \dot{k}$ gives:
 
 
 ### "Necessary condition for Ramsey integral convergence:"
+---
 $$g(1-\theta) + n - \rho < 0$$
 
 On the BGP, TVC is satisfied when $\bar{r} > g_Y$
@@ -1028,6 +1088,7 @@ On the BGP, TVC is satisfied when $\bar{r} > g_Y$
 
 
 ### "Euler Equation for Consumption (Solution to the Ramsey Problem)"
+---
 $$\frac{\dot{c_t}}{c_t}=\frac{1}{\theta}(r_t- (\rho + \theta g ))$$
 
 Often written as
@@ -1040,6 +1101,7 @@ ALWAYS CHECK THAT EE SAYS THINGS THAT MAKE SENSE:
 
 
 ### "Intertemporal elasticity of substitution"
+---
 $\theta$ = IES, i.e. elasticity of the marginal utility ratio with respect to consumption growth.
 
 
@@ -1049,6 +1111,7 @@ $\theta$ = IES, i.e. elasticity of the marginal utility ratio with respect to co
 
 
 ### "Phase Diagram Equations (steady state)"
+---
 
 $$\dot{k} = 0 \iff c_t = f(k_t) - (n + d + g)k_t$$
 $$\dot{c} = 0 \iff k_t = k_*, \text{ where } f'(k_*) = d + \rho + \theta g$$
@@ -1056,6 +1119,7 @@ $$c_* = f(k_*) - (n+d+g)k_*$$
 
 
 ### "Ramsey Key Equations"
+---
 LOM for capital:
 $$\dot{K} = I - dK = Y - C - dK$$
 
@@ -1068,6 +1132,7 @@ $$Y = F(K, e^{gt}L) = C_t + I_t$$
 
 
 ### "Ramsey Golden Rule vs Steady State Capital"
+---
 golden rule level of capital is the level that maximizes consumption:
 $$k_G = \arg \max_{ c^* }= \arg \max f(k^*) - (n + d + g)k^* \Rightarrow f'(k_G) = n + d + g$$
 
@@ -1076,6 +1141,7 @@ $$f'(k_*) > f'(k_G) \iff \rho > n + (1-\theta)g$$
 
 
 ### "Ramsey Isoclines"
+---
 * $\dot{k} = 0$: $c_t = f(k_t) - (n+d+g)k_t$
 * $\dot{c} = 0$: $r = \rho + \theta g$ or $k_t=k_*$, where $f'(k_*)=d+\rho + \theta g$
 
@@ -1089,6 +1155,7 @@ $$f'(k_*) > f'(k_G) \iff \rho > n + (1-\theta)g$$
 
 
 ### "Ramsey Parameters"
+---
 There are only 5 parameters that shift the isoclines:
 
 1. $\rho$: ??
@@ -1099,6 +1166,7 @@ There are only 5 parameters that shift the isoclines:
 
 
 ### "Ramsey Comparative Dynamics"
+---
 
 1. Unanticipated Permanent Change
     i. $c, \lambda$ must jump to new SA (otherwise will never get there)
@@ -1121,14 +1189,14 @@ IMPORTANT:
 
 > $c$ and $\lambda$ always jump/stay together so long as utility is strictly increasing (it always is!)
 
-<!-- * $c$ jumps if parameter changes make $u_C, \Gamma_C$ discontinuous (e.g. pre-announced jump in sales tax rate or a parameter change making marginal utility jump) -->
 
 
-<!-- Example: $n$ falls to $n'$ at $t_C > t_A$. Then,  -->
 
-<!-- * MU: falls, no jump (since $e^{-\rho t} L_t u'(c_t)$ unaffected by $n$ except the $L_t$ term which decreases, but not suddenly) -->
-<!-- * $\Gamma_C = 1$: this is always true in planner's problem. -->
-<!-- * So, no jump -->
+
+
+
+
+
 
 
 ![](src/jump_or_no.png){width=50%}
@@ -1138,6 +1206,7 @@ IMPORTANT:
 
 
 ### "Assorted explanations of consumption behavior at $t_A$"
+---
 
 All of the following are pre-announced (at $t_A$) changes (at $t_C$):
 
@@ -1153,9 +1222,11 @@ All of the following are pre-announced (at $t_A$) changes (at $t_C$):
 
 
 
-## "Ramsey - Competitive Equilibrium/Household Expectations"
+
+---
 
 ### "Ramsey Household Facts"
+---
 
 * $c_{it}$: per-capita consumption (not consumption per effective worker)
 * $g$: tech growth. We usually assume $g = 0$ - no technology growth in the consumer problem so the Euler equations of the Household and Planner coincide.
@@ -1165,10 +1236,12 @@ All of the following are pre-announced (at $t_A$) changes (at $t_C$):
 
 
 ### Def "Representative Household flow budget constraint"
+---
 $$\dot{A_t} = r_tA_t+w_tL_t - C_t$$
 
 
 ### "Ramsey Household Utility Maximization"
+---
 $$\max_{c_{it}} \int_0^\infty e^{-\rho t} L_{it}u(c_{it})dt \text{ s. to: }$$
 
 1. $\underbrace{\dot{A_{it}}}_{\text{rate of change of assets}} = \overbrace{\underbrace{r_tA_{it} + w_t L_t}_{\text{Income}} - \underbrace{c_{it}L_{it}}_{\text{Consumption}}}^{\text{Savings flow}}$ (aka household flow budget constraint) DON'T USE $\dot{K}$ here!! 
@@ -1178,13 +1251,14 @@ $$\max_{c_{it}} \int_0^\infty e^{-\rho t} L_{it}u(c_{it})dt \text{ s. to: }$$
 * Individual State Variable: $A_{it}$
 * Aggregate state variables: can use $r_t, w_t$ or $K_t, L_t$. Both will give the same answer, but we use $K_t, L_t$ in this class.
 
-<!-- Household's Utility Maximization Problem FOCs: -->
 
-<!-- * $\frac{\partial \mathcal H}{\partial c_{it}} = 0 \iff$ -->
-<!-- * $\frac{\partial \mathcal H}{\partial A_{it}} = -\dot{\mu_{it}}$ -->
+
+
+
 
 
 ### "Euler Equation for Consumption (Solution to the Ramsey Problem)"
+---
 
 $$\frac{\dot{c_{it}}}{c_{it}} = -\frac{u'(c_{it})}{u''(c_{it})c_{it}}(r_t - \rho) = \underbrace{\frac{1}{\varepsilon_u}(r_t - \rho)}_{\text{sign flipped due to abs val}}$$
 
@@ -1192,24 +1266,25 @@ where $\varepsilon_u = \big|\frac{u''(c_{it})c_{it}}{u'(c_{it})}\big|$
 
 > This is identical to the Euler equation in the planner's problem if $g = 0$ and $\theta = \varepsilon_u$.
 
-<!-- > EE boils down to: growth rate of MU = growth rate of price of consumption ($r$?) -->
 
 
-<!-- ### "Ramsey Household Asset Market Clearing" -->
-<!-- $$A_t = K_t$$ -->
-<!-- Technically also have the capital leasing sector which requires -->
-<!-- $$A_D = K_t \text{ and } L_D = L_t$$ -->
 
-<!-- ### Ramsey Capital leasing max problem  -->
-<!-- Idk if this is important, so don't get sidetracked, but here it is: -->
 
-<!-- $$\max_{A_D}(R_t - r_t - d)A_D$$  -->
-<!-- where $A_D$ is the decision of the capital leasing firms. -->
+
+
+
+
+
+
+
+
+
 
 
 
 
 ### Def "Competitive (Walrasian) Equilibrium"
+---
 Competitive equilibrium is a list of quantities $\{C_t, Y_t, I_t, K_t, A_t\}$ and prices $\{w_t, r_t, R_t\}$ such that
 
 1. $\{C_t, A_t\}$ solves the household problem given $\{w_t,r_t\}$
@@ -1223,6 +1298,7 @@ Competitive equilibrium is a list of quantities $\{C_t, Y_t, I_t, K_t, A_t\}$ an
 
 
 ### Def "Ramsey: Production Side Equilibirum"
+---
 A list of quantities $\{C_t, Y_t,K_t\}$ and prices $\{w_t, r_t, R_t\}$ satisfying, for all $t$:
 
 1. Aggregate production function: $Y_t = F(K_t, L_t)$
@@ -1235,6 +1311,7 @@ A list of quantities $\{C_t, Y_t,K_t\}$ and prices $\{w_t, r_t, R_t\}$ satisfyin
 
 
 ### "Ramsey - differences between Planner and Household Problems"
+---
 
 If we have (1) production side equilibrium, and (2) Asset market clearing ($A = K$), then planner and household have the same (1) utility, (2) LOM for wealth ($\dot{K}$), (3) transversality condition.
 
@@ -1245,19 +1322,20 @@ Careful: if we don't have asset market clearing and/or production side equilibri
 * Unique Pareto Optimum $\Rightarrow$ will also be a competitive equilibrium
 * TVC: Prod-side eqm and Asset market clearing make it so TVCs are identical
 
-<!-- * Controls -->
-<!--     * Planner: $c$ -->
-<!--     * Household: own financial wealth and agg wealth -->
-<!-- * States:  -->
-<!--     * Planner: ???????? -->
-<!--     * Household: individual state: $A_{it}$; aggregate states: $K/R, L/w$ (generally easier to use $R$ and $w$) -->
-<!-- * TVC: -->
-<!--     * Planner: -->
-<!--     * Household: $\lim_{T \rightarrow \infty}$  holds iff $PVLC = PVLR$ -->
+
+
+
+
+
+
+
+
+
 
 
 
 ### Def "Rational Expectations Equilibrium (REE)"
+---
 Refinement of WE - we add an expectation/belief function $\Phi(K) = c_t, C_t = \Phi(K_t) L_t$ that allows households to forecast future factor prices
 
 Explains how households know future factor prices.
@@ -1265,15 +1343,16 @@ Explains how households know future factor prices.
 REE is also WE.
 
 ![](src/def_ree.png)
-<!-- FINISH MEE -->
+
 
 > WE equipped with a belief equal to the stable arm is a REE.
 
 
-## Government and fiscal policy in the Ramsey model
+
 
 
 ### "Government Budget Balance"
+---
 $$G_t = \tau_{A,t} \cdot r_t A_t + \tau_{w,t} \cdot w_t L_t + \tau_{c,t} \cdot C_t + T_t$$
 
 Where:
@@ -1287,6 +1366,7 @@ If taxes are collected in excess of $G$ then excess is distributed back to house
 
 
 ### "Ramsey Household problem with taxes"
+---
 same as before, but now:
 
 $$\dot{A}_{it} = (1 - \tau_{A,t}) \cdot r_t A_{it} + (1 - \tau_{w,t}) \cdot w_t L_{it} + \underbrace{(1 + \tau_{c,t})}_{\text{Note "+"}} \cdot c_{it} L_{it} + T_t$$
@@ -1297,6 +1377,7 @@ Instead, need to (1) solve HH problem, (2) aggregate decisions
 
 
 ### "Which taxes distortionary?"
+---
 Nondistortionary = behavior of the household agrees with planner's optimum despite taxes being present in the household's budget constraint (Planner doesn't care about taxes--so we're talking just about households).
 
 In general need to solve and do phase diagrams to solve. But, should also memorize the following:
@@ -1311,21 +1392,24 @@ In general need to solve and do phase diagrams to solve. But, should also memori
 
 
 ### "Government in Planner's and HH Problems"
+---
 
 *Assume*: $G_t$ does not depend on aggregate state.
 
-<!-- *Result 1*: If government budget is balanced, the $\dot{k} = 0$ isoclines for the household and the planner coincide. -->
 
-<!-- *Result 2*: If taxes are non-distortionary, the $\dot{c} = 0$ isoclines for the household and the planner coincide. -->
+
+
 
 Non-distortionary AND budget balanced $\Rightarrow$ both isoclines coincide
 
 
 ### "Proposition: nondistortionary taxes = reduction in initial wealth"
+---
 If taxes are non-distortionary, the effect of taxes is just like a reduction in initial wealth
 
 
 ### "Government Debt in Ramsey"
+---
 Households can hold wealth in the form of $K$ or $D$.
 
 Asset market clearing:
@@ -1338,6 +1422,7 @@ $$\dot{D}_t = r_t D_t + G_t - T_t$$
 Government cannot roll over debt indefinitely in Ramsey! No Ponzi!
 
 ### Thm "Ricardian Equivalence theorem"
+---
 If taxes are non-distortionary, then
 
 1. $D_t$ has no effect on the household lifetime budget constraint, and
@@ -1347,19 +1432,20 @@ If taxes are non-distortionary, then
 Implication: If taxes are non-distortionary, the amount and timing of intergenerational transfers implemented through $D_t$ (e.g. Social Security, Medicare) does not affect the economy’s consumption and interest rate trajectory. Sorta makes sense: dynastic households receiving a stimulus today will save it instead of spending so that their progeny will be able to pay off the debt later.
 
 
-<!-- ### "Irrelevance result" -->
-<!-- eqm allocations and prices do not depend on the level of gov debt under certain conditions... -->
 
 
 
 
 
-\newpage
-# Endogenous Growth (EG)
 
-## Endogenous Growth Intro
+
+
+
+
+
 
 ### "EG Algorithm"
+---
 
 **Household Problem**
 
@@ -1396,6 +1482,7 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 * $g_Y = g_A + n$
 
 ### "Endogenous Growth Facts"
+---
 
 * $A$: patent number (index)
 * $P_{A,t}$: price of idea
@@ -1412,7 +1499,7 @@ Implication: If taxes are non-distortionary, the amount and timing of intergener
 
 Marginal products of labor are equal across sectors in standard models, but be careful to not assert that $w = MPL_Y = MPL$ without checking things first...
 
-<!-- > Mechanism of growth: $A \uparrow \Rightarrow x_j = \frac{K}{A} \downarrow \Rightarrow MPx_j \uparrow \Rightarrow Y \uparrow$ (don't get this backwards!) -->
+
 
 > wages always equal; interest rate on assets always equal; but capital income rates not equal - physical capital will be higher (since $d$ added to $R$ and $\frac{\dot{P}_A}{P_A}$ subtracted from patent return rate)!
 
@@ -1422,6 +1509,7 @@ Marginal products of labor are equal across sectors in standard models, but be c
 ![](src/eg_diagram.png){width=50%}
 
 ### "EG Market Clearing"
+---
 Asset:
 $$V = K + P_AA$$
 
@@ -1437,6 +1525,7 @@ $$L = L_A + L_Y$$
 
 
 ### "EG Final Goods Sector (1/4)"
+---
 
 $$Y = L_Y^{1-\alpha} \sum_{j=1}^A x_j^\alpha = L_Y^{1-\alpha} (x_1^\alpha + \cdot \cdot \cdot x_A^\alpha)= L_Y^{1-\alpha} \sum_{j=1}^A \bigg(\frac{K}{A}\bigg)^\alpha  =  L_Y^{1-\alpha} A \bigg(\frac{K}{A}\bigg)^\alpha = K^\alpha(AL_Y)^{1-\alpha}$$
 
@@ -1448,6 +1537,7 @@ Competitive, so $w = MPL = (1-\alpha) \frac{Y}{L_Y}$ and $p_j = MPx_j = \bigg( \
 
 
 ### "EG Capital Goods Bundling Sector (2/4)"
+---
 
 $A$ monopolists own one of $j = \{1, ..., A\}$ ideas, purchased at price $P_{A,t}$.
 
@@ -1480,9 +1570,11 @@ $$MR = p(x) + x p'(x) = p + (\alpha - 1)p = R = MC$$
 Gives:
 $$p(x) = \underbrace{\frac{1}{\alpha}}_{\text{Markup}} \underbrace{R}_{\text{MC}}$$
 ### "Monopolist's markup on bundle price"
+---
 $$p(x) = \underbrace{\frac{1}{\alpha}}_{\text{Markup}} \underbrace{R}_{\text{MC}}$$
 
 ### "Research Sector (3/4)"
+---
 
 Why is this household??????
 $$\dot{a} = z_t l_A$$
@@ -1500,6 +1592,7 @@ $$P_A z= w \iff 0 < l_A < \infty$$
 > Relative size of the production and research sectors is the free variable that makes the MPL rise/fall to ensure we have a wage that makes workers indifferent between $w_A$ and $w_L$ 
 
 ### "EG Physical Capital Goods Producing Sector (4/4)"
+---
 Standard neoclassical and we still have that $R_t = r_t + d$, BUT:
 
 $$R \neq MPK$$
@@ -1508,15 +1601,18 @@ Since there is a markup from the capital bundlers! (instead $R = p\alpha$)
 
 
 ### "EG LOM for capital"
+---
 $$\dot{K} = Y - C - dK$$
 
 
 ### "EG Key Identity"
+---
 $$\underbrace{P_A \dot{A}}_{\text{agg value of research output}} = \underbrace{w L_A}_{\text{researcher wage}}$$
 
 
 
 ### "Patents as financial assets"
+---
 A patent is like a financial asset which means there is a no arbitrage condition:
 $$r_t = \frac{\overbrace{\pi_t}^{\text{Dividend}} + \overbrace{\dot{P}_{A,t}}^{\text{cap gains}}}{  \underbrace{P_{A,t}}_{\text{purchase price}}} \iff \underbrace{\dot{P_A} = P_A r - \pi}_{\text{usually use in this form}}$$
 
@@ -1530,10 +1626,12 @@ $$r_t = \frac{\overbrace{\pi_t A_t - w_tL_{A,t}}^{\text{dividend}} + \overbrace{
 
 
 ### "EG w National Accounts"
+---
 $$GDP = \underbrace{Y + P_A\dot{A}}_{\text{Product}} = Y + wL_A = \underbrace{RK + \pi A + w L_Y + wL_A}_{\text{Income}} = wL + RK + M \underbrace{(r - \frac{\dot{P}_A}{P_A})}_{\text{Jorg for patents}}$$
 
 
 ### "Jorgenson's for patents"
+---
 With standard capital $d$ is added to $R$ since depreciation is negative.
 $$\text{Financial return on market value capital} = R = r+d$$
 With patents, $\frac{\dot{P}_A}{P_A}$ is subtracted since patent values generally appreciate:
@@ -1544,6 +1642,7 @@ $$GDP = wL + RK + M(r - \frac{\dot{P}_A}{P_A})$$
 
 
 ### "EG Labor Share and GDP"
+---
 Labor Share of GDP (not $Y$) is > $1-\alpha$!
 
 Makes sense because labor share in final goods sector is standard (inputs are split between $K$ and $L$), but labor share in the research sector is 100%. So, the average contribution of labor to GDP should be higher than $1-\alpha$.
@@ -1552,11 +1651,13 @@ So, our estimates for $\alpha$ in previous models don't work here; $\alpha$ with
 
 
 ### "EG Euler Thm"
+---
 Since PF is CRS/Homogeneous of degree 1:
 $$Y = L_Y^{1-\alpha} (Ax)^\alpha = \frac{\partial Y}{\partial L_Y}L_Y + \frac{\partial Y}{\partial x_1}x_1 + \cdot \cdot \cdot + \frac{\partial Y}{\partial x_A}x_A = wL_Y + px_1 + \cdot \cdot \cdot + px_A = wL_Y + Axp$$
 
 
 ### "EG Labor/Capital/IP Shares of Output"
+---
 
 * Recall that $wL_Y = (1-\alpha)Y$ to see that $Axp = \alpha Y$. 
 * Plug in the fact that $p = \frac{R} {\alpha}$ to get: share of physical capital $\frac{RK}{Y} = \alpha^2 < \alpha$ like in competitive models!
@@ -1567,6 +1668,7 @@ $$Y = (1-\alpha)Y + \alpha^2 Y + \alpha(1 - \alpha)Y = wL_Y + RK + \underbrace{\
 > Memorize: $\pi A = \alpha(1-\alpha)Y$
 
 ### "EG Externalities"
+---
 Assume functional form:
 $$z_t = \gamma (A, L_A) = \eta A^\varphi L_A^{\lambda - 1}$$
 So,
@@ -1575,18 +1677,24 @@ where
 
 * $\varphi = 0, \lambda = 1$ means no external effect on $\gamma$
 * $\varphi > 0$: "standing on shoulders"
+---
 * $\varphi < 0$: "fishing out the pond of ideas"
+---
 * $\lambda > 0$: "synergy"
+---
 * $\lambda < 0$: "stepping on toes"
+---
 
 > Bigger = better for both the idea externality $\varphi$ and the labor externality, $\lambda$
 
 ### "EG $\bar{r}$"
+---
 $$\bar{r} = \rho + \theta g_A$$
 Caution: this is not solved yet because $g_A$ is endogenous! 
 
 
 ### "Profit in Endogenous Growth"
+---
 $$\pi_t = \alpha(1-\alpha)\frac{Y}{A}$$ 
 Also:
 $$\pi_t= \frac{1}{A}(Y - RK - wL_Y)$$
@@ -1601,11 +1709,13 @@ $$P_A = PV(\{\pi_t\}) = \int_t^\infty e^{-\overline{r}(t, s)}\pi_s ds \underbrac
 
 
 ### "Share of workers in research sector"
+---
 $$\frac{s_R}{1-s_R} = \frac{L_A}{L_Y}$$
 
-## Household Problem
+
 
 ### "EG Household Problem"
+---
 Household Total Financial Wealth = Market Value of businesses = physical capital and IP:
 $$\underbrace{V}_{\text{mkt value of businesses}} \overbrace{=}^{\text{by AMC}} \underbrace{K + \overbrace{M}^{=P_AA}}_{\text{wealth of rep HH}}$$
 UMP:
@@ -1623,6 +1733,7 @@ $$\lim_{t\rightarrow \infty} e^{-\overline{r}(0,t)}V_t = 0 \iff PVLR_t = PVLC_t,
 
 
 ### "EG 5 Equations and Unknowns"
+---
 (Reduced) list of endogenous variables:
 $$(Y_t, A_t, K_t, C_t, L_{Y,t}, L_{A,t}), (P_{A,t}, w_t, r_t)$$
 
@@ -1643,6 +1754,7 @@ $$L = L_A + L_Y \tag{Labor Mkt Clearing}$$
 > This is too hard to solve, so look for a BGP to simplify!
 
 ### "EG BGP"
+---
 PF is identical to that in Solow, so everything in Solow BGP applies exactly the same here!
 
 ![](src/eg_bgp.png){width=50%}
@@ -1655,9 +1767,10 @@ $$P_A \dot{A} = w L_A \iff  P_A \frac{\dot{A}}{A} = \frac{w L_A}{A} \iff g_{P_A}
 Derive $g_{V}$:
 $$V = P_A A + K \underbrace{\iff}_{\text{dont forget this!!}} g_V = g_{P_A} + g_A = g_K \Rightarrow g_V = g_A + n$$
 
-## Planner's Problem
+
 
 ### "Planner's Problem"
+---
 
 * States: $A, K$
 * Controls: $C, L_A, L_Y$
@@ -1691,10 +1804,11 @@ Hamiltonian and FOCs are standard. They give:
 $$\dot{P}_A^* = r_t P_A^* - \underbrace{\frac{z}{w}P_A^*}_{=1} \frac{\partial Y}{\partial A} = r_t P_A^* - \frac{\partial Y}{\partial A}$$
 
 
-## Planner and market equilibrium comparison
+
 
 
 ### "EG Planner and Market Comparison"
+---
 
 ![](src/eg_compare.png)
 
@@ -1715,6 +1829,7 @@ With externalities, all bets are off (e.g., a negative externality will induce t
 
 
 ### "Value of ideas"
+---
 
 Two distortions that affect the market price of an idea relative to its social value: 
 
@@ -1735,6 +1850,7 @@ $$MPL_A^* \neq w_* = MPL_Y$$
 
 
 ### "Private and social marginal benefits from research"
+---
 Private marginal benefit: 
 $$w_A = P_Az$$
 
@@ -1750,6 +1866,7 @@ $$MPA^* = \underbrace{\frac{\partial Y}{\partial A}}_{\text{social dividend}} + 
 
 
 ### "Consequences of monopoly"
+---
 Monopolists choose an output level below that of a competitive market and charge a markup. Consequences:
 
 1. IP priced below its social value: $P_A = \alpha P_A^*$ (if no externalities - otherwise this may not hold!!).
@@ -1760,25 +1877,29 @@ Monopolists choose an output level below that of a competitive market and charge
 
 
 
-\newpage
-# Misc
+
+
 
 ### "Common Tricks"
+---
 * $gn$ small and along BGP $g_Y$ is known: 
     * $(1+n)(1+g) = 1 + g + n + gn \approx 1 + g_Y$ (used in OLG, maybe elsewhere)
 
 
 ### "BGP"
+---
 On the balanced growth path, all components of expenditure have to grow at the same rate as $Y$. Specifically: $g_Y = g_K = g_I = g_C$. Usually $g_Y = g_A + n$.
 
 ### Def "Euler equation"
+---
 An Euler equation relates choice in one period to choice in another period.
 
 
-## Prereqs
+
 
 
 ### "Combining stocks vs flows"
+---
 
 * Not valid: $stock + flow$
 * Valid: $stock + flow * \Delta t$ or $\frac{stock}{\Delta t} + flow$
@@ -1788,14 +1909,16 @@ An Euler equation relates choice in one period to choice in another period.
 This is a "gotcha" mostly only in discrete time because in continuous time the dot notation usually makes it clear.
 
 
-<!-- ```{r} -->
-<!-- gsub(.pdf, , list.files(ECON 605 - Macro I/Notes/Slides/)) -->
-<!-- ``` -->
+
+
+
 
 ### Def "rate of change over time interval"
+---
 $$\frac{X_t - X_{t-1}}{\Delta t}$$
 
 ### Def "Annual growth rate"
+---
 $$g_{X,t} = \frac{X_t - X_{t-1}}{X_{t-1}}$$
 
 
@@ -1808,12 +1931,13 @@ $$g_{X,t} = \frac{X_t - X_{t-1}}{X_{t-1}} \approx \ln(X_t) - \ln(X_{t-1})$$
 
 
 ### Def "Average (annual) growth rate"
+---
 
-<!-- ![](src/growth_q.png) -->
 
-<!-- ![](src/growth_a.png) -->
 
-<!-- CAUTION: don't just do: $\frac{332 - 100}{100} = 2.23\%$! -->
+
+
+
 
 Between any two dates, $a, b$:
 
@@ -1822,6 +1946,7 @@ $$g_X = \frac{\ln(X_b) - \ln(X_a)}{b-a}$$
 
 
 ### Def "Annualized and instantaneous growth rate"
+---
 $$g_{X,t}  = \frac{\text{Rate of change over time interval}}{\text{Initial value of } X} = \frac{(X_t - X_{t-\Delta t}) / \Delta t}{X_{t-\Delta t}}$$
 
 Taking $\lim_{\Delta t \rightarrow 0}$ gives the instantaneous growth rate:
@@ -1830,19 +1955,22 @@ $$g_{X,t} = \frac{1}{X_t}\frac{dX_t}{dt} = \frac{\dot{X}_t}{X_t}$$
 
 
 ### "Arithmetic with growth rates"
+---
 * $g_{XY} = g_X + g_Y$
 * $g_{X/Y} = g_X - g_Y$
 * $g_{X^\alpha} = \alpha g_X$
 
 
 ### "MPK"
+---
 $$MPK \equiv \frac{\partial Y}{\partial K} \neq \frac{\partial F}{\partial K} \text{  (e.g., if } Y = Z F(K, L))$$
 
-<!-- ### "AMC implies GMC" -->
-<!-- In each of the (standard) models in this class we have that Asset Market Clearing $\Rightarrow$ Goods Market Clearing. -->
+
+
 
 
 ### "Movement of variables"
+---
 
 * $k, w$ nearly always move together
 * $k, r$ nearly always move opposite
