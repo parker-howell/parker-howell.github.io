@@ -1480,7 +1480,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Econ 604 Notes</h1>
 <h4 class="author">Parker Howell</h4>
-<h4 class="date">Last Updated: 2024-05-03</h4>
+<h4 class="date">Last Updated: 2024-07-19</h4>
 
 </div>
 
@@ -2534,19 +2534,18 @@ e_H\}\)</span></li>
 <li>Agent risk-averse, principal is risk-neutral</li>
 <li>Agent maxes the <em>expectation of</em> <span class="math inline">\(u(w,e) = v(w) - g(e)\)</span>
 <ul>
-<li><span class="math inline">\(v&#39; &gt; 0, v&#39;&#39; leq
+<li><span class="math inline">\(v&#39; &gt; 0, v&#39;&#39; \leq
 0\)</span> (equality <span class="math inline">\(\Rightarrow\)</span>
-risk neutral; inequality <span class="math inline">\(Rightarrow\)</span>
-risk-averse)</li>
+risk neutral; inequality <span class="math inline">\(\Rightarrow\)</span> risk-averse)</li>
 <li>has reservation utility <span class="math inline">\(\bar{u}\)</span>
 if doesn’t work with principal</li>
 </ul></li>
 <li>Principal maxes the <em>expectation of</em> <span class="math inline">\(\pi - w\)</span></li>
 </ul>
 </div>
-<div id="model-contractible-effort-benchmark-casestrawman" class="section level3" number="6.0.2">
+<div id="model-contractible-i.e.-observable-effort-benchmark-casestrawman" class="section level3" number="6.0.2">
 <h3><span class="header-section-number">6.0.2</span> Model “Contractible
-Effort (benchmark case/strawman)”</h3>
+(i.e., observable) Effort (benchmark case/strawman)”</h3>
 <ul>
 <li>Principal makes TIOLI offer comprising BOTH effort <span class="math inline">\(e^* \in \{e_L, e_H\}\)</span> and wage (<span class="math inline">\(w^*: \mathbb{R} \rightarrow
 \mathbb{R}\)</span>)</li>
@@ -2565,7 +2564,8 @@ Principal asks only for <span class="math inline">\(e_L\)</span></p>
 </blockquote>
 <p>To analyze:</p>
 <ol style="list-style-type: decimal">
-<li>fix <span class="math inline">\(e\)</span></li>
+<li>fix <span class="math inline">\(e\)</span> (this lets us ignore
+IC)</li>
 <li>note that IR constraint binds, so <span class="math inline">\(\lambda_{IR} &gt; 0\)</span></li>
 <li>FOC for <span class="math inline">\(w(\pi)\)</span> is: <span class="math inline">\(-f(\pi|e) = -\lambda_{IR}
 v&#39;(w(\pi))f(\pi|e)\)</span></li>
@@ -2595,9 +2595,9 @@ w\)</span> (or any constant in front wlog)</p></li>
 <li><p>sell the firm to the agent <span class="math inline">\(w^*(\pi) =
 \pi - L\)</span></p></li>
 <li><p>now agent solves the problem the principal wanted to solve, but
-without a constraint: <span class="math display">\[\max_{e\in \{e_L,
-e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}\pi f(\pi | e) d\pi - (L +
-g(e))\]</span></p></li>
+without the IC constraint: <span class="math display">\[\max_{e\in
+\{e_L, e_H\}} \int_{\underline{\pi}}^{\overline{\pi}}\pi f(\pi | e) d\pi
+- (L + g(e))\]</span></p></li>
 <li><p>IR binds <span class="math inline">\(\rightarrow L = E[\pi | e^*]
 - (g(e^*) - \overline{u})\)</span></p></li>
 <li><p>Now this is the same as the problem with contractible
@@ -2711,15 +2711,12 @@ risk averse party to take on the risk.</p>
 <div id="term-likelihood-ratio" class="section level4" number="6.0.4.1">
 <h4><span class="header-section-number">6.0.4.1</span> Term “Likelihood
 Ratio”</h4>
-<p><span class="math display">\[\frac{f(\pi|e_H)}{f(\pi|e_L)}\]</span></p>
+<p><span class="math display">\[\frac{f(\pi|e_L)}{f(\pi|e_H)}\]</span></p>
 <blockquote>
 <p><span class="math inline">\(LR_H\)</span> high <span class="math inline">\(\Rightarrow\)</span> agent probably chose high
 effort.</p>
 </blockquote>
-<blockquote>
-<p><span class="math inline">\(\frac{f(\pi|e_L)}{f(\pi|e_H)}\)</span> is
-the “inverse likelihood ratio”</p>
-</blockquote>
+<!-- > $\frac{f(\pi|e_L)}{f(\pi|e_H)}$ is the "inverse likelihood ratio" -->
 </div>
 </div>
 <div id="example-prove-the-ir-constraint-must-bind-in-a-standard-model." class="section level3" number="6.0.5">
@@ -2749,7 +2746,13 @@ Function Theorem”</h3>
 differentiable with nonzero derivative at <span class="math inline">\(a\)</span> then <span class="math display">\[{\displaystyle {\bigl (}f^{-1}{\bigr
 )}&#39;(b)={\frac {1}{f&#39;(a)}}={\frac
 {1}{f&#39;(f^{-1}(b))}}.}\]</span></p>
-<!-- # Algorithms to solve for each solution concept -->
+<!-- ### "3+ effort levels" -->
+<!-- would have a separate multiplier for each. So, if doing the high case with a medium and low levels, we'd have: $\lambda_IC_{HL}$, $\lambda_IC_{HM}$. -->
+</div>
+</div>
+<div id="algorithms-to-solve-for-each-solution-concept" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Algorithms to solve for
+each solution concept</h1>
 <!-- ### PSNE -->
 <!-- * Construct best-response correspondences -->
 <!--     * take FOCs (and SOCs) to max if continuous -->
@@ -2764,9 +2767,8 @@ differentiable with nonzero derivative at <span class="math inline">\(a\)</span>
 <!-- 1. draw out extensive form if possible -->
 <!-- 2. check one-shot deviation principle if repeated -->
 <!-- 3.  -->
-</div>
-<div id="wpbe-algorithm" class="section level3" number="6.0.7">
-<h3><span class="header-section-number">6.0.7</span> wPBE algorithm</h3>
+<div id="wpbe-algorithm" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> wPBE algorithm</h3>
 <ol start="0" style="list-style-type: decimal">
 <li>label beliefs and check for dominated strategies.
 <ul>
@@ -2808,48 +2810,29 @@ complete set of wPBE.</li>
 <!-- ### PBE -->
 </div>
 </div>
-<div id="misc" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Misc</h1>
-<div id="standard-form" class="section level3" number="7.0.1">
-<h3><span class="header-section-number">7.0.1</span> Standard form</h3>
-<p>Finish
-<!-- If IR is something like $\int_{\underline{\pi}}^{\overline{\pi}} \cdot d\pi - g(e) \geq \overline{u}$ then need "$-$" in front of $\lambda_{IR}$ --></p>
+<div id="misc" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Misc</h1>
+<div id="algorithm-spe-supporting-xx" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> “Algorithm SPE
+supporting XX”</h3>
+<ol start="0" style="list-style-type: decimal">
+<li>If finite: “No non-Nash SPE. Since only NE can be played in the last
+period, backward induction shows the same is true for every earlier
+period. So, the only SPE is such that a stage NE is played in each stage
+game”</li>
+<li>If infinite…</li>
+<li>finish!</li>
+</ol>
 </div>
-<div id="kkt-algorithm-2-constraints" class="section level3" number="7.0.2">
-<h3><span class="header-section-number">7.0.2</span> KKT Algorithm 2
-Constraints</h3>
-<p>Given want to max <span class="math display">\[\mathcal{L} = f(x, y,
-z) + \lambda_1(constraint) +  \lambda_2(constraint)\]</span></p>
-<p><strong>Step 1:</strong></p>
-<ul>
-<li>assume constraint 2 slack (<span class="math inline">\(\lambda_2 =
-0\)</span>)</li>
-<li>solve</li>
-<li>test if constraint 2 really was satisfied
-<ul>
-<li>if so, stop here</li>
-<li>if not, continue</li>
-</ul></li>
-</ul>
-<p><strong>Step 2:</strong></p>
-<ul>
-<li>assume constraint 1 slack (<span class="math inline">\(\lambda_1 =
-0\)</span>)</li>
-<li>solve</li>
-<li>test if constraint 1 really was satisfied
-<ul>
-<li>if so, stop here</li>
-<li>if not, continue</li>
-</ul></li>
-</ul>
-<p><strong>Step 3:</strong></p>
-<ul>
-<li>Solve with both constraints non-binding (i.e., <span class="math inline">\(\lambda_1=\lambda_2=0\)</span>)</li>
-</ul>
-<blockquote>
-<p>“<span class="math inline">\(-\)</span>” in front of objective if
-minimizing</p>
-</blockquote>
+<div id="random-tipsfacts" class="section level3" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> “Random
+tips/facts”</h3>
+<p>TBD</p>
+</div>
+<div id="mistakes-to-avoid" class="section level3" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> “Mistakes to
+avoid”</h3>
+<p>TBD</p>
 </div>
 </div>
 
