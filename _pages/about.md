@@ -1,10 +1,10 @@
 ---
 permalink: /
-title: "Parker Howell's Personal Website"
+title: "Economics PhD Student at the University of Michigan"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Coming soon!
+**Research interests:** Crime; Labor; Fairness in AI; Inequality; Machine Learning/AI in Economics
